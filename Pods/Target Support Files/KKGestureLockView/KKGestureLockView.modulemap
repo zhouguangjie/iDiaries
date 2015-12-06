@@ -1,6 +1,0 @@
-framework module KKGestureLockView {
-  umbrella header "KKGestureLockView-umbrella.h"
-
-  export *
-  module * { export * }
-}
