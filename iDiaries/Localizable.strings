@@ -1,0 +1,69 @@
+/* 
+  Localizable.strings
+  iDiaries
+
+  Created by AlexChow on 15/12/3.
+  Copyright © 2015年 GStudio. All rights reserved.
+*/
+
+MainContentPlaceHolderText = "Men you meet...\nThings you experience...\nPlaces you go...\nFeeling you feel...\nSay something to yourself...";
+PastRemindMessageFormat = "Past you send you this mail at %@";
+APP_TITLE = "Easy Diary";
+
+"Weather" = "Weather";
+"Mood" = "Mood";
+"DaySummary" = "Today Summary";
+
+//Weather
+"Sunny" = "Sunny";
+"Cloudy" = "Cloudy";
+"Rainy" = "Rainy";
+"Snowy" = "Snowy";
+"Thundering" = "Thundering";
+"Windy" = "Windy";
+
+//Mood
+"Happy" = "Happy";
+"Sad" = "Sad";
+"Dysphoria" = "Dysphoria";
+"Anger" = "Anger";
+"Fear" = "Fear";
+"Normal" = "Normal";
+
+//Day Summary
+"Beautiful Day" = "Good Day";
+"Funny Day" = "Funny Day";
+"Boring Day" = "Boring Day";
+"Full Day" = "Full Day";
+"Leisure Day" = "Leisure Day";
+"Busy Day" = "Busy Day";
+"Routine Day" = "Routine Day";
+"Bad Day" = "Bad Day";
+"Unforgettable Day" = "Unforgettable Day";
+"Meaningful Day" = "Meaningful Day";
+
+ONE_WEEK = "A Week Later";
+ONE_MONTH = "A Month Later";
+ONE_YEAR = "A Year Later";
+SELECT_REVIEW_TIME = "Select Date";
+CANCEL_REVIEW = "Don't Remind Me";
+CANCEL = "Cancel";
+
+Sunday = "Sunday";
+Monday = "Monday";
+Tuesday = "Tuesday";
+Wednesday = "Wednesday";
+Thursday = "Thursday";
+Friday = "Friday";
+Saturday = "Saturday";
+
+REMIND_FUTURE_ME_REVIEW = "Send review mail to future me";
+REMIND_FUTURE_ME_REVIEW_AT = "Mail will send at %@";
+
+SWIPE_KEY_SET_PASSWORD = "Swipe key to set new password";
+SWIPE_KEY_VALIDATE_PASSWORD = "Swipe key to validate password";
+INCORRECT_PASSWORD = "Incorrect password,retry please";
+REPEAT_PASSWORD = "Validate new password";
+REPEAT_PASSWORD_NOT_MATCH = "Twice swipe not match,reset password again";
+
+NO_DIARY_HERE = "No diary here!";
