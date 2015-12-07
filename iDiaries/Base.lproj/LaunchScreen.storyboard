@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -19,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" text="iDiaries" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Vcw-wA-m2A">
-                                <rect key="frame" x="27" y="186" width="546" height="182"/>
+                                <rect key="frame" x="27" y="124" width="546" height="182"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="128"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -29,7 +30,7 @@
                         <animations/>
                         <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Vcw-wA-m2A" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-23" id="1Jd-MF-eFf"/>
+                            <constraint firstItem="Vcw-wA-m2A" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" multiplier="5/7" constant="1" id="1Jd-MF-eFf"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Vcw-wA-m2A" secondAttribute="trailing" constant="7" id="Ec7-LS-UaX"/>
                             <constraint firstItem="Vcw-wA-m2A" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="7" id="dWu-4c-t5X"/>
                         </constraints>

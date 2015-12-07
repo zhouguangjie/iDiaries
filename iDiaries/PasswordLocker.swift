@@ -29,14 +29,14 @@ class PasswordLocker: NSObject,KKGestureLockViewDelegate {
     private var onValidateSuc:ValidateSuccessCallback!
     private var onSetPasswordSuc:SetPasswordSuccessCallback!
     
-    static func showValidateLocker(rootController:ViewController,callback:ValidateSuccessCallback)
+    static func showValidateLocker(rootController:UIViewController,callback:ValidateSuccessCallback)
     {
         let locker = PasswordLocker(type: .ValidatePassword)
         locker.onValidateSuc = callback
         locker.showLocker(rootController)
     }
     
-    static func showSetPasswordLocker(rootController:ViewController,callback:SetPasswordSuccessCallback)
+    static func showSetPasswordLocker(rootController:UIViewController,callback:SetPasswordSuccessCallback)
     {
         let locker = PasswordLocker(type: .SetPassword)
         locker.onSetPasswordSuc = callback
