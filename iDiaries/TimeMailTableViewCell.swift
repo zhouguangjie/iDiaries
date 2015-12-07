@@ -10,15 +10,34 @@ import UIKit
 
 class TimeMailTableViewCell: UITableViewCell {
     static let reuseId = "TimeMailTableViewCell"
+    var rootController:TimeMailTableViewController!
     var timeMail:TimeMailModel!
     @IBOutlet weak var mailContent: UILabel!
     
     @IBOutlet weak var mailStatusImg: UIImageView!
 
-    override func layoutSubviews() {
+    func initCell()
+    {
+        self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "onCellTaped:"))
+    }
+    
+    func onCellTaped(_:UITapGestureRecognizer)
+    {
+        timeMail.read = true
+        timeMail.saveModel()
+        refresh()
+        rootController.performSegueWithIdentifier(SegueShowMailDetailController, sender: self)
+    }
+    
+    func refresh()
+    {
         mailContent.text = timeMail.msgContent
         let imageStatusName = timeMail.read ? "mail_read" : "mail_not_read"
         mailStatusImg.image = UIImage(named: imageStatusName)
+    }
+    
+    override func layoutSubviews() {
+        
         super.layoutSubviews()
     }
 }

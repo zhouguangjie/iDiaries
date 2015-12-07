@@ -26,12 +26,15 @@ class SelectDateController: UIViewController {
         }
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
     static func showDatePicker(rootController:UIViewController,date:NSDate,minDate:NSDate!,maxDate:NSDate!,selectedDateCallback:(dateTime:NSDate!)->Void)
     {
         let controller = instanceFromStoreboard()
         let nvController = UINavigationController(rootViewController: controller)
-        nvController.navigationBar.barTintColor = rootController.navigationController?.navigationBar.barTintColor
-        nvController.navigationBar.tintColor = UIColor.whiteColor()
+        nvController.changeNavigationBarColor()
         rootController.presentViewController(nvController, animated: true){
             controller.selectedDateCallback = selectedDateCallback
             controller.datePicker.minimumDate = minDate

@@ -64,6 +64,9 @@
 		E781B4881C11925F0014A17D /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E781B4871C11925F0014A17D /* AudioToolbox.framework */; };
 		E781B4A81C11C5DB0014A17D /* PasswordLocker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E781B4A71C11C5DB0014A17D /* PasswordLocker.swift */; };
 		E781B4AA1C11D5730014A17D /* LockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E781B4A91C11D5730014A17D /* LockViewController.swift */; };
+		E7BB95541C154A0700130E2F /* MailDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BB95531C154A0700130E2F /* MailDetailController.swift */; };
+		E7BB95561C154B7C00130E2F /* UserSettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BB95551C154B7C00130E2F /* UserSettingController.swift */; };
+		E7BB95581C157E1700130E2F /* SystemSoundHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BB95571C157E1700130E2F /* SystemSoundHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -133,6 +136,9 @@
 		E781B4871C11925F0014A17D /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		E781B4A71C11C5DB0014A17D /* PasswordLocker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordLocker.swift; sourceTree = "<group>"; };
 		E781B4A91C11D5730014A17D /* LockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockViewController.swift; sourceTree = "<group>"; };
+		E7BB95531C154A0700130E2F /* MailDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailDetailController.swift; sourceTree = "<group>"; };
+		E7BB95551C154B7C00130E2F /* UserSettingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettingController.swift; sourceTree = "<group>"; };
+		E7BB95571C157E1700130E2F /* SystemSoundHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemSoundHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +199,7 @@
 				E70DDEB61C10606C00DD0E57 /* ToastHelper.swift */,
 				E70DDEB71C10606C00DD0E57 /* UserGuide.swift */,
 				E743D8DD1C143B10003ACC4E /* UIAnimationHelper.swift */,
+				E7BB95571C157E1700130E2F /* SystemSoundHelper.swift */,
 			);
 			name = BahamutUIKit;
 			path = ../../bahamut/Bahamut/Bahamut/BahamutUIKit;
@@ -257,6 +264,7 @@
 			children = (
 				E743D8E71C14A104003ACC4E /* TimeMailTableViewController.swift */,
 				E743D8E91C14A120003ACC4E /* TimeMailTableViewCell.swift */,
+				E7BB95531C154A0700130E2F /* MailDetailController.swift */,
 			);
 			name = TimeMail;
 			sourceTree = "<group>";
@@ -338,6 +346,7 @@
 				E76DEB771C0E981D0072A1D7 /* AppDelegate.swift */,
 				E76DEB791C0E981D0072A1D7 /* ViewController.swift */,
 				E70DDE9F1C1015D400DD0E57 /* DiaryMarksConfig.swift */,
+				E7BB95551C154B7C00130E2F /* UserSettingController.swift */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -507,6 +516,7 @@
 				E781B4841C114DB10014A17D /* NewDiaryBaseCell.swift in Sources */,
 				E743D8E81C14A104003ACC4E /* TimeMailTableViewController.swift in Sources */,
 				E781B4AA1C11D5730014A17D /* LockViewController.swift in Sources */,
+				E7BB95561C154B7C00130E2F /* UserSettingController.swift in Sources */,
 				E781B4A81C11C5DB0014A17D /* PasswordLocker.swift in Sources */,
 				E70DDECD1C10606C00DD0E57 /* ControllerExtension.swift in Sources */,
 				E743D8F51C14AD3E003ACC4E /* UIButton+Badge.m in Sources */,
@@ -514,6 +524,7 @@
 				E70DDECA1C10606C00DD0E57 /* RegexUtil.swift in Sources */,
 				E743D8D91C128E10003ACC4E /* NewDiaryCellManager.swift in Sources */,
 				E70DDED11C10606C00DD0E57 /* KeyboardAdjustHelper.swift in Sources */,
+				E7BB95541C154A0700130E2F /* MailDetailController.swift in Sources */,
 				E781B4801C114BFC0014A17D /* NewDiaryRemindFutureCell.swift in Sources */,
 				E70DDED51C10606C00DD0E57 /* FileMgrEntities.swift in Sources */,
 				E70DDED01C10606C00DD0E57 /* ImageUtil.swift in Sources */,
@@ -536,6 +547,7 @@
 				E743D8F41C14AD3E003ACC4E /* UIBarButtonItem+Badge.m in Sources */,
 				E70DDED81C10606C00DD0E57 /* ModelEntity.swift in Sources */,
 				E70DDEA21C10197F00DD0E57 /* DiaryContentCell.swift in Sources */,
+				E7BB95581C157E1700130E2F /* SystemSoundHelper.swift in Sources */,
 				E70DDEC81C10606C00DD0E57 /* DateHelper.swift in Sources */,
 				E70DDEDA1C10606C00DD0E57 /* ShareChatEntity.swift in Sources */,
 				E70DDEC91C10606C00DD0E57 /* IDUtil.swift in Sources */,

@@ -8,28 +8,15 @@
 
 import UIKit
 import KKGestureLockView
-import AudioToolbox
-
-enum LockedCellStatus
-{
-    case NoPasswordStored
-    case Validating
-}
-
-class DiaryLockedCell: UITableViewCell,KKGestureLockViewDelegate {
-    static let reuseId = "DiaryLockedCell"
-    var rootController:ViewController!
-    @IBAction func unlock(sender: AnyObject) {
-        
-        
-    }
-}
 
 enum PasswordLockerType
 {
     case ValidatePassword
     case SetPassword
 }
+
+typealias ValidateSuccessCallback = ()->Void
+typealias SetPasswordSuccessCallback = (String)->Void
 
 class PasswordLocker: NSObject,KKGestureLockViewDelegate {
     init(type:PasswordLockerType) {
@@ -38,25 +25,29 @@ class PasswordLocker: NSObject,KKGestureLockViewDelegate {
     private var type:PasswordLockerType = .ValidatePassword
     private var password:String!
     private var lockViewController:LockViewController!
-    private var rootController:ViewController!
     
-    static func showValidateLocker(rootController:ViewController)
+    private var onValidateSuc:ValidateSuccessCallback!
+    private var onSetPasswordSuc:SetPasswordSuccessCallback!
+    
+    static func showValidateLocker(rootController:ViewController,callback:ValidateSuccessCallback)
     {
         let locker = PasswordLocker(type: .ValidatePassword)
+        locker.onValidateSuc = callback
         locker.showLocker(rootController)
     }
     
-    static func showSetPasswordLocker(rootController:ViewController)
+    static func showSetPasswordLocker(rootController:ViewController,callback:SetPasswordSuccessCallback)
     {
         let locker = PasswordLocker(type: .SetPassword)
+        locker.onSetPasswordSuc = callback
         locker.showLocker(rootController)
     }
     
-    func showLocker(rootController:ViewController)
+    func showLocker(rootController:UIViewController)
     {
-        self.rootController = rootController
-        lockViewController = rootController.showLockView()
+        lockViewController = LockViewController.instanceFromStoreboard()
         lockViewController.delegate = self
+        rootController.navigationController?.pushViewController(lockViewController, animated: true)
         switch type
         {
         case .SetPassword:lockViewController.message = NSLocalizedString("SWIPE_KEY_SET_PASSWORD", comment: "")
@@ -66,26 +57,26 @@ class PasswordLocker: NSObject,KKGestureLockViewDelegate {
     
     //MARK:KKGestureLockViewDelegate
     func gestureLockView(gestureLockView: KKGestureLockView!, didBeginWithPasscode passcode: String!) {
-        print("didBeginWithPasscode:\(passcode)")
     }
     
     func gestureLockView(gestureLockView: KKGestureLockView!, didCanceledWithPasscode passcode: String!) {
-        print("didCanceledWithPasscode:\(passcode)")
     }
     
     func gestureLockView(gestureLockView: KKGestureLockView!, didEndWithPasscode passcode: String!) {
-        print("didEndWithPasscode:\(passcode)")
         if type == .ValidatePassword
         {
             if DiaryService.sharedInstance.checkPswCorrent(passcode)
             {
                 lockViewController.navigationController?.popViewControllerAnimated(true)
-                DiaryListManager.sharedInstance.unlockDiary()
+                if let handler = onValidateSuc
+                {
+                    handler()
+                }
             }else
             {
                 lockViewController.message = NSLocalizedString("INCORRECT_PASSWORD", comment: "Incorrect Password,Please Retry")
                 lockViewController.messageLabel.shakeAnimationForView()
-                AudioServicesPlaySystemSound(1011)
+                SystemSoundHelper.vibrate()
             }
         }else if type == .SetPassword
         {
@@ -96,10 +87,13 @@ class PasswordLocker: NSObject,KKGestureLockViewDelegate {
             }else if password == passcode{
                 DiaryService.sharedInstance.setPassword(passcode)
                 lockViewController.navigationController?.popViewControllerAnimated(true)
-                DiaryListManager.sharedInstance.unlockDiary()
+                if let handler = onSetPasswordSuc
+                {
+                    handler(passcode)
+                }
             }else{
                 password = nil
-                AudioServicesPlaySystemSound(1011)
+                SystemSoundHelper.vibrate()
                 lockViewController.messageLabel.shakeAnimationForView()
                 lockViewController.message = NSLocalizedString("REPEAT_PASSWORD_NOT_MATCH", comment: "Twice swipe not match,reset password again")
             }

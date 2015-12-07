@@ -77,8 +77,7 @@ class DiaryService: NSNotificationCenter {
     }()
     
     override init() {
-        PersistentManager.sharedInstance.appInit("iDiary")
-        PersistentManager.sharedInstance.initManager("easy_diary.sqlite", userDocumentDir: PersistentManager.sharedInstance.rootUrl)
+        
     }
     
     let PSW_STORE_KEY = "PSW_STORE_KEY"
@@ -120,11 +119,15 @@ class DiaryService: NSNotificationCenter {
         PersistentManager.sharedInstance.saveNow()
     }
     
-    func getAllDailies() -> [DiaryModel]
+    func getAllDailies(callback:([DiaryModel])->Void)
     {
-        let diaries = PersistentManager.sharedInstance.getAllModel(DiaryModel)
-        return diaries.sort({ (a, b) -> Bool in
-            a.dateTime!.dateTimeOfString.timeIntervalSince1970 > b.dateTime!.dateTimeOfString.timeIntervalSince1970
-        })
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) { () -> Void in
+            let diaries = PersistentManager.sharedInstance.getAllModel(DiaryModel)
+            let sorted = diaries.sort({ (a, b) -> Bool in
+                a.dateTime!.dateTimeOfString.timeIntervalSince1970 > b.dateTime!.dateTimeOfString.timeIntervalSince1970
+            })
+            callback(sorted)
+        }
+        
     }
 }

@@ -27,7 +27,10 @@ class NewDiaryTextContentCell: NewDiaryBaseCell,UITextViewDelegate {
     }
     @IBOutlet weak var diaryMarkImgView: UIImageView!{
         didSet{
-            AudioServicesPlaySystemSound(isMarkedDiary ? 1103 : 1105)
+            if oldValue != nil
+            {
+                isMarkedDiary ? SystemSoundHelper.keyTink() : SystemSoundHelper.keyTock()
+            }
             diaryMarkImgView.image = isMarkedDiary ? UIImage(named: "diary_mark") : UIImage(named: "diary_unmark")
             diaryMarkImgView.userInteractionEnabled = true
             diaryMarkImgView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "tapDiaryMark:"))

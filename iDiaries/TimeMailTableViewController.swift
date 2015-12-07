@@ -8,11 +8,16 @@
 
 import UIKit
 
+let SegueShowMailDetailController = "ShowMailDetailController"
+
+//MARK:TimeMailTableViewController
 class TimeMailTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.tableFooterView = UIView()
+        tableView.rowHeight = UITableViewAutomaticDimension;
+        tableView.estimatedRowHeight = 48;
+        tableView.tableFooterView = UIView()
     }
 
     override func didReceiveMemoryWarning() {
@@ -20,27 +25,62 @@ class TimeMailTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    private func updateTableViewFooter()
+    {
+        if TimeMailService.sharedInstance.notReadMailCount == 0
+        {
+            let footer = NothingViewFooter.instanceFromXib()
+            footer.messageLabel.text = NSLocalizedString("NO_MAIL_HERE", comment: "")
+            footer.frame = tableView.bounds
+            tableView.tableFooterView = footer
+        }else
+        {
+            tableView.tableFooterView = UIView()
+        }
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        self.makeToastActivity()
+        TimeMailService.sharedInstance.refreshTimeMailBox { () -> Void in
+            self.hideToastActivity()
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in                    
+                self.updateTableViewFooter()
+                self.tableView.reloadData()
+            })
+        }
+    }
+    
+    //MARK: Segue
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == SegueShowMailDetailController
+        {
+            let mdc = segue.destinationViewController as! MailDetailController
+            let cell = sender as! TimeMailTableViewCell
+            mdc.timeMail = cell.timeMail
+        }
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return TimeMailService.sharedInstance.timeMails.count > 0 ? 1 : 0
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return TimeMailService.sharedInstance.timeMails.count
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier(TimeMailTableViewCell.reuseId, forIndexPath: indexPath) as! TimeMailTableViewCell
 
         // Configure the cell...
-
+        cell.timeMail = TimeMailService.sharedInstance.timeMails[indexPath.row]
+        cell.refresh()
         return cell
     }
-    */
+
 
     /*
     // Override to support conditional editing of the table view.

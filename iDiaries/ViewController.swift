@@ -18,41 +18,53 @@ enum ViewControllerMode
 
 let SegueShowTimeMailController = "ShowTimeMailController"
 let SegueShowEditView = "ShowEditView"
+let SegueShowUserSetting = "ShowUserSettingController"
 
+//MARK:ViewController
 class ViewController: UITableViewController, KKGestureLockViewDelegate{
     var mode:ViewControllerMode = .NewDiaryMode{
         didSet{
             if tableView != nil
             {
-                updateTableViewHeader()
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    self.updateTableViewHeader()
+                    self.updateTableViewFooter()
+                    self.tableView.reloadData()
+                })
             }
         }
     }
     
     private let diaryShot:UIImageView = UIImageView(image: UIImage(named: "diary_shot"))
+    
+    //MARK: life process
     override func viewDidLoad() {
         super.viewDidLoad()
+        ColorSets.navicationBarTintColor = UIColor.whiteColor()
+        ColorSets.navicationBarColor = (self.navigationController?.navigationBar.barTintColor!)!
+        changeNavigationBarColor()
         tableView.rowHeight = UITableViewAutomaticDimension;
         tableView.estimatedRowHeight = 48;
         navigationItem.rightBarButtonItem?.badgeBGColor = UIColor.orangeColor()
         navigationItem.rightBarButtonItem?.badge.layer.cornerRadius = 10
         updateTableViewHeader()
         initDiaryShot()
-        DiaryListManager.sharedInstance.addObserver(self, selector: "diaryUnlocked:", name: DiaryListManager.DiaryUnlocked, object: nil)
+        self.tableView.reloadData()
+        self.tableView.tableFooterView = UIView()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)        
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         self.tableView.reloadData()
-        self.tableView.tableFooterView = UIView()
-        initDiaryShot()
-        self.navigationItem.rightBarButtonItem?.badgeValue = "\(TimeMailService.sharedInstance.notReadMailCount)"
-    }
-    
-    func diaryUnlocked(a:NSNotification)
-    {
-        mode = .DiaryListMode
-        tableView.reloadData()
+        TimeMailService.sharedInstance.refreshTimeMailBox { () -> Void in
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                self.navigationItem.rightBarButtonItem?.badgeValue = "\(TimeMailService.sharedInstance.notReadMailCount)"
+            })
+        }
     }
     
     private func initDiaryShot()
@@ -63,7 +75,7 @@ class ViewController: UITableViewController, KKGestureLockViewDelegate{
         self.view.addSubview(diaryShot)
     }
 
-    func animationSaveDiary()
+    private func animationSaveDiary()
     {
         let startPos = CGPointMake(diaryShot.frame.origin.x + diaryShot.frame.width/2, self.view.frame.height - 72)
         UIAnimationHelper.flyToTopForView(startPos,view: diaryShot)
@@ -89,6 +101,29 @@ class ViewController: UITableViewController, KKGestureLockViewDelegate{
         tableView.mj_header = header
     }
     
+    private func updateTableViewFooter()
+    {
+        if mode == .DiaryListMode && DiaryListManager.sharedInstance.diaryListItemCount == 0
+        {
+            let footer = NothingViewFooter.instanceFromXib()
+            footer.messageLabel.text = NSLocalizedString("NO_DIARY_HERE", comment: "")
+            footer.frame = tableView.bounds
+            tableView.tableFooterView = footer
+        }else
+        {
+            tableView.tableFooterView = UIView()
+        }
+    }
+    
+    private func openDiaries()
+    {
+        self.makeToastActivity()
+        DiaryListManager.sharedInstance.refreshDiary({ () -> Void in
+            self.hideToastActivity()
+            self.mode = .DiaryListMode
+        })
+    }
+    
     private func switchDiaryMode()
     {
         if mode == .NewDiaryMode
@@ -97,33 +132,87 @@ class ViewController: UITableViewController, KKGestureLockViewDelegate{
             {
                 if DiaryService.sharedInstance.hasPassword()
                 {
-                    PasswordLocker.showValidateLocker(self)
+                    PasswordLocker.showValidateLocker(self){
+                        DiaryListManager.sharedInstance.unlockDiary()
+                        self.openDiaries()
+                    }
                 }else
                 {
-                    PasswordLocker.showSetPasswordLocker(self)
+                    PasswordLocker.showSetPasswordLocker(self){ newPsw in
+                        DiaryListManager.sharedInstance.unlockDiary()
+                        self.openDiaries()
+                    }
                 }
             }else
             {
-                mode = .DiaryListMode
-                tableView.reloadData()
+                openDiaries()
             }
             
         }else
         {
-            mode = .NewDiaryMode
-            tableView.reloadData()
+            self.mode = .NewDiaryMode
         }
     }
     
     func saveDiary() {
-        NewDiaryCellManager.sharedInstance.saveNewDiary()
+        if let notReady = NewDiaryCellManager.sharedInstance.notReadyForSaveCell()
+        {
+            tableView.scrollToRowAtIndexPath(NSIndexPath(forRow: notReady.index, inSection: 0), atScrollPosition: .None, animated: true)
+            notReady.cell.shakeAnimationForView(7)
+            SystemSoundHelper.vibrate()
+        }else
+        {
+            NewDiaryCellManager.sharedInstance.saveNewDiary()
+            animationSaveDiary()
+        }
     }
     
-    func showLockView() -> LockViewController{
-        let lockVC = LockViewController.instanceFromStoreboard()
-        self.navigationController?.pushViewController(lockVC, animated: true)
-        return lockVC
+    @IBAction func timeMailClick(sender: AnyObject) {
+        
+        if DiaryListManager.sharedInstance.isLocked
+        {
+            if DiaryService.sharedInstance.hasPassword()
+            {
+                PasswordLocker.showValidateLocker(self){
+                    DiaryListManager.sharedInstance.unlockDiary()
+                    self.performSegueWithIdentifier(SegueShowTimeMailController, sender: self)
+                }
+            }else
+            {
+                PasswordLocker.showSetPasswordLocker(self){ newPsw in
+                    DiaryListManager.sharedInstance.unlockDiary()
+                    self.performSegueWithIdentifier(SegueShowTimeMailController, sender: self)
+                }
+            }
+        }else
+        {
+            self.performSegueWithIdentifier(SegueShowTimeMailController, sender: self)
+        }
     }
+    
+    @IBAction func userSettingClick(sender: AnyObject)
+    {
+        if DiaryListManager.sharedInstance.isLocked
+        {
+            if DiaryService.sharedInstance.hasPassword()
+            {
+                PasswordLocker.showValidateLocker(self){
+                    DiaryListManager.sharedInstance.unlockDiary()
+                    self.performSegueWithIdentifier(SegueShowUserSetting, sender: self)
+                }
+            }else
+            {
+                PasswordLocker.showSetPasswordLocker(self){ newPsw in
+                    DiaryListManager.sharedInstance.unlockDiary()
+                    self.performSegueWithIdentifier(SegueShowUserSetting, sender: self)
+                }
+            }
+        }else
+        {
+            self.performSegueWithIdentifier(SegueShowUserSetting, sender: self)
+        }
+    }
+    
     //MARK:Segue
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == SegueShowEditView
@@ -184,23 +273,6 @@ class ViewController: UITableViewController, KKGestureLockViewDelegate{
         DiaryService.sharedInstance.deleteDiary(diary)
         tableView.reloadData()
     }
-    
-    override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        if mode == .DiaryListMode && DiaryListManager.sharedInstance.diaryListItemCount == 0
-        {
-            return tableView.frame.height
-        }
-        return 0
-    }
-    
-    override func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        if mode == .DiaryListMode && DiaryListManager.sharedInstance.diaryListItemCount == 0
-        {
-            let footer = NothingViewFooter.instanceFromXib()
-            footer.messageLabel.text = NSLocalizedString("NO_DIARY_HERE", comment: "")
-            return footer
-        }
-        return nil
-    }
+ 
 }
 

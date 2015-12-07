@@ -36,6 +36,19 @@ class NewDiaryCellManager
         return 7
     }
     
+    func notReadyForSaveCell() -> (index:Int,cell:NewDiaryBaseCell)?
+    {
+        for var i:Int = 0 ;i < markCells.count; i++
+        {
+            let cell = markCells[i]!
+            if cell.selectedMarks.count == 0
+            {
+                return (index:i + 1,cell:cell)
+            }
+        }
+        return nil
+    }
+    
     func saveNewDiary()
     {
         let dm = DiaryModel()

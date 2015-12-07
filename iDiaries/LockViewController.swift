@@ -17,6 +17,7 @@ class LockViewController: UIViewController {
     @IBOutlet weak var messageLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        changeNavigationBarColor()
         messageLabel.text = message
         lockView.delegate = self.delegate
         lockView.normalGestureNodeImage = UIImage(named: "gesture_node_normal")

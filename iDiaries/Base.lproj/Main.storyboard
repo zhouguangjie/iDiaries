@@ -24,7 +24,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GRJ-dm-Uyr">
-                                <rect key="frame" x="40" y="104" width="520" height="21"/>
+                                <rect key="frame" x="40" y="85" width="520" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -39,7 +39,7 @@
                             <constraint firstItem="r92-Fg-iqG" firstAttribute="top" secondItem="mJi-zy-DU1" secondAttribute="bottom" constant="128" id="IdR-nh-h2i"/>
                             <constraint firstItem="GRJ-dm-Uyr" firstAttribute="trailing" secondItem="r92-Fg-iqG" secondAttribute="trailing" id="RLn-OP-mU9"/>
                             <constraint firstItem="r92-Fg-iqG" firstAttribute="leading" secondItem="qtj-NZ-z5y" secondAttribute="leadingMargin" constant="20" id="YeR-cg-3wv"/>
-                            <constraint firstItem="r92-Fg-iqG" firstAttribute="top" secondItem="GRJ-dm-Uyr" secondAttribute="bottom" constant="23" id="oB1-R7-LeE"/>
+                            <constraint firstItem="r92-Fg-iqG" firstAttribute="top" secondItem="GRJ-dm-Uyr" secondAttribute="bottom" constant="42" id="oB1-R7-LeE"/>
                             <constraint firstItem="r92-Fg-iqG" firstAttribute="trailing" secondItem="qtj-NZ-z5y" secondAttribute="trailingMargin" constant="-20" id="xE8-ah-XAW"/>
                         </constraints>
                     </view>
@@ -50,7 +50,40 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ES9-Zj-ebn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1438" y="-823"/>
+            <point key="canvasLocation" x="1410" y="-581"/>
+        </scene>
+        <!--User Setting Controller-->
+        <scene sceneID="8hv-39-CXR">
+            <objects>
+                <tableViewController id="b3n-mR-ADf" customClass="UserSettingController" customModule="iDiaries" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="4EZ-yx-I44">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Aa6-d1-UGv">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Aa6-d1-UGv" id="7Ec-x4-qzn">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <animations/>
+                                </tableViewCellContentView>
+                                <animations/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="b3n-mR-ADf" id="N71-MO-1xF"/>
+                            <outlet property="delegate" destination="b3n-mR-ADf" id="fwf-gL-Kh0"/>
+                        </connections>
+                    </tableView>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="600"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yKP-yp-Xbq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2944" y="803"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="HGq-1t-VKM">
@@ -73,13 +106,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aXV-Un-tF2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1454" y="-184"/>
+            <point key="canvasLocation" x="1397" y="128"/>
         </scene>
         <!--Time Mail-->
         <scene sceneID="ksp-DO-5EU">
             <objects>
                 <tableViewController id="4zA-fK-k5p" customClass="TimeMailTableViewController" customModule="iDiaries" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="72" sectionHeaderHeight="28" sectionFooterHeight="28" id="SbC-uW-wx0">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="72" sectionHeaderHeight="28" sectionFooterHeight="28" id="SbC-uW-wx0">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
@@ -136,10 +169,75 @@
                     </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="600"/>
+                    <connections>
+                        <segue destination="XpH-hv-y8H" kind="show" identifier="ShowMailDetailController" id="g7V-F7-pgR"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hwl-zF-RBW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2780" y="-832"/>
+            <point key="canvasLocation" x="2944" y="-548"/>
+        </scene>
+        <!--Mail Detail Controller-->
+        <scene sceneID="TOS-kO-348">
+            <objects>
+                <tableViewController id="XpH-hv-y8H" customClass="MailDetailController" customModule="iDiaries" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="373" sectionHeaderHeight="28" sectionFooterHeight="28" id="IMm-aH-Qfs">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="373" id="z9A-ie-6n4" customClass="MailDetailCell" customModule="iDiaries" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="373"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="z9A-ie-6n4" id="WZD-rY-JO3">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="372"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rbA-e5-Knw">
+                                            <rect key="frame" x="8" y="8" width="42" height="21"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3wE-xE-WNO">
+                                            <rect key="frame" x="8" y="37" width="42" height="21"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XsG-J5-esl">
+                                            <rect key="frame" x="8" y="66" width="42" height="21"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <animations/>
+                                    <constraints>
+                                        <constraint firstItem="XsG-J5-esl" firstAttribute="leading" secondItem="3wE-xE-WNO" secondAttribute="leading" id="HYF-C5-SMn"/>
+                                        <constraint firstItem="XsG-J5-esl" firstAttribute="top" secondItem="3wE-xE-WNO" secondAttribute="bottom" constant="8" symbolic="YES" id="a7x-uH-TWZ"/>
+                                        <constraint firstItem="3wE-xE-WNO" firstAttribute="leading" secondItem="rbA-e5-Knw" secondAttribute="leading" id="dzz-61-fc4"/>
+                                        <constraint firstItem="3wE-xE-WNO" firstAttribute="top" secondItem="rbA-e5-Knw" secondAttribute="bottom" constant="8" symbolic="YES" id="k7z-vE-OZz"/>
+                                        <constraint firstItem="rbA-e5-Knw" firstAttribute="leading" secondItem="WZD-rY-JO3" secondAttribute="leadingMargin" id="m3o-QY-g7Z"/>
+                                        <constraint firstItem="rbA-e5-Knw" firstAttribute="top" secondItem="WZD-rY-JO3" secondAttribute="topMargin" id="wPS-sV-NTp"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <animations/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="XpH-hv-y8H" id="qU0-E3-bpI"/>
+                            <outlet property="delegate" destination="XpH-hv-y8H" id="kRj-aZ-JzW"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p47-KN-HXq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3634" y="-548"/>
         </scene>
         <!--Diary Content-->
         <scene sceneID="3Yy-e5-W8e">
@@ -183,7 +281,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jrv-CM-rs0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2780" y="-172"/>
+            <point key="canvasLocation" x="2944" y="128"/>
         </scene>
         <!--Select Date Controller-->
         <scene sceneID="1al-Wr-4w1">
@@ -233,20 +331,21 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ym4-2L-aam" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2115" y="-823"/>
+            <point key="canvasLocation" x="2098" y="-831"/>
         </scene>
-        <!--Easy Diary-->
+        <!--iDiaries-->
         <scene sceneID="w2d-Qx-Phd">
             <objects>
                 <tableViewController id="hoi-mO-Ucz" customClass="ViewController" customModule="iDiaries" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="17Q-rJ-SyQ">
-                        <rect key="frame" x="0.0" y="64" width="600" height="1136"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="1200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexBackgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="NewDiaryDateCell" rowHeight="42" id="9dL-Xw-uyh" customClass="NewDiaryDateCell" customModule="iDiaries" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="600" height="42"/>
+                                <rect key="frame" x="0.0" y="92" width="600" height="42"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9dL-Xw-uyh" id="Q1b-HT-j6Q">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="42"/>
@@ -296,7 +395,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="NewDiaryMarkCell" rowHeight="168" id="SrN-WO-vcz" customClass="NewDiaryMarkCell" customModule="iDiaries" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="70" width="600" height="168"/>
+                                <rect key="frame" x="0.0" y="134" width="600" height="168"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SrN-WO-vcz" id="bcC-Gm-ppc">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="168"/>
@@ -391,7 +490,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="NewDiaryTextContentCell" rowHeight="168" id="deG-C7-C7D" customClass="NewDiaryTextContentCell" customModule="iDiaries" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="238" width="600" height="168"/>
+                                <rect key="frame" x="0.0" y="302" width="600" height="168"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="deG-C7-C7D" id="V7M-Yb-6qy">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="168"/>
@@ -465,7 +564,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="NewDiaryRemindFutureCell" rowHeight="42" id="kVa-qN-ZfX" customClass="NewDiaryRemindFutureCell" customModule="iDiaries" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="406" width="600" height="42"/>
+                                <rect key="frame" x="0.0" y="470" width="600" height="42"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kVa-qN-ZfX" id="WZ4-gN-CoV">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="42"/>
@@ -510,7 +609,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="NewDiarySaveCell" rowHeight="98" id="VxH-al-peJ" customClass="NewDiarySaveCell" customModule="iDiaries" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="448" width="600" height="98"/>
+                                <rect key="frame" x="0.0" y="512" width="600" height="98"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VxH-al-peJ" id="iWl-D8-rnF">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="98"/>
@@ -544,47 +643,8 @@
                                 </tableViewCellContentView>
                                 <animations/>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DiaryLockedCell" rowHeight="98" id="mrO-nf-fb3" customClass="DiaryLockedCell" customModule="iDiaries" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="546" width="600" height="98"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mrO-nf-fb3" id="rbd-Yf-p7T">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="98"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j78-kR-Rvp">
-                                            <rect key="frame" x="268" y="17" width="64" height="64"/>
-                                            <animations/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="64" id="Rv1-KG-k91"/>
-                                                <constraint firstAttribute="width" constant="64" id="s6j-SG-Uxe"/>
-                                            </constraints>
-                                            <state key="normal" title="Button" image="lock"/>
-                                            <connections>
-                                                <action selector="unlock:" destination="mrO-nf-fb3" eventType="touchUpInside" id="tak-Dy-vW4"/>
-                                            </connections>
-                                        </button>
-                                    </subviews>
-                                    <animations/>
-                                    <constraints>
-                                        <constraint firstItem="j78-kR-Rvp" firstAttribute="centerY" secondItem="rbd-Yf-p7T" secondAttribute="centerY" id="8bc-8S-OvO"/>
-                                        <constraint firstItem="j78-kR-Rvp" firstAttribute="centerX" secondItem="rbd-Yf-p7T" secondAttribute="centerX" id="QkH-Xy-xoS"/>
-                                        <constraint firstItem="j78-kR-Rvp" firstAttribute="top" secondItem="rbd-Yf-p7T" secondAttribute="topMargin" constant="3" id="Qud-Ux-6zU"/>
-                                        <constraint firstItem="j78-kR-Rvp" firstAttribute="top" secondItem="rbd-Yf-p7T" secondAttribute="topMargin" constant="9" id="ayh-EN-y7L"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="j78-kR-Rvp" secondAttribute="bottom" constant="2" id="fgs-5b-9dJ"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="j78-kR-Rvp" secondAttribute="bottom" constant="9" id="pV8-bC-sRq"/>
-                                    </constraints>
-                                    <variation key="default">
-                                        <mask key="constraints">
-                                            <exclude reference="8bc-8S-OvO"/>
-                                            <exclude reference="Qud-Ux-6zU"/>
-                                            <exclude reference="fgs-5b-9dJ"/>
-                                        </mask>
-                                    </variation>
-                                </tableViewCellContentView>
-                                <animations/>
-                            </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="DiaryContentCell" editingAccessoryType="checkmark" rowHeight="156" id="cMb-Os-8QA" customClass="DiaryContentCell" customModule="iDiaries" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="644" width="600" height="156"/>
+                                <rect key="frame" x="0.0" y="610" width="600" height="156"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cMb-Os-8QA" id="mi2-Ll-Sym">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="156"/>
@@ -601,7 +661,7 @@
                                             <rect key="frame" x="8" y="37" width="44" height="21"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Good Day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kkj-Mi-IKg">
@@ -658,16 +718,19 @@
                             <outlet property="delegate" destination="hoi-mO-Ucz" id="Xuk-V0-MFJ"/>
                         </connections>
                     </tableView>
-                    <extendedEdge key="edgesForExtendedLayout"/>
-                    <navigationItem key="navigationItem" title="Easy Diary" id="5th-99-zTO">
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
+                    <navigationItem key="navigationItem" title="iDiaries" id="5th-99-zTO">
                         <barButtonItem key="backBarButtonItem" title="Back" id="cJg-1d-8IA"/>
                         <barButtonItem key="leftBarButtonItem" image="user" id="TxD-bH-T49">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="userSettingClick:" destination="hoi-mO-Ucz" id="x64-5J-4OE"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="time_mail" id="ClN-u5-kLp">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <segue destination="4zA-fK-k5p" kind="show" identifier="ShowTimeMailController" id="EZo-cd-gR1"/>
+                                <action selector="timeMailClick:" destination="hoi-mO-Ucz" id="zGR-rt-lRK"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -675,6 +738,8 @@
                     <size key="freeformSize" width="600" height="1200"/>
                     <connections>
                         <segue destination="51r-LR-HXm" kind="show" identifier="ShowEditView" id="Ip4-2W-eA1"/>
+                        <segue destination="b3n-mR-ADf" kind="show" identifier="ShowUserSettingController" id="Sp2-er-5nH"/>
+                        <segue destination="4zA-fK-k5p" kind="show" identifier="ShowTimeMailController" id="iN4-Pz-Y2F"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PNI-s8-Gfo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -684,7 +749,6 @@
     </scenes>
     <resources>
         <image name="diary_mark" width="48" height="48"/>
-        <image name="lock" width="128" height="128"/>
         <image name="next" width="64" height="64"/>
         <image name="save" width="128" height="128"/>
         <image name="time_mail" width="24" height="24"/>

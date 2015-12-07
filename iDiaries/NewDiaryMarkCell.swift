@@ -57,14 +57,14 @@ class NewDiaryMarkCell: NewDiaryBaseCell,UICollectionViewDataSource,UICollection
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         let cell = collectionView.cellForItemAtIndexPath(indexPath) as! DiaryMarkCell
-        AudioServicesPlaySystemSound(1103)
+        SystemSoundHelper.keyTink()
         selectedMarks.append(cell.markModel)
         cell.refresh()
     }
     
     func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
         let cell = collectionView.cellForItemAtIndexPath(indexPath) as! DiaryMarkCell
-        AudioServicesPlaySystemSound(1105)
+        SystemSoundHelper.keyTock()
         selectedMarks.removeElement { (itemInArray) -> Bool in
             itemInArray.name == cell.markModel.name
         }

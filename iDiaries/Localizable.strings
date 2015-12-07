@@ -8,7 +8,7 @@
 
 MainContentPlaceHolderText = "Men you meet...\nThings you experience...\nPlaces you go...\nFeeling you feel...\nSay something to yourself...";
 PastRemindMessageFormat = "Past you send you this mail at %@";
-APP_TITLE = "Easy Diary";
+APP_TITLE = "iDiaries";
 
 "Weather" = "Weather";
 "Mood" = "Mood";
@@ -46,7 +46,7 @@ ONE_WEEK = "A Week Later";
 ONE_MONTH = "A Month Later";
 ONE_YEAR = "A Year Later";
 SELECT_REVIEW_TIME = "Select Date";
-CANCEL_REVIEW = "Don't Remind Me";
+CANCEL_REVIEW = "Don't Send Time Mail";
 CANCEL = "Cancel";
 
 Sunday = "Sunday";
@@ -57,7 +57,7 @@ Thursday = "Thursday";
 Friday = "Friday";
 Saturday = "Saturday";
 
-REMIND_FUTURE_ME_REVIEW = "Send review mail to future me";
+REMIND_FUTURE_ME_REVIEW = "Send time mail to future me";
 REMIND_FUTURE_ME_REVIEW_AT = "Mail will send at %@";
 
 SWIPE_KEY_SET_PASSWORD = "Swipe key to set new password";
@@ -67,3 +67,4 @@ REPEAT_PASSWORD = "Validate new password";
 REPEAT_PASSWORD_NOT_MATCH = "Twice swipe not match,reset password again";
 
 NO_DIARY_HERE = "No diary here!";
+NO_MAIL_HERE = "No time mail here!";

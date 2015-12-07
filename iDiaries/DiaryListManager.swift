@@ -30,14 +30,16 @@ class DiaryListManager:NSNotificationCenter
     
     func unlockDiary()
     {
-        refreshDiary()
         isLocked = false
         self.postNotificationName(DiaryListManager.DiaryUnlocked, object: self)
     }
     
-    func refreshDiary()
+    func refreshDiary(updatedCallback:()->Void)
     {
-        diaries = DiaryService.sharedInstance.getAllDailies()
+        DiaryService.sharedInstance.getAllDailies{ result in
+            self.diaries = result
+            updatedCallback()
+        }
     }
     
     var diaryListItemCount:Int{
