@@ -139,6 +139,7 @@
 		E7BB95531C154A0700130E2F /* MailDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailDetailController.swift; sourceTree = "<group>"; };
 		E7BB95551C154B7C00130E2F /* UserSettingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettingController.swift; sourceTree = "<group>"; };
 		E7BB95571C157E1700130E2F /* SystemSoundHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemSoundHelper.swift; sourceTree = "<group>"; };
+		E7BB955A1C15953900130E2F /* iDiaries.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = iDiaries.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -326,6 +327,7 @@
 				E76DEB7E1C0E981D0072A1D7 /* Assets.xcassets */,
 				E76DEB831C0E981D0072A1D7 /* Info.plist */,
 				E76DEBFE1C0F220F0072A1D7 /* Bridging-Header.h */,
+				E7BB955A1C15953900130E2F /* iDiaries.entitlements */,
 				E70DDE9B1C1014F800DD0E57 /* Localizable.strings */,
 			);
 			path = iDiaries;
@@ -343,10 +345,10 @@
 				E743D8DA1C129447003ACC4E /* DiaryList */,
 				E743D8E61C14A0DE003ACC4E /* TimeMail */,
 				E743D8EB1C14A81E003ACC4E /* Services */,
-				E76DEB771C0E981D0072A1D7 /* AppDelegate.swift */,
-				E76DEB791C0E981D0072A1D7 /* ViewController.swift */,
+				E7BB95591C1593CD00130E2F /* UserSetting */,
 				E70DDE9F1C1015D400DD0E57 /* DiaryMarksConfig.swift */,
-				E7BB95551C154B7C00130E2F /* UserSettingController.swift */,
+				E76DEB791C0E981D0072A1D7 /* ViewController.swift */,
+				E76DEB771C0E981D0072A1D7 /* AppDelegate.swift */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -365,6 +367,14 @@
 				E743D8E41C149989003ACC4E /* EditMainContentViewController.swift */,
 			);
 			name = NewDiary;
+			sourceTree = "<group>";
+		};
+		E7BB95591C1593CD00130E2F /* UserSetting */ = {
+			isa = PBXGroup;
+			children = (
+				E7BB95551C154B7C00130E2F /* UserSettingController.swift */,
+			);
+			name = UserSetting;
 			sourceTree = "<group>";
 		};
 		E930703952CF9F5E7439696B /* Frameworks */ = {
@@ -411,7 +421,12 @@
 				TargetAttributes = {
 					E76DEB731C0E981D0072A1D7 = {
 						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = 9UH472QS6S;
+						DevelopmentTeam = 2BW6TGDJAV;
+						SystemCapabilities = {
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -667,6 +682,7 @@
 			baseConfigurationReference = AE9BC71D74986D97B8B73218 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = iDiaries/iDiaries.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = iDiaries/Info.plist;
@@ -676,7 +692,7 @@
 					"$(inherited)",
 					"$(SDKROOT)/usr/lib/system",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.GStudio.iDiaries;
+				PRODUCT_BUNDLE_IDENTIFIER = com.idiaries.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/alexchow/GitHub/iDiaries/iDiaries/Bridging-Header.h";
@@ -688,6 +704,7 @@
 			baseConfigurationReference = 42B62F95657CF65E2B8E9CED /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = iDiaries/iDiaries.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = iDiaries/Info.plist;
@@ -697,7 +714,7 @@
 					"$(inherited)",
 					"$(SDKROOT)/usr/lib/system",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.GStudio.iDiaries;
+				PRODUCT_BUNDLE_IDENTIFIER = com.idiaries.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/alexchow/GitHub/iDiaries/iDiaries/Bridging-Header.h";

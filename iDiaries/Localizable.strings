@@ -68,3 +68,5 @@ REPEAT_PASSWORD_NOT_MATCH = "Twice swipe not match,reset password again";
 
 NO_DIARY_HERE = "No diary here!";
 NO_MAIL_HERE = "No time mail here!";
+
+TIME_MAIL_FROM_DATE = "This is a mail from %@";

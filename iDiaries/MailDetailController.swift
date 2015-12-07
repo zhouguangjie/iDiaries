@@ -12,6 +12,21 @@ import UIKit
 class MailDetailCell: UITableViewCell{
     static let reuseId = "MailDetailCell"
     var timeMail:TimeMailModel!
+    
+    @IBOutlet weak var sendDateLabel: UILabel!
+    @IBOutlet weak var moodAndWeatherLabel: UILabel!
+    @IBOutlet weak var diaryContentLabel: UILabel!
+    
+    override func layoutSubviews() {
+        let sendDateFormat = NSLocalizedString("TIME_MAIL_FROM_DATE", comment: "")
+        let sendDateStr = timeMail.sendMailTime!.dateTimeOfString.toDateString()
+        sendDateLabel.text = String(format: sendDateFormat,sendDateStr)
+        let diary = timeMail.diary
+        moodAndWeatherLabel.text = diary.weathers.map{$0.emoji!}.joinWithSeparator("") + diary.moods.map{$0.emoji!}.joinWithSeparator("")
+        let content  = "\(diary.dateTime.dateTimeOfString.toDateString()) \(diary.summary.map{$0.name!}.joinWithSeparator(" "))\n\( diary.mainContent)"
+        diaryContentLabel.text = content
+        super.layoutSubviews()
+    }
 }
 
 //MARK:MailDetailController

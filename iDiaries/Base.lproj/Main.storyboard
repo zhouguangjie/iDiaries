@@ -72,6 +72,85 @@
                                 </tableViewCellContentView>
                                 <animations/>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" selectionStyle="none" indentationWidth="10" reuseIdentifier="MyDetailTextPropertyCell" id="7Zx-3R-p3a" customClass="MyDetailTextPropertyCell" customModule="iDiaries" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="136" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7Zx-3R-p3a" id="Xzg-r5-OYc">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Property Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NxL-Zy-DVM">
+                                            <rect key="frame" x="15" y="9" width="141" height="26"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="next" translatesAutoresizingMaskIntoConstraints="NO" id="Cex-ee-fET">
+                                            <rect key="frame" x="569" y="10" width="23" height="23"/>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="23" id="9Vi-Z6-wYH"/>
+                                                <constraint firstAttribute="width" constant="23" id="lhD-f2-t3u"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Property Value" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b2M-gh-jrI">
+                                            <rect key="frame" x="163" y="12" width="107" height="20"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <animations/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Cex-ee-fET" secondAttribute="trailing" id="8H0-ih-rVk"/>
+                                        <constraint firstItem="b2M-gh-jrI" firstAttribute="centerY" secondItem="Xzg-r5-OYc" secondAttribute="centerY" id="Ap1-3Y-atl"/>
+                                        <constraint firstItem="b2M-gh-jrI" firstAttribute="leading" secondItem="NxL-Zy-DVM" secondAttribute="trailing" constant="7" id="Gbt-D3-BaK"/>
+                                        <constraint firstItem="Cex-ee-fET" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="b2M-gh-jrI" secondAttribute="trailing" id="SoH-i4-bk3"/>
+                                        <constraint firstItem="NxL-Zy-DVM" firstAttribute="leading" secondItem="Xzg-r5-OYc" secondAttribute="leadingMargin" constant="7" id="Xmc-CQ-s1d"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="b2M-gh-jrI" secondAttribute="bottom" constant="3" id="ngm-6Y-w42"/>
+                                        <constraint firstItem="b2M-gh-jrI" firstAttribute="top" secondItem="Xzg-r5-OYc" secondAttribute="topMargin" constant="4" id="qUM-pn-cla"/>
+                                        <constraint firstItem="NxL-Zy-DVM" firstAttribute="centerY" secondItem="Xzg-r5-OYc" secondAttribute="centerY" id="sd6-kt-gcB"/>
+                                        <constraint firstItem="Cex-ee-fET" firstAttribute="centerY" secondItem="Xzg-r5-OYc" secondAttribute="centerY" id="tqi-mg-5La"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="ngm-6Y-w42"/>
+                                            <exclude reference="qUM-pn-cla"/>
+                                        </mask>
+                                    </variation>
+                                </tableViewCellContentView>
+                                <animations/>
+                                <connections>
+                                    <outlet property="editableMark" destination="Cex-ee-fET" id="Ocb-m1-1fd"/>
+                                    <outlet property="propertyNameLabel" destination="NxL-Zy-DVM" id="M3T-uY-WXV"/>
+                                    <outlet property="propertyValueLabel" destination="b2M-gh-jrI" id="hGo-eu-ysH"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="aboutsharelink" id="QSD-We-PWr">
+                                <rect key="frame" x="0.0" y="180" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QSD-We-PWr" id="4KX-Wh-2Cp">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TE7-ox-BMc">
+                                            <rect key="frame" x="277" y="11" width="47" height="21"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <animations/>
+                                    <constraints>
+                                        <constraint firstItem="TE7-ox-BMc" firstAttribute="centerY" secondItem="4KX-Wh-2Cp" secondAttribute="centerY" id="OAN-I3-d1d"/>
+                                        <constraint firstItem="TE7-ox-BMc" firstAttribute="centerX" secondItem="4KX-Wh-2Cp" secondAttribute="centerX" id="efk-Vb-2XM"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <animations/>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="b3n-mR-ADf" id="N71-MO-1xF"/>
@@ -177,56 +256,63 @@
             </objects>
             <point key="canvasLocation" x="2944" y="-548"/>
         </scene>
-        <!--Mail Detail Controller-->
+        <!--Time Mail-->
         <scene sceneID="TOS-kO-348">
             <objects>
                 <tableViewController id="XpH-hv-y8H" customClass="MailDetailController" customModule="iDiaries" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="373" sectionHeaderHeight="28" sectionFooterHeight="28" id="IMm-aH-Qfs">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="109" sectionHeaderHeight="28" sectionFooterHeight="28" id="IMm-aH-Qfs">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="373" id="z9A-ie-6n4" customClass="MailDetailCell" customModule="iDiaries" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="600" height="373"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="109" id="z9A-ie-6n4" customClass="MailDetailCell" customModule="iDiaries" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="109"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="z9A-ie-6n4" id="WZD-rY-JO3">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="372"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="108"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rbA-e5-Knw">
-                                            <rect key="frame" x="8" y="8" width="42" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is a mail from 2015-12-07" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rbA-e5-Knw">
+                                            <rect key="frame" x="8" y="8" width="233" height="21"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3wE-xE-WNO">
-                                            <rect key="frame" x="8" y="37" width="42" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🙂☀️" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3wE-xE-WNO">
+                                            <rect key="frame" x="8" y="37" width="44" height="21"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XsG-J5-esl">
-                                            <rect key="frame" x="8" y="66" width="42" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Diary Content" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XsG-J5-esl">
+                                            <rect key="frame" x="8" y="66" width="584" height="21"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <animations/>
                                     <constraints>
                                         <constraint firstItem="XsG-J5-esl" firstAttribute="leading" secondItem="3wE-xE-WNO" secondAttribute="leading" id="HYF-C5-SMn"/>
+                                        <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="XsG-J5-esl" secondAttribute="bottom" constant="13" id="VeQ-cT-6I0"/>
                                         <constraint firstItem="XsG-J5-esl" firstAttribute="top" secondItem="3wE-xE-WNO" secondAttribute="bottom" constant="8" symbolic="YES" id="a7x-uH-TWZ"/>
                                         <constraint firstItem="3wE-xE-WNO" firstAttribute="leading" secondItem="rbA-e5-Knw" secondAttribute="leading" id="dzz-61-fc4"/>
                                         <constraint firstItem="3wE-xE-WNO" firstAttribute="top" secondItem="rbA-e5-Knw" secondAttribute="bottom" constant="8" symbolic="YES" id="k7z-vE-OZz"/>
                                         <constraint firstItem="rbA-e5-Knw" firstAttribute="leading" secondItem="WZD-rY-JO3" secondAttribute="leadingMargin" id="m3o-QY-g7Z"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="XsG-J5-esl" secondAttribute="trailing" id="uAt-lJ-1Bl"/>
                                         <constraint firstItem="rbA-e5-Knw" firstAttribute="top" secondItem="WZD-rY-JO3" secondAttribute="topMargin" id="wPS-sV-NTp"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <animations/>
+                                <connections>
+                                    <outlet property="diaryContentLabel" destination="XsG-J5-esl" id="B3r-fK-tgA"/>
+                                    <outlet property="moodAndWeatherLabel" destination="3wE-xE-WNO" id="GcK-PB-fYS"/>
+                                    <outlet property="sendDateLabel" destination="rbA-e5-Knw" id="Zcz-U2-dso"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -234,6 +320,7 @@
                             <outlet property="delegate" destination="XpH-hv-y8H" id="kRj-aZ-JzW"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Time Mail" id="gS4-c9-oS0"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p47-KN-HXq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
