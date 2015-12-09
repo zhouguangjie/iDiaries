@@ -75,12 +75,13 @@ class TextPropertyCell:UITableViewCell
     }
 }
 
+//MARK: UserSettingController
 class UserSettingController: UITableViewController
 {
     struct InfoIds
     {
         static let changePsw = "changePassword"
-        static let backup = "backup"
+        static let syncDiaries = "syncDiaries"
         static let alarm = "alarm"
     }
     
@@ -97,10 +98,11 @@ class UserSettingController: UITableViewController
     private func initPropertySet()
     {
         textPropertyCells.append(TextPropertyCellModel(propertySet: changePswPropertySet, editable: true, selector: "changePassword:"))
-        textPropertyCells.append(TextPropertyCellModel(propertySet:backUp_resotrePropertySet,editable:true, selector: "backupOrRestore:"))
+        textPropertyCells.append(TextPropertyCellModel(propertySet:syncDiariesPropertySet,editable:true, selector: "syncDiaries:"))
         textPropertyCells.append(TextPropertyCellModel(propertySet:writeDiaryAlarmPropertySet,editable:true, selector: "setAlarm:"))
     }
     
+    //MARK: property set
     private var changePswPropertySet:UIEditTextPropertySet
     {
         let propertySet = UIEditTextPropertySet()
@@ -110,11 +112,11 @@ class UserSettingController: UITableViewController
         return propertySet
     }
     
-    private var backUp_resotrePropertySet:UIEditTextPropertySet
+    private var syncDiariesPropertySet:UIEditTextPropertySet
     {
         let propertySet = UIEditTextPropertySet()
-        propertySet.propertyIdentifier = InfoIds.backup
-        propertySet.propertyLabel = NSLocalizedString("BACKUP_RESTORE", comment:"Back/Restore")
+        propertySet.propertyIdentifier = InfoIds.syncDiaries
+        propertySet.propertyLabel = NSLocalizedString("SYNC_DIARIES", comment:"Sync Diaries")
         propertySet.propertyValue = ""
         return propertySet
     }
@@ -126,7 +128,10 @@ class UserSettingController: UITableViewController
         propertySet.propertyLabel = NSLocalizedString("ALARM_WRITE_DIARY", comment:"Alarm Write Diary")
         if let alarmTime = DiaryService.sharedInstance.hasWriteDiaryAlarm()
         {
-            propertySet.propertyValue = "\(alarmTime.hour):\(alarmTime.minute)"
+            let formatter = NSDateFormatter()
+            formatter.dateFormat = "hh:mm"
+            formatter.timeZone = NSTimeZone()
+            propertySet.propertyValue = formatter.stringFromDate(alarmTime)
         }else
         {
             propertySet.propertyValue = NSLocalizedString("NO_ALARM", comment: "")
@@ -134,6 +139,7 @@ class UserSettingController: UITableViewController
         return propertySet
     }
     
+    //MARK: actions
     func changePassword(_:UITapGestureRecognizer)
     {
         PasswordLocker.showSetPasswordLocker(self) { (newPsw) -> Void in
@@ -141,9 +147,9 @@ class UserSettingController: UITableViewController
         }
     }
     
-    func backupOrRestore(_:UITapGestureRecognizer)
+    func syncDiaries(_:UITapGestureRecognizer)
     {
-        
+        SyncDiariesViewController.showSyncDiariesViewController(self.navigationController!)
     }
     
     func setAlarm(tap:UITapGestureRecognizer)

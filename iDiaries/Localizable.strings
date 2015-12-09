@@ -72,10 +72,19 @@ NO_MAIL_HERE = "No time mail here!";
 TIME_MAIL_FROM_DATE = "This is a mail from %@";
 
 CHANGE_PSW = "Change Password";
-BACKUP_RESTORE = "Backup/Restore";
+SYNC_DIARIES = "Sync Diaries";
 ALARM_WRITE_DIARY = "Alarm Write Diary";
 PSW_CHANGED = "Password Changed!";
 
 NO_ALARM = "No Alarm";
 SELECT_ALARM_TIME = "Select Alarm Time";
 CLEAR_ALARM = "Clear Alarm";
+
+ICLOUD_STATUS_CHECKING = "Checking iCloud";
+ICLOUD_STATUS_UNAVAILABLE = "iCloud Unavailable";
+
+SYNCING = "Syncing";
+SYNC_UP_TO_DATE = "Up to date";
+SYNCED_AT = "Last sync at %@";
+NO_SYNC_BEFORE = "No sync before";
+SYNC_ERROR = "Sync Error";

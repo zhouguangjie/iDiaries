@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         PersistentManager.sharedInstance.appInit("iDiaries")
         PersistentManager.sharedInstance.useModelExtension(PersistentManager.sharedInstance.rootUrl.URLByAppendingPathComponent("idiaries_model.sqlite"))
+        PersistentManager.sharedInstance.useiCloudExtension("iCloud.com.idiaries.ios")
         return true
     }
 

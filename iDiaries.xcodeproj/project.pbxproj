@@ -13,7 +13,6 @@
 		E70A5B121C17BFEC001C0A47 /* PersistentFileHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70A5AF61C17BFEC001C0A47 /* PersistentFileHelper.swift */; };
 		E70A5B131C17BFEC001C0A47 /* PersistentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70A5AF71C17BFEC001C0A47 /* PersistentManager.swift */; };
 		E70A5B151C17BFEC001C0A47 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70A5AFB1C17BFEC001C0A47 /* CoreDataManager.swift */; };
-		E70A5B161C17BFEC001C0A47 /* iCloudDocumentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70A5AFD1C17BFEC001C0A47 /* iCloudDocumentManager.swift */; };
 		E70A5B201C17BFEC001C0A47 /* BahamutModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E70A5B0C1C17BFEC001C0A47 /* BahamutModel.xcdatamodeld */; };
 		E70A5B211C17BFEC001C0A47 /* ModelEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70A5B0E1C17BFEC001C0A47 /* ModelEntity.swift */; };
 		E70A5B221C17BFEC001C0A47 /* ModelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70A5B0F1C17BFEC001C0A47 /* ModelExtension.swift */; };
@@ -68,6 +67,8 @@
 		E7BB95541C154A0700130E2F /* MailDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BB95531C154A0700130E2F /* MailDetailController.swift */; };
 		E7BB95561C154B7C00130E2F /* UserSettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BB95551C154B7C00130E2F /* UserSettingController.swift */; };
 		E7BB95581C157E1700130E2F /* SystemSoundHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BB95571C157E1700130E2F /* SystemSoundHelper.swift */; };
+		E7CD27201C17F51700AB2C64 /* SyncDiariesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CD271F1C17F51700AB2C64 /* SyncDiariesViewController.swift */; };
+		E7CD27231C17FD5500AB2C64 /* iCloudExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CD27221C17FD5500AB2C64 /* iCloudExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,7 +80,6 @@
 		E70A5AF61C17BFEC001C0A47 /* PersistentFileHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistentFileHelper.swift; sourceTree = "<group>"; };
 		E70A5AF71C17BFEC001C0A47 /* PersistentManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistentManager.swift; sourceTree = "<group>"; };
 		E70A5AFB1C17BFEC001C0A47 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
-		E70A5AFD1C17BFEC001C0A47 /* iCloudDocumentManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iCloudDocumentManager.swift; sourceTree = "<group>"; };
 		E70A5B0D1C17BFEC001C0A47 /* BahamutModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BahamutModel.xcdatamodel; sourceTree = "<group>"; };
 		E70A5B0E1C17BFEC001C0A47 /* ModelEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelEntity.swift; sourceTree = "<group>"; };
 		E70A5B0F1C17BFEC001C0A47 /* ModelExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelExtension.swift; sourceTree = "<group>"; };
@@ -143,6 +143,8 @@
 		E7BB95571C157E1700130E2F /* SystemSoundHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemSoundHelper.swift; sourceTree = "<group>"; };
 		E7BB955A1C15953900130E2F /* iDiaries.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = iDiaries.entitlements; sourceTree = "<group>"; };
 		E7BB955D1C15C8D400130E2F /* Pods.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods.framework; path = "Pods/../build/Debug-iphoneos/Pods.framework"; sourceTree = "<group>"; };
+		E7CD271F1C17F51700AB2C64 /* SyncDiariesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncDiariesViewController.swift; sourceTree = "<group>"; };
+		E7CD27221C17FD5500AB2C64 /* iCloudExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iCloudExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,9 +172,9 @@
 		E70A5AF21C17BFEC001C0A47 /* Persistents */ = {
 			isa = PBXGroup;
 			children = (
+				E7CD27211C17FD5500AB2C64 /* iCloud */,
 				E70A5AF31C17BFEC001C0A47 /* Base */,
 				E70A5AF81C17BFEC001C0A47 /* CoreData */,
-				E70A5AFC1C17BFEC001C0A47 /* iClound */,
 				E70A5B0B1C17BFEC001C0A47 /* Model */,
 			);
 			name = Persistents;
@@ -196,14 +198,6 @@
 				E70A5AFB1C17BFEC001C0A47 /* CoreDataManager.swift */,
 			);
 			path = CoreData;
-			sourceTree = "<group>";
-		};
-		E70A5AFC1C17BFEC001C0A47 /* iClound */ = {
-			isa = PBXGroup;
-			children = (
-				E70A5AFD1C17BFEC001C0A47 /* iCloudDocumentManager.swift */,
-			);
-			path = iClound;
 			sourceTree = "<group>";
 		};
 		E70A5B0B1C17BFEC001C0A47 /* Model */ = {
@@ -401,8 +395,17 @@
 			children = (
 				E7BB95551C154B7C00130E2F /* UserSettingController.swift */,
 				E77D43451C15E812008E350A /* AboutViewController.swift */,
+				E7CD271F1C17F51700AB2C64 /* SyncDiariesViewController.swift */,
 			);
 			name = UserSetting;
+			sourceTree = "<group>";
+		};
+		E7CD27211C17FD5500AB2C64 /* iCloud */ = {
+			isa = PBXGroup;
+			children = (
+				E7CD27221C17FD5500AB2C64 /* iCloudExtension.swift */,
+			);
+			path = iCloud;
 			sourceTree = "<group>";
 		};
 		E930703952CF9F5E7439696B /* Frameworks */ = {
@@ -557,6 +560,7 @@
 				E781B47E1C114BE20014A17D /* NewDiaryTextContentCell.swift in Sources */,
 				E70DDECC1C10606C00DD0E57 /* ColorUtil.swift in Sources */,
 				E70DDECE1C10606C00DD0E57 /* HSL.swift in Sources */,
+				E7CD27231C17FD5500AB2C64 /* iCloudExtension.swift in Sources */,
 				E77D43461C15E812008E350A /* AboutViewController.swift in Sources */,
 				E781B4841C114DB10014A17D /* NewDiaryBaseCell.swift in Sources */,
 				E743D8E81C14A104003ACC4E /* TimeMailTableViewController.swift in Sources */,
@@ -577,6 +581,7 @@
 				E70DDED01C10606C00DD0E57 /* ImageUtil.swift in Sources */,
 				E781B4861C1186310014A17D /* SelectDateController.swift in Sources */,
 				E743D8EA1C14A120003ACC4E /* TimeMailTableViewCell.swift in Sources */,
+				E7CD27201C17F51700AB2C64 /* SyncDiariesViewController.swift in Sources */,
 				E781B47A1C114BAD0014A17D /* NewDiaryDateCell.swift in Sources */,
 				E70DDEA01C1015D400DD0E57 /* DiaryMarksConfig.swift in Sources */,
 				E70DDEC61C10606C00DD0E57 /* BahamutObject.swift in Sources */,
@@ -586,7 +591,6 @@
 				E70DDE9E1C10156B00DD0E57 /* DiaryService.swift in Sources */,
 				E70DDECF1C10606C00DD0E57 /* UIColor.swift in Sources */,
 				E70DDED21C10606C00DD0E57 /* ToastHelper.swift in Sources */,
-				E70A5B161C17BFEC001C0A47 /* iCloudDocumentManager.swift in Sources */,
 				E70A5B211C17BFEC001C0A47 /* ModelEntity.swift in Sources */,
 				E70A5B111C17BFEC001C0A47 /* PersistentBase.swift in Sources */,
 				E743D8F41C14AD3E003ACC4E /* UIBarButtonItem+Badge.m in Sources */,

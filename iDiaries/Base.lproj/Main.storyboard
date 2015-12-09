@@ -52,6 +52,68 @@
             </objects>
             <point key="canvasLocation" x="1410" y="-581"/>
         </scene>
+        <!--Sync Diaries-->
+        <scene sceneID="AHg-Gj-x5N">
+            <objects>
+                <viewController storyboardIdentifier="SyncDiariesViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="da4-mX-WuF" customClass="SyncDiariesViewController" customModule="iDiaries" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZiD-qB-Yth"/>
+                        <viewControllerLayoutGuide type="bottom" id="qVw-Ha-FFo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eOh-pb-zXa">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ha2-Rz-veW">
+                                <rect key="frame" x="529" y="66" width="51" height="40"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <state key="normal" title="Sync"/>
+                                <connections>
+                                    <action selector="sync:" destination="da4-mX-WuF" eventType="touchUpInside" id="zKh-Sp-DdO"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Syncing" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mg0-yM-9e0">
+                                <rect key="frame" x="20" y="72" width="83" height="28"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="bOL-MU-Am2">
+                                <rect key="frame" x="111" y="76" width="20" height="20"/>
+                                <animations/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="mg0-yM-9e0" firstAttribute="top" secondItem="ZiD-qB-Yth" secondAttribute="bottom" constant="8" symbolic="YES" id="83A-rH-ydB"/>
+                            <constraint firstItem="bOL-MU-Am2" firstAttribute="leading" secondItem="mg0-yM-9e0" secondAttribute="trailing" constant="8" symbolic="YES" id="Qk8-CN-Gux"/>
+                            <constraint firstItem="bOL-MU-Am2" firstAttribute="centerY" secondItem="mg0-yM-9e0" secondAttribute="centerY" id="aqY-Zb-vV7"/>
+                            <constraint firstItem="bOL-MU-Am2" firstAttribute="top" secondItem="mg0-yM-9e0" secondAttribute="top" id="b6w-se-HFI"/>
+                            <constraint firstItem="mg0-yM-9e0" firstAttribute="leading" secondItem="eOh-pb-zXa" secondAttribute="leadingMargin" id="c31-nr-G1y"/>
+                            <constraint firstItem="Ha2-Rz-veW" firstAttribute="baseline" secondItem="mg0-yM-9e0" secondAttribute="baseline" id="jiB-M4-KCQ"/>
+                            <constraint firstItem="Ha2-Rz-veW" firstAttribute="trailing" secondItem="eOh-pb-zXa" secondAttribute="trailingMargin" id="kEA-8I-zd4"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="b6w-se-HFI"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="Sync Diaries" id="NLf-Zi-BQW"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="syncButton" destination="Ha2-Rz-veW" id="U9t-Iv-tyv"/>
+                        <outlet property="syncIndicator" destination="bOL-MU-Am2" id="QkS-vT-f23"/>
+                        <outlet property="syncStatusLabel" destination="mg0-yM-9e0" id="yUf-ZW-ME6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vUO-Q7-isf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2092" y="1087"/>
+        </scene>
         <!--Setting-->
         <scene sceneID="8hv-39-CXR">
             <objects>
@@ -60,7 +122,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" selectionStyle="none" indentationWidth="10" reuseIdentifier="TextPropertyCell" id="7Zx-3R-p3a" customClass="TextPropertyCell" customModule="iDiaries" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
@@ -882,7 +944,8 @@
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
+                    <navigationItem key="navigationItem" title="IDiaries" id="J9h-cX-WfG"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="appImageView" destination="inf-0q-N63" id="c25-3m-xN4"/>
                     </connections>

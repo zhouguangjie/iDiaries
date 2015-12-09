@@ -5,6 +5,7 @@ PODS:
     - EVReflection
   - CocoaAsyncSocket (7.4.2)
   - EVReflection (2.13.2)
+  - iCloudDocumentSync (7.4.1)
   - KKGestureLockView (1.0.0)
   - MBProgressHUD (0.9.1)
   - MJRefresh (3.0.7)
@@ -14,6 +15,7 @@ DEPENDENCIES:
   - AlamofireJsonToObjects
   - CocoaAsyncSocket
   - EVReflection
+  - iCloudDocumentSync
   - KKGestureLockView
   - MBProgressHUD (~> 0.9.1)
   - MJRefresh
@@ -23,6 +25,7 @@ SPEC CHECKSUMS:
   AlamofireJsonToObjects: 2041f79276a2964c1d141d3c934604b5c0f6f786
   CocoaAsyncSocket: f5783bdedd232d91b89769bc4b5a1580aed518ad
   EVReflection: b42bd75ebda0a56f50eb347d0f45b7de7e031361
+  iCloudDocumentSync: 961aac30ca09c221de4c236e94dae69912f2c589
   KKGestureLockView: b27a33d2fe7995cd3c5e548dab1a8db7947322b8
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
   MJRefresh: f3e1228ec3d38c7ba5208d58032631a52f39f495

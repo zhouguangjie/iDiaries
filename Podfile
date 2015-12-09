@@ -15,3 +15,5 @@ pod 'AlamofireJsonToObjects'
 
 pod 'KKGestureLockView'
 
+pod 'iCloudDocumentSync'
+

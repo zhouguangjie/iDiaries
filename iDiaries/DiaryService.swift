@@ -82,10 +82,10 @@ class DiaryService: NSNotificationCenter {
     
     //MARK:
     let ALARM_WRITE_DIARY_TIME_KEY = "ALARM_WRITE_DIARY_TIME_KEY"
-    func hasWriteDiaryAlarm() -> (hour:Int,minute:Int)?
+    func hasWriteDiaryAlarm() -> NSDate!
     {
         if let time = NSUserDefaults.standardUserDefaults().objectForKey(ALARM_WRITE_DIARY_TIME_KEY) as? NSDate{
-            return (hour:time.hourOfDate,minute:time.minuteOfDate)
+            return time
         }
         return nil
     }
