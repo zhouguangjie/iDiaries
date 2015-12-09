@@ -31,7 +31,7 @@ class NewDiaryDateCell: NewDiaryBaseCell {
     {
         let formatter = NSDateFormatter()
         formatter.dateFormat = "yyyy-MM-dd EEE"
-        formatter.timeZone = NSTimeZone()
+        formatter.timeZone = NSTimeZone.systemTimeZone()
         dateLabel.text = formatter.stringFromDate(diaryDate)
     }
     

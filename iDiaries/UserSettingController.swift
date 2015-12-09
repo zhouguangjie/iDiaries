@@ -67,6 +67,12 @@ class TextPropertyCell:UITableViewCell
         }
     }
     
+    func refresh()
+    {
+        propertyNameLabel.text = info?.propertySet?.propertyLabel
+        propertyValueLabel.text = info?.propertySet?.propertyValue
+        editableMark.hidden = !info.editable
+    }
 }
 
 class UserSettingController: UITableViewController
@@ -90,25 +96,42 @@ class UserSettingController: UITableViewController
     
     private func initPropertySet()
     {
-        
-        var propertySet = UIEditTextPropertySet()
+        textPropertyCells.append(TextPropertyCellModel(propertySet: changePswPropertySet, editable: true, selector: "changePassword:"))
+        textPropertyCells.append(TextPropertyCellModel(propertySet:backUp_resotrePropertySet,editable:true, selector: "backupOrRestore:"))
+        textPropertyCells.append(TextPropertyCellModel(propertySet:writeDiaryAlarmPropertySet,editable:true, selector: "setAlarm:"))
+    }
+    
+    private var changePswPropertySet:UIEditTextPropertySet
+    {
+        let propertySet = UIEditTextPropertySet()
         propertySet.propertyIdentifier = InfoIds.changePsw
         propertySet.propertyLabel = NSLocalizedString("CHANGE_PSW", comment: "Change Password")
         propertySet.propertyValue = ""
-        textPropertyCells.append(TextPropertyCellModel(propertySet: propertySet, editable: true, selector: "changePassword:"))
-        
-        propertySet = UIEditTextPropertySet()
+        return propertySet
+    }
+    
+    private var backUp_resotrePropertySet:UIEditTextPropertySet
+    {
+        let propertySet = UIEditTextPropertySet()
         propertySet.propertyIdentifier = InfoIds.backup
         propertySet.propertyLabel = NSLocalizedString("BACKUP_RESTORE", comment:"Back/Restore")
         propertySet.propertyValue = ""
-        textPropertyCells.append(TextPropertyCellModel(propertySet:propertySet,editable:true, selector: "backOrRestore:"))
-        
-        propertySet = UIEditTextPropertySet()
+        return propertySet
+    }
+    
+    private var writeDiaryAlarmPropertySet:UIEditTextPropertySet
+    {
+        let propertySet = UIEditTextPropertySet()
         propertySet.propertyIdentifier = InfoIds.alarm
         propertySet.propertyLabel = NSLocalizedString("ALARM_WRITE_DIARY", comment:"Alarm Write Diary")
-        propertySet.propertyValue = ""
-        textPropertyCells.append(TextPropertyCellModel(propertySet:propertySet,editable:true, selector: "setAlarm:"))
-        
+        if let alarmTime = DiaryService.sharedInstance.hasWriteDiaryAlarm()
+        {
+            propertySet.propertyValue = "\(alarmTime.hour):\(alarmTime.minute)"
+        }else
+        {
+            propertySet.propertyValue = NSLocalizedString("NO_ALARM", comment: "")
+        }
+        return propertySet
     }
     
     func changePassword(_:UITapGestureRecognizer)
@@ -118,14 +141,32 @@ class UserSettingController: UITableViewController
         }
     }
     
-    func backOrRestore(_:UITapGestureRecognizer)
+    func backupOrRestore(_:UITapGestureRecognizer)
     {
         
     }
     
-    func setAlarm(_:UITapGestureRecognizer)
+    func setAlarm(tap:UITapGestureRecognizer)
     {
-        SelectDateController.showTimePicker(self, date: NSDate(), minDate: nil, maxDate: nil) { (dateTime) -> Void in
+        let cell = tap.view as! TextPropertyCell
+        
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("SELECT_ALARM_TIME", comment: "Select Alarm Time"), style: .Default, handler: { (action) -> Void in
+            SelectDateController.showTimePicker(self, date: NSDate(), minDate: nil, maxDate: nil) { (dateTime) -> Void in
+                DiaryService.sharedInstance.setWriteDiaryAlarm(dateTime)
+                cell.info.propertySet.propertyValue = self.writeDiaryAlarmPropertySet.propertyValue
+                cell.refresh()
+            }
+        }))
+        
+        alert.addAction(UIAlertAction(title: NSLocalizedString("CLEAR_ALARM", comment: "Clear Alarm"), style: .Default, handler: { (action) -> Void in
+            DiaryService.sharedInstance.clearDiaryAlarm()
+            cell.info.propertySet.propertyValue = self.writeDiaryAlarmPropertySet.propertyValue
+            cell.refresh()
+        }))
+        
+        alert.addAction(UIAlertAction(title: NSLocalizedString("CANCEL", comment: ""), style: .Cancel, handler: nil))
+        self.presentViewController(alert, animated: true) { () -> Void in
             
         }
     }

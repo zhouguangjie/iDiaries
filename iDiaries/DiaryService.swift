@@ -80,8 +80,30 @@ class DiaryService: NSNotificationCenter {
         
     }
     
+    //MARK:
+    let ALARM_WRITE_DIARY_TIME_KEY = "ALARM_WRITE_DIARY_TIME_KEY"
+    func hasWriteDiaryAlarm() -> (hour:Int,minute:Int)?
+    {
+        if let time = NSUserDefaults.standardUserDefaults().objectForKey(ALARM_WRITE_DIARY_TIME_KEY) as? NSDate{
+            return (hour:time.hourOfDate,minute:time.minuteOfDate)
+        }
+        return nil
+    }
+    
+    func setWriteDiaryAlarm(alarmTime:NSDate)
+    {
+        NSUserDefaults.standardUserDefaults().setObject(alarmTime, forKey: ALARM_WRITE_DIARY_TIME_KEY)
+    }
+    
+    func clearDiaryAlarm()
+    {
+        NSUserDefaults.standardUserDefaults().setObject(nil, forKey: ALARM_WRITE_DIARY_TIME_KEY)
+    }
+    
+    //MARK: password
     let PSW_STORE_KEY = "PSW_STORE_KEY"
-    func hasPassword() -> Bool{
+    func hasPassword() -> Bool
+    {
         if let psw = NSUserDefaults.standardUserDefaults().objectForKey(PSW_STORE_KEY) as? String{
             return String.isNullOrWhiteSpace(psw) == false
         }
@@ -101,22 +123,24 @@ class DiaryService: NSNotificationCenter {
         return false
     }
     
+    //MARK: diary
+    
     func addDiary(diaryModel:DiaryModel)
     {
         diaryModel.saveModel()
-        PersistentManager.sharedInstance.saveNow()
+        PersistentManager.sharedInstance.saveAll()
     }
     
     func addFutureMessage(msg:TimeMailModel)
     {
         msg.saveModel()
-        PersistentManager.sharedInstance.saveNow()
+        PersistentManager.sharedInstance.saveAll()
     }
     
     func deleteDiary(diary:DiaryModel)
     {
         PersistentManager.sharedInstance.removeModel(diary)
-        PersistentManager.sharedInstance.saveNow()
+        PersistentManager.sharedInstance.saveAll()
     }
     
     func getAllDailies(callback:([DiaryModel])->Void)

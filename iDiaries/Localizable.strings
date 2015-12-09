@@ -72,6 +72,10 @@ NO_MAIL_HERE = "No time mail here!";
 TIME_MAIL_FROM_DATE = "This is a mail from %@";
 
 CHANGE_PSW = "Change Password";
-BACKUP_RESTORE = "Back/Restore";
+BACKUP_RESTORE = "Backup/Restore";
 ALARM_WRITE_DIARY = "Alarm Write Diary";
 PSW_CHANGED = "Password Changed!";
+
+NO_ALARM = "No Alarm";
+SELECT_ALARM_TIME = "Select Alarm Time";
+CLEAR_ALARM = "Clear Alarm";

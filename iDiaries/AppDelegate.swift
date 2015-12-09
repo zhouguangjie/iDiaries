@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         PersistentManager.sharedInstance.appInit("iDiaries")
-        PersistentManager.sharedInstance.initManager("idiaries.sqlite", userDocumentDir: PersistentManager.sharedInstance.rootUrl)
+        PersistentManager.sharedInstance.useModelExtension(PersistentManager.sharedInstance.rootUrl.URLByAppendingPathComponent("idiaries_model.sqlite"))
         return true
     }
 
