@@ -23,7 +23,7 @@
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GRJ-dm-Uyr">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="消息" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GRJ-dm-Uyr">
                                 <rect key="frame" x="40" y="85" width="520" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -52,7 +52,7 @@
             </objects>
             <point key="canvasLocation" x="1410" y="-581"/>
         </scene>
-        <!--Sync-->
+        <!--同步-->
         <scene sceneID="AHg-Gj-x5N">
             <objects>
                 <viewController storyboardIdentifier="SyncDiariesViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="da4-mX-WuF" customClass="SyncDiariesViewController" customModule="iDiaries" customModuleProvider="target" sceneMemberID="viewController">
@@ -64,7 +64,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Syncing" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="mg0-yM-9e0">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="同步中" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="mg0-yM-9e0">
                                 <rect key="frame" x="20" y="470" width="560" height="28"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
@@ -82,7 +82,7 @@
                                     <constraint firstAttribute="width" constant="67" id="UqG-nc-peh"/>
                                     <constraint firstAttribute="height" constant="67" id="q75-N8-hGC"/>
                                 </constraints>
-                                <state key="normal" title="Sync" image="sync"/>
+                                <state key="normal" title="同步" image="sync"/>
                                 <connections>
                                     <action selector="sync:" destination="da4-mX-WuF" eventType="touchUpInside" id="zKh-Sp-DdO"/>
                                 </connections>
@@ -116,7 +116,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="Sync" id="NLf-Zi-BQW"/>
+                    <navigationItem key="navigationItem" title="同步" id="NLf-Zi-BQW"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="syncButton" destination="Ha2-Rz-veW" id="U9t-Iv-tyv"/>
@@ -128,7 +128,7 @@
             </objects>
             <point key="canvasLocation" x="1397" y="819"/>
         </scene>
-        <!--Diary-->
+        <!--日记-->
         <scene sceneID="1fN-6f-q3a">
             <objects>
                 <tableViewController id="gog-eg-vvZ" customClass="DiaryDetailViewController" customModule="iDiaries" customModuleProvider="target" sceneMemberID="viewController">
@@ -152,7 +152,7 @@
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Diary Content" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bmW-gf-cfy">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="日记" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bmW-gf-cfy">
                                             <rect key="frame" x="8" y="44" width="584" height="21"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -182,7 +182,7 @@
                             <outlet property="delegate" destination="gog-eg-vvZ" id="slT-ne-Ljg"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Diary" id="zox-ST-gb6"/>
+                    <navigationItem key="navigationItem" title="日记" id="zox-ST-gb6"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="600"/>
                 </tableViewController>
@@ -190,7 +190,7 @@
             </objects>
             <point key="canvasLocation" x="2103" y="953"/>
         </scene>
-        <!--Setting-->
+        <!--设置-->
         <scene sceneID="8hv-39-CXR">
             <objects>
                 <tableViewController id="b3n-mR-ADf" customClass="UserSettingController" customModule="iDiaries" customModuleProvider="target" sceneMemberID="viewController">
@@ -263,8 +263,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TE7-ox-BMc">
-                                            <rect key="frame" x="277" y="11" width="47" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="关于iDiaries" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TE7-ox-BMc">
+                                            <rect key="frame" x="255" y="11" width="91" height="21"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -286,7 +286,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get Sharelink Free!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j1B-KW-eEK">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="免费下载Sharelink!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j1B-KW-eEK">
                                             <rect key="frame" x="15" y="11" width="570" height="21"/>
                                             <animations/>
                                             <constraints>
@@ -323,7 +323,7 @@
                             <outlet property="delegate" destination="b3n-mR-ADf" id="fwf-gL-Kh0"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Setting" id="yGS-H0-2pK"/>
+                    <navigationItem key="navigationItem" title="设置" id="yGS-H0-2pK"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="600"/>
                 </tableViewController>
@@ -354,7 +354,7 @@
             </objects>
             <point key="canvasLocation" x="1397" y="128"/>
         </scene>
-        <!--Time Mail-->
+        <!--时光邮箱-->
         <scene sceneID="ksp-DO-5EU">
             <objects>
                 <tableViewController id="4zA-fK-k5p" customClass="TimeMailTableViewController" customModule="iDiaries" customModuleProvider="target" sceneMemberID="viewController">
@@ -410,8 +410,8 @@
                             <outlet property="delegate" destination="4zA-fK-k5p" id="uaB-n9-9Bv"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Time Mail" id="b5l-jg-akT">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="Zbz-Ac-wQo"/>
+                    <navigationItem key="navigationItem" title="时光邮箱" id="b5l-jg-akT">
+                        <barButtonItem key="backBarButtonItem" title="返回" id="Zbz-Ac-wQo"/>
                     </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="600"/>
@@ -423,7 +423,7 @@
             </objects>
             <point key="canvasLocation" x="2944" y="-548"/>
         </scene>
-        <!--Time Mail Box-->
+        <!--时光邮件-->
         <scene sceneID="TOS-kO-348">
             <objects>
                 <tableViewController id="XpH-hv-y8H" customClass="MailDetailController" customModule="iDiaries" customModuleProvider="target" sceneMemberID="viewController">
@@ -454,7 +454,7 @@
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Diary Content" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XsG-J5-esl">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="日记" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XsG-J5-esl">
                                             <rect key="frame" x="8" y="66" width="584" height="21"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -489,13 +489,13 @@
                         </connections>
                     </tableView>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <navigationItem key="navigationItem" title="Time Mail Box" id="gS4-c9-oS0"/>
+                    <navigationItem key="navigationItem" title="时光邮件" id="gS4-c9-oS0"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p47-KN-HXq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3634" y="-548"/>
         </scene>
-        <!--Today-->
+        <!--今天-->
         <scene sceneID="3Yy-e5-W8e">
             <objects>
                 <viewController id="51r-LR-HXm" customClass="EditMainContentViewController" customModule="iDiaries" customModuleProvider="target" sceneMemberID="viewController">
@@ -526,8 +526,8 @@
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
-                    <navigationItem key="navigationItem" title="Today" id="dFR-KG-i0k">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="edF-SD-A2s"/>
+                    <navigationItem key="navigationItem" title="今天" id="dFR-KG-i0k">
+                        <barButtonItem key="backBarButtonItem" title="返回" id="edF-SD-A2s"/>
                     </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="600"/>
@@ -589,7 +589,7 @@
             </objects>
             <point key="canvasLocation" x="2098" y="-831"/>
         </scene>
-        <!--iDiaries-->
+        <!--我的日记-->
         <scene sceneID="w2d-Qx-Phd">
             <objects>
                 <tableViewController id="hoi-mO-Ucz" customClass="ViewController" customModule="iDiaries" customModuleProvider="target" sceneMemberID="viewController">
@@ -678,8 +678,8 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="185" height="23"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mark" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H6e-u6-POe">
-                                                                <rect key="frame" x="77" y="4" width="31" height="16"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="标记名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H6e-u6-POe">
+                                                                <rect key="frame" x="73" y="4" width="39" height="16"/>
                                                                 <animations/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                                 <color key="textColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -752,14 +752,14 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="168"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8hf-Kf-Nz0">
-                                            <rect key="frame" x="8" y="8" width="47" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今天" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8hf-Kf-Nz0">
+                                            <rect key="frame" x="8" y="8" width="34" height="21"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Write something..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6bV-Gf-L4F">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="写下你的感想" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6bV-Gf-L4F">
                                             <rect key="frame" x="15" y="44" width="577" height="21"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -819,11 +819,11 @@
                                     <outlet property="mainContentTextView" destination="1Mn-lg-cVj" id="fKm-Na-1Ql"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="NewDiarySendTimeMailCell" rowHeight="73" id="kVa-qN-ZfX" customClass="NewDiarySendTimeMailCell" customModule="iDiaries" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="470" width="600" height="73"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="NewDiarySendTimeMailCell" rowHeight="66" id="kVa-qN-ZfX" customClass="NewDiarySendTimeMailCell" customModule="iDiaries" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="470" width="600" height="66"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kVa-qN-ZfX" id="WZ4-gN-CoV">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="73"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="66"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unchecked" translatesAutoresizingMaskIntoConstraints="NO" id="HRF-Kq-b3o">
@@ -834,8 +834,8 @@
                                                 <constraint firstAttribute="height" constant="23" id="UgL-rp-V5h"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send Time Mail Send Time Mail Send Time Mail Send Time Mail Send Time Mail Send Time Mail" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cBj-8Q-hDq">
-                                            <rect key="frame" x="39" y="11" width="553" height="51"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="发一封时光邮件 发一封时光邮件发一封时光邮件发一封时光邮件发一封时光邮件发一封时光邮件" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cBj-8Q-hDq">
+                                            <rect key="frame" x="39" y="11" width="553" height="44"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -846,19 +846,21 @@
                                     <constraints>
                                         <constraint firstItem="cBj-8Q-hDq" firstAttribute="leading" secondItem="HRF-Kq-b3o" secondAttribute="trailing" constant="8" symbolic="YES" id="2Lj-o2-d0D"/>
                                         <constraint firstItem="HRF-Kq-b3o" firstAttribute="top" secondItem="WZ4-gN-CoV" secondAttribute="topMargin" constant="2" id="3CQ-Su-hqT"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="cBj-8Q-hDq" secondAttribute="trailing" id="4wH-m2-maJ"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="cBj-8Q-hDq" secondAttribute="trailing" id="4X5-MT-PdK"/>
                                         <constraint firstItem="cBj-8Q-hDq" firstAttribute="centerY" secondItem="HRF-Kq-b3o" secondAttribute="centerY" id="7Yh-Hj-hlB"/>
+                                        <constraint firstItem="cBj-8Q-hDq" firstAttribute="centerY" secondItem="WZ4-gN-CoV" secondAttribute="centerY" id="CBj-ve-stK"/>
                                         <constraint firstItem="cBj-8Q-hDq" firstAttribute="top" secondItem="WZ4-gN-CoV" secondAttribute="topMargin" constant="3" id="H2H-Pz-t0j"/>
-                                        <constraint firstItem="cBj-8Q-hDq" firstAttribute="top" secondItem="WZ4-gN-CoV" secondAttribute="topMargin" constant="3" id="IVA-aM-5f4"/>
+                                        <constraint firstItem="cBj-8Q-hDq" firstAttribute="top" secondItem="WZ4-gN-CoV" secondAttribute="topMargin" constant="3" id="JfZ-Tm-v6i"/>
                                         <constraint firstAttribute="leadingMargin" secondItem="HRF-Kq-b3o" secondAttribute="leading" id="KbV-wN-L7N"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="cBj-8Q-hDq" secondAttribute="bottom" priority="750" constant="7" id="X9Y-h6-TVh"/>
-                                        <constraint firstItem="HRF-Kq-b3o" firstAttribute="top" secondItem="cBj-8Q-hDq" secondAttribute="top" id="ZgM-zx-SPu"/>
-                                        <constraint firstItem="cBj-8Q-hDq" firstAttribute="centerY" secondItem="WZ4-gN-CoV" secondAttribute="centerY" id="gt1-qS-zn4"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="cBj-8Q-hDq" secondAttribute="bottom" priority="750" constant="7" id="b25-n1-IPB"/>
+                                        <constraint firstItem="HRF-Kq-b3o" firstAttribute="top" secondItem="cBj-8Q-hDq" secondAttribute="top" id="fFz-yU-3ca"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="cBj-8Q-hDq" secondAttribute="bottom" constant="2" id="gyx-dq-lzG"/>
+                                        <constraint firstItem="HRF-Kq-b3o" firstAttribute="centerY" secondItem="cBj-8Q-hDq" secondAttribute="centerY" id="wDU-iN-vM3"/>
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
                                             <exclude reference="3CQ-Su-hqT"/>
+                                            <exclude reference="wDU-iN-vM3"/>
                                             <exclude reference="7Yh-Hj-hlB"/>
                                             <exclude reference="H2H-Pz-t0j"/>
                                             <exclude reference="gyx-dq-lzG"/>
@@ -872,7 +874,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="NewDiarySaveCell" rowHeight="98" id="VxH-al-peJ" customClass="NewDiarySaveCell" customModule="iDiaries" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="543" width="600" height="98"/>
+                                <rect key="frame" x="0.0" y="536" width="600" height="98"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VxH-al-peJ" id="iWl-D8-rnF">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="98"/>
@@ -907,7 +909,7 @@
                                 <animations/>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="DiaryContentCell" editingAccessoryType="checkmark" rowHeight="156" id="cMb-Os-8QA" customClass="DiaryContentCell" customModule="iDiaries" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="641" width="600" height="156"/>
+                                <rect key="frame" x="0.0" y="634" width="600" height="156"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cMb-Os-8QA" id="mi2-Ll-Sym">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="156"/>
@@ -982,8 +984,8 @@
                         </connections>
                     </tableView>
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
-                    <navigationItem key="navigationItem" title="iDiaries" id="5th-99-zTO">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="cJg-1d-8IA"/>
+                    <navigationItem key="navigationItem" title="我的日记" id="5th-99-zTO">
+                        <barButtonItem key="backBarButtonItem" title="返回" id="cJg-1d-8IA"/>
                         <barButtonItem key="leftBarButtonItem" image="user" id="TxD-bH-T49">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
@@ -1010,10 +1012,10 @@
             </objects>
             <point key="canvasLocation" x="2103" y="128"/>
         </scene>
-        <!--About-->
+        <!--关于iDiaries-->
         <scene sceneID="d6Y-42-7G2">
             <objects>
-                <viewController storyboardIdentifier="aboutViewController" title="About" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hxl-m0-nOG" customClass="AboutViewController" customModule="iDiaries" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="aboutViewController" title="关于iDiaries" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hxl-m0-nOG" customClass="AboutViewController" customModule="iDiaries" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hi3-EM-iIt"/>
                         <viewControllerLayoutGuide type="bottom" id="80t-00-Qmp"/>
@@ -1038,17 +1040,17 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="65v-Qy-qOv">
-                                <rect key="frame" x="84" y="34" width="142" height="30"/>
+                                <rect key="frame" x="84" y="34" width="105" height="30"/>
                                 <animations/>
-                                <state key="normal" title="Vote me in app store"/>
+                                <state key="normal" title="去应用商店评价"/>
                                 <connections>
                                     <action selector="showInAppStore:" destination="hxl-m0-nOG" eventType="touchUpInside" id="QLe-mD-XNd"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EAU-Cj-F7W">
-                                <rect key="frame" x="20" y="72" width="153" height="30"/>
+                                <rect key="frame" x="20" y="72" width="146" height="30"/>
                                 <animations/>
-                                <state key="normal" title="Email: cplover@live.cn"/>
+                                <state key="normal" title="邮箱: cplover@live.cn"/>
                                 <connections>
                                     <action selector="mailToBahamutSharelink:" destination="hxl-m0-nOG" eventType="touchUpInside" id="hoz-w8-ytC"/>
                                 </connections>
@@ -1068,7 +1070,7 @@
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <navigationItem key="navigationItem" title="IDiaries" id="J9h-cX-WfG"/>
+                    <navigationItem key="navigationItem" title="iDiaries" id="J9h-cX-WfG"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="appImageView" destination="inf-0q-N63" id="c25-3m-xN4"/>

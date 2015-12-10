@@ -10,7 +10,8 @@ import Foundation
 
 class iDiariesConfig
 {
+    static let appTitle = NSLocalizedString("APP_TITLE", comment: "")
     static let appName = "iDiaries"
-    static let appStoreId = ""
+    static let appStoreId = "1065482853"
     static let officalMail = "cplover@live.cn"
 }

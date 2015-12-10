@@ -7,8 +7,13 @@
 */
 
 MainContentPlaceHolderText = "Men you meet...\nThings you experience...\nPlaces you go...\nFeeling you feel...\nSay something to yourself...";
-PastRemindMessageFormat = "Past you send you this mail at %@";
+TimeMailMessageFormat = "Past you send this mail to you at %@";
 APP_TITLE = "iDiaries";
+
+OK = "OK";
+I_SEE = "I See";
+
+TIME_MAIL_REMINDER_EFFECTIVELESS = "The Time Mail Will Not Remind By Calendar";
 
 "Weather" = "Weather";
 "Mood" = "Mood";
@@ -31,7 +36,7 @@ APP_TITLE = "iDiaries";
 "Normal" = "Normal";
 
 //Day Summary
-"Beautiful Day" = "Good Day";
+"Beautiful Day" = "Beautiful Day";
 "Funny Day" = "Funny Day";
 "Boring Day" = "Boring Day";
 "Full Day" = "Full Day";
@@ -42,10 +47,10 @@ APP_TITLE = "iDiaries";
 "Unforgettable Day" = "Unforgettable Day";
 "Meaningful Day" = "Meaningful Day";
 
-ONE_WEEK = "A Week Later";
-ONE_MONTH = "A Month Later";
-ONE_YEAR = "A Year Later";
-SELECT_REVIEW_TIME = "Select Date";
+ONE_WEEK = "One Week Later";
+ONE_MONTH = "One Month Later";
+ONE_YEAR = "One Year Later";
+SELECT_REVIEW_TIME = "Select A Date";
 CANCEL_REVIEW = "Don't Send Time Mail";
 CANCEL = "Cancel";
 
@@ -58,33 +63,35 @@ Friday = "Friday";
 Saturday = "Saturday";
 
 REMIND_FUTURE_ME_REVIEW = "Send time mail to future me";
-REMIND_FUTURE_ME_REVIEW_AT = "Mail will send at %@";
+REMIND_FUTURE_ME_REVIEW_AT = "Mail will send to %@";
 
-SWIPE_KEY_SET_PASSWORD = "Swipe key to set new password";
-SWIPE_KEY_VALIDATE_PASSWORD = "Swipe key to validate password";
-INCORRECT_PASSWORD = "Incorrect password,retry please";
-REPEAT_PASSWORD = "Validate new password";
-REPEAT_PASSWORD_NOT_MATCH = "Twice swipe not match,reset password again";
+SWIPE_KEY_SET_PASSWORD = "Set A New Password";
+SWIPE_KEY_VALIDATE_PASSWORD = "Validate Your Password";
+INCORRECT_PASSWORD = "Validate Failed,Retry Please";
+REPEAT_PASSWORD = "Validate New Password";
+REPEAT_PASSWORD_NOT_MATCH = "Validate New Password Not Match,Retry Set New Password";
 
-NO_DIARY_HERE = "No diary here!";
-NO_MAIL_HERE = "No time mail here!";
+NO_DIARY_HERE = "Diary Is Empty!";
+NO_MAIL_HERE = "Time Mail Box Is Empty!";
 
-TIME_MAIL_FROM_DATE = "This is a mail from %@";
+TIME_MAIL_FROM_DATE = "This mail is from %@";
 
 CHANGE_PSW = "Change Password";
-SYNC_DIARIES = "Sync Diaries";
-ALARM_WRITE_DIARY = "Alarm Write Diary";
+SYNC_DIARIES = "Sync iDiaries";
+ALARM_WRITE_DIARY = "Notify Write Diary";
 PSW_CHANGED = "Password Changed!";
 
-NO_ALARM = "No Alarm";
-SELECT_ALARM_TIME = "Select Alarm Time";
-CLEAR_ALARM = "Clear Alarm";
+NO_ALARM = "No Notification";
+SELECT_ALARM_TIME = "Select Notification Time";
+CLEAR_ALARM = "Clear Notification";
 
 ICLOUD_STATUS_CHECKING = "Checking iCloud";
 ICLOUD_STATUS_UNAVAILABLE = "iCloud Unavailable";
 
 SYNCING = "Syncing";
-SYNC_UP_TO_DATE = "Up to date";
-SYNCED_AT = "Last sync at %@";
-NO_SYNC_BEFORE = "No sync before";
+SYNC_UP_TO_DATE = "All Synced";
+NEED_TO_SYNC = "Sync";
 SYNC_ERROR = "Sync Error";
+
+TIME_TO_WRITE_DIARY = "It's time to write diary!";
+YOU_HAVE_A_NEW_TIME_MAIL = "New Time Mail Received";

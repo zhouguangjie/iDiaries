@@ -1,19 +1,17 @@
 //
-//  MailDetailController.swift
+//  DiaryDetailViewController.swift
 //  iDiaries
 //
-//  Created by AlexChow on 15/12/7.
+//  Created by AlexChow on 15/12/10.
 //  Copyright © 2015年 GStudio. All rights reserved.
 //
 
-import UIKit
 
-//MARK:MailDetailCell
-class MailDetailCell: UITableViewCell{
-    static let reuseId = "MailDetailCell"
-    var timeMail:TimeMailModel!
+//MARK:DiaryDetailCell
+class DiaryDetailCell: UITableViewCell{
+    static let reuseId = "DiaryDetailCell"
+    var diary:DiaryModel!
     
-    @IBOutlet weak var sendDateLabel: UILabel!
     @IBOutlet weak var moodAndWeatherLabel: UILabel!
     @IBOutlet weak var diaryContentLabel: UILabel!
     
@@ -22,19 +20,15 @@ class MailDetailCell: UITableViewCell{
     }
     
     func refresh(){
-        let sendDateFormat = NSLocalizedString("TIME_MAIL_FROM_DATE", comment: "")
-        let sendDateStr = NSDate(timeIntervalSince1970: timeMail.sendMailTime.doubleValue).toLocalDateString()
-        sendDateLabel.text = String(format: sendDateFormat,sendDateStr)
-        let diary = timeMail.diary
         moodAndWeatherLabel.text = diary.weathers.map{$0.emoji!}.joinWithSeparator("") + diary.moods.map{$0.emoji!}.joinWithSeparator("")
-        let content  = "\(NSDate(timeIntervalSince1970: diary.dateTime.doubleValue).toLocalDateString()) \(diary.summary.map{$0.name!}.joinWithSeparator(" "))\n\( diary.mainContent)"
+        let content  = "\(NSDate(timeIntervalSince1970: diary.dateTime.doubleValue).toLocalDateString()) \(diary.summary.map{$0.displayName}.joinWithSeparator(" "))\n\( diary.mainContent)"
         diaryContentLabel.text = content
     }
 }
 
-//MARK:MailDetailController
-class MailDetailController: UITableViewController {
-    var timeMail:TimeMailModel!
+//MARK:DiaryDetailViewController
+class DiaryDetailViewController: UITableViewController {
+    var diary:DiaryModel!
     
     //MARK: life process
     
@@ -61,9 +55,10 @@ class MailDetailController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(MailDetailCell.reuseId, forIndexPath: indexPath) as! MailDetailCell
-        cell.timeMail = self.timeMail
+        let cell = tableView.dequeueReusableCellWithIdentifier(DiaryDetailCell.reuseId, forIndexPath: indexPath) as! DiaryDetailCell
+        cell.diary = self.diary
         cell.refresh()
         return cell
     }
 }
+

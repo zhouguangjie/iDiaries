@@ -43,26 +43,29 @@ class DiaryModel: BahamutObject
     }
     
     var diaryId:String!
-    var dateTime:String!
+    var dateTime:NSNumber!
     var mainContent:String!
     var weathers:[DiaryMark]!
     var moods:[DiaryMark]!
     var summary:[DiaryMark]!
     var diaryType:String!
     var diaryMarked:Bool = false
+    var lastModifiedTime:NSNumber!
 }
 
 class TimeMailModel : BahamutObject
 {
     override func getObjectUniqueIdName() -> String {
-        return "futureMsgId"
+        return "mailId"
     }
-    var futureMsgId:String!
-    var sendMailTime:String!
-    var mailReceiveDateTime:String!
+    var mailId:String!
+    var sendMailTime:NSNumber!
+    var mailReceiveDateTime:NSNumber!
     var msgContent:String!
     var diary:DiaryModel!
     var read:Bool = false
+    var lastModifiedTime:NSNumber!
+    var calendarIdentifier:String!
 }
 
 enum DiaryType : String
@@ -80,6 +83,15 @@ class DiaryService: NSNotificationCenter {
         
     }
     
+    var newestDiaryDateTimeInterval:NSTimeInterval{
+        get{
+            return NSUserDefaults.standardUserDefaults().doubleForKey("newestDiaryDateTimeInterval") ?? 0
+        }
+        set{
+            NSUserDefaults.standardUserDefaults().setDouble(newValue, forKey: "newestDiaryDateTimeInterval")
+        }
+    }
+    
     //MARK:
     let ALARM_WRITE_DIARY_TIME_KEY = "ALARM_WRITE_DIARY_TIME_KEY"
     func hasWriteDiaryAlarm() -> NSDate!
@@ -92,12 +104,24 @@ class DiaryService: NSNotificationCenter {
     
     func setWriteDiaryAlarm(alarmTime:NSDate)
     {
+        clearDiaryAlarm()
         NSUserDefaults.standardUserDefaults().setObject(alarmTime, forKey: ALARM_WRITE_DIARY_TIME_KEY)
+        let localNotification = UILocalNotification()
+        localNotification.fireDate = alarmTime
+        localNotification.timeZone = NSTimeZone.defaultTimeZone()
+        localNotification.soundName = UILocalNotificationDefaultSoundName
+        localNotification.repeatInterval = NSCalendarUnit.Day
+        localNotification.alertBody = NSLocalizedString("TIME_TO_WRITE_DIARY", comment: "")
+        localNotification.applicationIconBadgeNumber = UIApplication.sharedApplication().applicationIconBadgeNumber + 1
+        localNotification.hasAction = false
+        localNotification.userInfo = ["type":"write_diary"]
+        UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
     }
     
     func clearDiaryAlarm()
     {
         NSUserDefaults.standardUserDefaults().setObject(nil, forKey: ALARM_WRITE_DIARY_TIME_KEY)
+        UIApplication.sharedApplication().scheduledLocalNotifications?.removeElement{$0.userInfo != nil && ("write_diary" == $0.userInfo!["type"] as? String)}
     }
     
     //MARK: password
@@ -127,13 +151,10 @@ class DiaryService: NSNotificationCenter {
     
     func addDiary(diaryModel:DiaryModel)
     {
+        let now = NSDate().timeIntervalSince1970
+        newestDiaryDateTimeInterval = now
+        diaryModel.lastModifiedTime = now
         diaryModel.saveModel()
-        PersistentManager.sharedInstance.saveAll()
-    }
-    
-    func addFutureMessage(msg:TimeMailModel)
-    {
-        msg.saveModel()
         PersistentManager.sharedInstance.saveAll()
     }
     
@@ -148,7 +169,7 @@ class DiaryService: NSNotificationCenter {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) { () -> Void in
             let diaries = PersistentManager.sharedInstance.getAllModel(DiaryModel)
             let sorted = diaries.sort({ (a, b) -> Bool in
-                a.dateTime!.dateTimeOfString.timeIntervalSince1970 > b.dateTime!.dateTimeOfString.timeIntervalSince1970
+                a.dateTime.doubleValue > b.dateTime.doubleValue
             })
             callback(sorted)
         }

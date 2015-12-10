@@ -182,10 +182,16 @@ class UserSettingController: UITableViewController
         AboutViewController.showAbout(self)
     }
     
+    func getSharelink(_:UITapGestureRecognizer)
+    {
+        let url = "itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=1059287119"
+        UIApplication.sharedApplication().openURL(NSURL(string: url)!)
+    }
+    
     //MARK: tableview delegate
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        //user infos + about
-        return 2
+        //user infos + about + sharelink
+        return 3
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -207,10 +213,15 @@ class UserSettingController: UITableViewController
         if indexPath.section == 0
         {
             return getTextPropertyCell(indexPath.row)
-        }else
+        }else if indexPath.section == 1
         {
             let cell = tableView.dequeueReusableCellWithIdentifier("aboutAppCell",forIndexPath: indexPath)
             cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "about:"))
+            return cell
+        }else{
+            
+            let cell = tableView.dequeueReusableCellWithIdentifier("GetSharelinkCell",forIndexPath: indexPath)
+            cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "getSharelink:"))
             return cell
         }
     }

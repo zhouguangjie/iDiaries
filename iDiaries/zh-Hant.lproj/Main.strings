@@ -1,0 +1,120 @@
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "3JB-9f-GDt"; */
+"3JB-9f-GDt.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "🙂☀️"; ObjectID = "3wE-xE-WNO"; */
+"3wE-xE-WNO.text" = "🙂☀️";
+
+/* Class = "UILabel"; text = "🌧🙂"; ObjectID = "58o-2Q-UdW"; */
+"58o-2Q-UdW.text" = "🌧🙂";
+
+/* Class = "UINavigationItem"; title = "iDiaries"; ObjectID = "5th-99-zTO"; */
+"5th-99-zTO.title" = "iDiaries";
+
+/* Class = "UIButton"; normalTitle = "Vote me in app store"; ObjectID = "65v-Qy-qOv"; */
+"65v-Qy-qOv.normalTitle" = "去App Store 評價";
+
+/* Class = "UILabel"; text = "Write something..."; ObjectID = "6bV-Gf-L4F"; */
+"6bV-Gf-L4F.text" = "Write something...";
+
+/* Class = "UILabel"; text = "Today"; ObjectID = "8hf-Kf-Nz0"; */
+"8hf-Kf-Nz0.text" = "今日";
+
+/* Class = "UIButton"; normalTitle = "Email: cplover@live.cn"; ObjectID = "EAU-Cj-F7W"; */
+"EAU-Cj-F7W.normalTitle" = "電郵: cplover@live.cn";
+
+/* Class = "UILabel"; text = "Message"; ObjectID = "GRJ-dm-Uyr"; */
+"GRJ-dm-Uyr.text" = "訊息";
+
+/* Class = "UILabel"; text = "Mark"; ObjectID = "H6e-u6-POe"; */
+"H6e-u6-POe.text" = "Mark";
+
+/* Class = "UIButton"; normalTitle = "Sync"; ObjectID = "Ha2-Rz-veW"; */
+"Ha2-Rz-veW.normalTitle" = "同步";
+
+/* Class = "UINavigationItem"; title = "IDiaries"; ObjectID = "J9h-cX-WfG"; */
+"J9h-cX-WfG.title" = "iDiaries";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "K7A-sX-2Cf"; */
+"K7A-sX-2Cf.text" = "Label";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "KZy-sU-Dhy"; */
+"KZy-sU-Dhy.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+
+/* Class = "UINavigationItem"; title = "Sync"; ObjectID = "NLf-Zi-BQW"; */
+"NLf-Zi-BQW.title" = "同步";
+
+/* Class = "UILabel"; text = "Property Name"; ObjectID = "NxL-Zy-DVM"; */
+"NxL-Zy-DVM.text" = "Property Name";
+
+/* Class = "UILabel"; text = "2015-12-05 Saturday"; ObjectID = "OEo-Bx-UGQ"; */
+"OEo-Bx-UGQ.text" = "2015-12-05 Saturday";
+
+/* Class = "UILabel"; text = "About"; ObjectID = "TE7-ox-BMc"; */
+"TE7-ox-BMc.text" = "關於";
+
+/* Class = "UILabel"; text = "Diary Content"; ObjectID = "XsG-J5-esl"; */
+"XsG-J5-esl.text" = "日誌";
+
+/* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "Zbz-Ac-wQo"; */
+"Zbz-Ac-wQo.title" = "返回";
+
+/* Class = "UILabel"; text = "Diary Content Diary Content Diary Content Diary Content Diary Content Diary Content Diary Content Diary Content"; ObjectID = "aDT-8x-M4n"; */
+"aDT-8x-M4n.text" = "Diary Content Diary Content Diary Content Diary Content Diary Content Diary Content Diary Content Diary Content";
+
+/* Class = "UILabel"; text = "Property Value"; ObjectID = "b2M-gh-jrI"; */
+"b2M-gh-jrI.text" = "Property Value";
+
+/* Class = "UINavigationItem"; title = "Time Mail"; ObjectID = "b5l-jg-akT"; */
+"b5l-jg-akT.title" = "時光郵件";
+
+/* Class = "UILabel"; text = "Diary Content"; ObjectID = "bmW-gf-cfy"; */
+"bmW-gf-cfy.text" = "日誌";
+
+/* Class = "UILabel"; text = "Send Time Mail Send Time Mail Send Time Mail Send Time Mail Send Time Mail Send Time Mail"; ObjectID = "cBj-8Q-hDq"; */
+"cBj-8Q-hDq.text" = "Send Time Mail Send Time Mail Send Time Mail Send Time Mail Send Time Mail Send Time Mail";
+
+/* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "cJg-1d-8IA"; */
+"cJg-1d-8IA.title" = "返回";
+
+/* Class = "UILabel"; text = "MarkType"; ObjectID = "cZZ-K4-MKE"; */
+"cZZ-K4-MKE.text" = "MarkType";
+
+/* Class = "UILabel"; text = "🙂☀️"; ObjectID = "d1o-JV-JnS"; */
+"d1o-JV-JnS.text" = "🙂☀️";
+
+/* Class = "UINavigationItem"; title = "Today"; ObjectID = "dFR-KG-i0k"; */
+"dFR-KG-i0k.title" = "今日";
+
+/* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "edF-SD-A2s"; */
+"edF-SD-A2s.title" = "返回";
+
+/* Class = "UILabel"; text = "2015-12-03 Mon. Winter"; ObjectID = "gNV-MF-MAQ"; */
+"gNV-MF-MAQ.text" = "2015-12-03 Mon. Winter";
+
+/* Class = "UINavigationItem"; title = "Time Mail Box"; ObjectID = "gS4-c9-oS0"; */
+"gS4-c9-oS0.title" = "時光信箱";
+
+/* Class = "UIViewController"; title = "About"; ObjectID = "hxl-m0-nOG"; */
+"hxl-m0-nOG.title" = "關於iDiaries";
+
+/* Class = "UILabel"; text = "Get Sharelink Free!"; ObjectID = "j1B-KW-eEK"; */
+"j1B-KW-eEK.text" = "Get Sharelink Free!";
+
+/* Class = "UILabel"; text = "iDiaries"; ObjectID = "jvc-V2-OR4"; */
+"jvc-V2-OR4.text" = "iDiaries";
+
+/* Class = "UILabel"; text = "Good Day"; ObjectID = "kkj-Mi-IKg"; */
+"kkj-Mi-IKg.text" = "Good Day";
+
+/* Class = "UILabel"; text = "Syncing"; ObjectID = "mg0-yM-9e0"; */
+"mg0-yM-9e0.text" = "正在同步數據";
+
+/* Class = "UILabel"; text = "This is a mail from 2015-12-07"; ObjectID = "rbA-e5-Knw"; */
+"rbA-e5-Knw.text" = "This is a mail from 2015-12-07";
+
+/* Class = "UINavigationItem"; title = "Setting"; ObjectID = "yGS-H0-2pK"; */
+"yGS-H0-2pK.title" = "設定";
+
+/* Class = "UINavigationItem"; title = "Diary"; ObjectID = "zox-ST-gb6"; */
+"zox-ST-gb6.title" = "日誌";

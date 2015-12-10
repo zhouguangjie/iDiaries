@@ -35,6 +35,11 @@ class NewDiaryDateCell: NewDiaryBaseCell {
         dateLabel.text = formatter.stringFromDate(diaryDate)
     }
     
+    func resetDate()
+    {
+        self.diaryDate = NSDate()
+    }
+    
     func selectDate(_:UITapGestureRecognizer)
     {
         SelectDateController.showDatePicker(self.rootController,date: diaryDate, minDate: NSDate(timeIntervalSince1970: 0), maxDate: NSDate()) { (dateTime) -> Void in

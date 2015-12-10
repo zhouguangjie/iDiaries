@@ -1,0 +1,97 @@
+/* 
+  Localizable.strings
+  iDiaries
+
+  Created by AlexChow on 15/12/3.
+  Copyright © 2015年 GStudio. All rights reserved.
+*/
+
+MainContentPlaceHolderText = "遇到的人...\n经历的事情...\n去过的地方...\n你的感想...\n对自己说点什么...";
+TimeMailMessageFormat = "过去的你在 %@ 给你发了一封时光邮件";
+APP_TITLE = "我的日记";
+
+OK = "好";
+I_SEE = "知道了";
+
+TIME_MAIL_REMINDER_EFFECTIVELESS = "The Time Mail Will Not Remind By Calendar";
+
+"Weather" = "天气";
+"Mood" = "心情";
+"DaySummary" = "今日是";
+
+//Weather
+"Sunny" = "晴";
+"Cloudy" = "阴";
+"Rainy" = "下雨";
+"Snowy" = "飘雪";
+"Thundering" = "打雷";
+"Windy" = "吹风";
+
+//Mood
+"Happy" = "开心";
+"Sad" = "不开心";
+"Dysphoria" = "烦";
+"Anger" = "愤怒";
+"Fear" = "怕怕";
+"Normal" = "还好";
+
+//Day Summary
+"Beautiful Day" = "美好的一天";
+"Funny Day" = "有趣的一天";
+"Boring Day" = "无聊的一天";
+"Full Day" = "充实的一天";
+"Leisure Day" = "休闲的一天";
+"Busy Day" = "忙碌的一天";
+"Routine Day" = "平常的一天";
+"Bad Day" = "糟糕的一天";
+"Unforgettable Day" = "难忘的一天";
+"Meaningful Day" = "有意义的一天";
+
+ONE_WEEK = "一周后";
+ONE_MONTH = "一个月后";
+ONE_YEAR = "一年后";
+SELECT_REVIEW_TIME = "选择一个时间";
+CANCEL_REVIEW = "不发送时光邮件";
+CANCEL = "取消";
+
+Sunday = "周日";
+Monday = "周一";
+Tuesday = "周二";
+Wednesday = "周三";
+Thursday = "周四";
+Friday = "周五";
+Saturday = "周六";
+
+REMIND_FUTURE_ME_REVIEW = "给未来的我发送时光邮件！";
+REMIND_FUTURE_ME_REVIEW_AT = "将会在 %@ 收到日记的时光邮件！";
+
+SWIPE_KEY_SET_PASSWORD = "滑动设置新密码";
+SWIPE_KEY_VALIDATE_PASSWORD = "滑动解锁";
+INCORRECT_PASSWORD = "验证失败，请重试";
+REPEAT_PASSWORD = "验证新密码";
+REPEAT_PASSWORD_NOT_MATCH = "两次滑动不一致，请重新设置新密码";
+
+NO_DIARY_HERE = "空空的日记本!";
+NO_MAIL_HERE = "空空的邮箱!";
+
+TIME_MAIL_FROM_DATE = "这封邮件来自 %@";
+
+CHANGE_PSW = "修改密码";
+SYNC_DIARIES = "同步";
+ALARM_WRITE_DIARY = "提醒写日记";
+PSW_CHANGED = "密码已修改!";
+
+NO_ALARM = "不提醒";
+SELECT_ALARM_TIME = "选择一个时间";
+CLEAR_ALARM = "取消提醒";
+
+ICLOUD_STATUS_CHECKING = "正在连接iCloud";
+ICLOUD_STATUS_UNAVAILABLE = "iCloud不可用";
+
+SYNCING = "同步中";
+SYNC_UP_TO_DATE = "已同步";
+NEED_TO_SYNC = "同步";
+SYNC_ERROR = "同步错误";
+
+TIME_TO_WRITE_DIARY = "开始写日记吧!";
+YOU_HAVE_A_NEW_TIME_MAIL = "收到新的时光邮件！";

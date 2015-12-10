@@ -19,6 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         PersistentManager.sharedInstance.appInit("iDiaries")
         PersistentManager.sharedInstance.useModelExtension(PersistentManager.sharedInstance.rootUrl.URLByAppendingPathComponent("idiaries_model.sqlite"))
         PersistentManager.sharedInstance.useiCloudExtension("iCloud.com.idiaries.ios")
+        
+        application.registerUserNotificationSettings(UIUserNotificationSettings.init(forTypes: [UIUserNotificationType.Alert,UIUserNotificationType.Sound,UIUserNotificationType.Badge], categories: nil))
+        
         return true
     }
 
@@ -39,6 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        application.applicationIconBadgeNumber = 0
     }
 
     func applicationWillTerminate(application: UIApplication) {

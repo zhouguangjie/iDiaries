@@ -17,7 +17,7 @@ let WeatherMarks:[MarkStruct] =
     (name:"Rainy",emoji:"🌧"),
     (name:"Snowy",emoji:"❄️"),
     (name:"Thundering",emoji:"⚡️"),
-    (name:"Windy",emoji:"🌬")
+    (name:"Windy",emoji:"🌪")
 ]
 
 let MoodMarks:[MarkStruct] =
@@ -39,9 +39,9 @@ let DaySummaryMarks:[MarkStruct] =
     (name:"Leisure Day",emoji:""),
     (name:"Busy Day",emoji:""),
     (name:"Routine Day",emoji:""),
-    (name:"Bad Day",emoji:""),
     (name:"Unforgettable Day",emoji:""),
-    (name:"Meaningful Day",emoji:"")
+    (name:"Meaningful Day",emoji:""),
+    (name:"Bad Day",emoji:"")
     
 ]
 

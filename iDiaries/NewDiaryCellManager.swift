@@ -29,7 +29,7 @@ class NewDiaryCellManager
         return markCells[2]
     }
     private var textContentCell:NewDiaryTextContentCell!
-    private var remindCell:NewDiaryRemindFutureCell!
+    private var remindCell:NewDiarySendTimeMailCell!
     private var saveCell:NewDiarySaveCell!
     
     var newDiaryCellsCount:Int{
@@ -53,7 +53,7 @@ class NewDiaryCellManager
     {
         let dm = DiaryModel()
         dm.diaryId = IdUtil.generateUniqueId()
-        dm.dateTime = dateCell.diaryDate.toDateTimeString()
+        dm.dateTime = dateCell.diaryDate.timeIntervalSince1970
         dm.weathers = weatherCell.selectedMarks
         dm.moods = moodCell.selectedMarks
         dm.summary = summaryCell.selectedMarks
@@ -62,24 +62,25 @@ class NewDiaryCellManager
         dm.diaryType = DiaryType.Normal.rawValue
         DiaryService.sharedInstance.addDiary(dm)
         
-        weatherCell.refresh()
-        moodCell.refresh()
-        summaryCell.refresh()
+        dateCell.resetDate()
+        weatherCell.clearSelected()
+        moodCell.clearSelected()
+        summaryCell.clearSelected()
         textContentCell.clearContent()
         textContentCell.isMarkedDiary = false
         
         if let futureReviewTime = remindCell.futureReviewTime
         {
-            let ftmsgModel = TimeMailModel()
-            ftmsgModel.futureMsgId = IdUtil.generateUniqueId()
+            let timeMail = TimeMailModel()
+            timeMail.mailId = IdUtil.generateUniqueId()
             let now = NSDate()
-            let msgFormat = NSLocalizedString("PastRemindMessageFormat", comment: "")
+            let msgFormat = NSLocalizedString("TimeMailMessageFormat", comment: "")
             let msg = String(format: msgFormat, now.toLocalDateTimeString())
-            ftmsgModel.msgContent = msg
-            ftmsgModel.mailReceiveDateTime = futureReviewTime.toLocalDateTimeString()
-            ftmsgModel.diary = dm
-            ftmsgModel.sendMailTime = NSDate().toLocalDateTimeString()
-            DiaryService.sharedInstance.addFutureMessage(ftmsgModel)
+            timeMail.msgContent = msg
+            timeMail.mailReceiveDateTime = futureReviewTime.timeIntervalSince1970
+            timeMail.diary = dm
+            timeMail.sendMailTime = NSDate().timeIntervalSince1970
+            TimeMailService.sharedInstance.addTimeMail(timeMail)
         }
         remindCell.setReviewDiaryTime(nil)
     }
@@ -124,7 +125,7 @@ class NewDiaryCellManager
             textContentCell = textContentCell ?? tableView.dequeueReusableCellWithIdentifier(NewDiaryTextContentCell.reuseId) as! NewDiaryTextContentCell
             cell = textContentCell
         case 5:
-            remindCell = remindCell ?? tableView.dequeueReusableCellWithIdentifier(NewDiaryRemindFutureCell.reuseId) as! NewDiaryRemindFutureCell
+            remindCell = remindCell ?? tableView.dequeueReusableCellWithIdentifier(NewDiarySendTimeMailCell.reuseId) as! NewDiarySendTimeMailCell
             cell = remindCell
         case 6:
             saveCell = saveCell ?? tableView.dequeueReusableCellWithIdentifier(NewDiarySaveCell.reuseId) as! NewDiarySaveCell

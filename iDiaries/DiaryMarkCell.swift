@@ -10,6 +10,14 @@ import UIKit
 
 let MarkBorderColor = UIColor(hexString: "#0080FF")
 
+extension DiaryMark
+{
+    var displayName:String{
+        return NSLocalizedString(name, comment: "")
+    }
+}
+
+//MARK: DiaryMarkCell
 class DiaryMarkCell: UICollectionViewCell {
 
     static let reuseId = "DiaryMarkCell"
@@ -17,12 +25,13 @@ class DiaryMarkCell: UICollectionViewCell {
 
     static func cellSize(model:MarkStruct) -> CGSize
     {
-        return cellSizeFor("\(model.emoji ?? "")\(model.name)")
+        let modelDisplayName = NSLocalizedString(model.name, comment: "")
+        return cellSizeFor("\(model.emoji ?? "")\(modelDisplayName)")
     }
     
     static func cellSize(model:DiaryMark) -> CGSize
     {
-        return cellSizeFor("\(model.emoji ?? "")\(model.name)")
+        return cellSizeFor("\(model.emoji ?? "")\(model.displayName)")
     }
     
     static func cellSizeFor(text:String) -> CGSize
@@ -35,7 +44,7 @@ class DiaryMarkCell: UICollectionViewCell {
     
     var markModel:DiaryMark!
     func refresh(){
-        markName.text = "\(markModel.emoji ?? "")\(markModel.name)"
+        markName.text = "\(markModel.emoji ?? "")\(markModel.displayName)"
         self.layer.cornerRadius = 14
         self.layer.borderColor = MarkBorderColor.CGColor
         self.layer.borderWidth = self.selected ? 3 : 1

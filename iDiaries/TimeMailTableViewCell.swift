@@ -14,9 +14,13 @@ class TimeMailTableViewCell: UITableViewCell {
     var timeMail:TimeMailModel!
     @IBOutlet weak var mailContent: UILabel!
     
-    @IBOutlet weak var mailStatusImg: UIImageView!
+    @IBOutlet weak var mailStatusImg: UIImageView!{
+        didSet{
+            initCell()
+        }
+    }
 
-    func initCell()
+    private func initCell()
     {
         self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "onCellTaped:"))
     }
@@ -25,6 +29,7 @@ class TimeMailTableViewCell: UITableViewCell {
     {
         timeMail.read = true
         timeMail.saveModel()
+        PersistentManager.sharedInstance.saveAll()
         refresh()
         rootController.performSegueWithIdentifier(SegueShowMailDetailController, sender: self)
     }

@@ -54,6 +54,11 @@ class SelectDateController: UIViewController {
         showDatePicker(rootController, date: date, minDate: minDate, maxDate: maxDate, datePickerMode: .Date, selectedDateCallback: selectedDateCallback)
     }
     
+    static func showCountDownTimePicker(rootController:UIViewController,date:NSDate,minDate:NSDate!,maxDate:NSDate!,selectedDateCallback:(dateTime:NSDate!)->Void)
+    {
+        showDatePicker(rootController, date: date, minDate: minDate, maxDate: maxDate, datePickerMode: .CountDownTimer, selectedDateCallback: selectedDateCallback)
+    }
+    
     static func showDatePicker(rootController:UIViewController,date:NSDate,minDate:NSDate!,maxDate:NSDate!,datePickerMode:UIDatePickerMode,selectedDateCallback:(dateTime:NSDate!)->Void)
     {
         let controller = instanceFromStoreboard()

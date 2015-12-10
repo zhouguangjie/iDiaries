@@ -27,7 +27,7 @@ class TimeMailTableViewController: UITableViewController {
 
     private func updateTableViewFooter()
     {
-        if TimeMailService.sharedInstance.notReadMailCount == 0
+        if TimeMailService.sharedInstance.timeMails.count == 0
         {
             let footer = NothingViewFooter.instanceFromXib()
             footer.messageLabel.text = NSLocalizedString("NO_MAIL_HERE", comment: "")
@@ -77,6 +77,7 @@ class TimeMailTableViewController: UITableViewController {
 
         // Configure the cell...
         cell.timeMail = TimeMailService.sharedInstance.timeMails[indexPath.row]
+        cell.rootController = self
         cell.refresh()
         return cell
     }

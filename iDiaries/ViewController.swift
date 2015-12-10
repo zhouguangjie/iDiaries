@@ -9,6 +9,10 @@
 import UIKit
 import KKGestureLockView
 import MJRefresh
+import AudioToolbox
+
+let ALERT_ACTION_OK = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style:.Cancel, handler: nil)
+let ALERT_ACTION_I_SEE = UIAlertAction(title: NSLocalizedString("I_SEE", comment: ""), style:.Cancel, handler: nil)
 
 enum ViewControllerMode
 {
@@ -19,8 +23,10 @@ enum ViewControllerMode
 let SegueShowTimeMailController = "ShowTimeMailController"
 let SegueShowEditView = "ShowEditView"
 let SegueShowUserSetting = "ShowUserSettingController"
+let SegueShowDairyDetailViewController = "ShowDairyDetailViewController"
 
 //MARK:ViewController
+
 class ViewController: UITableViewController, KKGestureLockViewDelegate{
     var mode:ViewControllerMode = .NewDiaryMode{
         didSet{
@@ -59,12 +65,19 @@ class ViewController: UITableViewController, KKGestureLockViewDelegate{
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        self.tableView.reloadData()
+        if self.mode == .DiaryListMode
+        {
+            openDiaries()
+        }else
+        {
+            self.tableView.reloadData()
+        }
         TimeMailService.sharedInstance.refreshTimeMailBox { () -> Void in
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 self.navigationItem.rightBarButtonItem?.badgeValue = "\(TimeMailService.sharedInstance.notReadMailCount)"
             })
         }
+        TimeMailService.sharedInstance.requestReminderPermission()
     }
     
     private func initDiaryShot()
@@ -164,6 +177,7 @@ class ViewController: UITableViewController, KKGestureLockViewDelegate{
         {
             NewDiaryCellManager.sharedInstance.saveNewDiary()
             animationSaveDiary()
+            AudioServicesPlaySystemSound(1001)
         }
     }
     
@@ -220,6 +234,10 @@ class ViewController: UITableViewController, KKGestureLockViewDelegate{
             let vc = segue.destinationViewController as! EditMainContentViewController
             vc.mainContentCell = sender as! NewDiaryTextContentCell
             
+        }else if segue.identifier == SegueShowDairyDetailViewController
+        {
+            let vc = segue.destinationViewController as! DiaryDetailViewController
+            vc.diary = (sender as! DiaryContentCell).diary
         }
     }
     
@@ -245,6 +263,7 @@ class ViewController: UITableViewController, KKGestureLockViewDelegate{
         }else
         {
             let contentCell = tableView.dequeueReusableCellWithIdentifier(DiaryContentCell.reuseId,forIndexPath: indexPath) as! DiaryContentCell
+            contentCell.rootController = self
             contentCell.diary = DiaryListManager.sharedInstance.diaries[indexPath.row]
             contentCell.update()
             return contentCell

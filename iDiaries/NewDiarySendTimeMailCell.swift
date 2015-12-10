@@ -1,5 +1,5 @@
 //
-//  NewDiaryRemindFutureCell.swift
+//  NewDiarySendTimeMailCell.swift
 //  iDiaries
 //
 //  Created by AlexChow on 15/12/4.
@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import EventKit
 
-class NewDiaryRemindFutureCell: NewDiaryBaseCell {
-    static let reuseId = "NewDiaryRemindFutureCell"
+class NewDiarySendTimeMailCell: NewDiaryBaseCell {
+    static let reuseId = "NewDiarySendTimeMailCell"
     
     @IBOutlet weak var futureReviewCheckImg: UIImageView!{
         didSet{
@@ -22,10 +23,16 @@ class NewDiaryRemindFutureCell: NewDiaryBaseCell {
         didSet{
             toFutureMe.userInteractionEnabled = true
             toFutureMe.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "selectTimeReviewDiary:"))
+            refreshCheckBoxLabel()
         }
     }
     
     func selectTimeReviewDiary(_:UITapGestureRecognizer)
+    {
+        showSelectDateActionSheet()
+    }
+    
+    private func showSelectDateActionSheet()
     {
         let now = NSDate()
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
@@ -46,13 +53,14 @@ class NewDiaryRemindFutureCell: NewDiaryBaseCell {
         }))
         alert.addAction(UIAlertAction(title: NSLocalizedString("CANCEL", comment: ""), style: .Cancel, handler: { (action) -> Void in
         }))
-        rootController.presentViewController(alert, animated: true, completion: nil)
+        rootController.presentViewController(alert, animated: true){ action in
+        }
     }
     
     func selectADate()
     {
-        SelectDateController.showDatePicker(self.rootController, date: NSDate().addDays(1), minDate: NSDate().addDays(1), maxDate: nil) { (dateTime) -> Void in
-            
+        let date = NSDate().addDays(1)
+        SelectDateController.showDatePicker(rootController, date: date, minDate: date, maxDate: nil) { (dateTime) -> Void in
             self.setReviewDiaryTime(dateTime)
         }
     }
@@ -60,13 +68,19 @@ class NewDiaryRemindFutureCell: NewDiaryBaseCell {
     func setReviewDiaryTime(date:NSDate!)
     {
         self.futureReviewTime = date
+        refreshCheckBoxLabel()
+        self.rootController.tableView.reloadData()
+    }
+    
+    private func refreshCheckBoxLabel(){
         if futureReviewTime == nil{
             futureReviewCheckImg.image = UIImage(named: "unchecked")
             toFutureMe.text = NSLocalizedString("REMIND_FUTURE_ME_REVIEW", comment: "")
         }else{
             futureReviewCheckImg.image = UIImage(named: "checked")
             let dateStrformat = NSLocalizedString("REMIND_FUTURE_ME_REVIEW_AT", comment: "")
-            toFutureMe.text = String(format: dateStrformat, date.toLocalDateString())
+            toFutureMe.text = String(format: dateStrformat, self.futureReviewTime.toLocalDateString())
         }
+        
     }
 }

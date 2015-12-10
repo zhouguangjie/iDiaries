@@ -24,6 +24,12 @@ class NewDiaryMarkCell: NewDiaryBaseCell,UICollectionViewDataSource,UICollection
     
     private(set) var selectedMarks = [DiaryMark]()
     
+    func clearSelected()
+    {
+        selectedMarks.removeAll()
+        refresh()
+    }
+    
     func refresh()
     {
         marksCollectionView.reloadData()

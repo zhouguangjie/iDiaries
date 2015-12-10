@@ -17,7 +17,6 @@
 		E70A5B211C17BFEC001C0A47 /* ModelEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70A5B0E1C17BFEC001C0A47 /* ModelEntity.swift */; };
 		E70A5B221C17BFEC001C0A47 /* ModelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70A5B0F1C17BFEC001C0A47 /* ModelExtension.swift */; };
 		E70DDE9A1C10122600DD0E57 /* DiaryMarkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70DDE991C10122600DD0E57 /* DiaryMarkCell.swift */; };
-		E70DDE9C1C1014F800DD0E57 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E70DDE9B1C1014F800DD0E57 /* Localizable.strings */; };
 		E70DDE9E1C10156B00DD0E57 /* DiaryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70DDE9D1C10156B00DD0E57 /* DiaryService.swift */; };
 		E70DDEA01C1015D400DD0E57 /* DiaryMarksConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70DDE9F1C1015D400DD0E57 /* DiaryMarksConfig.swift */; };
 		E70DDEA21C10197F00DD0E57 /* DiaryContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70DDEA11C10197F00DD0E57 /* DiaryContentCell.swift */; };
@@ -47,6 +46,8 @@
 		E743D8ED1C14A843003ACC4E /* TimeMailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E743D8EC1C14A843003ACC4E /* TimeMailService.swift */; };
 		E743D8F41C14AD3E003ACC4E /* UIBarButtonItem+Badge.m in Sources */ = {isa = PBXBuildFile; fileRef = E743D8F11C14AD3E003ACC4E /* UIBarButtonItem+Badge.m */; };
 		E743D8F51C14AD3E003ACC4E /* UIButton+Badge.m in Sources */ = {isa = PBXBuildFile; fileRef = E743D8F31C14AD3E003ACC4E /* UIButton+Badge.m */; };
+		E74DB7B81C193362004F0207 /* DiaryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74DB7B71C193362004F0207 /* DiaryDetailViewController.swift */; };
+		E74DB7C21C197515004F0207 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E74DB7C41C197515004F0207 /* Localizable.strings */; };
 		E76DEB781C0E981D0072A1D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76DEB771C0E981D0072A1D7 /* AppDelegate.swift */; };
 		E76DEB7A1C0E981D0072A1D7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76DEB791C0E981D0072A1D7 /* ViewController.swift */; };
 		E76DEB7D1C0E981D0072A1D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E76DEB7B1C0E981D0072A1D7 /* Main.storyboard */; };
@@ -57,13 +58,14 @@
 		E781B47A1C114BAD0014A17D /* NewDiaryDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E781B4791C114BAD0014A17D /* NewDiaryDateCell.swift */; };
 		E781B47C1C114BC60014A17D /* NewDiaryMarkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E781B47B1C114BC60014A17D /* NewDiaryMarkCell.swift */; };
 		E781B47E1C114BE20014A17D /* NewDiaryTextContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E781B47D1C114BE20014A17D /* NewDiaryTextContentCell.swift */; };
-		E781B4801C114BFC0014A17D /* NewDiaryRemindFutureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E781B47F1C114BFC0014A17D /* NewDiaryRemindFutureCell.swift */; };
+		E781B4801C114BFC0014A17D /* NewDiarySendTimeMailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E781B47F1C114BFC0014A17D /* NewDiarySendTimeMailCell.swift */; };
 		E781B4821C114C0E0014A17D /* NewDiarySaveCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E781B4811C114C0E0014A17D /* NewDiarySaveCell.swift */; };
 		E781B4841C114DB10014A17D /* NewDiaryBaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E781B4831C114DB10014A17D /* NewDiaryBaseCell.swift */; };
 		E781B4861C1186310014A17D /* SelectDateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E781B4851C1186310014A17D /* SelectDateController.swift */; };
 		E781B4881C11925F0014A17D /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E781B4871C11925F0014A17D /* AudioToolbox.framework */; };
 		E781B4A81C11C5DB0014A17D /* PasswordLocker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E781B4A71C11C5DB0014A17D /* PasswordLocker.swift */; };
 		E781B4AA1C11D5730014A17D /* LockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E781B4A91C11D5730014A17D /* LockViewController.swift */; };
+		E78D26601C19823C002860A5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E78D26621C19823C002860A5 /* InfoPlist.strings */; };
 		E7BB95541C154A0700130E2F /* MailDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BB95531C154A0700130E2F /* MailDetailController.swift */; };
 		E7BB95561C154B7C00130E2F /* UserSettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BB95551C154B7C00130E2F /* UserSettingController.swift */; };
 		E7BB95581C157E1700130E2F /* SystemSoundHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BB95571C157E1700130E2F /* SystemSoundHelper.swift */; };
@@ -84,7 +86,6 @@
 		E70A5B0E1C17BFEC001C0A47 /* ModelEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelEntity.swift; sourceTree = "<group>"; };
 		E70A5B0F1C17BFEC001C0A47 /* ModelExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelExtension.swift; sourceTree = "<group>"; };
 		E70DDE991C10122600DD0E57 /* DiaryMarkCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryMarkCell.swift; sourceTree = "<group>"; };
-		E70DDE9B1C1014F800DD0E57 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		E70DDE9D1C10156B00DD0E57 /* DiaryService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryService.swift; sourceTree = "<group>"; };
 		E70DDE9F1C1015D400DD0E57 /* DiaryMarksConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryMarksConfig.swift; sourceTree = "<group>"; };
 		E70DDEA11C10197F00DD0E57 /* DiaryContentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryContentCell.swift; sourceTree = "<group>"; };
@@ -118,26 +119,37 @@
 		E743D8F11C14AD3E003ACC4E /* UIBarButtonItem+Badge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Badge.m"; sourceTree = "<group>"; };
 		E743D8F21C14AD3E003ACC4E /* UIButton+Badge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Badge.h"; sourceTree = "<group>"; };
 		E743D8F31C14AD3E003ACC4E /* UIButton+Badge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Badge.m"; sourceTree = "<group>"; };
+		E74DB7B71C193362004F0207 /* DiaryDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryDetailViewController.swift; sourceTree = "<group>"; };
+		E74DB7BF1C1973F9004F0207 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "zh-Hans"; path = "zh-Hans.lproj/Main.storyboard"; sourceTree = "<group>"; };
+		E74DB7C11C1974DB004F0207 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		E74DB7C31C197515004F0207 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		E74DB7C51C197518004F0207 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E76DEB741C0E981D0072A1D7 /* iDiaries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iDiaries.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E76DEB771C0E981D0072A1D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E76DEB791C0E981D0072A1D7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E76DEB7C1C0E981D0072A1D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E76DEB7E1C0E981D0072A1D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E76DEB811C0E981D0072A1D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		E76DEB831C0E981D0072A1D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E76DEBFE1C0F220F0072A1D7 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		E77D43451C15E812008E350A /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		E77D43471C15E853008E350A /* iDiariesConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iDiariesConfig.swift; sourceTree = "<group>"; };
 		E781B4791C114BAD0014A17D /* NewDiaryDateCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewDiaryDateCell.swift; sourceTree = "<group>"; };
 		E781B47B1C114BC60014A17D /* NewDiaryMarkCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewDiaryMarkCell.swift; sourceTree = "<group>"; };
 		E781B47D1C114BE20014A17D /* NewDiaryTextContentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewDiaryTextContentCell.swift; sourceTree = "<group>"; };
-		E781B47F1C114BFC0014A17D /* NewDiaryRemindFutureCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewDiaryRemindFutureCell.swift; sourceTree = "<group>"; };
+		E781B47F1C114BFC0014A17D /* NewDiarySendTimeMailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewDiarySendTimeMailCell.swift; sourceTree = "<group>"; };
 		E781B4811C114C0E0014A17D /* NewDiarySaveCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewDiarySaveCell.swift; sourceTree = "<group>"; };
 		E781B4831C114DB10014A17D /* NewDiaryBaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewDiaryBaseCell.swift; sourceTree = "<group>"; };
 		E781B4851C1186310014A17D /* SelectDateController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectDateController.swift; sourceTree = "<group>"; };
 		E781B4871C11925F0014A17D /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		E781B4A71C11C5DB0014A17D /* PasswordLocker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordLocker.swift; sourceTree = "<group>"; };
 		E781B4A91C11D5730014A17D /* LockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockViewController.swift; sourceTree = "<group>"; };
+		E78D265C1C1981F6002860A5 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E78D26611C19823C002860A5 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		E78D26631C19823D002860A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E78D26691C19AF2D002860A5 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		E78D266A1C19AF2E002860A5 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
+		E78D266B1C19AF2E002860A5 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		E78D266C1C19AF2E002860A5 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		E7BB95531C154A0700130E2F /* MailDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailDetailController.swift; sourceTree = "<group>"; };
 		E7BB95551C154B7C00130E2F /* UserSettingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettingController.swift; sourceTree = "<group>"; };
 		E7BB95571C157E1700130E2F /* SystemSoundHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemSoundHelper.swift; sourceTree = "<group>"; };
@@ -266,6 +278,7 @@
 			children = (
 				E743D8DB1C129479003ACC4E /* DiaryListManager.swift */,
 				E70DDEA11C10197F00DD0E57 /* DiaryContentCell.swift */,
+				E74DB7B71C193362004F0207 /* DiaryDetailViewController.swift */,
 			);
 			name = DiaryList;
 			sourceTree = "<group>";
@@ -344,11 +357,7 @@
 			isa = PBXGroup;
 			children = (
 				E76DEC031C0F24B30072A1D7 /* Source */,
-				E76DEB7E1C0E981D0072A1D7 /* Assets.xcassets */,
-				E76DEB831C0E981D0072A1D7 /* Info.plist */,
-				E76DEBFE1C0F220F0072A1D7 /* Bridging-Header.h */,
-				E7BB955A1C15953900130E2F /* iDiaries.entitlements */,
-				E70DDE9B1C1014F800DD0E57 /* Localizable.strings */,
+				E78D26641C1982E7002860A5 /* SupportFiles */,
 			);
 			path = iDiaries;
 			sourceTree = "<group>";
@@ -382,12 +391,25 @@
 				E781B4791C114BAD0014A17D /* NewDiaryDateCell.swift */,
 				E781B47B1C114BC60014A17D /* NewDiaryMarkCell.swift */,
 				E781B47D1C114BE20014A17D /* NewDiaryTextContentCell.swift */,
-				E781B47F1C114BFC0014A17D /* NewDiaryRemindFutureCell.swift */,
+				E781B47F1C114BFC0014A17D /* NewDiarySendTimeMailCell.swift */,
 				E781B4811C114C0E0014A17D /* NewDiarySaveCell.swift */,
 				E743D8D81C128E10003ACC4E /* NewDiaryCellManager.swift */,
 				E743D8E41C149989003ACC4E /* EditMainContentViewController.swift */,
 			);
 			name = NewDiary;
+			sourceTree = "<group>";
+		};
+		E78D26641C1982E7002860A5 /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				E76DEB7E1C0E981D0072A1D7 /* Assets.xcassets */,
+				E76DEBFE1C0F220F0072A1D7 /* Bridging-Header.h */,
+				E78D265C1C1981F6002860A5 /* Info.plist */,
+				E7BB955A1C15953900130E2F /* iDiaries.entitlements */,
+				E74DB7C41C197515004F0207 /* Localizable.strings */,
+				E78D26621C19823C002860A5 /* InfoPlist.strings */,
+			);
+			name = SupportFiles;
 			sourceTree = "<group>";
 		};
 		E7BB95591C1593CD00130E2F /* UserSetting */ = {
@@ -469,6 +491,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hant",
 			);
 			mainGroup = E76DEB6B1C0E981D0072A1D7;
 			productRefGroup = E76DEB751C0E981D0072A1D7 /* Products */;
@@ -486,8 +509,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E76DEB821C0E981D0072A1D7 /* LaunchScreen.storyboard in Resources */,
+				E78D26601C19823C002860A5 /* InfoPlist.strings in Resources */,
 				E743D8E01C149365003ACC4E /* NothingViewFooter.xib in Resources */,
-				E70DDE9C1C1014F800DD0E57 /* Localizable.strings in Resources */,
+				E74DB7C21C197515004F0207 /* Localizable.strings in Resources */,
 				E76DEB7F1C0E981D0072A1D7 /* Assets.xcassets in Resources */,
 				E76DEB7D1C0E981D0072A1D7 /* Main.storyboard in Resources */,
 			);
@@ -577,7 +601,7 @@
 				E70DDED11C10606C00DD0E57 /* KeyboardAdjustHelper.swift in Sources */,
 				E7BB95541C154A0700130E2F /* MailDetailController.swift in Sources */,
 				E70A5B221C17BFEC001C0A47 /* ModelExtension.swift in Sources */,
-				E781B4801C114BFC0014A17D /* NewDiaryRemindFutureCell.swift in Sources */,
+				E781B4801C114BFC0014A17D /* NewDiarySendTimeMailCell.swift in Sources */,
 				E70DDED01C10606C00DD0E57 /* ImageUtil.swift in Sources */,
 				E781B4861C1186310014A17D /* SelectDateController.swift in Sources */,
 				E743D8EA1C14A120003ACC4E /* TimeMailTableViewCell.swift in Sources */,
@@ -593,6 +617,7 @@
 				E70DDED21C10606C00DD0E57 /* ToastHelper.swift in Sources */,
 				E70A5B211C17BFEC001C0A47 /* ModelEntity.swift in Sources */,
 				E70A5B111C17BFEC001C0A47 /* PersistentBase.swift in Sources */,
+				E74DB7B81C193362004F0207 /* DiaryDetailViewController.swift in Sources */,
 				E743D8F41C14AD3E003ACC4E /* UIBarButtonItem+Badge.m in Sources */,
 				E70DDEA21C10197F00DD0E57 /* DiaryContentCell.swift in Sources */,
 				E70A5B101C17BFEC001C0A47 /* FileType.swift in Sources */,
@@ -609,10 +634,22 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		E74DB7C41C197515004F0207 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E74DB7C31C197515004F0207 /* zh-Hans */,
+				E74DB7C51C197518004F0207 /* Base */,
+				E78D266B1C19AF2E002860A5 /* zh-Hant */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		E76DEB7B1C0E981D0072A1D7 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				E76DEB7C1C0E981D0072A1D7 /* Base */,
+				E74DB7BF1C1973F9004F0207 /* zh-Hans */,
+				E78D266A1C19AF2E002860A5 /* zh-Hant */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -621,8 +658,21 @@
 			isa = PBXVariantGroup;
 			children = (
 				E76DEB811C0E981D0072A1D7 /* Base */,
+				E74DB7C11C1974DB004F0207 /* zh-Hans */,
+				E78D26691C19AF2D002860A5 /* zh-Hant */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		E78D26621C19823C002860A5 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E78D26611C19823C002860A5 /* zh-Hans */,
+				E78D26631C19823D002860A5 /* Base */,
+				E78D266C1C19AF2E002860A5 /* zh-Hant */,
+			);
+			name = InfoPlist.strings;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -664,7 +714,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				INFOPLIST_FILE = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -703,7 +754,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				INFOPLIST_FILE = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
