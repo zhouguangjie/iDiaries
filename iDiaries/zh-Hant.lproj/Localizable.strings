@@ -13,6 +13,17 @@ APP_TITLE = "iDiaries";
 OK = "好";
 I_SEE = "知道了";
 
+INVITE_TO_VOTE_TITLE = "AppStore評價";
+INVITE_TO_VOTE_MSG = "iDiaries邀請你去商店寫下你的點評！";
+NO_THANKS = "殘忍拒絕";
+NEXT_TIME = "現在忙，下次吧";
+YES_I_LOVE_TO = "好的，現在就去";
+
+NOT_SYNC_DAYS = "%@ 天未同步日誌,馬上同步?";
+SYNC = "同步";
+REMIND_SYNC_NEXT_TIME = "過幾天提醒";
+SYNC_NOW = "現在同步";
+
 TIME_MAIL_REMINDER_EFFECTIVELESS = "The Time Mail Will Not Remind By Calendar";
 
 "Weather" = "天氣";

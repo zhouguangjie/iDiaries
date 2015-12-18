@@ -48,6 +48,9 @@
 		E743D8F51C14AD3E003ACC4E /* UIButton+Badge.m in Sources */ = {isa = PBXBuildFile; fileRef = E743D8F31C14AD3E003ACC4E /* UIButton+Badge.m */; };
 		E74DB7B81C193362004F0207 /* DiaryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74DB7B71C193362004F0207 /* DiaryDetailViewController.swift */; };
 		E74DB7C21C197515004F0207 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E74DB7C41C197515004F0207 /* Localizable.strings */; };
+		E7534B811C23BCA100F0ED58 /* SyncService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7534B801C23BCA100F0ED58 /* SyncService.swift */; };
+		E7534B861C23C3F200F0ED58 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E7534B831C23C3F200F0ED58 /* libMobClickLibrary.a */; };
+		E7534B881C23DE3500F0ED58 /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E7534B871C23DE3500F0ED58 /* libz.1.2.5.tbd */; };
 		E76DEB781C0E981D0072A1D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76DEB771C0E981D0072A1D7 /* AppDelegate.swift */; };
 		E76DEB7A1C0E981D0072A1D7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76DEB791C0E981D0072A1D7 /* ViewController.swift */; };
 		E76DEB7D1C0E981D0072A1D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E76DEB7B1C0E981D0072A1D7 /* Main.storyboard */; };
@@ -121,9 +124,13 @@
 		E743D8F31C14AD3E003ACC4E /* UIButton+Badge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Badge.m"; sourceTree = "<group>"; };
 		E74DB7B71C193362004F0207 /* DiaryDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryDetailViewController.swift; sourceTree = "<group>"; };
 		E74DB7BF1C1973F9004F0207 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "zh-Hans"; path = "zh-Hans.lproj/Main.storyboard"; sourceTree = "<group>"; };
-		E74DB7C11C1974DB004F0207 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		E74DB7C31C197515004F0207 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		E74DB7C51C197518004F0207 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E7534B801C23BCA100F0ED58 /* SyncService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncService.swift; sourceTree = "<group>"; };
+		E7534B831C23C3F200F0ED58 /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
+		E7534B841C23C3F200F0ED58 /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
+		E7534B851C23C3F200F0ED58 /* MobClickSocialAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClickSocialAnalytics.h; sourceTree = "<group>"; };
+		E7534B871C23DE3500F0ED58 /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
 		E76DEB741C0E981D0072A1D7 /* iDiaries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iDiaries.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E76DEB771C0E981D0072A1D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E76DEB791C0E981D0072A1D7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -146,7 +153,6 @@
 		E78D265C1C1981F6002860A5 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E78D26611C19823C002860A5 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		E78D26631C19823D002860A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		E78D26691C19AF2D002860A5 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		E78D266A1C19AF2E002860A5 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
 		E78D266B1C19AF2E002860A5 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		E78D266C1C19AF2E002860A5 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
@@ -164,6 +170,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7534B881C23DE3500F0ED58 /* libz.1.2.5.tbd in Frameworks */,
+				E7534B861C23C3F200F0ED58 /* libMobClickLibrary.a in Frameworks */,
 				E781B4881C11925F0014A17D /* AudioToolbox.framework in Frameworks */,
 				41E0151092E8C702AF72BCD3 /* Pods.framework in Frameworks */,
 			);
@@ -308,6 +316,7 @@
 			children = (
 				E70DDE9D1C10156B00DD0E57 /* DiaryService.swift */,
 				E743D8EC1C14A843003ACC4E /* TimeMailService.swift */,
+				E7534B801C23BCA100F0ED58 /* SyncService.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -335,6 +344,16 @@
 			path = "UIBarButtomItem-Badge";
 			sourceTree = "<group>";
 		};
+		E7534B821C23C3F200F0ED58 /* UMAnalytics */ = {
+			isa = PBXGroup;
+			children = (
+				E7534B831C23C3F200F0ED58 /* libMobClickLibrary.a */,
+				E7534B841C23C3F200F0ED58 /* MobClick.h */,
+				E7534B851C23C3F200F0ED58 /* MobClickSocialAnalytics.h */,
+			);
+			path = UMAnalytics;
+			sourceTree = "<group>";
+		};
 		E76DEB6B1C0E981D0072A1D7 = {
 			isa = PBXGroup;
 			children = (
@@ -356,6 +375,7 @@
 		E76DEB761C0E981D0072A1D7 /* iDiaries */ = {
 			isa = PBXGroup;
 			children = (
+				E7534B821C23C3F200F0ED58 /* UMAnalytics */,
 				E76DEC031C0F24B30072A1D7 /* Source */,
 				E78D26641C1982E7002860A5 /* SupportFiles */,
 			);
@@ -433,6 +453,7 @@
 		E930703952CF9F5E7439696B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E7534B871C23DE3500F0ED58 /* libz.1.2.5.tbd */,
 				E7BB955D1C15C8D400130E2F /* Pods.framework */,
 				E781B4871C11925F0014A17D /* AudioToolbox.framework */,
 				2C6CC0BDD0C2F3E4BF93137B /* Pods.framework */,
@@ -492,6 +513,7 @@
 				en,
 				Base,
 				"zh-Hant",
+				"zh-Hans",
 			);
 			mainGroup = E76DEB6B1C0E981D0072A1D7;
 			productRefGroup = E76DEB751C0E981D0072A1D7 /* Products */;
@@ -601,6 +623,7 @@
 				E70DDED11C10606C00DD0E57 /* KeyboardAdjustHelper.swift in Sources */,
 				E7BB95541C154A0700130E2F /* MailDetailController.swift in Sources */,
 				E70A5B221C17BFEC001C0A47 /* ModelExtension.swift in Sources */,
+				E7534B811C23BCA100F0ED58 /* SyncService.swift in Sources */,
 				E781B4801C114BFC0014A17D /* NewDiarySendTimeMailCell.swift in Sources */,
 				E70DDED01C10606C00DD0E57 /* ImageUtil.swift in Sources */,
 				E781B4861C1186310014A17D /* SelectDateController.swift in Sources */,
@@ -658,8 +681,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				E76DEB811C0E981D0072A1D7 /* Base */,
-				E74DB7C11C1974DB004F0207 /* zh-Hans */,
-				E78D26691C19AF2D002860A5 /* zh-Hant */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -778,6 +799,27 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SDKROOT)/usr/lib/system",
+					"$(PROJECT_DIR)/iDiaries/UMAnalytics",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"Alamofire\"",
+					"-framework",
+					"\"AlamofireJsonToObjects\"",
+					"-framework",
+					"\"CocoaAsyncSocket\"",
+					"-framework",
+					"\"EVReflection\"",
+					"-framework",
+					"\"KKGestureLockView\"",
+					"-framework",
+					"\"MBProgressHUD\"",
+					"-framework",
+					"\"MJRefresh\"",
+					"-framework",
+					"\"iCloudDocumentSync\"",
+					"-objc",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.idiaries.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -801,6 +843,27 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SDKROOT)/usr/lib/system",
+					"$(PROJECT_DIR)/iDiaries/UMAnalytics",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"Alamofire\"",
+					"-framework",
+					"\"AlamofireJsonToObjects\"",
+					"-framework",
+					"\"CocoaAsyncSocket\"",
+					"-framework",
+					"\"EVReflection\"",
+					"-framework",
+					"\"KKGestureLockView\"",
+					"-framework",
+					"\"MBProgressHUD\"",
+					"-framework",
+					"\"MJRefresh\"",
+					"-framework",
+					"\"iCloudDocumentSync\"",
+					"-objc",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.idiaries.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "1D49BEDD1D130F747821DD8F3D752CECBA3BC19E",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "1D49BEDD1D130F747821DD8F3D752CECBA3BC19E" : 0,
+    "B84DE46359EC6144872C156939360FB1A660D8C3" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "0693D17B-D051-4D10-9570-9DE0979E3208",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "1D49BEDD1D130F747821DD8F3D752CECBA3BC19E" : "iDiaries\/",
+    "B84DE46359EC6144872C156939360FB1A660D8C3" : "bahamut\/Bahamut\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "iDiaries",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "iDiaries.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/zhouguangjie\/iDiaries.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "1D49BEDD1D130F747821DD8F3D752CECBA3BC19E"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Sharelink\/Bahamut.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "B84DE46359EC6144872C156939360FB1A660D8C3"
+    }
+  ]
+}

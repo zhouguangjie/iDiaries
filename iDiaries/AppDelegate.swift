@@ -21,10 +21,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         PersistentManager.sharedInstance.useiCloudExtension("iCloud.com.idiaries.ios")
         
         application.registerUserNotificationSettings(UIUserNotificationSettings.init(forTypes: [UIUserNotificationType.Alert,UIUserNotificationType.Sound,UIUserNotificationType.Badge], categories: nil))
-        
+        configureUmeng()
         return true
     }
 
+    private func configureUmeng()
+    {
+        MobClick.startWithAppkey(iDiariesConfig.umengAppkey, reportPolicy: BATCH, channelId: nil)
+        if let infoDic = NSBundle.mainBundle().infoDictionary
+        {
+            let version = infoDic["CFBundleShortVersionString"] as! String
+            MobClick.setAppVersion(version)
+        }
+        MobClick.setEncryptEnabled(true)
+        MobClick.setLogEnabled(false)
+    }
+    
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.

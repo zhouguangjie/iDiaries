@@ -60,7 +60,13 @@ class ViewController: UITableViewController, KKGestureLockViewDelegate{
     }
     
     override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)        
+        super.viewWillAppear(animated)
+        MobClick.beginLogPageView("ViewController")
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        MobClick.endLogPageView("ViewController")
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -78,6 +84,31 @@ class ViewController: UITableViewController, KKGestureLockViewDelegate{
             })
         }
         TimeMailService.sharedInstance.requestReminderPermission()
+        sync()
+    }
+    
+    //MARK: remind sync
+    
+    
+    private func sync()
+    {
+        let rsd = SyncService.sharedInstance.remindSyncDate
+        if rsd.timeIntervalSinceNow < 0
+        {
+            let date = SyncService.sharedInstance.lastSyncDate
+            let msgFormat = NSLocalizedString("NOT_SYNC_DAYS", comment: "%@ Days No Sync Diaries,Go To Sync Diaries Now?")
+            let msg = String(format: msgFormat, "\(date.totalDaysSinceNow)")
+            let alert = UIAlertController(title: NSLocalizedString("SYNC", comment: "Sync"), message: msg, preferredStyle: .Alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("REMIND_SYNC_NEXT_TIME", comment: "Remind Me Next Time"), style: .Default, handler: { (action) -> Void in
+                SyncService.sharedInstance.remindNextTime()
+            }))
+            
+            alert.addAction(UIAlertAction(title: NSLocalizedString("SYNC_NOW", comment: "Sync Now"), style: .Default, handler: { (action) -> Void in
+                SyncDiariesViewController.showSyncDiariesViewController(self.navigationController!)
+                SyncService.sharedInstance.remindNextTime(30)
+            }))
+            showAlert(self, alertController: alert)
+        }
     }
     
     private func initDiaryShot()
@@ -259,7 +290,8 @@ class ViewController: UITableViewController, KKGestureLockViewDelegate{
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if mode == .NewDiaryMode
         {
-            return NewDiaryCellManager.sharedInstance.getNewDiaryCell(self, row: indexPath.row)
+            let cell = NewDiaryCellManager.sharedInstance.getNewDiaryCell(self, row: indexPath.row)
+            return cell
         }else
         {
             let contentCell = tableView.dequeueReusableCellWithIdentifier(DiaryContentCell.reuseId,forIndexPath: indexPath) as! DiaryContentCell
@@ -274,7 +306,6 @@ class ViewController: UITableViewController, KKGestureLockViewDelegate{
         if mode == .NewDiaryMode
         {
             return NewDiaryCellManager.sharedInstance.getCellHeight(indexPath.row)
-            
         }
         return UITableViewAutomaticDimension
     }

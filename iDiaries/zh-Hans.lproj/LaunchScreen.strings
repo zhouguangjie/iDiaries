@@ -1,3 +1,6 @@
 
-/* Class = "UILabel"; text = "我的日记"; ObjectID = "Vcw-wA-m2A"; */
+/* Class = "UILabel"; text = "iDiaries"; ObjectID = "Vcw-wA-m2A"; */
 "Vcw-wA-m2A.text" = "iDiaries";
+
+/* Class = "UILabel"; text = "写日记，遇见更好的你"; ObjectID = "tV3-bd-4bf"; */
+"tV3-bd-4bf.text" = "写日记，遇见更好的你";

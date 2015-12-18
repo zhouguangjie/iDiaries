@@ -85,6 +85,17 @@ class UserSettingController: UITableViewController
         static let alarm = "alarm"
     }
     
+    private var shownVoteMeAlert:Bool = false
+    
+    private var votedMe:Bool{
+        get{
+            return NSUserDefaults.standardUserDefaults().boolForKey("votedMe")
+        }
+        set{
+            NSUserDefaults.standardUserDefaults().setBool(newValue, forKey: "votedMe")
+        }
+    }
+    
     override func viewDidLoad() {
         initPropertySet()
         tableView.tableFooterView = UIView()
@@ -92,8 +103,46 @@ class UserSettingController: UITableViewController
         tableView.reloadData()
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        MobClick.beginLogPageView("UserSetting")
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        MobClick.endLogPageView("UserSetting")
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        if shownVoteMeAlert == false &&  votedMe == false{
+            voteMe()
+        }
+    }
+    
     //MARK: Property Cell
-    var textPropertyCells:[TextPropertyCellModel] = [TextPropertyCellModel]()
+    private var textPropertyCells:[TextPropertyCellModel] = [TextPropertyCellModel]()
+    
+    private func voteMe()
+    {
+        let alert = UIAlertController(title: NSLocalizedString("INVITE_TO_VOTE_TITLE", comment: ""), message: NSLocalizedString("INVITE_TO_VOTE_MSG", comment: ""), preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("NO_THANKS", comment: "No Thanks"), style: .Default, handler: { (action) -> Void in
+            self.votedMe = true
+            MobClick.event("Reject Vote")
+        }))
+        
+        alert.addAction(UIAlertAction(title: NSLocalizedString("NEXT_TIME", comment: "Busy Now! Next Time"), style: .Default, handler: { (action) -> Void in
+            
+        }))
+        
+        alert.addAction(UIAlertAction(title: NSLocalizedString("YES_I_LOVE_TO", comment: "No Thanks"), style: .Default, handler: { (action) -> Void in
+            self.votedMe = true
+            let url = "itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=\(iDiariesConfig.appStoreId)"
+            UIApplication.sharedApplication().openURL(NSURL(string: url)!)
+        }))
+        self.showAlert(self, alertController: alert)
+        shownVoteMeAlert = true
+    }
     
     private func initPropertySet()
     {
@@ -219,7 +268,7 @@ class UserSettingController: UITableViewController
             cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "about:"))
             return cell
         }else{
-            
+            MobClick.event("GetSharelink")
             let cell = tableView.dequeueReusableCellWithIdentifier("GetSharelinkCell",forIndexPath: indexPath)
             cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "getSharelink:"))
             return cell

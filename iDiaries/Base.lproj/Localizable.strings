@@ -13,6 +13,17 @@ APP_TITLE = "iDiaries";
 OK = "OK";
 I_SEE = "I See";
 
+INVITE_TO_VOTE_TITLE = "AppStore Comment";
+INVITE_TO_VOTE_MSG = "iDiaries Invite You Comment In AppStore";
+NO_THANKS = "No Thanks";
+NEXT_TIME = "Busy Now! Next Time";
+YES_I_LOVE_TO = "Ok,Go To AppStore Now!";
+
+NOT_SYNC_DAYS = "%@ Days No Sync Diaries,Go To Sync Diaries Now?";
+SYNC = "Sync";
+REMIND_SYNC_NEXT_TIME = "Remind Me Next Time";
+SYNC_NOW = "Sync Now";
+
 TIME_MAIL_REMINDER_EFFECTIVELESS = "The Time Mail Will Not Remind By Calendar";
 
 "Weather" = "Weather";

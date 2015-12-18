@@ -13,10 +13,12 @@ class AboutViewController: UIViewController,MFMailComposeViewControllerDelegate{
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        MobClick.beginLogPageView("AboutView")
     }
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
+        MobClick.endLogPageView("AboutView")
     }
     
     override func viewDidLoad() {
