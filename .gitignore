@@ -1,0 +1,66 @@
+# Xcode
+#
+build/
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata
+*.xccheckout
+*.moved-aside
+DerivedData
+*.hmap
+*.ipa
+*.xcuserstate
+
+#Bahamut secret config
+Bahamut/BahamutConfig.swift
+
+# CocoaPods
+#
+# We recommend against adding the Pods directory to your .gitignore. However
+# you should judge for yourself, the pros and cons are mentioned at:
+# http://guides.cocoapods.org/using/using-cocoapods.html#should-i-ignore-the-pods-directory-in-source-control
+#
+ Pods/
+*.lock
+# Carthage
+#
+# Add this line if you want to avoid checking in source code from Carthage dependencies.
+# Carthage/Checkouts
+
+Carthage/Build
+
+Bahamut.xcworkspace/xcuserdata/alexchow.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist
+
+*.xcbkptlist
+
+Bahamut.xcworkspace/xcuserdata/alexchow.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist
+
+Pods/Local Podspecs/Alamofire.podspec.json
+
+Podfile.lock
+
+Pods/Local Podspecs/Alamofire.podspec.json
+
+Pods/Local Podspecs/MJRefresh.podspec.json
+
+Pods/Manifest.lock
+
+Pods/PBJVision/Source/PBJVision.m
+
+Pods/Pods.xcodeproj/project.pbxproj
+
+Pods/Target Support Files/Pods/Pods-acknowledgements.markdown
+
+Pods/Target Support Files/Pods/Pods-acknowledgements.plist
+
+Pods/Target Support Files/Pods/Pods-frameworks.sh
+
+Pods/Target Support Files/Pods/Pods.debug.xcconfig
+
+Pods/Target Support Files/Pods/Pods.release.xcconfig
