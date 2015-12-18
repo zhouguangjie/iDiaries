@@ -88,10 +88,21 @@ class ViewController: UITableViewController, KKGestureLockViewDelegate{
     }
     
     //MARK: remind sync
-    
+    var remindSyncClosed:Bool{
+        get{
+            return NSUserDefaults.standardUserDefaults().boolForKey("remindSyncClosed")
+        }
+        set{
+            NSUserDefaults.standardUserDefaults().setBool(newValue, forKey: "remindSyncClosed")
+        }
+    }
     
     private func sync()
     {
+        if remindSyncClosed
+        {
+            return
+        }
         let rsd = SyncService.sharedInstance.remindSyncDate
         if rsd.timeIntervalSinceNow < 0
         {
@@ -101,6 +112,10 @@ class ViewController: UITableViewController, KKGestureLockViewDelegate{
             let alert = UIAlertController(title: NSLocalizedString("SYNC", comment: "Sync"), message: msg, preferredStyle: .Alert)
             alert.addAction(UIAlertAction(title: NSLocalizedString("REMIND_SYNC_NEXT_TIME", comment: "Remind Me Next Time"), style: .Default, handler: { (action) -> Void in
                 SyncService.sharedInstance.remindNextTime()
+            }))
+            
+            alert.addAction(UIAlertAction(title: NSLocalizedString("DONT_REMIND_SYNC", comment: "Don't Remind Me"), style: .Default, handler: { (action) -> Void in
+                self.remindSyncClosed = true
             }))
             
             alert.addAction(UIAlertAction(title: NSLocalizedString("SYNC_NOW", comment: "Sync Now"), style: .Default, handler: { (action) -> Void in
