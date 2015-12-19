@@ -35,7 +35,7 @@ class NewDiarySendTimeMailCell: NewDiaryBaseCell {
     private func showSelectDateActionSheet()
     {
         let now = NSDate()
-        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
+        let alert = UIAlertController(title: nil, message: NSLocalizedString("TIME_MAIL_RECEIVED_TIME", comment: ""), preferredStyle: .Alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("ONE_WEEK", comment: ""), style: .Default, handler: { (action) -> Void in
             self.setReviewDiaryTime(now.addWeeks(1))
         }))

@@ -17,12 +17,14 @@ INVITE_TO_VOTE_TITLE = "AppStore評價";
 INVITE_TO_VOTE_MSG = "iDiaries邀請你去商店寫下你的點評！";
 NO_THANKS = "殘忍拒絕";
 NEXT_TIME = "現在忙，下次吧";
-YES_I_LOVE_TO = "好的，現在就去";
+YES_I_LOVE_TO = "好的!現在就去";
 
 NOT_SYNC_DAYS = "%@ 天未同步日誌,馬上同步?";
 SYNC = "同步";
 REMIND_SYNC_NEXT_TIME = "過幾天提醒";
 SYNC_NOW = "現在同步";
+
+REMINDER_CHANGED = "提醒時間已修改";
 
 TIME_MAIL_REMINDER_EFFECTIVELESS = "The Time Mail Will Not Remind By Calendar";
 
@@ -75,6 +77,8 @@ Saturday = "周六";
 
 REMIND_FUTURE_ME_REVIEW = "給未來的我發送時光信件！";
 REMIND_FUTURE_ME_REVIEW_AT = "將會在 %@ 收到日誌的時光信件！";
+
+TIME_MAIL_RECEIVED_TIME = "時光信件發送時間";
 
 SWIPE_KEY_SET_PASSWORD = "滑動設置密碼";
 SWIPE_KEY_VALIDATE_PASSWORD = "滑動解鎖";

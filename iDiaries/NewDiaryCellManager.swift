@@ -28,7 +28,13 @@ class NewDiaryCellManager
     private var summaryCell:NewDiaryMarkCell!{
         return markCells[2]
     }
-    private var textContentCell:NewDiaryTextContentCell!
+    private var textContentCell:NewDiaryTextContentCell!{
+        didSet{
+            if oldValue == nil{
+                self.returnForeground()
+            }
+        }
+    }
     private var remindCell:NewDiarySendTimeMailCell!
     private var saveCell:NewDiarySaveCell!
     
@@ -135,5 +141,21 @@ class NewDiaryCellManager
         }
         cell.rootController = rootController
         return cell
+    }
+    
+    //MARK: temperate
+    var isNewDiaryNotNull:Bool{
+        get{
+            return moodCell.selectedMarks.count > 0 || weatherCell.selectedMarks.count > 0 || summaryCell.selectedMarks.count > 0 || String.isNullOrWhiteSpace(textContentCell.mainContent) == false
+        }
+    }
+    
+    func returnForeground()
+    {
+        if isNewDiaryNotNull == false
+        {
+            dateCell.resetDate()
+        }
+        
     }
 }

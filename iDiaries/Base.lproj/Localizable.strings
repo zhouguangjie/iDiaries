@@ -17,12 +17,14 @@ INVITE_TO_VOTE_TITLE = "AppStore Comment";
 INVITE_TO_VOTE_MSG = "iDiaries Invite You Comment In AppStore";
 NO_THANKS = "No Thanks";
 NEXT_TIME = "Busy Now! Next Time";
-YES_I_LOVE_TO = "Ok,Go To AppStore Now!";
+YES_I_LOVE_TO = "Ok! Go To AppStore Now!";
 
 NOT_SYNC_DAYS = "%@ Days No Sync Diaries,Go To Sync Diaries Now?";
 SYNC = "Sync";
 REMIND_SYNC_NEXT_TIME = "Remind Me Next Time";
 SYNC_NOW = "Sync Now";
+
+REMINDER_CHANGED = "Reminder Changed!";
 
 TIME_MAIL_REMINDER_EFFECTIVELESS = "The Time Mail Will Not Remind By Calendar";
 
@@ -75,6 +77,8 @@ Saturday = "Saturday";
 
 REMIND_FUTURE_ME_REVIEW = "Send time mail to future me";
 REMIND_FUTURE_ME_REVIEW_AT = "Mail will send to %@";
+
+TIME_MAIL_RECEIVED_TIME = "Time Mail Send Date";
 
 SWIPE_KEY_SET_PASSWORD = "Set A New Password";
 SWIPE_KEY_VALIDATE_PASSWORD = "Validate Your Password";

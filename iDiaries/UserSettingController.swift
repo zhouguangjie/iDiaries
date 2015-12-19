@@ -192,7 +192,8 @@ class UserSettingController: UITableViewController
     func changePassword(_:UITapGestureRecognizer)
     {
         PasswordLocker.showSetPasswordLocker(self) { (newPsw) -> Void in
-            self.showToast(NSLocalizedString("PSW_CHANGED", comment: "Password Changed!"))
+            let msg = NSLocalizedString("PSW_CHANGED", comment: "Password Changed!")
+            self.showCheckMark(msg)
         }
     }
     
@@ -211,6 +212,8 @@ class UserSettingController: UITableViewController
                 DiaryService.sharedInstance.setWriteDiaryAlarm(dateTime)
                 cell.info.propertySet.propertyValue = self.writeDiaryAlarmPropertySet.propertyValue
                 cell.refresh()
+                let msg = NSLocalizedString("REMINDER_CHANGED", comment: "Reminder Changed!")
+                self.showCheckMark(msg)
             }
         }))
         
