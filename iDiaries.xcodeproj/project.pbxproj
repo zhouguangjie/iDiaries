@@ -804,8 +804,6 @@
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-framework",
-					"\"CocoaAsyncSocket\"",
-					"-framework",
 					"\"EVReflection\"",
 					"-framework",
 					"\"KKGestureLockView\"",
@@ -844,8 +842,6 @@
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
-					"-framework",
-					"\"CocoaAsyncSocket\"",
 					"-framework",
 					"\"EVReflection\"",
 					"-framework",
