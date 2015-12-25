@@ -804,10 +804,6 @@
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-framework",
-					"\"Alamofire\"",
-					"-framework",
-					"\"AlamofireJsonToObjects\"",
-					"-framework",
 					"\"CocoaAsyncSocket\"",
 					"-framework",
 					"\"EVReflection\"",
@@ -848,10 +844,6 @@
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
-					"-framework",
-					"\"Alamofire\"",
-					"-framework",
-					"\"AlamofireJsonToObjects\"",
 					"-framework",
 					"\"CocoaAsyncSocket\"",
 					"-framework",
