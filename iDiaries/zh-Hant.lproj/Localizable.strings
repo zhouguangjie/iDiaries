@@ -6,7 +6,7 @@
  Copyright © 2015年 GStudio. All rights reserved.
  */
 
-MainContentPlaceHolderText = "遇到的人...\n經歷的事...\n去過的地方...\n你的感想...\n對自己說...";
+MainContentPlaceHolderText = "遇到的人...\n經歷的事...\n去過的地方...\n你的感想...\n對自己說...\n左滑进入编辑模式";
 TimeMailMessageFormat = "過去的你在 %@ 給你發了一封時光信件";
 APP_TITLE = "iDiaries";
 
@@ -23,6 +23,7 @@ NOT_SYNC_DAYS = "%@ 天未同步日誌,馬上同步?";
 SYNC = "同步";
 REMIND_SYNC_NEXT_TIME = "過幾天提醒";
 SYNC_NOW = "現在同步";
+DONT_REMIND_SYNC = "不需要提醒";
 
 REMINDER_CHANGED = "提醒時間已修改";
 

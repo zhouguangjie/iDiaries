@@ -6,7 +6,7 @@
   Copyright © 2015年 GStudio. All rights reserved.
 */
 
-MainContentPlaceHolderText = "遇到的人...\n经历的事情...\n去过的地方...\n你的感想...\n对自己说点什么...";
+MainContentPlaceHolderText = "遇到的人...\n经历的事情...\n去过的地方...\n你的感想...\n对自己说点什么...\n左滑进入编辑模式";
 TimeMailMessageFormat = "过去的你在 %@ 给你发了一封时光邮件";
 APP_TITLE = "我的日记";
 
@@ -23,6 +23,7 @@ NOT_SYNC_DAYS = "%@ 天未同步日志，现在马上同步?";
 SYNC = "同步";
 REMIND_SYNC_NEXT_TIME = "过几天提醒";
 SYNC_NOW = "现在同步";
+DONT_REMIND_SYNC = "不需要提醒";
 
 REMINDER_CHANGED = "提醒时间已修改";
 

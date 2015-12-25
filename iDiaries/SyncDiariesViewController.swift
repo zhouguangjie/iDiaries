@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import EVReflection
 
 //MARK:Sync Status
 enum SyncDiariesStatus:String

@@ -6,7 +6,7 @@
   Copyright © 2015年 GStudio. All rights reserved.
 */
 
-MainContentPlaceHolderText = "Men you meet...\nThings you experience...\nPlaces you go...\nFeeling you feel...\nSay something to yourself...";
+MainContentPlaceHolderText = "Men you meet...\nThings you experience...\nPlaces you go...\nFeeling you feel...\nSay something to yourself...\nSwipe left to edit mode";
 TimeMailMessageFormat = "Past you send this mail to you at %@";
 APP_TITLE = "iDiaries";
 
@@ -23,6 +23,7 @@ NOT_SYNC_DAYS = "%@ Days No Sync Diaries,Go To Sync Diaries Now?";
 SYNC = "Sync";
 REMIND_SYNC_NEXT_TIME = "Remind Me Next Time";
 SYNC_NOW = "Sync Now";
+DONT_REMIND_SYNC = "Don't Remind Me";
 
 REMINDER_CHANGED = "Reminder Changed!";
 

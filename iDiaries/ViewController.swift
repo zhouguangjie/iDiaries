@@ -108,7 +108,7 @@ class ViewController: UITableViewController, KKGestureLockViewDelegate{
         {
             let date = SyncService.sharedInstance.lastSyncDate
             let msgFormat = NSLocalizedString("NOT_SYNC_DAYS", comment: "%@ Days No Sync Diaries,Go To Sync Diaries Now?")
-            let msg = String(format: msgFormat, "\(date.totalDaysSinceNow)")
+            let msg = String(format: msgFormat, "\(-1 * date.totalDaysSinceNow)")
             let alert = UIAlertController(title: NSLocalizedString("SYNC", comment: "Sync"), message: msg, preferredStyle: .Alert)
             alert.addAction(UIAlertAction(title: NSLocalizedString("REMIND_SYNC_NEXT_TIME", comment: "Remind Me Next Time"), style: .Default, handler: { (action) -> Void in
                 SyncService.sharedInstance.remindNextTime()
