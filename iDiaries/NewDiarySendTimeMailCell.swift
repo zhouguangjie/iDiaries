@@ -29,10 +29,11 @@ class NewDiarySendTimeMailCell: NewDiaryBaseCell {
     
     func selectTimeReviewDiary(_:UITapGestureRecognizer)
     {
-        showSelectDateActionSheet()
+        SystemSoundHelper.keyTink()
+        showSelectDateAlert()
     }
     
-    private func showSelectDateActionSheet()
+    private func showSelectDateAlert()
     {
         let now = NSDate()
         let alert = UIAlertController(title: nil, message: NSLocalizedString("TIME_MAIL_RECEIVED_TIME", comment: ""), preferredStyle: .Alert)

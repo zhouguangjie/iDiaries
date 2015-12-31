@@ -23,6 +23,7 @@ class NewDiaryTextContentCell: NewDiaryBaseCell,UITextViewDelegate {
             let rec = UISwipeGestureRecognizer(target: self, action: "showEditContentController:")
             rec.direction = .Left
             mainContentTextView.addGestureRecognizer(rec)
+            self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "onViewTap:"))
         }
     }
     @IBOutlet weak var diaryMarkImgView: UIImageView!{
@@ -46,10 +47,11 @@ class NewDiaryTextContentCell: NewDiaryBaseCell,UITextViewDelegate {
     var isMarkedDiary = false{
         didSet{
             if diaryMarkImgView != nil{
-            diaryMarkImgView.image = isMarkedDiary ? UIImage(named: "diary_mark") : UIImage(named: "diary_unmark")
+                diaryMarkImgView.image = isMarkedDiary ? UIImage(named: "diary_mark") : UIImage(named: "diary_unmark")
             }
         }
     }
+    
     var mainContent:String{
         set{
             mainContentTextView.text = newValue
@@ -58,6 +60,11 @@ class NewDiaryTextContentCell: NewDiaryBaseCell,UITextViewDelegate {
         get{
             return mainContentTextView.text ?? ""
         }
+    }
+    
+    func onViewTap(_:UITapGestureRecognizer)
+    {
+        self.rootController.hideKeyBoard()
     }
     
     func showEditContentController(_:UIGestureRecognizer)
@@ -73,6 +80,7 @@ class NewDiaryTextContentCell: NewDiaryBaseCell,UITextViewDelegate {
     func tapDiaryMark(_:UITapGestureRecognizer)
     {
         isMarkedDiary = !isMarkedDiary
+        isMarkedDiary ? SystemSoundHelper.keyTink() : SystemSoundHelper.keyTock()
     }
     
     private func updateMsgTxtPlaceHolder()

@@ -57,7 +57,6 @@ class ViewController: UITableViewController, KKGestureLockViewDelegate{
         initDiaryShot()
         self.tableView.reloadData()
         self.tableView.tableFooterView = UIView()
-        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "onViewTap:"))
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -86,11 +85,6 @@ class ViewController: UITableViewController, KKGestureLockViewDelegate{
         }
         TimeMailService.sharedInstance.requestReminderPermission()
         sync()
-    }
-    
-    func onViewTap(_:UITapGestureRecognizer)
-    {
-        self.hideKeyBoard()
     }
     
     //MARK: remind sync
