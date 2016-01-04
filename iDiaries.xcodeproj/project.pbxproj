@@ -32,9 +32,9 @@
 		E70DDECE1C10606C00DD0E57 /* HSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70DDEB21C10606C00DD0E57 /* HSL.swift */; };
 		E70DDECF1C10606C00DD0E57 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70DDEB31C10606C00DD0E57 /* UIColor.swift */; };
 		E70DDED01C10606C00DD0E57 /* ImageUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70DDEB41C10606C00DD0E57 /* ImageUtil.swift */; };
-		E70DDED11C10606C00DD0E57 /* KeyboardAdjustHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70DDEB51C10606C00DD0E57 /* KeyboardAdjustHelper.swift */; };
 		E70DDED21C10606C00DD0E57 /* ToastHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70DDEB61C10606C00DD0E57 /* ToastHelper.swift */; };
 		E70DDED31C10606C00DD0E57 /* UserGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70DDEB71C10606C00DD0E57 /* UserGuide.swift */; };
+		E74246481C3A133800BA564F /* KeyboardAdjustHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74246471C3A133800BA564F /* KeyboardAdjustHelper.swift */; };
 		E743D8D91C128E10003ACC4E /* NewDiaryCellManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E743D8D81C128E10003ACC4E /* NewDiaryCellManager.swift */; };
 		E743D8DC1C129479003ACC4E /* DiaryListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E743D8DB1C129479003ACC4E /* DiaryListManager.swift */; };
 		E743D8DE1C143B10003ACC4E /* UIAnimationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E743D8DD1C143B10003ACC4E /* UIAnimationHelper.swift */; };
@@ -106,9 +106,9 @@
 		E70DDEB21C10606C00DD0E57 /* HSL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HSL.swift; sourceTree = "<group>"; };
 		E70DDEB31C10606C00DD0E57 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		E70DDEB41C10606C00DD0E57 /* ImageUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageUtil.swift; sourceTree = "<group>"; };
-		E70DDEB51C10606C00DD0E57 /* KeyboardAdjustHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardAdjustHelper.swift; sourceTree = "<group>"; };
 		E70DDEB61C10606C00DD0E57 /* ToastHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastHelper.swift; sourceTree = "<group>"; };
 		E70DDEB71C10606C00DD0E57 /* UserGuide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserGuide.swift; sourceTree = "<group>"; };
+		E74246471C3A133800BA564F /* KeyboardAdjustHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardAdjustHelper.swift; sourceTree = "<group>"; };
 		E743D8D81C128E10003ACC4E /* NewDiaryCellManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewDiaryCellManager.swift; sourceTree = "<group>"; };
 		E743D8DB1C129479003ACC4E /* DiaryListManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryListManager.swift; sourceTree = "<group>"; };
 		E743D8DD1C143B10003ACC4E /* UIAnimationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIAnimationHelper.swift; sourceTree = "<group>"; };
@@ -258,11 +258,11 @@
 		E70DDEAE1C10606C00DD0E57 /* BahamutUIKit */ = {
 			isa = PBXGroup;
 			children = (
+				E74246471C3A133800BA564F /* KeyboardAdjustHelper.swift */,
 				E70DDEB11C10606C00DD0E57 /* DynamicColor */,
 				E70DDEAF1C10606C00DD0E57 /* ColorUtil.swift */,
 				E70DDEB01C10606C00DD0E57 /* ControllerExtension.swift */,
 				E70DDEB41C10606C00DD0E57 /* ImageUtil.swift */,
-				E70DDEB51C10606C00DD0E57 /* KeyboardAdjustHelper.swift */,
 				E70DDEB61C10606C00DD0E57 /* ToastHelper.swift */,
 				E70DDEB71C10606C00DD0E57 /* UserGuide.swift */,
 				E743D8DD1C143B10003ACC4E /* UIAnimationHelper.swift */,
@@ -594,6 +594,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E74246481C3A133800BA564F /* KeyboardAdjustHelper.swift in Sources */,
 				E76DEB7A1C0E981D0072A1D7 /* ViewController.swift in Sources */,
 				E781B47C1C114BC60014A17D /* NewDiaryMarkCell.swift in Sources */,
 				E70DDED31C10606C00DD0E57 /* UserGuide.swift in Sources */,
@@ -620,7 +621,6 @@
 				E70A5B151C17BFEC001C0A47 /* CoreDataManager.swift in Sources */,
 				E70DDECA1C10606C00DD0E57 /* RegexUtil.swift in Sources */,
 				E743D8D91C128E10003ACC4E /* NewDiaryCellManager.swift in Sources */,
-				E70DDED11C10606C00DD0E57 /* KeyboardAdjustHelper.swift in Sources */,
 				E7BB95541C154A0700130E2F /* MailDetailController.swift in Sources */,
 				E70A5B221C17BFEC001C0A47 /* ModelExtension.swift in Sources */,
 				E7534B811C23BCA100F0ED58 /* SyncService.swift in Sources */,

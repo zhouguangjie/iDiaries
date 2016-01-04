@@ -458,48 +458,6 @@
             </objects>
             <point key="canvasLocation" x="3634" y="-548"/>
         </scene>
-        <!--Today-->
-        <scene sceneID="3Yy-e5-W8e">
-            <objects>
-                <viewController id="51r-LR-HXm" customClass="EditMainContentViewController" customModule="iDiaries" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="wvS-E6-xMH"/>
-                        <viewControllerLayoutGuide type="bottom" id="4jh-BI-Znm"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="FW8-18-WD3">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="KZy-sU-Dhy">
-                                <rect key="frame" x="20" y="0.0" width="560" height="580"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="bottom" secondItem="KZy-sU-Dhy" secondAttribute="bottom" constant="20" symbolic="YES" id="RGz-iQ-hft"/>
-                            <constraint firstItem="KZy-sU-Dhy" firstAttribute="top" secondItem="FW8-18-WD3" secondAttribute="top" id="Y1Z-xT-24p"/>
-                            <constraint firstItem="KZy-sU-Dhy" firstAttribute="trailing" secondItem="FW8-18-WD3" secondAttribute="trailingMargin" id="fW6-Lg-guo"/>
-                            <constraint firstItem="KZy-sU-Dhy" firstAttribute="leading" secondItem="FW8-18-WD3" secondAttribute="leadingMargin" id="qwY-mX-aOY"/>
-                        </constraints>
-                    </view>
-                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
-                    <navigationItem key="navigationItem" title="Today" id="dFR-KG-i0k">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="edF-SD-A2s"/>
-                    </navigationItem>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="600" height="600"/>
-                    <connections>
-                        <outlet property="mainContentTextView" destination="KZy-sU-Dhy" id="b0g-bC-KcN"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jrv-CM-rs0" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2944" y="128"/>
-        </scene>
         <!--Select Date Controller-->
         <scene sceneID="1al-Wr-4w1">
             <objects>
@@ -926,10 +884,10 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="800"/>
                     <connections>
-                        <segue destination="51r-LR-HXm" kind="show" identifier="ShowEditView" id="Ip4-2W-eA1"/>
                         <segue destination="b3n-mR-ADf" kind="show" identifier="ShowUserSettingController" id="Sp2-er-5nH"/>
                         <segue destination="4zA-fK-k5p" kind="show" identifier="ShowTimeMailController" id="iN4-Pz-Y2F"/>
                         <segue destination="gog-eg-vvZ" kind="show" identifier="ShowDairyDetailViewController" id="l5d-Vt-vbf"/>
+                        <segue destination="Omo-Pw-tvq" kind="show" identifier="ShowEditView" id="4vl-Ue-0mL"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PNI-s8-Gfo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -998,6 +956,49 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZHD-qA-bH8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3615" y="803"/>
+        </scene>
+        <!--Today-->
+        <scene sceneID="wmX-zS-0Og">
+            <objects>
+                <viewController id="Omo-Pw-tvq" customClass="EditMainContentViewController" customModule="iDiaries" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="frs-3v-lub"/>
+                        <viewControllerLayoutGuide type="bottom" id="dpj-cA-yyA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZU0-E5-ecQ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="PkZ-TU-VaM">
+                                <rect key="frame" x="20" y="20" width="560" height="560"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="PkZ-TU-VaM" firstAttribute="leading" secondItem="ZU0-E5-ecQ" secondAttribute="leadingMargin" id="6Xe-er-gLL"/>
+                            <constraint firstItem="PkZ-TU-VaM" firstAttribute="top" secondItem="ZU0-E5-ecQ" secondAttribute="top" constant="20" symbolic="YES" id="FBY-5Q-pHq"/>
+                            <constraint firstAttribute="bottom" secondItem="PkZ-TU-VaM" secondAttribute="bottom" constant="20" symbolic="YES" id="UZa-sW-Fge"/>
+                            <constraint firstItem="PkZ-TU-VaM" firstAttribute="trailing" secondItem="ZU0-E5-ecQ" secondAttribute="trailingMargin" id="ekW-En-cvf"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
+                    <navigationItem key="navigationItem" title="Today" id="vg1-oc-cX6">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="1h1-1d-MUe"/>
+                    </navigationItem>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="600"/>
+                    <connections>
+                        <outlet property="bottomConstraint" destination="UZa-sW-Fge" id="l50-aW-LqJ"/>
+                        <outlet property="mainContentTextView" destination="PkZ-TU-VaM" id="UmX-Wh-IMp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3VV-Pd-9FN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2944" y="128"/>
         </scene>
     </scenes>
     <resources>

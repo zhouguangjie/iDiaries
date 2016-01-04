@@ -16,13 +16,16 @@ let WeatherMarks:[MarkStruct] =
     (name:"Cloudy",emoji:"☁️"),
     (name:"Rainy",emoji:"🌧"),
     (name:"Snowy",emoji:"❄️"),
-    (name:"Thundering",emoji:"⚡️"),
-    (name:"Windy",emoji:"🌪")
+    (name:"Thunder",emoji:"⚡️"),
+    (name:"Windy",emoji:"🌪"),
+    (name:"Overcast",emoji:"⛅️")
 ]
 
 let MoodMarks:[MarkStruct] =
 [
     (name:"Happy",emoji:"😄"),
+    (name:"Delightful",emoji:"😀"),
+    (name:"Pleasant",emoji:"😃"),
     (name:"Sad",emoji:"😔"),
     (name:"Dysphoria",emoji:"😫"),
     (name:"Anger",emoji:"😡"),
@@ -41,7 +44,9 @@ let DaySummaryMarks:[MarkStruct] =
     (name:"Routine Day",emoji:""),
     (name:"Unforgettable Day",emoji:""),
     (name:"Meaningful Day",emoji:""),
-    (name:"Bad Day",emoji:"")
+    (name:"Bad Day",emoji:""),
+    (name:"Excited Day",emoji:""),
+    (name:"Good Day",emoji:"")
     
 ]
 
