@@ -45,8 +45,8 @@ let DaySummaryMarks:[MarkStruct] =
     (name:"Unforgettable Day",emoji:""),
     (name:"Meaningful Day",emoji:""),
     (name:"Bad Day",emoji:""),
-    (name:"Excited Day",emoji:""),
-    (name:"Good Day",emoji:"")
+    (name:"Good Day",emoji:""),
+    (name:"Excited Day",emoji:"")
     
 ]
 

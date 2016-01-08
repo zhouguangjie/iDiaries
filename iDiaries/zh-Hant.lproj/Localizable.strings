@@ -49,11 +49,11 @@ TIME_MAIL_REMINDER_EFFECTIVELESS = "The Time Mail Will Not Remind By Calendar";
 "Anger" = "生氣";
 "Fear" = "慌慌";
 "Normal" = "還好";
-"Delightful" = "高兴";
+"Delightful" = "高興";
 "Pleasant" = "愉快";
 
 //Day Summary
-"Excited Day" = "激动的一天";
+"Excited Day" = "激動的一天";
 "Good Day" = "很好的一天";
 "Beautiful Day" = "美好的一天";
 "Funny Day" = "有趣的一天";
