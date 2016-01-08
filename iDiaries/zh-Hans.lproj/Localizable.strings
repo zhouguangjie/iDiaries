@@ -38,8 +38,9 @@ TIME_MAIL_REMINDER_EFFECTIVELESS = "The Time Mail Will Not Remind By Calendar";
 "Cloudy" = "阴";
 "Rainy" = "下雨";
 "Snowy" = "飘雪";
-"Thundering" = "打雷";
+"Thunder" = "打雷";
 "Windy" = "吹风";
+"Overcast" = "多云";
 
 //Mood
 "Happy" = "开心";
@@ -48,8 +49,12 @@ TIME_MAIL_REMINDER_EFFECTIVELESS = "The Time Mail Will Not Remind By Calendar";
 "Anger" = "愤怒";
 "Fear" = "怕怕";
 "Normal" = "还好";
+"Delightful" = "高興";
+"Pleasant" = "愉快";
 
 //Day Summary
+"Excited Day" = "激動人心的一天";
+"Good Day" = "很好的一天";
 "Beautiful Day" = "美好的一天";
 "Funny Day" = "有趣的一天";
 "Boring Day" = "无聊的一天";

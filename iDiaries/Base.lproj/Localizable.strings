@@ -38,8 +38,9 @@ TIME_MAIL_REMINDER_EFFECTIVELESS = "The Time Mail Will Not Remind By Calendar";
 "Cloudy" = "Cloudy";
 "Rainy" = "Rainy";
 "Snowy" = "Snowy";
-"Thundering" = "Thundering";
+"Thunder" = "Thunder";
 "Windy" = "Windy";
+"Overcast" = "Overcast";
 
 //Mood
 "Happy" = "Happy";
@@ -48,8 +49,12 @@ TIME_MAIL_REMINDER_EFFECTIVELESS = "The Time Mail Will Not Remind By Calendar";
 "Anger" = "Anger";
 "Fear" = "Fear";
 "Normal" = "Normal";
+"Delightful" = "Delightful";
+"Pleasant" = "Pleasant";
 
 //Day Summary
+"Excited Day" = "Excited Day";
+"Good Day" = "Good Day";
 "Beautiful Day" = "Beautiful Day";
 "Funny Day" = "Funny Day";
 "Boring Day" = "Boring Day";

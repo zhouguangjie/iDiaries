@@ -38,6 +38,18 @@ class NewDiaryCellManager
     private var remindCell:NewDiarySendTimeMailCell!
     private var saveCell:NewDiarySaveCell!
     
+    private func initMarkCellHeight(i:Int)
+    {
+        let height = NSUserDefaults.standardUserDefaults().doubleForKey("markCellHeight_\(i)")
+        markCellHeight[i] = CGFloat(height)
+    }
+    
+    private func storeMarkCellHeight(index:Int)
+    {
+        let height = Double(markCellHeight[index])
+        NSUserDefaults.standardUserDefaults().setDouble(height, forKey: "markCellHeight_\(index)")
+    }
+    
     var newDiaryCellsCount:Int{
         return 7
     }
@@ -118,13 +130,17 @@ class NewDiaryCellManager
                 mcell.typedMarks = AllDiaryMarks[markIndex]
                 mcell.marksCollectionView.allowsMultipleSelection = markCellsMultiSelection[markIndex]
                 mcell.refresh()
+                mcell.sizeToFit()
+                initMarkCellHeight(markIndex)
             }else{
                 mcell = markCells[markIndex]
             }
             cell = mcell
+            
             if mcell.marksCollectionView.contentSize.height > markCellHeight[markIndex]
             {
                 markCellHeight[markIndex] = mcell.marksCollectionView.contentSize.height
+                storeMarkCellHeight(markIndex)
             }
             
         case 4:
