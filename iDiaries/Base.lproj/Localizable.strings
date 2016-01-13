@@ -73,6 +73,9 @@ SELECT_REVIEW_TIME = "Select A Date";
 CANCEL_REVIEW = "Don't Send Time Mail";
 CANCEL = "Cancel";
 
+EVERY_WEEK = "Every Week";
+EVERY_MONTH = "Every Month";
+
 Sunday = "Sunday";
 Monday = "Monday";
 Tuesday = "Tuesday";
@@ -99,8 +102,13 @@ TIME_MAIL_FROM_DATE = "This mail is from %@";
 
 CHANGE_PSW = "Change Password";
 SYNC_DIARIES = "Sync iDiaries";
+ALARM_SYNC = "Sync Reminder";
 ALARM_WRITE_DIARY = "Notify Write Diary";
 PSW_CHANGED = "Password Changed!";
+
+NO_REMIDER = "No Reminder";
+EVARY_MONTH = "Every Month";
+EVARY_WEEK = "Every Week";
 
 NO_ALARM = "No Notification";
 SELECT_ALARM_TIME = "Select Notification Time";

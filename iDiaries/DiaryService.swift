@@ -20,7 +20,7 @@ class DiaryMark: BahamutObject
     
     init(markStruct:MarkStruct) {
         super.init()
-        self.markId = markStruct.name
+        self.markId = "\(markStruct.id)"
         self.name = markStruct.name
         self.emoji = markStruct.emoji
     }
@@ -92,7 +92,7 @@ class DiaryService: NSNotificationCenter {
         }
     }
     
-    //MARK:
+    //MARK: alarm write diary
     let ALARM_WRITE_DIARY_TIME_KEY = "ALARM_WRITE_DIARY_TIME_KEY"
     func hasWriteDiaryAlarm() -> NSDate!
     {
@@ -164,7 +164,18 @@ class DiaryService: NSNotificationCenter {
         PersistentManager.sharedInstance.saveAll()
     }
     
-    func getAllDailies(callback:([DiaryModel])->Void)
+    func getDiariesOfMonth(year:Int,month:Int,callback:([DiaryModel])->Void)
+    {
+        getAllDiaries { (diaries) -> Void in
+            let result = diaries.filter({ (diary) -> Bool in
+                let date = NSDate(timeIntervalSince1970: diary.dateTime.doubleValue)
+                return date.yearOfDate == year && date.monthOfDate == month
+            })
+            callback(result)
+        }
+    }
+    
+    func getAllDiaries(callback:([DiaryModel])->Void)
     {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) { () -> Void in
             let diaries = PersistentManager.sharedInstance.getAllModel(DiaryModel)

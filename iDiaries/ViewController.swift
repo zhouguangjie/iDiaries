@@ -87,40 +87,23 @@ class ViewController: UITableViewController, KKGestureLockViewDelegate{
         sync()
     }
     
-    //MARK: remind sync
-    var remindSyncClosed:Bool{
-        get{
-            return NSUserDefaults.standardUserDefaults().boolForKey("remindSyncClosed")
-        }
-        set{
-            NSUserDefaults.standardUserDefaults().setBool(newValue, forKey: "remindSyncClosed")
-        }
-    }
-    
     private func sync()
     {
-        if remindSyncClosed
-        {
-            return
-        }
-        let rsd = SyncService.sharedInstance.remindSyncDate
-        if rsd.timeIntervalSinceNow < 0
+        if SyncService.sharedInstance.isRemindSyncNow
         {
             let date = SyncService.sharedInstance.lastSyncDate
-            let msgFormat = NSLocalizedString("NOT_SYNC_DAYS", comment: "%@ Days No Sync Diaries,Go To Sync Diaries Now?")
-            let msg = String(format: msgFormat, "\(-1 * date.totalDaysSinceNow)")
-            let alert = UIAlertController(title: NSLocalizedString("SYNC", comment: "Sync"), message: msg, preferredStyle: .Alert)
-            alert.addAction(UIAlertAction(title: NSLocalizedString("REMIND_SYNC_NEXT_TIME", comment: "Remind Me Next Time"), style: .Default, handler: { (action) -> Void in
-                SyncService.sharedInstance.remindNextTime()
+            let msgFormat = NSLocalizedString("NOT_SYNC_DAYS", comment: "")
+            let msg = String(format: msgFormat, "\(abs(date.totalDaysSinceNow))")
+            let alert = UIAlertController(title: NSLocalizedString("SYNC", comment: ""), message: msg, preferredStyle: .Alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("REMIND_SYNC_NEXT_TIME", comment: ""), style: .Default, handler: { (action) -> Void in
             }))
             
-            alert.addAction(UIAlertAction(title: NSLocalizedString("DONT_REMIND_SYNC", comment: "Don't Remind Me"), style: .Default, handler: { (action) -> Void in
-                self.remindSyncClosed = true
+            alert.addAction(UIAlertAction(title: NSLocalizedString("DONT_REMIND_SYNC", comment: ""), style: .Default, handler: { (action) -> Void in
+                SyncService.sharedInstance.remindSyncInterval = .noAlarm
             }))
             
-            alert.addAction(UIAlertAction(title: NSLocalizedString("SYNC_NOW", comment: "Sync Now"), style: .Default, handler: { (action) -> Void in
+            alert.addAction(UIAlertAction(title: NSLocalizedString("SYNC_NOW", comment: ""), style: .Default, handler: { (action) -> Void in
                 SyncDiariesViewController.showSyncDiariesViewController(self.navigationController!)
-                SyncService.sharedInstance.remindNextTime(30)
             }))
             showAlert(self, alertController: alert)
         }

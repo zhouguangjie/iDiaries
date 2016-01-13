@@ -82,10 +82,12 @@ class UserSettingController: UITableViewController
     {
         static let changePsw = "changePassword"
         static let syncDiaries = "syncDiaries"
+        static let alarmSync = "alarmSync"
         static let alarm = "alarm"
     }
     
     private var shownVoteMeAlert:Bool = false
+    
     
     private var votedMe:Bool{
         get{
@@ -148,6 +150,7 @@ class UserSettingController: UITableViewController
     {
         textPropertyCells.append(TextPropertyCellModel(propertySet: changePswPropertySet, editable: true, selector: "changePassword:"))
         textPropertyCells.append(TextPropertyCellModel(propertySet:syncDiariesPropertySet,editable:true, selector: "syncDiaries:"))
+        textPropertyCells.append(TextPropertyCellModel(propertySet:alarmSyncPropertySet,editable:true, selector: "alarmSync:"))
         textPropertyCells.append(TextPropertyCellModel(propertySet:writeDiaryAlarmPropertySet,editable:true, selector: "setAlarm:"))
     }
     
@@ -157,6 +160,15 @@ class UserSettingController: UITableViewController
         let propertySet = UIEditTextPropertySet()
         propertySet.propertyIdentifier = InfoIds.changePsw
         propertySet.propertyLabel = NSLocalizedString("CHANGE_PSW", comment: "Change Password")
+        propertySet.propertyValue = ""
+        return propertySet
+    }
+    
+    private var alarmSyncPropertySet:UIEditTextPropertySet
+    {
+        let propertySet = UIEditTextPropertySet()
+        propertySet.propertyIdentifier = InfoIds.alarmSync
+        propertySet.propertyLabel = NSLocalizedString("ALARM_SYNC", comment:"Alarm Sync")
         propertySet.propertyValue = ""
         return propertySet
     }
@@ -196,6 +208,32 @@ class UserSettingController: UITableViewController
             self.showCheckMark(msg)
         }
     }
+    
+    func alarmSync(_:UITapGestureRecognizer)
+    {
+        let alert = UIAlertController(title: NSLocalizedString("ALARM_SYNC", comment: ""), message: nil, preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("EVERY_WEEK", comment: ""), style: .Default, handler: { (action) -> Void in
+            self.setSyncAlarm(.oneWeek)
+        }))
+        alert.addAction(UIAlertAction(title: NSLocalizedString("EVERY_MONTH", comment: ""), style: .Default, handler: { (action) -> Void in
+            self.setSyncAlarm(.oneMonth)
+        }))
+        
+        alert.addAction(UIAlertAction(title: NSLocalizedString("NO_ALARM", comment: ""), style: .Default, handler: { (action) -> Void in
+            self.setSyncAlarm(.noAlarm)
+        }))
+        alert.addAction(UIAlertAction(title: NSLocalizedString("CANCEL", comment: ""), style: .Cancel, handler: { (action) -> Void in
+        }))
+        self.presentViewController(alert, animated: true){ action in
+        }
+    }
+    
+    private func setSyncAlarm(interval:SyncAlarmInterval)
+    {
+        alarmSyncPropertySet.propertyValue = interval.nameForShow
+        SyncService.sharedInstance.remindSyncInterval = interval
+    }
+    
     
     func syncDiaries(_:UITapGestureRecognizer)
     {

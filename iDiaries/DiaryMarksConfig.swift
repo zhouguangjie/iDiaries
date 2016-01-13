@@ -8,46 +8,45 @@
 
 import Foundation
 
-typealias MarkStruct = (name:String,emoji:String!)
+typealias MarkStruct = (id:Int,name:String,emoji:String!,info:AnyObject!)
 
 let WeatherMarks:[MarkStruct] =
 [
-    (name:"Sunny",emoji:"☀️"),
-    (name:"Cloudy",emoji:"☁️"),
-    (name:"Rainy",emoji:"🌧"),
-    (name:"Snowy",emoji:"❄️"),
-    (name:"Thunder",emoji:"⚡️"),
-    (name:"Windy",emoji:"🌪"),
-    (name:"Overcast",emoji:"⛅️")
+    (id:10000,name:"Sunny",emoji:"☀️",info:nil),
+    (id:10001,name:"Cloudy",emoji:"☁️",info:nil),
+    (id:10002,name:"Rainy",emoji:"🌧",info:nil),
+    (id:10003,name:"Snowy",emoji:"❄️",info:nil),
+    (id:10004,name:"Thunder",emoji:"⚡️",info:nil),
+    (id:10005,name:"Windy",emoji:"🌪",info:nil),
+    (id:10006,name:"Overcast",emoji:"⛅️",info:nil)
 ]
 
 let MoodMarks:[MarkStruct] =
 [
-    (name:"Happy",emoji:"😄"),
-    (name:"Delightful",emoji:"😀"),
-    (name:"Pleasant",emoji:"😃"),
-    (name:"Sad",emoji:"😔"),
-    (name:"Dysphoria",emoji:"😫"),
-    (name:"Anger",emoji:"😡"),
-    (name:"Fear",emoji:"😨"),
-    (name:"Normal",emoji:"🙂")
+    (id:20000,name:"Happy",emoji:"😄",info:100.0),
+    (id:20001,name:"Delightful",emoji:"😀",info:90.0),
+    (id:20002,name:"Pleasant",emoji:"😃",info:80.0),
+    (id:20003,name:"Sad",emoji:"😔",info:50.0),
+    (id:20004,name:"Dysphoria",emoji:"😫",info:40.0),
+    (id:20005,name:"Anger",emoji:"😡",info:60.0),
+    (id:20006,name:"Fear",emoji:"😨",info:55.0),
+    (id:20007,name:"Normal",emoji:"🙂",info:70.0)
 ]
 
 let DaySummaryMarks:[MarkStruct] =
 [
-    (name:"Beautiful Day",emoji:""),
-    (name:"Funny Day",emoji:""),
-    (name:"Boring Day",emoji:""),
-    (name:"Full Day",emoji:""),
-    (name:"Leisure Day",emoji:""),
-    (name:"Busy Day",emoji:""),
-    (name:"Routine Day",emoji:""),
-    (name:"Unforgettable Day",emoji:""),
-    (name:"Meaningful Day",emoji:""),
-    (name:"Bad Day",emoji:""),
-    (name:"Good Day",emoji:""),
-    (name:"Excited Day",emoji:"")
-    
+    (id:30000,name:"Beautiful Day",emoji:"",info:nil),
+    (id:30001,name:"Funny Day",emoji:"",info:nil),
+    (id:30002,name:"Boring Day",emoji:"",info:nil),
+    (id:30003,name:"Full Day",emoji:"",info:nil),
+    (id:30004,name:"Leisure Day",emoji:"",info:nil),
+    (id:30005,name:"Busy Day",emoji:"",info:nil),
+    (id:30006,name:"Routine Day",emoji:"",info:nil),
+    (id:30007,name:"Unforgettable Day",emoji:"",info:nil),
+    (id:30008,name:"Meaningful Day",emoji:"",info:nil),
+    (id:30009,name:"Bad Day",emoji:"",info:nil),
+    (id:30010,name:"Good Day",emoji:"",info:nil),
+    (id:30011,name:"Excited Day",emoji:"",info:nil)
 ]
 
 typealias TypedMarks = (markType:String,marks:[MarkStruct])
@@ -58,3 +57,44 @@ let AllDiaryMarks:[TypedMarks] =
     (markType:"Mood",marks:MoodMarks),
     (markType:"DaySummary",marks:DaySummaryMarks)
 ]
+
+let AllDiaryMarksMap:[Int:MarkStruct] = {
+   var marksMap = [Int:MarkStruct]()
+    
+    for tm in AllDiaryMarks
+    {
+        for m in tm.marks
+        {
+            marksMap[m.id] = m
+        }
+    }
+    return marksMap
+}()
+
+let AllDiaryMarksNameMap:[String:Int] = {
+    var map = [String:Int]()
+    
+    for (key,value) in AllDiaryMarksMap
+    {
+        map[value.name] = key
+    }
+    
+    return map
+}()
+
+func getDiaryMark(markId:String) -> MarkStruct?
+{
+    if let index = Int(markId)
+    {
+        return AllDiaryMarksMap[index]
+    }else if let index = AllDiaryMarksNameMap[markId]
+    {
+        return AllDiaryMarksMap[index]
+    }else if markId == "Thundering"
+    {
+        return AllDiaryMarksMap[10004]
+    }else
+    {
+        return nil
+    }
+}

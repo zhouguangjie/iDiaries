@@ -1,22 +1,31 @@
 PODS:
   - EVReflection (2.14.1)
   - iCloudDocumentSync (7.4.1)
+  - JYRadarChart (0.3.3)
   - KKGestureLockView (1.0.0)
   - MBProgressHUD (0.9.2)
   - MJRefresh (3.0.8)
+  - PNChart (0.8.7):
+    - UICountingLabel (~> 1.2.0)
+  - UICountingLabel (1.2.0)
 
 DEPENDENCIES:
   - EVReflection
   - iCloudDocumentSync
+  - JYRadarChart
   - KKGestureLockView
   - MBProgressHUD (~> 0.9.1)
   - MJRefresh
+  - PNChart
 
 SPEC CHECKSUMS:
   EVReflection: d018df32f97a41b808cc36738a7b48fad57d86aa
   iCloudDocumentSync: 961aac30ca09c221de4c236e94dae69912f2c589
+  JYRadarChart: 6b6f4318179bb97408ae74e1a934a06617d24d9f
   KKGestureLockView: b27a33d2fe7995cd3c5e548dab1a8db7947322b8
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
   MJRefresh: fafde8f18f4afd66b434331a9beb67a6c0264056
+  PNChart: c1755716bbd45386d2035b2bf2ce73e6d3f8cb22
+  UICountingLabel: 1db4e7d023e1762171eb226d6dff47a7a84f27aa
 
 COCOAPODS: 0.39.0

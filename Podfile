@@ -10,3 +10,7 @@ pod 'MBProgressHUD', '~> 0.9.1'
 pod 'KKGestureLockView'
 
 pod 'iCloudDocumentSync'
+
+pod 'JYRadarChart'
+
+pod 'PNChart'

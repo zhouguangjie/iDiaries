@@ -9,8 +9,26 @@
 import Foundation
 import EVReflection
 
-//MARK: sync model
+//MARK: SyncAlarmInterval
+enum SyncAlarmInterval:Int
+{
+    case noAlarm = 0
+    case oneWeek = 7
+    case oneMonth = 30
+    
+    var nameForShow:String{
+        var value = ""
+        switch self
+        {
+            case .noAlarm: value = NSLocalizedString("NO_REMIDER", comment: "No Alarm")
+            case .oneMonth:value = NSLocalizedString("EVARY_MONTH", comment: "Every Month")
+            case .oneWeek:value = NSLocalizedString("EVARY_WEEK", comment: "Every Week")
+        }
+        return value
+    }
+}
 
+//MARK: sync model
 class LockFileModel: EVObject
 {
     var version:String! = LockFileVersion
@@ -31,6 +49,34 @@ class SyncService:NSNotificationCenter
         return SyncService()
     }()
     
+    //MARK: alarm diary sync
+    var remindSyncInterval:SyncAlarmInterval{
+        get{
+            let setting = NSUserDefaults.standardUserDefaults().integerForKey("remindSyncInterval")
+            return SyncAlarmInterval(rawValue: setting)!
+        }
+        
+        set{
+            NSUserDefaults.standardUserDefaults().setInteger(newValue.rawValue, forKey: "remindSyncInterval")
+        }
+    }
+    
+    var isRemindSyncNow:Bool{
+        if abs(lastSyncDate.totalDaysSinceNow) > 0
+        {
+            switch remindSyncInterval
+            {
+            case .oneMonth:
+                return NSDate().dayOfDate == 1
+            case .oneWeek:
+                return NSDate().weekDayOfDate == 0
+            default:break
+            }
+        }
+        return false
+    }
+    
+    //MARK: status
     static let syncStatusChanged = "syncStatusChanged"
     
     private(set) var syncStatus:SyncDiariesStatus = .CheckingiCloud{
@@ -56,30 +102,6 @@ class SyncService:NSNotificationCenter
         }
     }
     
-    private(set) var remindSyncDate:NSDate{
-        get{
-            if let date = NSUserDefaults.standardUserDefaults().objectForKey("remindSyncDate") as? NSDate
-            {
-                return date
-            }else{
-                let date = NSDate().addDays(7)
-                NSUserDefaults.standardUserDefaults().setObject(date, forKey: "remindSyncDate")
-                return date
-            }
-        }
-        
-        set{
-            NSUserDefaults.standardUserDefaults().setObject(newValue, forKey: "remindSyncDate")
-        }
-    }
-    
-    //MARK: remind
-    func remindNextTime(laterDay:Int = 7)
-    {
-        self.remindSyncDate = NSDate().addDays(laterDay)
-    }
-    
-    //MARK: status
     private var lockFile:LockFileModel!
     func initStatus()
     {
@@ -284,7 +306,7 @@ class SyncService:NSNotificationCenter
     {
         let lastSyncTime = self.lockFile.syncDates.last?.doubleValue ?? 0
         let newSyncFileModel = SyncFileModel()
-        DiaryService.sharedInstance.getAllDailies({ (diaries) -> Void in
+        DiaryService.sharedInstance.getAllDiaries({ (diaries) -> Void in
             newSyncFileModel.diaries = diaries.filter{$0.lastModifiedTime.doubleValue > lastSyncTime}
             TimeMailService.sharedInstance.getAllTimeMail({ (mails) -> Void in
                 newSyncFileModel.mails = mails.filter{$0.lastModifiedTime.doubleValue > lastSyncTime}
@@ -351,7 +373,6 @@ class SyncService:NSNotificationCenter
             self.syncingState = self.syncingState + (err == nil ? 4 : 8)
             self.syncingStateLock.unlock()
             self.lastSyncDate = NSDate()
-            self.remindNextTime(30)
         }
     }
     

@@ -72,6 +72,8 @@
 		E7BB95541C154A0700130E2F /* MailDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BB95531C154A0700130E2F /* MailDetailController.swift */; };
 		E7BB95561C154B7C00130E2F /* UserSettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BB95551C154B7C00130E2F /* UserSettingController.swift */; };
 		E7BB95581C157E1700130E2F /* SystemSoundHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BB95571C157E1700130E2F /* SystemSoundHelper.swift */; };
+		E7C6A24C1C462D520094E7C4 /* ReportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C6A24B1C462D520094E7C4 /* ReportService.swift */; };
+		E7C6A24E1C4682FE0094E7C4 /* UICollectionViewFullFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C6A24D1C4682FE0094E7C4 /* UICollectionViewFullFlowLayout.swift */; };
 		E7CD27201C17F51700AB2C64 /* SyncDiariesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CD271F1C17F51700AB2C64 /* SyncDiariesViewController.swift */; };
 		E7CD27231C17FD5500AB2C64 /* iCloudExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CD27221C17FD5500AB2C64 /* iCloudExtension.swift */; };
 /* End PBXBuildFile section */
@@ -161,6 +163,8 @@
 		E7BB95571C157E1700130E2F /* SystemSoundHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemSoundHelper.swift; sourceTree = "<group>"; };
 		E7BB955A1C15953900130E2F /* iDiaries.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = iDiaries.entitlements; sourceTree = "<group>"; };
 		E7BB955D1C15C8D400130E2F /* Pods.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods.framework; path = "Pods/../build/Debug-iphoneos/Pods.framework"; sourceTree = "<group>"; };
+		E7C6A24B1C462D520094E7C4 /* ReportService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportService.swift; sourceTree = "<group>"; };
+		E7C6A24D1C4682FE0094E7C4 /* UICollectionViewFullFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewFullFlowLayout.swift; sourceTree = "<group>"; };
 		E7CD271F1C17F51700AB2C64 /* SyncDiariesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncDiariesViewController.swift; sourceTree = "<group>"; };
 		E7CD27221C17FD5500AB2C64 /* iCloudExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iCloudExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -267,6 +271,7 @@
 				E70DDEB71C10606C00DD0E57 /* UserGuide.swift */,
 				E743D8DD1C143B10003ACC4E /* UIAnimationHelper.swift */,
 				E7BB95571C157E1700130E2F /* SystemSoundHelper.swift */,
+				E7C6A24D1C4682FE0094E7C4 /* UICollectionViewFullFlowLayout.swift */,
 			);
 			name = BahamutUIKit;
 			path = ../../bahamut/Bahamut/Bahamut/BahamutUIKit;
@@ -317,6 +322,7 @@
 				E70DDE9D1C10156B00DD0E57 /* DiaryService.swift */,
 				E743D8EC1C14A843003ACC4E /* TimeMailService.swift */,
 				E7534B801C23BCA100F0ED58 /* SyncService.swift */,
+				E7C6A24B1C462D520094E7C4 /* ReportService.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -611,6 +617,7 @@
 				E77D43461C15E812008E350A /* AboutViewController.swift in Sources */,
 				E781B4841C114DB10014A17D /* NewDiaryBaseCell.swift in Sources */,
 				E743D8E81C14A104003ACC4E /* TimeMailTableViewController.swift in Sources */,
+				E7C6A24E1C4682FE0094E7C4 /* UICollectionViewFullFlowLayout.swift in Sources */,
 				E781B4AA1C11D5730014A17D /* LockViewController.swift in Sources */,
 				E7BB95561C154B7C00130E2F /* UserSettingController.swift in Sources */,
 				E781B4A81C11C5DB0014A17D /* PasswordLocker.swift in Sources */,
@@ -637,6 +644,7 @@
 				E743D8ED1C14A843003ACC4E /* TimeMailService.swift in Sources */,
 				E70DDE9E1C10156B00DD0E57 /* DiaryService.swift in Sources */,
 				E70DDECF1C10606C00DD0E57 /* UIColor.swift in Sources */,
+				E7C6A24C1C462D520094E7C4 /* ReportService.swift in Sources */,
 				E70DDED21C10606C00DD0E57 /* ToastHelper.swift in Sources */,
 				E70A5B211C17BFEC001C0A47 /* ModelEntity.swift in Sources */,
 				E70A5B111C17BFEC001C0A47 /* PersistentBase.swift in Sources */,

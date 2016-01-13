@@ -21,9 +21,9 @@ YES_I_LOVE_TO = "好的!現在就去";
 
 NOT_SYNC_DAYS = "%@ 天未同步日誌,馬上同步?";
 SYNC = "同步";
-REMIND_SYNC_NEXT_TIME = "過幾天提醒";
-SYNC_NOW = "現在同步";
-DONT_REMIND_SYNC = "不需要提醒";
+REMIND_SYNC_NEXT_TIME = "下次提醒";
+SYNC_NOW = "現在去同步";
+DONT_REMIND_SYNC = "不需要再提醒";
 
 REMINDER_CHANGED = "提醒時間已修改";
 
@@ -73,6 +73,9 @@ SELECT_REVIEW_TIME = "選擇一個時間";
 CANCEL_REVIEW = "不發送時光信件";
 CANCEL = "取消";
 
+EVERY_WEEK = "每周";
+EVERY_MONTH = "每月";
+
 Sunday = "周日";
 Monday = "周一";
 Tuesday = "周二";
@@ -99,8 +102,13 @@ TIME_MAIL_FROM_DATE = "這封信件來自 %@";
 
 CHANGE_PSW = "修改密碼";
 SYNC_DIARIES = "同步";
+ALARM_SYNC = "同步提醒";
 ALARM_WRITE_DIARY = "提醒寫日誌";
 PSW_CHANGED = "密碼已經修改!";
+
+NO_REMIDER = "不提醒";
+EVARY_MONTH = "每月";
+EVARY_WEEK = "每周";
 
 NO_ALARM = "不提醒";
 SELECT_ALARM_TIME = "選擇一個時間";

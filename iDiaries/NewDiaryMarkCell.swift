@@ -18,6 +18,7 @@ class NewDiaryMarkCell: NewDiaryBaseCell,UICollectionViewDataSource,UICollection
             marksCollectionView.dataSource = self
             marksCollectionView.allowsSelection = true
             marksCollectionView.allowsMultipleSelection = true
+            marksCollectionView.collectionViewLayout = UICollectionViewFullFlowLayout()
         }
     }
     @IBOutlet weak var marksCollectionViewHeight: NSLayoutConstraint!

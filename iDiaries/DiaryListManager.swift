@@ -36,7 +36,7 @@ class DiaryListManager:NSNotificationCenter
     
     func refreshDiary(updatedCallback:()->Void)
     {
-        DiaryService.sharedInstance.getAllDailies{ result in
+        DiaryService.sharedInstance.getAllDiaries{ result in
             self.diaries = result
             updatedCallback()
         }
