@@ -164,17 +164,6 @@ class DiaryService: NSNotificationCenter {
         PersistentManager.sharedInstance.saveAll()
     }
     
-    func getDiariesOfMonth(year:Int,month:Int,callback:([DiaryModel])->Void)
-    {
-        getAllDiaries { (diaries) -> Void in
-            let result = diaries.filter({ (diary) -> Bool in
-                let date = NSDate(timeIntervalSince1970: diary.dateTime.doubleValue)
-                return date.yearOfDate == year && date.monthOfDate == month
-            })
-            callback(result)
-        }
-    }
-    
     func getAllDiaries(callback:([DiaryModel])->Void)
     {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) { () -> Void in

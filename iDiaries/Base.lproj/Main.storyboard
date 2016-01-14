@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--Lock View Controller-->
@@ -47,7 +48,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ES9-Zj-ebn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1410" y="-581"/>
+            <point key="canvasLocation" x="2674" y="1273"/>
         </scene>
         <!--Sync-->
         <scene sceneID="AHg-Gj-x5N">
@@ -118,14 +119,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vUO-Q7-isf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1397" y="819"/>
+            <point key="canvasLocation" x="1397" y="1273"/>
         </scene>
         <!--Diary-->
         <scene sceneID="1fN-6f-q3a">
             <objects>
                 <tableViewController id="gog-eg-vvZ" customClass="DiaryDetailViewController" customModule="iDiaries" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="89" sectionHeaderHeight="28" sectionFooterHeight="28" id="XaC-FU-wqu">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -171,18 +172,18 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Diary" id="zox-ST-gb6"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="600" height="600"/>
+                    <size key="freeformSize" width="600" height="200"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wyG-Bk-mJZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2103" y="953"/>
+            <point key="canvasLocation" x="2103" y="734"/>
         </scene>
         <!--Setting-->
         <scene sceneID="8hv-39-CXR">
             <objects>
                 <tableViewController id="b3n-mR-ADf" customClass="UserSettingController" customModule="iDiaries" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="4EZ-yx-I44">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
@@ -300,11 +301,73 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Setting" id="yGS-H0-2pK"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="600" height="600"/>
+                    <size key="freeformSize" width="600" height="300"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yKP-yp-Xbq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2879" y="803"/>
+            <point key="canvasLocation" x="2909" y="425"/>
+        </scene>
+        <!--Month Mood Report-->
+        <scene sceneID="POZ-4n-4wT">
+            <objects>
+                <tableViewController title="Month Mood Report" id="TZO-a6-GHM" customClass="MoodReportViewController" customModule="iDiaries" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="5Wn-8L-010">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MoodReportCell" id="oQo-PC-F87" customClass="MoodReportCell" customModule="iDiaries" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oQo-PC-F87" id="aZn-5e-noe">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2016-01" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mqt-8u-yBF">
+                                            <rect key="frame" x="8" y="11" width="64" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="next" translatesAutoresizingMaskIntoConstraints="NO" id="sZr-V9-X4D">
+                                            <rect key="frame" x="569" y="10" width="23" height="23"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="23" id="uXE-FL-4A3"/>
+                                                <constraint firstAttribute="width" constant="23" id="wVk-io-4UC"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="sZr-V9-X4D" firstAttribute="centerY" secondItem="Mqt-8u-yBF" secondAttribute="centerY" id="0mw-ZZ-Zni"/>
+                                        <constraint firstItem="sZr-V9-X4D" firstAttribute="top" secondItem="aZn-5e-noe" secondAttribute="topMargin" constant="2" id="IO1-qE-rqW"/>
+                                        <constraint firstItem="Mqt-8u-yBF" firstAttribute="top" secondItem="aZn-5e-noe" secondAttribute="topMargin" constant="3" id="bRT-9o-XLr"/>
+                                        <constraint firstItem="Mqt-8u-yBF" firstAttribute="centerY" secondItem="aZn-5e-noe" secondAttribute="centerY" id="bWa-dN-6BY"/>
+                                        <constraint firstItem="sZr-V9-X4D" firstAttribute="trailing" secondItem="aZn-5e-noe" secondAttribute="trailingMargin" id="gCb-nF-zCF"/>
+                                        <constraint firstItem="Mqt-8u-yBF" firstAttribute="leading" secondItem="aZn-5e-noe" secondAttribute="leadingMargin" id="ijd-GK-eIZ"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="IO1-qE-rqW"/>
+                                        </mask>
+                                    </variation>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="reportTitleLabel" destination="Mqt-8u-yBF" id="2UY-MC-bhU"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="TZO-a6-GHM" id="Clu-OK-M1s"/>
+                            <outlet property="delegate" destination="TZO-a6-GHM" id="T9H-Ni-Lbo"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Month Mood Report" id="KcR-tz-Kng"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="200"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QQo-1G-dyl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2904" y="-423"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="HGq-1t-VKM">
@@ -333,7 +396,7 @@
             <objects>
                 <tableViewController id="4zA-fK-k5p" customClass="TimeMailTableViewController" customModule="iDiaries" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="72" sectionHeaderHeight="28" sectionFooterHeight="28" id="SbC-uW-wx0">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -383,21 +446,21 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="Zbz-Ac-wQo"/>
                     </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="600" height="600"/>
+                    <size key="freeformSize" width="600" height="200"/>
                     <connections>
                         <segue destination="XpH-hv-y8H" kind="show" identifier="ShowMailDetailController" id="g7V-F7-pgR"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hwl-zF-RBW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2944" y="-548"/>
+            <point key="canvasLocation" x="2904" y="-146"/>
         </scene>
         <!--Time Mail Box-->
         <scene sceneID="TOS-kO-348">
             <objects>
                 <tableViewController id="XpH-hv-y8H" customClass="MailDetailController" customModule="iDiaries" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="109" sectionHeaderHeight="28" sectionFooterHeight="28" id="IMm-aH-Qfs">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="136"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -456,7 +519,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p47-KN-HXq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3634" y="-548"/>
+            <point key="canvasLocation" x="3596" y="-146"/>
         </scene>
         <!--Select Date Controller-->
         <scene sceneID="1al-Wr-4w1">
@@ -504,7 +567,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ym4-2L-aam" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2098" y="-831"/>
+            <point key="canvasLocation" x="3361" y="1273"/>
         </scene>
         <!--iDiaries-->
         <scene sceneID="w2d-Qx-Phd">
@@ -546,6 +609,7 @@
                                         <constraint firstItem="1b8-CH-aH6" firstAttribute="centerY" secondItem="Q1b-HT-j6Q" secondAttribute="centerY" id="Vt9-xd-F7p"/>
                                         <constraint firstItem="gNV-MF-MAQ" firstAttribute="leading" secondItem="Q1b-HT-j6Q" secondAttribute="leadingMargin" id="YI6-Nl-eWJ"/>
                                         <constraint firstItem="gNV-MF-MAQ" firstAttribute="top" secondItem="Q1b-HT-j6Q" secondAttribute="topMargin" constant="3" id="fbV-Fl-M9W"/>
+                                        <constraint firstItem="gNV-MF-MAQ" firstAttribute="top" secondItem="Q1b-HT-j6Q" secondAttribute="topMargin" constant="3" id="k99-h3-n7I"/>
                                         <constraint firstItem="gNV-MF-MAQ" firstAttribute="top" secondItem="Q1b-HT-j6Q" secondAttribute="topMargin" constant="3" id="l6u-rB-StV"/>
                                     </constraints>
                                     <variation key="default">
@@ -874,12 +938,20 @@
                                 <action selector="userSettingClick:" destination="hoi-mO-Ucz" id="x64-5J-4OE"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="time_mail" id="ClN-u5-kLp">
-                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <action selector="timeMailClick:" destination="hoi-mO-Ucz" id="zGR-rt-lRK"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem image="time_mail" id="ClN-u5-kLp">
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="timeMailClick:" destination="hoi-mO-Ucz" id="zGR-rt-lRK"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="report" id="ywp-so-cMN">
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="moodReportClick:" destination="hoi-mO-Ucz" id="gTM-6e-WjI"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="800"/>
@@ -888,6 +960,7 @@
                         <segue destination="4zA-fK-k5p" kind="show" identifier="ShowTimeMailController" id="iN4-Pz-Y2F"/>
                         <segue destination="gog-eg-vvZ" kind="show" identifier="ShowDairyDetailViewController" id="l5d-Vt-vbf"/>
                         <segue destination="Omo-Pw-tvq" kind="show" identifier="ShowEditView" id="4vl-Ue-0mL"/>
+                        <segue destination="TZO-a6-GHM" kind="show" identifier="ShowMoodReportViewController" id="MiS-LL-enC"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PNI-s8-Gfo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -955,7 +1028,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZHD-qA-bH8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3615" y="803"/>
+            <point key="canvasLocation" x="2033" y="1273"/>
         </scene>
         <!--Today-->
         <scene sceneID="wmX-zS-0Og">
@@ -966,11 +1039,11 @@
                         <viewControllerLayoutGuide type="bottom" id="dpj-cA-yyA"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ZU0-E5-ecQ">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="PkZ-TU-VaM">
-                                <rect key="frame" x="20" y="20" width="560" height="560"/>
+                                <rect key="frame" x="20" y="20" width="560" height="160"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -990,7 +1063,7 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="1h1-1d-MUe"/>
                     </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="600" height="600"/>
+                    <size key="freeformSize" width="600" height="200"/>
                     <connections>
                         <outlet property="bottomConstraint" destination="UZa-sW-Fge" id="l50-aW-LqJ"/>
                         <outlet property="mainContentTextView" destination="PkZ-TU-VaM" id="UmX-Wh-IMp"/>
@@ -998,7 +1071,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3VV-Pd-9FN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2944" y="128"/>
+            <point key="canvasLocation" x="2909" y="120"/>
         </scene>
     </scenes>
     <resources>
@@ -1007,6 +1080,7 @@
         <image name="iDiaries" width="582" height="582"/>
         <image name="mail_not_read" width="128" height="128"/>
         <image name="next" width="72" height="72"/>
+        <image name="report" width="24" height="24"/>
         <image name="save" width="128" height="128"/>
         <image name="sync" width="128" height="128"/>
         <image name="time_mail" width="24" height="24"/>

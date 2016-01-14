@@ -169,7 +169,7 @@ class UserSettingController: UITableViewController
         let propertySet = UIEditTextPropertySet()
         propertySet.propertyIdentifier = InfoIds.alarmSync
         propertySet.propertyLabel = NSLocalizedString("ALARM_SYNC", comment:"Alarm Sync")
-        propertySet.propertyValue = ""
+        propertySet.propertyValue = SyncService.sharedInstance.remindSyncInterval.nameForShow
         return propertySet
     }
     
@@ -209,18 +209,22 @@ class UserSettingController: UITableViewController
         }
     }
     
-    func alarmSync(_:UITapGestureRecognizer)
+    func alarmSync(tap:UITapGestureRecognizer)
     {
+        let cell = tap.view as! TextPropertyCell
         let alert = UIAlertController(title: NSLocalizedString("ALARM_SYNC", comment: ""), message: nil, preferredStyle: .Alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("EVERY_WEEK", comment: ""), style: .Default, handler: { (action) -> Void in
             self.setSyncAlarm(.oneWeek)
+            cell.refresh()
         }))
         alert.addAction(UIAlertAction(title: NSLocalizedString("EVERY_MONTH", comment: ""), style: .Default, handler: { (action) -> Void in
             self.setSyncAlarm(.oneMonth)
+            cell.refresh()
         }))
         
         alert.addAction(UIAlertAction(title: NSLocalizedString("NO_ALARM", comment: ""), style: .Default, handler: { (action) -> Void in
             self.setSyncAlarm(.noAlarm)
+            cell.refresh()
         }))
         alert.addAction(UIAlertAction(title: NSLocalizedString("CANCEL", comment: ""), style: .Cancel, handler: { (action) -> Void in
         }))

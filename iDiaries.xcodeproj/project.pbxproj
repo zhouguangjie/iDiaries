@@ -72,10 +72,13 @@
 		E7BB95541C154A0700130E2F /* MailDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BB95531C154A0700130E2F /* MailDetailController.swift */; };
 		E7BB95561C154B7C00130E2F /* UserSettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BB95551C154B7C00130E2F /* UserSettingController.swift */; };
 		E7BB95581C157E1700130E2F /* SystemSoundHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BB95571C157E1700130E2F /* SystemSoundHelper.swift */; };
+		E7BEEE8E1C4745C9008E00AE /* MoodLineReportController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BEEE8D1C4745C9008E00AE /* MoodLineReportController.swift */; };
+		E7BEEE901C47492E008E00AE /* MoodReport.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7BEEE8F1C47492E008E00AE /* MoodReport.storyboard */; };
 		E7C6A24C1C462D520094E7C4 /* ReportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C6A24B1C462D520094E7C4 /* ReportService.swift */; };
 		E7C6A24E1C4682FE0094E7C4 /* UICollectionViewFullFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C6A24D1C4682FE0094E7C4 /* UICollectionViewFullFlowLayout.swift */; };
 		E7CD27201C17F51700AB2C64 /* SyncDiariesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CD271F1C17F51700AB2C64 /* SyncDiariesViewController.swift */; };
 		E7CD27231C17FD5500AB2C64 /* iCloudExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CD27221C17FD5500AB2C64 /* iCloudExtension.swift */; };
+		E7D84D461C4780C700CC180D /* MoodReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D84D451C4780C700CC180D /* MoodReportViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -163,10 +166,13 @@
 		E7BB95571C157E1700130E2F /* SystemSoundHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemSoundHelper.swift; sourceTree = "<group>"; };
 		E7BB955A1C15953900130E2F /* iDiaries.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = iDiaries.entitlements; sourceTree = "<group>"; };
 		E7BB955D1C15C8D400130E2F /* Pods.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods.framework; path = "Pods/../build/Debug-iphoneos/Pods.framework"; sourceTree = "<group>"; };
+		E7BEEE8D1C4745C9008E00AE /* MoodLineReportController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoodLineReportController.swift; sourceTree = "<group>"; };
+		E7BEEE8F1C47492E008E00AE /* MoodReport.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MoodReport.storyboard; sourceTree = "<group>"; };
 		E7C6A24B1C462D520094E7C4 /* ReportService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportService.swift; sourceTree = "<group>"; };
 		E7C6A24D1C4682FE0094E7C4 /* UICollectionViewFullFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewFullFlowLayout.swift; sourceTree = "<group>"; };
 		E7CD271F1C17F51700AB2C64 /* SyncDiariesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncDiariesViewController.swift; sourceTree = "<group>"; };
 		E7CD27221C17FD5500AB2C64 /* iCloudExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iCloudExtension.swift; sourceTree = "<group>"; };
+		E7D84D451C4780C700CC180D /* MoodReportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoodReportViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -302,6 +308,7 @@
 				E743D8DF1C149365003ACC4E /* NothingViewFooter.xib */,
 				E76DEB801C0E981D0072A1D7 /* LaunchScreen.storyboard */,
 				E76DEB7B1C0E981D0072A1D7 /* Main.storyboard */,
+				E7BEEE8F1C47492E008E00AE /* MoodReport.storyboard */,
 			);
 			name = UIResource;
 			sourceTree = "<group>";
@@ -398,6 +405,7 @@
 				E70DDEAE1C10606C00DD0E57 /* BahamutUIKit */,
 				E781B4781C114B7C0014A17D /* NewDiary */,
 				E743D8DA1C129447003ACC4E /* DiaryList */,
+				E7C6A24F1C468A090094E7C4 /* MonthMoodReport */,
 				E743D8E61C14A0DE003ACC4E /* TimeMail */,
 				E743D8EB1C14A81E003ACC4E /* Services */,
 				E7BB95591C1593CD00130E2F /* UserSetting */,
@@ -446,6 +454,15 @@
 				E7CD271F1C17F51700AB2C64 /* SyncDiariesViewController.swift */,
 			);
 			name = UserSetting;
+			sourceTree = "<group>";
+		};
+		E7C6A24F1C468A090094E7C4 /* MonthMoodReport */ = {
+			isa = PBXGroup;
+			children = (
+				E7BEEE8D1C4745C9008E00AE /* MoodLineReportController.swift */,
+				E7D84D451C4780C700CC180D /* MoodReportViewController.swift */,
+			);
+			name = MonthMoodReport;
 			sourceTree = "<group>";
 		};
 		E7CD27211C17FD5500AB2C64 /* iCloud */ = {
@@ -541,6 +558,7 @@
 				E743D8E01C149365003ACC4E /* NothingViewFooter.xib in Resources */,
 				E74DB7C21C197515004F0207 /* Localizable.strings in Resources */,
 				E76DEB7F1C0E981D0072A1D7 /* Assets.xcassets in Resources */,
+				E7BEEE901C47492E008E00AE /* MoodReport.storyboard in Resources */,
 				E76DEB7D1C0E981D0072A1D7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -601,6 +619,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E74246481C3A133800BA564F /* KeyboardAdjustHelper.swift in Sources */,
+				E7BEEE8E1C4745C9008E00AE /* MoodLineReportController.swift in Sources */,
 				E76DEB7A1C0E981D0072A1D7 /* ViewController.swift in Sources */,
 				E781B47C1C114BC60014A17D /* NewDiaryMarkCell.swift in Sources */,
 				E70DDED31C10606C00DD0E57 /* UserGuide.swift in Sources */,
@@ -654,6 +673,7 @@
 				E70A5B101C17BFEC001C0A47 /* FileType.swift in Sources */,
 				E77D43481C15E853008E350A /* iDiariesConfig.swift in Sources */,
 				E7BB95581C157E1700130E2F /* SystemSoundHelper.swift in Sources */,
+				E7D84D461C4780C700CC180D /* MoodReportViewController.swift in Sources */,
 				E70DDEC81C10606C00DD0E57 /* DateHelper.swift in Sources */,
 				E70DDEC91C10606C00DD0E57 /* IDUtil.swift in Sources */,
 				E70A5B131C17BFEC001C0A47 /* PersistentManager.swift in Sources */,

@@ -97,6 +97,7 @@ REPEAT_PASSWORD_NOT_MATCH = "两次滑动不一致，请重新设置新密码";
 
 NO_DIARY_HERE = "空空的日记本!";
 NO_MAIL_HERE = "空空的邮箱!";
+NO_REPORT_HERE = "还没有记录!";
 
 TIME_MAIL_FROM_DATE = "这封邮件来自 %@";
 

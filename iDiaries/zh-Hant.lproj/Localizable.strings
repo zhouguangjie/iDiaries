@@ -97,6 +97,7 @@ REPEAT_PASSWORD_NOT_MATCH = "兩次滑動不一致，請重新設定密碼";
 
 NO_DIARY_HERE = "空空的日誌本!";
 NO_MAIL_HERE = "空空的信箱!";
+NO_REPORT_HERE = "還沒有記錄!";
 
 TIME_MAIL_FROM_DATE = "這封信件來自 %@";
 

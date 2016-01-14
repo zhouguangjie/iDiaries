@@ -13,6 +13,7 @@ let SegueShowMailDetailController = "ShowMailDetailController"
 //MARK:TimeMailTableViewController
 class TimeMailTableViewController: UITableViewController {
 
+    private var mailsLoaded = false
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.rowHeight = UITableViewAutomaticDimension;
@@ -41,13 +42,17 @@ class TimeMailTableViewController: UITableViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        self.makeToastActivity()
-        TimeMailService.sharedInstance.refreshTimeMailBox { () -> Void in
-            self.hideToastActivity()
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in                    
-                self.updateTableViewFooter()
-                self.tableView.reloadData()
-            })
+        if mailsLoaded == false
+        {
+            self.makeToastActivity()
+            TimeMailService.sharedInstance.refreshTimeMailBox { () -> Void in
+                self.hideToastActivity()
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    self.updateTableViewFooter()
+                    self.tableView.reloadData()
+                    self.mailsLoaded = true
+                })
+            }
         }
     }
     

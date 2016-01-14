@@ -9,7 +9,6 @@
 import UIKit
 import KKGestureLockView
 import MJRefresh
-import AudioToolbox
 
 let ALERT_ACTION_OK = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style:.Cancel, handler: nil)
 let ALERT_ACTION_I_SEE = UIAlertAction(title: NSLocalizedString("I_SEE", comment: ""), style:.Cancel, handler: nil)
@@ -24,10 +23,14 @@ let SegueShowTimeMailController = "ShowTimeMailController"
 let SegueShowEditView = "ShowEditView"
 let SegueShowUserSetting = "ShowUserSettingController"
 let SegueShowDairyDetailViewController = "ShowDairyDetailViewController"
+let SegueShowMoodReportViewController = "ShowMoodReportViewController"
 
 //MARK:ViewController
 
 class ViewController: UITableViewController, KKGestureLockViewDelegate{
+    
+    private(set) static var instance:ViewController!
+    
     var mode:ViewControllerMode = .NewDiaryMode{
         didSet{
             if tableView != nil
@@ -46,6 +49,7 @@ class ViewController: UITableViewController, KKGestureLockViewDelegate{
     //MARK: life process
     override func viewDidLoad() {
         super.viewDidLoad()
+        ViewController.instance = self
         ColorSets.navicationBarTintColor = UIColor.whiteColor()
         ColorSets.navicationBarColor = (self.navigationController?.navigationBar.barTintColor!)!
         changeNavigationBarColor()
@@ -71,20 +75,16 @@ class ViewController: UITableViewController, KKGestureLockViewDelegate{
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        if self.mode == .DiaryListMode
-        {
-            openDiaries()
-        }else
+        if mode == .NewDiaryMode
         {
             self.tableView.reloadData()
+            TimeMailService.sharedInstance.refreshTimeMailBox { () -> Void in
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    self.navigationItem.rightBarButtonItem?.badgeValue = "\(TimeMailService.sharedInstance.notReadMailCount)"
+                })
+            }
+            sync()
         }
-        TimeMailService.sharedInstance.refreshTimeMailBox { () -> Void in
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                self.navigationItem.rightBarButtonItem?.badgeValue = "\(TimeMailService.sharedInstance.notReadMailCount)"
-            })
-        }
-        TimeMailService.sharedInstance.requestReminderPermission()
-        sync()
     }
     
     private func sync()
@@ -134,8 +134,8 @@ class ViewController: UITableViewController, KKGestureLockViewDelegate{
         tableView.separatorStyle = mode == .DiaryListMode ? .SingleLine : .None
         let image = UIImage(named: imageName)!
         let header = MJRefreshGifHeader { () -> Void in
-            self.tableView.mj_header.endRefreshing()
             self.switchDiaryMode()
+            self.tableView.mj_header.endRefreshing()
         }
         header.lastUpdatedTimeLabel?.hidden = true
         header.stateLabel?.hidden = true
@@ -206,34 +206,12 @@ class ViewController: UITableViewController, KKGestureLockViewDelegate{
         {
             NewDiaryCellManager.sharedInstance.saveNewDiary()
             animationSaveDiary()
-            AudioServicesPlaySystemSound(1001)
+            SystemSoundHelper.playSound(1001)
         }
     }
     
-    @IBAction func timeMailClick(sender: AnyObject) {
-        
-        if DiaryListManager.sharedInstance.isLocked
-        {
-            if DiaryService.sharedInstance.hasPassword()
-            {
-                PasswordLocker.showValidateLocker(self){
-                    DiaryListManager.sharedInstance.unlockDiary()
-                    self.performSegueWithIdentifier(SegueShowTimeMailController, sender: self)
-                }
-            }else
-            {
-                PasswordLocker.showSetPasswordLocker(self){ newPsw in
-                    DiaryListManager.sharedInstance.unlockDiary()
-                    self.performSegueWithIdentifier(SegueShowTimeMailController, sender: self)
-                }
-            }
-        }else
-        {
-            self.performSegueWithIdentifier(SegueShowTimeMailController, sender: self)
-        }
-    }
-    
-    @IBAction func userSettingClick(sender: AnyObject)
+    //MARK: actions
+    private func validateToShowSegue(segue:String)
     {
         if DiaryListManager.sharedInstance.isLocked
         {
@@ -241,23 +219,39 @@ class ViewController: UITableViewController, KKGestureLockViewDelegate{
             {
                 PasswordLocker.showValidateLocker(self){
                     DiaryListManager.sharedInstance.unlockDiary()
-                    self.performSegueWithIdentifier(SegueShowUserSetting, sender: self)
+                    self.performSegueWithIdentifier(segue, sender: self)
                 }
             }else
             {
                 PasswordLocker.showSetPasswordLocker(self){ newPsw in
                     DiaryListManager.sharedInstance.unlockDiary()
-                    self.performSegueWithIdentifier(SegueShowUserSetting, sender: self)
+                    self.performSegueWithIdentifier(segue, sender: self)
                 }
             }
         }else
         {
-            self.performSegueWithIdentifier(SegueShowUserSetting, sender: self)
+            self.performSegueWithIdentifier(segue, sender: self)
         }
+    }
+    
+    @IBAction func moodReportClick(sender: AnyObject)
+    {
+        validateToShowSegue(SegueShowMoodReportViewController)
+    }
+    
+    @IBAction func timeMailClick(sender: AnyObject) {
+        
+        validateToShowSegue(SegueShowTimeMailController)
+    }
+    
+    @IBAction func userSettingClick(sender: AnyObject)
+    {
+        validateToShowSegue(SegueShowUserSetting)
     }
     
     //MARK:Segue
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        super.prepareForSegue(segue, sender: sender)
         if segue.identifier == SegueShowEditView
         {
             let vc = segue.destinationViewController as! EditMainContentViewController
