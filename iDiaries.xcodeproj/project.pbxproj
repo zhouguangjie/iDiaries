@@ -75,7 +75,7 @@
 		E7BEEE8E1C4745C9008E00AE /* MoodLineReportController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BEEE8D1C4745C9008E00AE /* MoodLineReportController.swift */; };
 		E7BEEE901C47492E008E00AE /* MoodReport.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7BEEE8F1C47492E008E00AE /* MoodReport.storyboard */; };
 		E7C6A24C1C462D520094E7C4 /* ReportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C6A24B1C462D520094E7C4 /* ReportService.swift */; };
-		E7C6A24E1C4682FE0094E7C4 /* UICollectionViewFullFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C6A24D1C4682FE0094E7C4 /* UICollectionViewFullFlowLayout.swift */; };
+		E7C6A24E1C4682FE0094E7C4 /* UICollectionViewFlowLayouts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C6A24D1C4682FE0094E7C4 /* UICollectionViewFlowLayouts.swift */; };
 		E7CD27201C17F51700AB2C64 /* SyncDiariesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CD271F1C17F51700AB2C64 /* SyncDiariesViewController.swift */; };
 		E7CD27231C17FD5500AB2C64 /* iCloudExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CD27221C17FD5500AB2C64 /* iCloudExtension.swift */; };
 		E7D84D461C4780C700CC180D /* MoodReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D84D451C4780C700CC180D /* MoodReportViewController.swift */; };
@@ -169,7 +169,7 @@
 		E7BEEE8D1C4745C9008E00AE /* MoodLineReportController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoodLineReportController.swift; sourceTree = "<group>"; };
 		E7BEEE8F1C47492E008E00AE /* MoodReport.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MoodReport.storyboard; sourceTree = "<group>"; };
 		E7C6A24B1C462D520094E7C4 /* ReportService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportService.swift; sourceTree = "<group>"; };
-		E7C6A24D1C4682FE0094E7C4 /* UICollectionViewFullFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewFullFlowLayout.swift; sourceTree = "<group>"; };
+		E7C6A24D1C4682FE0094E7C4 /* UICollectionViewFlowLayouts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewFlowLayouts.swift; sourceTree = "<group>"; };
 		E7CD271F1C17F51700AB2C64 /* SyncDiariesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncDiariesViewController.swift; sourceTree = "<group>"; };
 		E7CD27221C17FD5500AB2C64 /* iCloudExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iCloudExtension.swift; sourceTree = "<group>"; };
 		E7D84D451C4780C700CC180D /* MoodReportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoodReportViewController.swift; sourceTree = "<group>"; };
@@ -277,7 +277,7 @@
 				E70DDEB71C10606C00DD0E57 /* UserGuide.swift */,
 				E743D8DD1C143B10003ACC4E /* UIAnimationHelper.swift */,
 				E7BB95571C157E1700130E2F /* SystemSoundHelper.swift */,
-				E7C6A24D1C4682FE0094E7C4 /* UICollectionViewFullFlowLayout.swift */,
+				E7C6A24D1C4682FE0094E7C4 /* UICollectionViewFlowLayouts.swift */,
 			);
 			name = BahamutUIKit;
 			path = ../../bahamut/Bahamut/Bahamut/BahamutUIKit;
@@ -636,7 +636,7 @@
 				E77D43461C15E812008E350A /* AboutViewController.swift in Sources */,
 				E781B4841C114DB10014A17D /* NewDiaryBaseCell.swift in Sources */,
 				E743D8E81C14A104003ACC4E /* TimeMailTableViewController.swift in Sources */,
-				E7C6A24E1C4682FE0094E7C4 /* UICollectionViewFullFlowLayout.swift in Sources */,
+				E7C6A24E1C4682FE0094E7C4 /* UICollectionViewFlowLayouts.swift in Sources */,
 				E781B4AA1C11D5730014A17D /* LockViewController.swift in Sources */,
 				E7BB95561C154B7C00130E2F /* UserSettingController.swift in Sources */,
 				E781B4A81C11C5DB0014A17D /* PasswordLocker.swift in Sources */,
