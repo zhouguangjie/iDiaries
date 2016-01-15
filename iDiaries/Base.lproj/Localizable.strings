@@ -31,7 +31,12 @@ TIME_MAIL_REMINDER_EFFECTIVELESS = "The Time Mail Will Not Remind By Calendar";
 
 "Weather" = "Weather";
 "Mood" = "Mood";
+"Moods" = "Moods";
 "DaySummary" = "Today Summary";
+
+YEAR_MONTH_FORMAT = "%@-%@";
+MOOD_STATISTICS_TITLE = "Moods Statistics";
+MOOD_TRENDS_TITLE = "This Month Moods Changes";
 
 //Weather
 "Sunny" = "Sunny";

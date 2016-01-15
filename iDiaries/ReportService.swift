@@ -14,6 +14,9 @@ class Report
     var year:Int = 2015
     var month:Int = 1
     var diariesCount:Int = 0
+    
+    var moods:[(day:Int,mark:MarkStruct)]!
+    var moodsMap:[Int:Int]!
 }
 
 class ReportService
@@ -87,22 +90,18 @@ class ReportService
         report.month = month
         report.diariesCount = diaries.count
         
-        let onedaySec = 60 * 60 * 23
-        var moods = [(time:Int,mark:MarkStruct)]()
+        var moods = [(day:Int,mark:MarkStruct)]()
         var moodMap = [Int:Int]()
         
         for diary in diaries
         {
-            let interval = onedaySec / diary.moods.count
-            let diaryDate = NSDate(timeIntervalSince1970: diary.dateTime.doubleValue)
-            let startPoint = diaryDate.dayOfDate * 60 * 60 * 24
             for i in 0..<diary.moods.count
             {
                 let m = diary.moods[i]
+                let diaryDate = NSDate(timeIntervalSince1970: diary.dateTime.doubleValue)
                 if let mood = getDiaryMark(m.markId)
                 {
-                    let x = startPoint + interval * i
-                    moods.append((x,mood))
+                    moods.append((diaryDate.dayOfDate,mood))
                     
                     if let count = moodMap[mood.id]
                     {
@@ -114,7 +113,8 @@ class ReportService
                 }
             }
         }
-        
+        report.moods = moods
+        report.moodsMap = moodMap
         return report
     }
 }

@@ -72,7 +72,8 @@
 		E7BB95541C154A0700130E2F /* MailDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BB95531C154A0700130E2F /* MailDetailController.swift */; };
 		E7BB95561C154B7C00130E2F /* UserSettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BB95551C154B7C00130E2F /* UserSettingController.swift */; };
 		E7BB95581C157E1700130E2F /* SystemSoundHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BB95571C157E1700130E2F /* SystemSoundHelper.swift */; };
-		E7BEEE8E1C4745C9008E00AE /* MoodLineReportController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BEEE8D1C4745C9008E00AE /* MoodLineReportController.swift */; };
+		E7BD6FB01C48B5EE00DB738F /* MoodReportDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BD6FAF1C48B5EE00DB738F /* MoodReportDetailController.swift */; };
+		E7BD6FB21C48CE8300DB738F /* CommonValueCast.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BD6FB11C48CE8300DB738F /* CommonValueCast.swift */; };
 		E7BEEE901C47492E008E00AE /* MoodReport.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7BEEE8F1C47492E008E00AE /* MoodReport.storyboard */; };
 		E7C6A24C1C462D520094E7C4 /* ReportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C6A24B1C462D520094E7C4 /* ReportService.swift */; };
 		E7C6A24E1C4682FE0094E7C4 /* UICollectionViewFlowLayouts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C6A24D1C4682FE0094E7C4 /* UICollectionViewFlowLayouts.swift */; };
@@ -166,7 +167,8 @@
 		E7BB95571C157E1700130E2F /* SystemSoundHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemSoundHelper.swift; sourceTree = "<group>"; };
 		E7BB955A1C15953900130E2F /* iDiaries.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = iDiaries.entitlements; sourceTree = "<group>"; };
 		E7BB955D1C15C8D400130E2F /* Pods.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods.framework; path = "Pods/../build/Debug-iphoneos/Pods.framework"; sourceTree = "<group>"; };
-		E7BEEE8D1C4745C9008E00AE /* MoodLineReportController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoodLineReportController.swift; sourceTree = "<group>"; };
+		E7BD6FAF1C48B5EE00DB738F /* MoodReportDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoodReportDetailController.swift; sourceTree = "<group>"; };
+		E7BD6FB11C48CE8300DB738F /* CommonValueCast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonValueCast.swift; sourceTree = "<group>"; };
 		E7BEEE8F1C47492E008E00AE /* MoodReport.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MoodReport.storyboard; sourceTree = "<group>"; };
 		E7C6A24B1C462D520094E7C4 /* ReportService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportService.swift; sourceTree = "<group>"; };
 		E7C6A24D1C4682FE0094E7C4 /* UICollectionViewFlowLayouts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewFlowLayouts.swift; sourceTree = "<group>"; };
@@ -251,6 +253,7 @@
 				E70DDEAB1C10606C00DD0E57 /* IDUtil.swift */,
 				E70DDEAC1C10606C00DD0E57 /* RegexUtil.swift */,
 				E70DDEAD1C10606C00DD0E57 /* StringHelper.swift */,
+				E7BD6FB11C48CE8300DB738F /* CommonValueCast.swift */,
 			);
 			name = BahamutCommon;
 			path = ../../bahamut/Bahamut/Bahamut/BahamutCommon;
@@ -459,8 +462,8 @@
 		E7C6A24F1C468A090094E7C4 /* MonthMoodReport */ = {
 			isa = PBXGroup;
 			children = (
-				E7BEEE8D1C4745C9008E00AE /* MoodLineReportController.swift */,
 				E7D84D451C4780C700CC180D /* MoodReportViewController.swift */,
+				E7BD6FAF1C48B5EE00DB738F /* MoodReportDetailController.swift */,
 			);
 			name = MonthMoodReport;
 			sourceTree = "<group>";
@@ -619,7 +622,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E74246481C3A133800BA564F /* KeyboardAdjustHelper.swift in Sources */,
-				E7BEEE8E1C4745C9008E00AE /* MoodLineReportController.swift in Sources */,
 				E76DEB7A1C0E981D0072A1D7 /* ViewController.swift in Sources */,
 				E781B47C1C114BC60014A17D /* NewDiaryMarkCell.swift in Sources */,
 				E70DDED31C10606C00DD0E57 /* UserGuide.swift in Sources */,
@@ -628,6 +630,7 @@
 				E781B4821C114C0E0014A17D /* NewDiarySaveCell.swift in Sources */,
 				E70A5B121C17BFEC001C0A47 /* PersistentFileHelper.swift in Sources */,
 				E70DDE9A1C10122600DD0E57 /* DiaryMarkCell.swift in Sources */,
+				E7BD6FB21C48CE8300DB738F /* CommonValueCast.swift in Sources */,
 				E743D8DC1C129479003ACC4E /* DiaryListManager.swift in Sources */,
 				E781B47E1C114BE20014A17D /* NewDiaryTextContentCell.swift in Sources */,
 				E70DDECC1C10606C00DD0E57 /* ColorUtil.swift in Sources */,
@@ -658,6 +661,7 @@
 				E781B47A1C114BAD0014A17D /* NewDiaryDateCell.swift in Sources */,
 				E70DDEA01C1015D400DD0E57 /* DiaryMarksConfig.swift in Sources */,
 				E70DDEC61C10606C00DD0E57 /* BahamutObject.swift in Sources */,
+				E7BD6FB01C48B5EE00DB738F /* MoodReportDetailController.swift in Sources */,
 				E76DEB781C0E981D0072A1D7 /* AppDelegate.swift in Sources */,
 				E743D8E31C149407003ACC4E /* NothingViewFooter.swift in Sources */,
 				E743D8ED1C14A843003ACC4E /* TimeMailService.swift in Sources */,

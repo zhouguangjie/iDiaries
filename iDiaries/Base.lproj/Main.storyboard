@@ -361,7 +361,9 @@
                             <outlet property="delegate" destination="TZO-a6-GHM" id="T9H-Ni-Lbo"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Month Mood Report" id="KcR-tz-Kng"/>
+                    <navigationItem key="navigationItem" title="Month Mood Report" id="KcR-tz-Kng">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="7dK-hj-8QY"/>
+                    </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="200"/>
                 </tableViewController>

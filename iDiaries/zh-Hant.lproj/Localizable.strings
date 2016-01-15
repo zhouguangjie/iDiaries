@@ -31,7 +31,12 @@ TIME_MAIL_REMINDER_EFFECTIVELESS = "The Time Mail Will Not Remind By Calendar";
 
 "Weather" = "天氣";
 "Mood" = "心情";
+"Moods" = "心情";
 "DaySummary" = "今日是";
+
+YEAR_MONTH_FORMAT = "%@年%@月";
+MOOD_STATISTICS_TITLE = "心情統計";
+MOOD_TRENDS_TITLE = "本月心情變化";
 
 //Weather
 "Sunny" = "晴";

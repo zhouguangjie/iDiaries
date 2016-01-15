@@ -11,6 +11,9 @@ pod 'KKGestureLockView'
 
 pod 'iCloudDocumentSync'
 
-pod 'JYRadarChart'
+pod 'FSLineChart'
 
-pod 'PNChart'
+pod 'TEAChart'
+
+pod 'BEMSimpleLineGraph'
+

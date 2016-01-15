@@ -1067,7 +1067,9 @@
                             <outlet property="delegate" destination="4WP-gd-cuM" id="SRh-Pb-Sbk"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="每月心情記錄" id="r2b-d2-Dqr"/>
+                    <navigationItem key="navigationItem" title="每月心情記錄" id="r2b-d2-Dqr">
+                        <barButtonItem key="backBarButtonItem" title="返回" id="FsE-Rj-kHh"/>
+                    </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="200"/>
                 </tableViewController>

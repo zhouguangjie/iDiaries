@@ -11,15 +11,26 @@ import UIKit
 //MARK: MoodReportCell
 class MoodReportCell : UITableViewCell
 {
-    @IBOutlet weak var reportTitleLabel: UILabel!
+    @IBOutlet weak var reportTitleLabel: UILabel!{
+        didSet{
+            self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "onClick:"))
+        }
+    }
     static let reuseId = "MoodReportCell"
+    
+    var rootController:MoodReportViewController!
     var report:Report!
+    
+    func onClick(_:UITapGestureRecognizer)
+    {
+        MoodReportDetailController.showReport(rootController, report: self.report)
+    }
     
     func refresh()
     {
         if report != nil && reportTitleLabel != nil
         {
-            reportTitleLabel.text = String(format: "%04d-%02d(%d)", report.year,report.month,report.diariesCount)
+            reportTitleLabel.text = String(format: "YEAR_MONTH_FORMAT".localizedString, "\(report.year)","\(report.month)")
         }
     }
 }
@@ -47,12 +58,12 @@ class MoodReportViewController: UITableViewController
             let allDiaries = DiaryListManager.sharedInstance.diaries
             if allDiaries.count == 0
             {
-                self.refreshReports(allDiaries)
-            }else
-            {
                 DiaryService.sharedInstance.getAllDiaries({ (diaries) -> Void in
                     self.refreshReports(diaries)
                 })
+            }else
+            {
+                self.refreshReports(allDiaries)
             }
         }
     }
@@ -105,6 +116,7 @@ class MoodReportViewController: UITableViewController
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(MoodReportCell.reuseId, forIndexPath: indexPath) as! MoodReportCell
         cell.report = ReportService.sharedInstance.allReports[indexPath.row]
+        cell.rootController = self
         cell.refresh()
         return cell
     }

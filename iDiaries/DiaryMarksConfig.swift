@@ -23,14 +23,14 @@ let WeatherMarks:[MarkStruct] =
 
 let MoodMarks:[MarkStruct] =
 [
-    (id:20000,name:"Happy",emoji:"😄",info:100.0),
-    (id:20001,name:"Delightful",emoji:"😀",info:90.0),
-    (id:20002,name:"Pleasant",emoji:"😃",info:80.0),
-    (id:20003,name:"Sad",emoji:"😔",info:50.0),
-    (id:20004,name:"Dysphoria",emoji:"😫",info:40.0),
+    (id:20000,name:"Happy",emoji:"😄",info:98.0),
+    (id:20001,name:"Delightful",emoji:"😀",info:83.0),
+    (id:20002,name:"Pleasant",emoji:"😃",info:76.0),
+    (id:20003,name:"Sad",emoji:"😔",info:20.0),
+    (id:20004,name:"Dysphoria",emoji:"😫",info:30.0),
     (id:20005,name:"Anger",emoji:"😡",info:60.0),
-    (id:20006,name:"Fear",emoji:"😨",info:55.0),
-    (id:20007,name:"Normal",emoji:"🙂",info:70.0)
+    (id:20006,name:"Fear",emoji:"😨",info:40.0),
+    (id:20007,name:"Normal",emoji:"🙂",info:67.0)
 ]
 
 let DaySummaryMarks:[MarkStruct] =

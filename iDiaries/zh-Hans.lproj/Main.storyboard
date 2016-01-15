@@ -1067,7 +1067,9 @@
                             <outlet property="delegate" destination="eMX-wI-6kw" id="3XS-FL-76M"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="每月心情记录" id="9fl-6Y-9gI"/>
+                    <navigationItem key="navigationItem" title="每月心情记录" id="9fl-6Y-9gI">
+                        <barButtonItem key="backBarButtonItem" title="返回" id="n5W-Vj-r5h"/>
+                    </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="200"/>
                 </tableViewController>
