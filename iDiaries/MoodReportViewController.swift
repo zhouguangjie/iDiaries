@@ -11,6 +11,13 @@ import UIKit
 //MARK: MoodReportCell
 class MoodReportCell : UITableViewCell
 {
+    static let titleFormatter:NSDateFormatter = {
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "YEAR_MONTH_FORMAT".localizedString
+        formatter.timeZone = NSTimeZone.systemTimeZone()
+        return formatter
+    }()
+    
     @IBOutlet weak var reportTitleLabel: UILabel!{
         didSet{
             self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "onClick:"))
@@ -30,7 +37,8 @@ class MoodReportCell : UITableViewCell
     {
         if report != nil && reportTitleLabel != nil
         {
-            reportTitleLabel.text = String(format: "YEAR_MONTH_FORMAT".localizedString, "\(report.year)","\(report.month)")
+            let date = DateHelper.generateDate(report.year,month: report.month)
+            reportTitleLabel.text = MoodReportCell.titleFormatter.stringFromDate(date)
         }
     }
 }

@@ -18,7 +18,7 @@ class NewDiaryCellManager
     private var markCellHeight:[CGFloat] = [0,0,0]
     private var markCells:[NewDiaryMarkCell!] = [nil,nil,nil]
     private let markCellsMultiSelection = [true,true,false]
-    private var dateCell:NewDiaryDateCell!
+    private(set) var dateCell:NewDiaryDateCell!
     private var weatherCell:NewDiaryMarkCell!{
         return markCells[0]
     }
@@ -108,6 +108,9 @@ class NewDiaryCellManager
         if row > 0 && row <= 3
         {
             return markCellHeight[row - 1] + 18
+        }else if row == 6
+        {
+            return 98
         }
         return UITableViewAutomaticDimension
     }

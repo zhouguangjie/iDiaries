@@ -361,7 +361,7 @@
                             <outlet property="delegate" destination="TZO-a6-GHM" id="T9H-Ni-Lbo"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Month Mood Report" id="KcR-tz-Kng">
+                    <navigationItem key="navigationItem" title="My Month Moods" id="KcR-tz-Kng">
                         <barButtonItem key="backBarButtonItem" title="Back" id="7dK-hj-8QY"/>
                     </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -851,6 +851,7 @@
                                         </button>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="3JB-9f-GDt" firstAttribute="centerY" secondItem="iWl-D8-rnF" secondAttribute="centerY" id="5mc-b6-Cd0"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="3JB-9f-GDt" secondAttribute="bottom" constant="9" id="KYF-KZ-Y1G"/>
                                         <constraint firstItem="3JB-9f-GDt" firstAttribute="centerX" secondItem="iWl-D8-rnF" secondAttribute="centerX" id="SRd-H9-QyF"/>
                                         <constraint firstItem="3JB-9f-GDt" firstAttribute="centerY" secondItem="iWl-D8-rnF" secondAttribute="centerY" id="bQH-qi-PgT"/>
@@ -858,7 +859,9 @@
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
+                                            <exclude reference="KYF-KZ-Y1G"/>
                                             <exclude reference="bQH-qi-PgT"/>
+                                            <exclude reference="i7l-Na-mmH"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>

@@ -160,6 +160,7 @@ class ViewController: UITableViewController, KKGestureLockViewDelegate{
     private func openDiaries()
     {
         self.makeToastActivity()
+        self.navigationItem.title = iDiariesConfig.appTitle
         DiaryListManager.sharedInstance.refreshDiary({ () -> Void in
             self.hideToastActivity()
             self.mode = .DiaryListMode
@@ -193,7 +194,19 @@ class ViewController: UITableViewController, KKGestureLockViewDelegate{
         }else
         {
             self.mode = .NewDiaryMode
+            if let diaryDate = NewDiaryCellManager.sharedInstance.dateCell?.diaryDate
+            {
+                updateDiaryDateTitle(diaryDate)
+            }
         }
+    }
+    
+    func updateDiaryDateTitle(diaryDate:NSDate)
+    {
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "NEW_DIARY_DATE_TITILE_FORMAT".localizedString
+        formatter.timeZone = NSTimeZone.systemTimeZone()
+        self.navigationItem.title = formatter.stringFromDate(diaryDate)
     }
     
     func saveDiary() {

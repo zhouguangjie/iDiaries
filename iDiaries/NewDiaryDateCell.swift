@@ -33,6 +33,11 @@ class NewDiaryDateCell: NewDiaryBaseCell {
         formatter.dateFormat = "yyyy-MM-dd EEE"
         formatter.timeZone = NSTimeZone.systemTimeZone()
         dateLabel.text = formatter.stringFromDate(diaryDate)
+        
+        if rootController != nil
+        {
+            self.rootController.updateDiaryDateTitle(self.diaryDate)
+        }
     }
     
     func resetDate()

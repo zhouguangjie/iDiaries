@@ -812,34 +812,37 @@
                                     <outlet property="toFutureMe" destination="cBj-8Q-hDq" id="16V-L1-ojC"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="NewDiarySaveCell" rowHeight="98" id="VxH-al-peJ" customClass="NewDiarySaveCell" customModule="iDiaries" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="NewDiarySaveCell" rowHeight="98" id="aQG-dI-Jy2" customClass="NewDiarySaveCell" customModule="iDiaries" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="536" width="600" height="98"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VxH-al-peJ" id="iWl-D8-rnF">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aQG-dI-Jy2" id="a6A-51-eXa">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="98"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3JB-9f-GDt">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ep-bb-NNu">
                                             <rect key="frame" x="268" y="17" width="64" height="64"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="64" id="Bcz-Tr-lBM"/>
-                                                <constraint firstAttribute="width" constant="64" id="peq-i9-dac"/>
+                                                <constraint firstAttribute="height" constant="64" id="NoL-Bl-cMg"/>
+                                                <constraint firstAttribute="width" constant="64" id="dnp-Zy-vCb"/>
                                             </constraints>
                                             <state key="normal" title="Button" image="save"/>
                                             <connections>
-                                                <action selector="save:" destination="VxH-al-peJ" eventType="touchUpInside" id="AN6-L2-8C0"/>
+                                                <action selector="save:" destination="aQG-dI-Jy2" eventType="touchUpInside" id="eRB-3C-nga"/>
                                             </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="bottomMargin" secondItem="3JB-9f-GDt" secondAttribute="bottom" constant="9" id="KYF-KZ-Y1G"/>
-                                        <constraint firstItem="3JB-9f-GDt" firstAttribute="centerX" secondItem="iWl-D8-rnF" secondAttribute="centerX" id="SRd-H9-QyF"/>
-                                        <constraint firstItem="3JB-9f-GDt" firstAttribute="centerY" secondItem="iWl-D8-rnF" secondAttribute="centerY" id="bQH-qi-PgT"/>
-                                        <constraint firstItem="3JB-9f-GDt" firstAttribute="top" secondItem="iWl-D8-rnF" secondAttribute="topMargin" constant="9" id="i7l-Na-mmH"/>
+                                        <constraint firstItem="9Ep-bb-NNu" firstAttribute="top" secondItem="a6A-51-eXa" secondAttribute="topMargin" constant="9" id="59I-nh-3Lz"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="9Ep-bb-NNu" secondAttribute="bottom" constant="9" id="C4J-OY-t4J"/>
+                                        <constraint firstItem="9Ep-bb-NNu" firstAttribute="centerX" secondItem="a6A-51-eXa" secondAttribute="centerX" id="HfY-Yy-Ypo"/>
+                                        <constraint firstItem="9Ep-bb-NNu" firstAttribute="centerY" secondItem="a6A-51-eXa" secondAttribute="centerY" id="KYN-21-ceN"/>
+                                        <constraint firstItem="9Ep-bb-NNu" firstAttribute="centerY" secondItem="a6A-51-eXa" secondAttribute="centerY" id="ryu-wN-5CC"/>
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
-                                            <exclude reference="bQH-qi-PgT"/>
+                                            <exclude reference="C4J-OY-t4J"/>
+                                            <exclude reference="ryu-wN-5CC"/>
+                                            <exclude reference="59I-nh-3Lz"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
@@ -1013,7 +1016,7 @@
             </objects>
             <point key="canvasLocation" x="3421" y="1269"/>
         </scene>
-        <!--每月心情记录-->
+        <!--我的心情记录-->
         <scene sceneID="yKq-8Q-fpq">
             <objects>
                 <tableViewController id="eMX-wI-6kw" customClass="MoodReportViewController" customModule="iDiaries" customModuleProvider="target" sceneMemberID="viewController">
@@ -1067,7 +1070,7 @@
                             <outlet property="delegate" destination="eMX-wI-6kw" id="3XS-FL-76M"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="每月心情记录" id="9fl-6Y-9gI">
+                    <navigationItem key="navigationItem" title="我的心情记录" id="9fl-6Y-9gI">
                         <barButtonItem key="backBarButtonItem" title="返回" id="n5W-Vj-r5h"/>
                     </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

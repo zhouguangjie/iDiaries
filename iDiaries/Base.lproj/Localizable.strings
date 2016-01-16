@@ -34,7 +34,9 @@ TIME_MAIL_REMINDER_EFFECTIVELESS = "The Time Mail Will Not Remind By Calendar";
 "Moods" = "Moods";
 "DaySummary" = "Today Summary";
 
-YEAR_MONTH_FORMAT = "%@-%@";
+NEW_DIARY_DATE_TITILE_FORMAT = "LLL. dd EEE";
+
+YEAR_MONTH_FORMAT = "LLLL yyyy";
 MOOD_STATISTICS_TITLE = "Moods Statistics";
 MOOD_TRENDS_TITLE = "This Month Moods Changes";
 

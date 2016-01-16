@@ -11,6 +11,8 @@ import UIKit
 class NewDiarySaveCell: NewDiaryBaseCell {
     static let reuseId = "NewDiarySaveCell"
     @IBAction func save(sender: AnyObject) {
+        let btn = sender as! UIView
+        btn.animationMaxToMin()
         rootController.saveDiary()
     }
 }

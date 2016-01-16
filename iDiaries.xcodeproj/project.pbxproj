@@ -80,7 +80,19 @@
 		E7CD27201C17F51700AB2C64 /* SyncDiariesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CD271F1C17F51700AB2C64 /* SyncDiariesViewController.swift */; };
 		E7CD27231C17FD5500AB2C64 /* iCloudExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CD27221C17FD5500AB2C64 /* iCloudExtension.swift */; };
 		E7D84D461C4780C700CC180D /* MoodReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D84D451C4780C700CC180D /* MoodReportViewController.swift */; };
+		E7DF89311C4A557B00C908D8 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70DDEAA1C10606C00DD0E57 /* DateHelper.swift */; };
+		E7DF89321C4A558200C908D8 /* iDiariesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DF88C71C4A539800C908D8 /* iDiariesTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E7DF88CA1C4A539800C908D8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E76DEB6C1C0E981D0072A1D7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E76DEB731C0E981D0072A1D7;
+			remoteInfo = iDiaries;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		2C6CC0BDD0C2F3E4BF93137B /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -175,6 +187,10 @@
 		E7CD271F1C17F51700AB2C64 /* SyncDiariesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncDiariesViewController.swift; sourceTree = "<group>"; };
 		E7CD27221C17FD5500AB2C64 /* iCloudExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iCloudExtension.swift; sourceTree = "<group>"; };
 		E7D84D451C4780C700CC180D /* MoodReportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoodReportViewController.swift; sourceTree = "<group>"; };
+		E7DF88C51C4A539800C908D8 /* iDiariesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iDiariesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7DF88C71C4A539800C908D8 /* iDiariesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iDiariesTests.swift; sourceTree = "<group>"; };
+		E7DF88C91C4A539800C908D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E7DF88DC1C4A54F300C908D8 /* iDiariesTests copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "iDiariesTests copy-Info.plist"; path = "/Users/alexchow/GitHub/iDiaries/iDiariesTests copy-Info.plist"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +202,13 @@
 				E7534B861C23C3F200F0ED58 /* libMobClickLibrary.a in Frameworks */,
 				E781B4881C11925F0014A17D /* AudioToolbox.framework in Frameworks */,
 				41E0151092E8C702AF72BCD3 /* Pods.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E7DF88C21C4A539800C908D8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,6 +400,8 @@
 				E76DEB751C0E981D0072A1D7 /* Products */,
 				5C1BBD39887709376E64B23B /* Pods */,
 				E930703952CF9F5E7439696B /* Frameworks */,
+				E7DF88C61C4A539800C908D8 /* iDiariesTests */,
+				E7DF88DC1C4A54F300C908D8 /* iDiariesTests copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -384,6 +409,7 @@
 			isa = PBXGroup;
 			children = (
 				E76DEB741C0E981D0072A1D7 /* iDiaries.app */,
+				E7DF88C51C4A539800C908D8 /* iDiariesTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -476,6 +502,15 @@
 			path = iCloud;
 			sourceTree = "<group>";
 		};
+		E7DF88C61C4A539800C908D8 /* iDiariesTests */ = {
+			isa = PBXGroup;
+			children = (
+				E7DF88C71C4A539800C908D8 /* iDiariesTests.swift */,
+				E7DF88C91C4A539800C908D8 /* Info.plist */,
+			);
+			path = iDiariesTests;
+			sourceTree = "<group>";
+		};
 		E930703952CF9F5E7439696B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -510,13 +545,31 @@
 			productReference = E76DEB741C0E981D0072A1D7 /* iDiaries.app */;
 			productType = "com.apple.product-type.application";
 		};
+		E7DF88C41C4A539800C908D8 /* iDiariesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E7DF88CE1C4A539800C908D8 /* Build configuration list for PBXNativeTarget "iDiariesTests" */;
+			buildPhases = (
+				E7DF88C11C4A539800C908D8 /* Sources */,
+				E7DF88C21C4A539800C908D8 /* Frameworks */,
+				E7DF88C31C4A539800C908D8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E7DF88CB1C4A539800C908D8 /* PBXTargetDependency */,
+			);
+			name = iDiariesTests;
+			productName = iDiariesTests;
+			productReference = E7DF88C51C4A539800C908D8 /* iDiariesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		E76DEB6C1C0E981D0072A1D7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0710;
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = GStudio;
 				TargetAttributes = {
@@ -528,6 +581,10 @@
 								enabled = 1;
 							};
 						};
+					};
+					E7DF88C41C4A539800C908D8 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = E76DEB731C0E981D0072A1D7;
 					};
 				};
 			};
@@ -547,6 +604,7 @@
 			projectRoot = "";
 			targets = (
 				E76DEB731C0E981D0072A1D7 /* iDiaries */,
+				E7DF88C41C4A539800C908D8 /* iDiariesTests */,
 			);
 		};
 /* End PBXProject section */
@@ -563,6 +621,13 @@
 				E76DEB7F1C0E981D0072A1D7 /* Assets.xcassets in Resources */,
 				E7BEEE901C47492E008E00AE /* MoodReport.storyboard in Resources */,
 				E76DEB7D1C0E981D0072A1D7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E7DF88C31C4A539800C908D8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -686,7 +751,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E7DF88C11C4A539800C908D8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7DF89321C4A558200C908D8 /* iDiariesTests.swift in Sources */,
+				E7DF89311C4A557B00C908D8 /* DateHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E7DF88CB1C4A539800C908D8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E76DEB731C0E981D0072A1D7 /* iDiaries */;
+			targetProxy = E7DF88CA1C4A539800C908D8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		E74DB7C41C197515004F0207 /* Localizable.strings */ = {
@@ -894,6 +976,32 @@
 			};
 			name = Release;
 		};
+		E7DF88CC1C4A539800C908D8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = iDiariesTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.GStudio.iDiariesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iDiaries.app/iDiaries";
+			};
+			name = Debug;
+		};
+		E7DF88CD1C4A539800C908D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = iDiariesTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.GStudio.iDiariesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iDiaries.app/iDiaries";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -914,6 +1022,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		E7DF88CE1C4A539800C908D8 /* Build configuration list for PBXNativeTarget "iDiariesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E7DF88CC1C4A539800C908D8 /* Debug */,
+				E7DF88CD1C4A539800C908D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 
