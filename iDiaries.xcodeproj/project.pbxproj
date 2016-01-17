@@ -69,12 +69,12 @@
 		E781B4A81C11C5DB0014A17D /* PasswordLocker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E781B4A71C11C5DB0014A17D /* PasswordLocker.swift */; };
 		E781B4AA1C11D5730014A17D /* LockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E781B4A91C11D5730014A17D /* LockViewController.swift */; };
 		E78D26601C19823C002860A5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E78D26621C19823C002860A5 /* InfoPlist.strings */; };
+		E7AE3DD31C4B77E900CB1859 /* MoodReport.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7AE3DD51C4B77E900CB1859 /* MoodReport.storyboard */; };
 		E7BB95541C154A0700130E2F /* MailDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BB95531C154A0700130E2F /* MailDetailController.swift */; };
 		E7BB95561C154B7C00130E2F /* UserSettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BB95551C154B7C00130E2F /* UserSettingController.swift */; };
 		E7BB95581C157E1700130E2F /* SystemSoundHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BB95571C157E1700130E2F /* SystemSoundHelper.swift */; };
 		E7BD6FB01C48B5EE00DB738F /* MoodReportDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BD6FAF1C48B5EE00DB738F /* MoodReportDetailController.swift */; };
 		E7BD6FB21C48CE8300DB738F /* CommonValueCast.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BD6FB11C48CE8300DB738F /* CommonValueCast.swift */; };
-		E7BEEE901C47492E008E00AE /* MoodReport.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7BEEE8F1C47492E008E00AE /* MoodReport.storyboard */; };
 		E7C6A24C1C462D520094E7C4 /* ReportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C6A24B1C462D520094E7C4 /* ReportService.swift */; };
 		E7C6A24E1C4682FE0094E7C4 /* UICollectionViewFlowLayouts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C6A24D1C4682FE0094E7C4 /* UICollectionViewFlowLayouts.swift */; };
 		E7CD27201C17F51700AB2C64 /* SyncDiariesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CD271F1C17F51700AB2C64 /* SyncDiariesViewController.swift */; };
@@ -174,6 +174,9 @@
 		E78D26631C19823D002860A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E78D266B1C19AF2E002860A5 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		E78D266C1C19AF2E002860A5 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		E7AE3DD41C4B77E900CB1859 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MoodReport.storyboard; sourceTree = "<group>"; };
+		E7AE3DD71C4B77EC00CB1859 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/MoodReport.strings"; sourceTree = "<group>"; };
+		E7AE3DD91C4B77ED00CB1859 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/MoodReport.strings"; sourceTree = "<group>"; };
 		E7BB95531C154A0700130E2F /* MailDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailDetailController.swift; sourceTree = "<group>"; };
 		E7BB95551C154B7C00130E2F /* UserSettingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettingController.swift; sourceTree = "<group>"; };
 		E7BB95571C157E1700130E2F /* SystemSoundHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemSoundHelper.swift; sourceTree = "<group>"; };
@@ -181,7 +184,6 @@
 		E7BB955D1C15C8D400130E2F /* Pods.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods.framework; path = "Pods/../build/Debug-iphoneos/Pods.framework"; sourceTree = "<group>"; };
 		E7BD6FAF1C48B5EE00DB738F /* MoodReportDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoodReportDetailController.swift; sourceTree = "<group>"; };
 		E7BD6FB11C48CE8300DB738F /* CommonValueCast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonValueCast.swift; sourceTree = "<group>"; };
-		E7BEEE8F1C47492E008E00AE /* MoodReport.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MoodReport.storyboard; sourceTree = "<group>"; };
 		E7C6A24B1C462D520094E7C4 /* ReportService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportService.swift; sourceTree = "<group>"; };
 		E7C6A24D1C4682FE0094E7C4 /* UICollectionViewFlowLayouts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewFlowLayouts.swift; sourceTree = "<group>"; };
 		E7CD271F1C17F51700AB2C64 /* SyncDiariesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncDiariesViewController.swift; sourceTree = "<group>"; };
@@ -334,7 +336,7 @@
 				E743D8DF1C149365003ACC4E /* NothingViewFooter.xib */,
 				E76DEB801C0E981D0072A1D7 /* LaunchScreen.storyboard */,
 				E76DEB7B1C0E981D0072A1D7 /* Main.storyboard */,
-				E7BEEE8F1C47492E008E00AE /* MoodReport.storyboard */,
+				E7AE3DD51C4B77E900CB1859 /* MoodReport.storyboard */,
 			);
 			name = UIResource;
 			sourceTree = "<group>";
@@ -619,7 +621,7 @@
 				E743D8E01C149365003ACC4E /* NothingViewFooter.xib in Resources */,
 				E74DB7C21C197515004F0207 /* Localizable.strings in Resources */,
 				E76DEB7F1C0E981D0072A1D7 /* Assets.xcassets in Resources */,
-				E7BEEE901C47492E008E00AE /* MoodReport.storyboard in Resources */,
+				E7AE3DD31C4B77E900CB1859 /* MoodReport.storyboard in Resources */,
 				E76DEB7D1C0E981D0072A1D7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -808,6 +810,16 @@
 			);
 			name = InfoPlist.strings;
 			path = ..;
+			sourceTree = "<group>";
+		};
+		E7AE3DD51C4B77E900CB1859 /* MoodReport.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E7AE3DD41C4B77E900CB1859 /* Base */,
+				E7AE3DD71C4B77EC00CB1859 /* zh-Hant */,
+				E7AE3DD91C4B77ED00CB1859 /* zh-Hans */,
+			);
+			name = MoodReport.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1030,6 +1042,7 @@
 				E7DF88CD1C4A539800C908D8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

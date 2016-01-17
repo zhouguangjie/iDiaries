@@ -38,6 +38,15 @@ class NewDiaryCellManager
     private var remindCell:NewDiarySendTimeMailCell!
     private var saveCell:NewDiarySaveCell!
     
+    func resetMarkCellHeights()
+    {
+        for i in 0..<markCellHeight.count
+        {
+            markCellHeight[i] = 0
+            storeMarkCellHeight(i)
+        }
+    }
+    
     private func initMarkCellHeight(i:Int)
     {
         let height = NSUserDefaults.standardUserDefaults().doubleForKey("markCellHeight_\(i)")

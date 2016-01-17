@@ -12,13 +12,16 @@ import AudioToolbox
 class NewDiaryMarkCell: NewDiaryBaseCell,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout {
     static let reuseId = "NewDiaryMarkCell"
     var typedMarks:TypedMarks!
+    static let minimumInteritemSpacing:CGFloat = 3
     @IBOutlet weak var marksCollectionView: UICollectionView!{
         didSet{
             marksCollectionView.delegate = self
             marksCollectionView.dataSource = self
             marksCollectionView.allowsSelection = true
             marksCollectionView.allowsMultipleSelection = true
-            marksCollectionView.collectionViewLayout = UICollectionViewFullFlowLayout()
+            let flowLayout = UICollectionViewFullFlowLayout()
+            flowLayout.minimumSpacing = NewDiaryMarkCell.minimumInteritemSpacing
+            marksCollectionView.collectionViewLayout = flowLayout
         }
     }
     @IBOutlet weak var marksCollectionViewHeight: NSLayoutConstraint!
@@ -103,6 +106,6 @@ class NewDiaryMarkCell: NewDiaryBaseCell,UICollectionViewDataSource,UICollection
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat {
-        return 3
+        return NewDiaryMarkCell.minimumInteritemSpacing
     }
 }

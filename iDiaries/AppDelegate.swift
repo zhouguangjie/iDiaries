@@ -15,6 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        configureLanguage()
         PersistentManager.sharedInstance.appInit("iDiaries")
         PersistentManager.sharedInstance.useModelExtension(PersistentManager.sharedInstance.rootUrl.URLByAppendingPathComponent("idiaries_model.sqlite"))
         PersistentManager.sharedInstance.useiCloudExtension("iCloud.com.idiaries.ios")
@@ -22,6 +23,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         application.registerUserNotificationSettings(UIUserNotificationSettings.init(forTypes: [UIUserNotificationType.Alert,UIUserNotificationType.Sound,UIUserNotificationType.Badge], categories: nil))
         configureUmeng()
         return true
+    }
+    
+    private func configureLanguage()
+    {
+        let langCode = NSLocale.currentLocale().objectForKey(NSLocaleLanguageCode)!.debugDescription!
+        if let langCodeStored = NSUserDefaults.standardUserDefaults().stringForKey("langCode")
+        {
+            if langCode != langCodeStored
+            {
+                NewDiaryCellManager.sharedInstance.resetMarkCellHeights()
+            }
+        }else
+        {
+            NewDiaryCellManager.sharedInstance.resetMarkCellHeights()
+        }
+        NSUserDefaults.standardUserDefaults().setObject(langCode, forKey: "langCode")
     }
 
     private func configureUmeng()

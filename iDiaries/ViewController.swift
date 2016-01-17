@@ -52,7 +52,7 @@ class ViewController: UITableViewController, KKGestureLockViewDelegate{
         ViewController.instance = self
         ColorSets.navicationBarTintColor = UIColor.whiteColor()
         ColorSets.navicationBarColor = (self.navigationController?.navigationBar.barTintColor!)!
-        changeNavigationBarColor()
+        ColorSets.themeColor = ColorSets.navicationBarColor
         tableView.rowHeight = UITableViewAutomaticDimension;
         tableView.estimatedRowHeight = 48;
         navigationItem.rightBarButtonItem?.badgeBGColor = UIColor.orangeColor()
@@ -65,6 +65,7 @@ class ViewController: UITableViewController, KKGestureLockViewDelegate{
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        changeNavigationBarColor()
         MobClick.beginLogPageView("ViewController")
     }
     

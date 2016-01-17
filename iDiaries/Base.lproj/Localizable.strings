@@ -39,6 +39,9 @@ NEW_DIARY_DATE_TITILE_FORMAT = "LLL. dd EEE";
 YEAR_MONTH_FORMAT = "LLLL yyyy";
 MOOD_STATISTICS_TITLE = "Moods Statistics";
 MOOD_TRENDS_TITLE = "This Month Moods Changes";
+DAY_MOOD_EMOJI_FORMAT = "Day %d(%.0f%@)";
+
+NO_MONTH_MOOD_REPORT = "No Moods Reports, Start To Write Diary, The Report Will Release Next Month!";
 
 //Weather
 "Sunny" = "Sunny";
@@ -104,7 +107,6 @@ REPEAT_PASSWORD_NOT_MATCH = "Validate New Password Not Match,Retry Set New Passw
 
 NO_DIARY_HERE = "Diary Is Empty!";
 NO_MAIL_HERE = "Time Mail Box Is Empty!";
-NO_REPORT_HERE = "No Report Released!";
 
 TIME_MAIL_FROM_DATE = "This mail is from %@";
 

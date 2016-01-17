@@ -93,7 +93,7 @@ class MoodReportViewController: UITableViewController
         if ReportService.sharedInstance.allReports.count == 0
         {
             let footer = NothingViewFooter.instanceFromXib()
-            footer.messageLabel.text = NSLocalizedString("NO_REPORT_HERE", comment: "")
+            footer.messageLabel.text = "NO_MONTH_MOOD_REPORT".localizedString
             footer.frame = tableView.bounds
             tableView.tableFooterView = footer
             self.view.backgroundColor = footer.backgroundColor

@@ -840,9 +840,9 @@
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
+                                            <exclude reference="59I-nh-3Lz"/>
                                             <exclude reference="C4J-OY-t4J"/>
                                             <exclude reference="ryu-wN-5CC"/>
-                                            <exclude reference="59I-nh-3Lz"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
@@ -992,24 +992,40 @@
                                     <action selector="mailToBahamutSharelink:" destination="hxl-m0-nOG" eventType="touchUpInside" id="hoz-w8-ytC"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BAS-oc-QIK">
+                                <rect key="frame" x="20" y="110" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="BAS-oc-QIK" firstAttribute="top" secondItem="EAU-Cj-F7W" secondAttribute="bottom" constant="8" id="2SJ-ZH-TMk"/>
                             <constraint firstItem="jvc-V2-OR4" firstAttribute="top" secondItem="inf-0q-N63" secondAttribute="top" id="3OU-JE-qWx"/>
                             <constraint firstItem="inf-0q-N63" firstAttribute="top" secondItem="hi3-EM-iIt" secondAttribute="bottom" constant="8" symbolic="YES" id="6mL-i2-pkG"/>
                             <constraint firstItem="EAU-Cj-F7W" firstAttribute="leading" secondItem="inf-0q-N63" secondAttribute="leading" id="F5K-7s-wBC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="BAS-oc-QIK" secondAttribute="trailing" id="FWL-42-CaI"/>
+                            <constraint firstItem="BAS-oc-QIK" firstAttribute="leading" secondItem="EAU-Cj-F7W" secondAttribute="leading" id="J4M-oX-rpt"/>
                             <constraint firstItem="inf-0q-N63" firstAttribute="leading" secondItem="bPE-cf-3fg" secondAttribute="leadingMargin" id="a8l-Sx-kQ6"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="BAS-oc-QIK" secondAttribute="leading" id="dDN-aP-7Nr"/>
                             <constraint firstItem="65v-Qy-qOv" firstAttribute="bottom" secondItem="inf-0q-N63" secondAttribute="bottom" id="f8e-Xy-OhI"/>
                             <constraint firstItem="jvc-V2-OR4" firstAttribute="leading" secondItem="inf-0q-N63" secondAttribute="trailing" constant="8" symbolic="YES" id="fQz-us-9kg"/>
                             <constraint firstItem="65v-Qy-qOv" firstAttribute="leading" secondItem="jvc-V2-OR4" secondAttribute="leading" id="iO0-XK-uRL"/>
                             <constraint firstItem="EAU-Cj-F7W" firstAttribute="top" secondItem="inf-0q-N63" secondAttribute="bottom" constant="8" symbolic="YES" id="kGW-Qe-HK4"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="J4M-oX-rpt"/>
+                            </mask>
+                        </variation>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="iDiaries" id="J9h-cX-WfG"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="appImageView" destination="inf-0q-N63" id="c25-3m-xN4"/>
+                        <outlet property="noteLabel" destination="BAS-oc-QIK" id="8Ww-P4-gDV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZHD-qA-bH8" userLabel="First Responder" sceneMemberID="firstResponder"/>

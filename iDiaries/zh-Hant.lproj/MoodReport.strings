@@ -1,0 +1,27 @@
+
+/* Class = "UILabel"; text = "本月写日记数:"; ObjectID = "FMZ-qO-3LN"; */
+"FMZ-qO-3LN.text" = "本月日誌數:";
+
+/* Class = "UILabel"; text = "本月日记统计"; ObjectID = "Pba-vg-px9"; */
+"Pba-vg-px9.text" = "本月日誌統計";
+
+/* Class = "UILabel"; text = "15号,90😀"; ObjectID = "SCQ-L2-ge3"; */
+"SCQ-L2-ge3.text" = "15号,90😀";
+
+/* Class = "UILabel"; text = "本月心情:"; ObjectID = "T47-cp-Qfh"; */
+"T47-cp-Qfh.text" = "本月心情:";
+
+/* Class = "UILabel"; text = "78(😀)"; ObjectID = "Wn5-9G-WOq"; */
+"Wn5-9G-WOq.text" = "78(😀)";
+
+/* Class = "UILabel"; text = "最低心情:"; ObjectID = "Y4i-Zo-6Gc"; */
+"Y4i-Zo-6Gc.text" = "最低心情:";
+
+/* Class = "UILabel"; text = "3好,50😟"; ObjectID = "l9q-VU-9wT"; */
+"l9q-VU-9wT.text" = "3好,50😟";
+
+/* Class = "UILabel"; text = "最佳心情:"; ObjectID = "pi5-np-CIH"; */
+"pi5-np-CIH.text" = "最好心情:";
+
+/* Class = "UILabel"; text = "23(80%)"; ObjectID = "zmv-Lb-y87"; */
+"zmv-Lb-y87.text" = "23(80%)";

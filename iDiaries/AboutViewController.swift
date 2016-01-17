@@ -26,6 +26,11 @@ class AboutViewController: UIViewController,MFMailComposeViewControllerDelegate{
         self.changeNavigationBarColor()
     }
     
+    @IBOutlet weak var noteLabel: UILabel!{
+        didSet{
+            noteLabel.text = ""
+        }
+    }
     @IBOutlet weak var appImageView: UIImageView!{
         didSet{
             appImageView.layer.cornerRadius = 7

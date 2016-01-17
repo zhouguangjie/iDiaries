@@ -10,6 +10,20 @@ import UIKit
 import TEAChart
 import FSLineChart
 
+let barChartColors:[UIColor] =
+[
+    UIColor.redColor(),
+    UIColor.orangeColor(),
+    UIColor.greenColor(),
+    UIColor.cyanColor(),
+    UIColor.blueColor(),
+    UIColor.purpleColor(),
+    UIColor.yellowColor(),
+    UIColor.magentaColor(),
+    UIColor.brownColor(),
+    UIColor.themeColor
+]
+
 class MoodReportDetailCell:UITableViewCell
 {
     static let reuseId = "MoodReportDetailCell"
@@ -31,9 +45,12 @@ class MoodReportDetailController: UITableViewController
     var report:Report!{
         didSet{
             initLineChartData()
+            initStatData()
         }
     }
     private var lineChartViewData:[Float]!
+    
+    private var monthMoodStat = MonthMoodStat()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,11 +103,50 @@ class MoodReportDetailController: UITableViewController
             }
         }
         self.lineChartViewData = data
+        
+        
+    }
+    
+    struct MonthMoodStat {
+        var writeDiaryPersent:Double = 0
+        var avgMoodPointEmoji = ""
+        var avgMoodPoint:Float = 0
+        
+        var bestMood:Float = 0
+        var bestDay:Int = 1
+        var bestMoodEmoji = ""
+        
+        var lowestMood:Float = 0
+        var lowestDay:Int = 1
+        var lowestMoodEmoji = ""
+        
+    }
+    
+    private func initStatData()
+    {
+        let monthDays = DateHelper.daysOfMonth(report.year, month: report.month)
+        monthMoodStat.writeDiaryPersent = Double(report.diariesCount) / Double(monthDays) * 100
+        
+        var avgMoodPoint:Float = 0
+        self.lineChartViewData.forEach{avgMoodPoint += $0}
+        
+        monthMoodStat.avgMoodPoint = avgMoodPoint / Float(lineChartViewData.count)
+        
+        monthMoodStat.avgMoodPointEmoji = MoodReportDetailController.moodValueEmoji(CGFloat(avgMoodPoint))
+        
+        monthMoodStat.bestMood = lineChartViewData.maxElement() ?? 60
+        monthMoodStat.bestDay = (lineChartViewData.indexOf(monthMoodStat.bestMood) ?? 0) + 1
+        monthMoodStat.bestMoodEmoji = MoodReportDetailController.moodValueEmoji(CGFloat(monthMoodStat.bestMood))
+        
+        monthMoodStat.lowestMood = lineChartViewData.minElement() ?? 60
+        monthMoodStat.lowestDay = (lineChartViewData.indexOf(monthMoodStat.lowestMood) ?? 0) + 1
+        monthMoodStat.lowestMoodEmoji = MoodReportDetailController.moodValueEmoji(CGFloat(monthMoodStat.lowestMood))
+        
     }
     
     static func moodValueEmoji(value:CGFloat) -> String
     {
-        if value < 30
+        if value <= 30
         {
             return "😞"
         }else if value < 60
@@ -156,9 +212,7 @@ class MoodReportDetailController: UITableViewController
             }.filter{String.isNullOrEmpty($0) == false}
         let barSpace = (cellWidth - CGFloat(arr.count) * barWidth) / CGFloat(arr.count)
         barChart.barSpacing = Int(barSpace)
-        barChart.barColors = arr.map({ (c) -> UIColor in
-            return UIColor.getRandomTextColor()
-        })
+        barChart.barColors = ArrayUtil.messArrayUp(barChartColors)
         charts.append(barChart)
     }
 
@@ -186,20 +240,11 @@ class MoodReportDetailController: UITableViewController
             return cell
         }else
         {
-            let monthDays = DateHelper.daysOfMonth(report.year, month: report.month)
-            let persent = Double(report.diariesCount) / Double(monthDays) * 100
-            
-            var avgMoodPoint:Float = 0
-            self.lineChartViewData.forEach{avgMoodPoint += $0}
-            
-            avgMoodPoint = avgMoodPoint / Float(lineChartViewData.count)
-            
-            let avgMoodPointEmoji = MoodReportDetailController.moodValueEmoji(CGFloat(avgMoodPoint))
-            
-            
             let cell = tableView.dequeueReusableCellWithIdentifier(MoodReportSummaryCell.reuseId, forIndexPath: indexPath) as! MoodReportSummaryCell
-            
-            
+            cell.totalDiariesCountLabel.text = String(format: "%d(%.0f%%)",report.diariesCount, monthMoodStat.writeDiaryPersent)
+            cell.averageMoodsLabel.text = String(format: "%.0f%@", monthMoodStat.avgMoodPoint,monthMoodStat.avgMoodPointEmoji)
+            cell.bestMoodLabel.text = String(format: "DAY_MOOD_EMOJI_FORMAT".localizedString, monthMoodStat.bestDay,monthMoodStat.bestMood,monthMoodStat.bestMoodEmoji)
+            cell.badMoodLabel.text = String(format: "DAY_MOOD_EMOJI_FORMAT".localizedString, monthMoodStat.lowestDay,monthMoodStat.lowestMood,monthMoodStat.lowestMoodEmoji)
             return cell
         }
     }

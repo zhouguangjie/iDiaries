@@ -40,6 +40,10 @@ YEAR_MONTH_FORMAT = "yyyy年MM月";
 MOOD_STATISTICS_TITLE = "心情統計";
 MOOD_TRENDS_TITLE = "本月心情變化";
 
+DAY_MOOD_EMOJI_FORMAT = "%d號(%.0f%@)";
+
+NO_MONTH_MOOD_REPORT = "還沒有心情記錄，馬上開始寫日誌吧，下個月1號就會有心情記錄的了！";
+
 //Weather
 "Sunny" = "晴";
 "Cloudy" = "陰";
@@ -104,7 +108,6 @@ REPEAT_PASSWORD_NOT_MATCH = "兩次滑動不一致，請重新設定密碼";
 
 NO_DIARY_HERE = "空空的日誌本!";
 NO_MAIL_HERE = "空空的信箱!";
-NO_REPORT_HERE = "還沒有記錄!";
 
 TIME_MAIL_FROM_DATE = "這封信件來自 %@";
 
