@@ -51,6 +51,10 @@ NO_MONTH_MOOD_REPORT = "No Moods Reports, Start To Write Diary, The Report Will 
 "Thunder" = "Thunder";
 "Windy" = "Windy";
 "Overcast" = "Overcast";
+"Hot" = "Hot";
+"Warm" = "Warm";
+"Cool" = "Cool";
+"Cold" = "Cold";
 
 //Mood
 "Happy" = "Happy";

@@ -76,6 +76,23 @@ class ViewController: UITableViewController, KKGestureLockViewDelegate{
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        if isAllServicesReady
+        {
+            appLogined()
+        }else
+        {
+            NSNotificationCenter.defaultCenter().addObserver(self, selector: "onAllServiceLoaded:", name: allServicesReady, object: nil)
+        }
+    }
+    
+    func onAllServiceLoaded(_:NSNotification)
+    {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+        appLogined()
+    }
+    
+    private func appLogined()
+    {
         if mode == .NewDiaryMode
         {
             self.tableView.reloadData()

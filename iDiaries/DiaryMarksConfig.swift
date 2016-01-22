@@ -17,8 +17,12 @@ let WeatherMarks:[MarkStruct] =
     (id:10002,name:"Rainy",emoji:"🌧",info:nil),
     (id:10003,name:"Snowy",emoji:"❄️",info:nil),
     (id:10004,name:"Thunder",emoji:"⚡️",info:nil),
-    (id:10005,name:"Windy",emoji:"🌪",info:nil),
-    (id:10006,name:"Overcast",emoji:"⛅️",info:nil)
+    (id:10005,name:"Windy",emoji:"🌬",info:nil),
+    (id:10006,name:"Overcast",emoji:"⛅️",info:nil),
+    (id:10007,name:"Hot",emoji:"🌴",info:nil),
+    (id:10008,name:"Warm",emoji:"🍀",info:nil),
+    (id:10009,name:"Cool",emoji:"🍁",info:nil),
+    (id:10010,name:"Cold",emoji:"☃️",info:nil)
 ]
 
 let MoodMarks:[MarkStruct] =

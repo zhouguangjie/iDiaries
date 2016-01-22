@@ -52,6 +52,10 @@ NO_MONTH_MOOD_REPORT = "還沒有心情記錄，馬上開始寫日誌吧，下�
 "Thunder" = "打雷";
 "Windy" = "吹風";
 "Overcast" = "多雲";
+"Hot" = "炎熱";
+"Warm" = "溫暖";
+"Cool" = "涼爽";
+"Cold" = "寒冷";
 
 //Mood
 "Happy" = "開心";
