@@ -212,7 +212,7 @@ class MoodReportDetailController: UITableViewController
             }.filter{String.isNullOrEmpty($0) == false}
         let barSpace = (cellWidth - CGFloat(arr.count) * barWidth) / CGFloat(arr.count)
         barChart.barSpacing = Int(barSpace)
-        barChart.barColors = ArrayUtil.messArrayUp(barChartColors)
+        barChart.barColors = barChartColors.messArrayUp()
         charts.append(barChart)
     }
 

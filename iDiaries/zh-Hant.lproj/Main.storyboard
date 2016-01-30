@@ -238,34 +238,14 @@
                                     <outlet property="propertyValueLabel" destination="b2M-gh-jrI" id="Thg-Od-yH9"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="aboutAppCell" id="QSD-We-PWr">
-                                <rect key="frame" x="0.0" y="136" width="600" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QSD-We-PWr" id="4KX-Wh-2Cp">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="關於" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TE7-ox-BMc">
-                                            <rect key="frame" x="283" y="11" width="34" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="TE7-ox-BMc" firstAttribute="centerY" secondItem="4KX-Wh-2Cp" secondAttribute="centerY" id="OAN-I3-d1d"/>
-                                        <constraint firstItem="TE7-ox-BMc" firstAttribute="centerX" secondItem="4KX-Wh-2Cp" secondAttribute="centerX" id="efk-Vb-2XM"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                            </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GetSharelinkCell" id="3m5-SP-IYr">
-                                <rect key="frame" x="0.0" y="180" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="136" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3m5-SP-IYr" id="5mm-Jp-dNw">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get Sharelink Free!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j1B-KW-eEK">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="體驗Sharelink!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j1B-KW-eEK">
                                             <rect key="frame" x="15" y="11" width="570" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="42" id="UhW-Nt-aEo"/>
@@ -289,6 +269,42 @@
                                     <variation key="default">
                                         <mask key="constraints">
                                             <exclude reference="WRh-6j-GFi"/>
+                                        </mask>
+                                    </variation>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="aboutAppCell" rowHeight="53" id="7AE-Na-S01">
+                                <rect key="frame" x="0.0" y="180" width="600" height="53"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7AE-Na-S01" id="qQd-xi-KYN">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="52"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="體驗至上，永不放廣告，覺得這個日記本好用，支持壹個！" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TwN-AW-qwX">
+                                            <rect key="frame" x="15" y="16" width="570" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="42" id="zWM-xG-RdH"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="zWM-xG-RdH"/>
+                                                </mask>
+                                            </variation>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="TwN-AW-qwX" firstAttribute="centerX" secondItem="qQd-xi-KYN" secondAttribute="centerX" id="6ux-wg-WOS"/>
+                                        <constraint firstItem="TwN-AW-qwX" firstAttribute="centerY" secondItem="qQd-xi-KYN" secondAttribute="centerY" id="TaA-P8-ywt"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="TwN-AW-qwX" secondAttribute="trailing" constant="7" id="gR5-Wy-LT2"/>
+                                        <constraint firstItem="TwN-AW-qwX" firstAttribute="leading" secondItem="qQd-xi-KYN" secondAttribute="leadingMargin" constant="7" id="hkc-Nz-pan"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="TwN-AW-qwX" secondAttribute="bottom" constant="7" id="l9Q-Mn-tpr"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="6ux-wg-WOS"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>

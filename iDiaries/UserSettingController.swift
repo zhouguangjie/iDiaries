@@ -88,6 +88,15 @@ class UserSettingController: UITableViewController
     
     private var shownVoteMeAlert:Bool = false
     
+    private var notShowGetSharelink:Bool{
+        get{
+            return NSUserDefaults.standardUserDefaults().boolForKey("notShowGetSharelink")
+        }
+        
+        set{
+            return NSUserDefaults.standardUserDefaults().setBool(newValue, forKey: "notShowGetSharelink")
+        }
+    }
     
     private var votedMe:Bool{
         get{
@@ -100,6 +109,8 @@ class UserSettingController: UITableViewController
     
     override func viewDidLoad() {
         initPropertySet()
+        tableView.rowHeight = UITableViewAutomaticDimension;
+        tableView.estimatedRowHeight = 48;
         tableView.tableFooterView = UIView()
         tableView.tableFooterView?.backgroundColor = UIColor.clearColor()
         tableView.reloadData()
@@ -282,16 +293,20 @@ class UserSettingController: UITableViewController
         UIApplication.sharedApplication().openURL(NSURL(string: url)!)
     }
     
+    func supportDeveloper(_:UITapGestureRecognizer)
+    {
+        
+    }
+    
     //MARK: tableview delegate
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         //user infos + about + sharelink
-        return 3
+        return 2 + (notShowGetSharelink ? 1 : 0)
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0
         {
-            //textPropertyCells.count
             return textPropertyCells.count
         }else
         {
@@ -300,6 +315,10 @@ class UserSettingController: UITableViewController
     }
     
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if section == 1
+        {
+            return UITableViewAutomaticDimension
+        }
         return 23
     }
     
@@ -312,7 +331,7 @@ class UserSettingController: UITableViewController
             let cell = tableView.dequeueReusableCellWithIdentifier("aboutAppCell",forIndexPath: indexPath)
             cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "about:"))
             return cell
-        }else{
+        }else {
             MobClick.event("GetSharelink")
             let cell = tableView.dequeueReusableCellWithIdentifier("GetSharelinkCell",forIndexPath: indexPath)
             cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "getSharelink:"))

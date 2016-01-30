@@ -19,6 +19,13 @@ enum ViewControllerMode
     case DiaryListMode
 }
 
+extension String
+{
+    var localizedString:String{
+        return NSLocalizedString(self, comment: "")
+    }
+}
+
 let SegueShowTimeMailController = "ShowTimeMailController"
 let SegueShowEditView = "ShowEditView"
 let SegueShowUserSetting = "ShowUserSettingController"

@@ -34,7 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     {
         dispatch_async(dispatch_get_main_queue()) { () -> Void in
             PersistentManager.sharedInstance.appInit("iDiaries")
-            PersistentManager.sharedInstance.useModelExtension(PersistentManager.sharedInstance.rootUrl.URLByAppendingPathComponent("idiaries_model.sqlite"))
+            PersistentManager.sharedInstance.useModelExtension(PersistentManager.sharedInstance.rootUrl.URLByAppendingPathComponent("idiaries_model.sqlite"),momdBundle: NSBundle.mainBundle())
             PersistentManager.sharedInstance.useiCloudExtension("iCloud.com.idiaries.ios")
             NSNotificationCenter.defaultCenter().postNotificationName(allServicesReady, object: nil)
             isAllServicesReady = true

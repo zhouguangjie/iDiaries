@@ -8,6 +8,7 @@
 
 import UIKit
 import MessageUI
+import StoreKit
 
 class AboutViewController: UIViewController,MFMailComposeViewControllerDelegate{
 
@@ -53,6 +54,26 @@ class AboutViewController: UIViewController,MFMailComposeViewControllerDelegate{
     
     func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
         controller.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    @IBAction func rmb1(sender: AnyObject)
+    {
+    }
+    
+    @IBAction func rmb3(sender: AnyObject)
+    {
+    }
+    
+    @IBAction func rmb7(sender: AnyObject)
+    {
+    }
+    
+    @IBAction func rmb23(sender: AnyObject)
+    {
+    }
+    
+    @IBAction func rmb67(sender: AnyObject)
+    {
     }
     
     static func showAbout(currentViewController:UIViewController)
