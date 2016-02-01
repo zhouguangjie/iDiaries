@@ -61,15 +61,26 @@ class SyncService:NSNotificationCenter
         }
     }
     
+    var remindSyncAfterDay:Int{
+        get{
+            return NSUserDefaults.standardUserDefaults().integerForKey("remindSyncAfterDay")
+        }
+        
+        set{
+            NSUserDefaults.standardUserDefaults().setInteger(newValue, forKey: "remindSyncAfterDay")
+        }
+    }
+    
     var isRemindSyncNow:Bool{
-        if abs(lastSyncDate.totalDaysSinceNow) > 0
+        let now = NSDate()
+        if remindSyncAfterDay < now.totalDaysSince1970
         {
             switch remindSyncInterval
             {
             case .oneMonth:
-                return NSDate().dayOfDate == 1
+                return now.dayOfDate == 1
             case .oneWeek:
-                return NSDate().weekDayOfDate == 0
+                return now.weekDayOfDate == 2
             default:break
             }
         }

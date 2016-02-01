@@ -132,7 +132,7 @@ class MoodReportDetailController: UITableViewController
         
         monthMoodStat.avgMoodPoint = avgMoodPoint / Float(lineChartViewData.count)
         
-        monthMoodStat.avgMoodPointEmoji = MoodReportDetailController.moodValueEmoji(CGFloat(avgMoodPoint))
+        monthMoodStat.avgMoodPointEmoji = MoodReportDetailController.moodValueEmoji(CGFloat(monthMoodStat.avgMoodPoint))
         
         monthMoodStat.bestMood = lineChartViewData.maxElement() ?? 60
         monthMoodStat.bestDay = (lineChartViewData.indexOf(monthMoodStat.bestMood) ?? 0) + 1

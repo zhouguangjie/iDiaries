@@ -62,6 +62,8 @@
 		E781B4A81C11C5DB0014A17D /* PasswordLocker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E781B4A71C11C5DB0014A17D /* PasswordLocker.swift */; };
 		E781B4AA1C11D5730014A17D /* LockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E781B4A91C11D5730014A17D /* LockViewController.swift */; };
 		E78D26601C19823C002860A5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E78D26621C19823C002860A5 /* InfoPlist.strings */; };
+		E793D6F01C5F70AC0028FFEC /* UserSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = E793D6EF1C5F70AC0028FFEC /* UserSetting.swift */; };
+		E793D6F21C5F82100028FFEC /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E793D6F11C5F82100028FFEC /* LocalAuthentication.framework */; };
 		E7AE3DD31C4B77E900CB1859 /* MoodReport.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7AE3DD51C4B77E900CB1859 /* MoodReport.storyboard */; };
 		E7BB95541C154A0700130E2F /* MailDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BB95531C154A0700130E2F /* MailDetailController.swift */; };
 		E7BB95561C154B7C00130E2F /* UserSettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BB95551C154B7C00130E2F /* UserSettingController.swift */; };
@@ -80,7 +82,6 @@
 		E7D0DB061C5CF94300F838F6 /* IDUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D0DAFB1C5CF94300F838F6 /* IDUtil.swift */; };
 		E7D0DB071C5CF94300F838F6 /* RegexUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D0DAFD1C5CF94300F838F6 /* RegexUtil.swift */; };
 		E7D0DB081C5CF94300F838F6 /* StringHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D0DAFE1C5CF94300F838F6 /* StringHelper.swift */; };
-		E7D0DB0A1C5D0F4700F838F6 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7D0DB091C5D0F4700F838F6 /* StoreKit.framework */; };
 		E7D84D461C4780C700CC180D /* MoodReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D84D451C4780C700CC180D /* MoodReportViewController.swift */; };
 		E7DF89321C4A558200C908D8 /* iDiariesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DF88C71C4A539800C908D8 /* iDiariesTests.swift */; };
 /* End PBXBuildFile section */
@@ -166,6 +167,8 @@
 		E78D26631C19823D002860A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E78D266B1C19AF2E002860A5 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		E78D266C1C19AF2E002860A5 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		E793D6EF1C5F70AC0028FFEC /* UserSetting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSetting.swift; sourceTree = "<group>"; };
+		E793D6F11C5F82100028FFEC /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		E7AE3DD41C4B77E900CB1859 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MoodReport.storyboard; sourceTree = "<group>"; };
 		E7AE3DD71C4B77EC00CB1859 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/MoodReport.strings"; sourceTree = "<group>"; };
 		E7AE3DD91C4B77ED00CB1859 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/MoodReport.strings"; sourceTree = "<group>"; };
@@ -193,7 +196,6 @@
 		E7D0DAFD1C5CF94300F838F6 /* RegexUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegexUtil.swift; sourceTree = "<group>"; };
 		E7D0DAFE1C5CF94300F838F6 /* StringHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringHelper.swift; sourceTree = "<group>"; };
 		E7D0DAFF1C5CF94300F838F6 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/BahamutCommonLocalized.strings"; sourceTree = "<group>"; };
-		E7D0DB091C5D0F4700F838F6 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		E7D84D451C4780C700CC180D /* MoodReportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoodReportViewController.swift; sourceTree = "<group>"; };
 		E7DF88C51C4A539800C908D8 /* iDiariesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iDiariesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7DF88C71C4A539800C908D8 /* iDiariesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iDiariesTests.swift; sourceTree = "<group>"; };
@@ -205,9 +207,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E793D6F21C5F82100028FFEC /* LocalAuthentication.framework in Frameworks */,
 				E7534B881C23DE3500F0ED58 /* libz.1.2.5.tbd in Frameworks */,
 				E7534B861C23C3F200F0ED58 /* libMobClickLibrary.a in Frameworks */,
-				E7D0DB0A1C5D0F4700F838F6 /* StoreKit.framework in Frameworks */,
 				E781B4881C11925F0014A17D /* AudioToolbox.framework in Frameworks */,
 				41E0151092E8C702AF72BCD3 /* Pods.framework in Frameworks */,
 			);
@@ -459,6 +461,7 @@
 		E7BB95591C1593CD00130E2F /* UserSetting */ = {
 			isa = PBXGroup;
 			children = (
+				E793D6EF1C5F70AC0028FFEC /* UserSetting.swift */,
 				E7BB95551C154B7C00130E2F /* UserSettingController.swift */,
 				E77D43451C15E812008E350A /* AboutViewController.swift */,
 				E7CD271F1C17F51700AB2C64 /* SyncDiariesViewController.swift */,
@@ -523,7 +526,7 @@
 		E930703952CF9F5E7439696B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E7D0DB091C5D0F4700F838F6 /* StoreKit.framework */,
+				E793D6F11C5F82100028FFEC /* LocalAuthentication.framework */,
 				E7534B871C23DE3500F0ED58 /* libz.1.2.5.tbd */,
 				E7BB955D1C15C8D400130E2F /* Pods.framework */,
 				E781B4871C11925F0014A17D /* AudioToolbox.framework */,
@@ -588,7 +591,7 @@
 						DevelopmentTeam = 2BW6TGDJAV;
 						SystemCapabilities = {
 							com.apple.InAppPurchase = {
-								enabled = 1;
+								enabled = 0;
 							};
 							com.apple.iCloud = {
 								enabled = 1;
@@ -745,6 +748,7 @@
 				E743D8E31C149407003ACC4E /* NothingViewFooter.swift in Sources */,
 				E743D8ED1C14A843003ACC4E /* TimeMailService.swift in Sources */,
 				E70DDE9E1C10156B00DD0E57 /* DiaryService.swift in Sources */,
+				E793D6F01C5F70AC0028FFEC /* UserSetting.swift in Sources */,
 				E70DDECF1C10606C00DD0E57 /* UIColor.swift in Sources */,
 				E7C6A24C1C462D520094E7C4 /* ReportService.swift in Sources */,
 				E7D0DB031C5CF94300F838F6 /* MF_Base64Additions.m in Sources */,
@@ -965,6 +969,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.idiaries.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/../bahamut/Bahamut/Bahamut/BahamutCommon";
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/alexchow/GitHub/iDiaries/iDiaries/Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1004,6 +1009,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.idiaries.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/../bahamut/Bahamut/Bahamut/BahamutCommon";
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/alexchow/GitHub/iDiaries/iDiaries/Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

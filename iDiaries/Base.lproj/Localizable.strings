@@ -119,6 +119,12 @@ SYNC_DIARIES = "Sync iDiaries";
 ALARM_SYNC = "Sync Reminder";
 ALARM_WRITE_DIARY = "Notify Write Diary";
 PSW_CHANGED = "Password Changed!";
+USE_TOUCH_ID_VALIDATION = "Use TouchID Unlock iDiaries";
+
+USE_TOUCH_ID = "Use TouchID";
+ON = "On";
+OFF = "Off";
+NOT_AVAILABLE = "Not Available";
 
 NO_REMIDER = "No Reminder";
 EVARY_MONTH = "Every Month";

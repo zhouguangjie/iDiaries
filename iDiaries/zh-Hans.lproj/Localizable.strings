@@ -109,6 +109,12 @@ SWIPE_KEY_VALIDATE_PASSWORD = "滑动解锁";
 INCORRECT_PASSWORD = "验证失败，请重试";
 REPEAT_PASSWORD = "验证新密码";
 REPEAT_PASSWORD_NOT_MATCH = "两次滑动不一致，请重新设置新密码";
+USE_TOUCH_ID_VALIDATION = "使用TouchID解除保护";
+NOT_AVAILABLE = "不可用";
+
+USE_TOUCH_ID = "使用TouchID";
+ON = "开";
+OFF = "关";
 
 NO_DIARY_HERE = "空空的日记本!";
 NO_MAIL_HERE = "空空的邮箱!";

@@ -38,6 +38,19 @@ class ViewController: UITableViewController, KKGestureLockViewDelegate{
     
     private(set) static var instance:ViewController!
     
+    @IBOutlet weak var reportBarItem: UIBarButtonItem!{
+        didSet{
+            reportBarItem.badgeBGColor = UIColor.orangeColor()
+            reportBarItem.badge.layer.cornerRadius = 10
+        }
+    }
+    @IBOutlet weak var timeMailBarItem: UIBarButtonItem!{
+        didSet{
+            timeMailBarItem.badgeBGColor = UIColor.orangeColor()
+            timeMailBarItem.badge.layer.cornerRadius = 10
+            
+        }
+    }
     var mode:ViewControllerMode = .NewDiaryMode{
         didSet{
             if tableView != nil
@@ -62,8 +75,6 @@ class ViewController: UITableViewController, KKGestureLockViewDelegate{
         ColorSets.themeColor = ColorSets.navicationBarColor
         tableView.rowHeight = UITableViewAutomaticDimension;
         tableView.estimatedRowHeight = 48;
-        navigationItem.rightBarButtonItem?.badgeBGColor = UIColor.orangeColor()
-        navigationItem.rightBarButtonItem?.badge.layer.cornerRadius = 10
         updateTableViewHeader()
         initDiaryShot()
         self.tableView.reloadData()
@@ -105,11 +116,26 @@ class ViewController: UITableViewController, KKGestureLockViewDelegate{
             self.tableView.reloadData()
             TimeMailService.sharedInstance.refreshTimeMailBox { () -> Void in
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                    self.navigationItem.rightBarButtonItem?.badgeValue = "\(TimeMailService.sharedInstance.notReadMailCount)"
+                    self.timeMailBarItem.badgeValue = "\(TimeMailService.sharedInstance.notReadMailCount)"
                 })
             }
+            self.reportBarItem.badgeValue = isThisMonthNotReadReport ? "1" : "0"
             sync()
         }
+    }
+    
+    private var isThisMonthNotReadReport:Bool{
+        let now = NSDate()
+        let nowMonths = now.yearOfDate * 12 + now.monthOfDate
+        let month = NSUserDefaults.standardUserDefaults().integerForKey("LAST_READ_MOOD_REPORT_MONTH")
+        return month < nowMonths
+    }
+    
+    private func setThisMonthReadReport()
+    {
+        let now = NSDate()
+        let nowMonths = now.yearOfDate * 12 + now.monthOfDate
+        NSUserDefaults.standardUserDefaults().setInteger(nowMonths, forKey: "LAST_READ_MOOD_REPORT_MONTH")
     }
     
     private func sync()
@@ -121,6 +147,7 @@ class ViewController: UITableViewController, KKGestureLockViewDelegate{
             let msg = String(format: msgFormat, "\(abs(date.totalDaysSinceNow))")
             let alert = UIAlertController(title: NSLocalizedString("SYNC", comment: ""), message: msg, preferredStyle: .Alert)
             alert.addAction(UIAlertAction(title: NSLocalizedString("REMIND_SYNC_NEXT_TIME", comment: ""), style: .Default, handler: { (action) -> Void in
+                SyncService.sharedInstance.remindSyncAfterDay = NSDate().totalDaysSince1970
             }))
             
             alert.addAction(UIAlertAction(title: NSLocalizedString("DONT_REMIND_SYNC", comment: ""), style: .Default, handler: { (action) -> Void in
@@ -128,6 +155,7 @@ class ViewController: UITableViewController, KKGestureLockViewDelegate{
             }))
             
             alert.addAction(UIAlertAction(title: NSLocalizedString("SYNC_NOW", comment: ""), style: .Default, handler: { (action) -> Void in
+                SyncService.sharedInstance.remindSyncAfterDay = NSDate().totalDaysSince1970
                 SyncDiariesViewController.showSyncDiariesViewController(self.navigationController!)
             }))
             showAlert(self, alertController: alert)
@@ -184,10 +212,10 @@ class ViewController: UITableViewController, KKGestureLockViewDelegate{
     
     private func openDiaries()
     {
-        self.makeToastActivity()
+        let hud = self.showActivityHud()
         self.navigationItem.title = iDiariesConfig.appTitle
         DiaryListManager.sharedInstance.refreshDiary({ () -> Void in
-            self.hideToastActivity()
+            hud.hideAsync(true)
             self.mode = .DiaryListMode
         })
     }
@@ -200,7 +228,7 @@ class ViewController: UITableViewController, KKGestureLockViewDelegate{
             {
                 if DiaryService.sharedInstance.hasPassword()
                 {
-                    PasswordLocker.showValidateLocker(self){
+                    PasswordLocker.showValidateLocker(self,useTouchId: UserSetting.isSettingEnable("USE_TOUCH_ID")){
                         DiaryListManager.sharedInstance.unlockDiary()
                         self.openDiaries()
                     }
@@ -255,7 +283,7 @@ class ViewController: UITableViewController, KKGestureLockViewDelegate{
         {
             if DiaryService.sharedInstance.hasPassword()
             {
-                PasswordLocker.showValidateLocker(self){
+                PasswordLocker.showValidateLocker(self,useTouchId: UserSetting.isSettingEnable("USE_TOUCH_ID")){
                     DiaryListManager.sharedInstance.unlockDiary()
                     self.performSegueWithIdentifier(segue, sender: self)
                 }
@@ -299,6 +327,9 @@ class ViewController: UITableViewController, KKGestureLockViewDelegate{
         {
             let vc = segue.destinationViewController as! DiaryDetailViewController
             vc.diary = (sender as! DiaryContentCell).diary
+        }else if segue.identifier == SegueShowMoodReportViewController
+        {
+            self.setThisMonthReadReport()
         }
     }
     

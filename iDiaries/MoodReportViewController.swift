@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 //MARK: MoodReportCell
 class MoodReportCell : UITableViewCell
@@ -51,18 +52,14 @@ class MoodReportViewController: UITableViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         initTableView()
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
+    private var refreshReportsHud:MBProgressHUD!
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         if self.reportsLoaded == false
         {
-            self.makeToastActivity()
+            refreshReportsHud = self.showActivityHud()
             let allDiaries = DiaryListManager.sharedInstance.diaries
             if allDiaries.count == 0
             {
@@ -81,7 +78,7 @@ class MoodReportViewController: UITableViewController
         ReportService.sharedInstance.refreshReports(allDiaries, callback: { () -> Void in
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 self.tableView.reloadData()
-                self.hideToastActivity()
+                self.refreshReportsHud.hideAsync(true)
                 self.reportsLoaded = true
                 self.updateTableViewFooter()
             })

@@ -8,6 +8,7 @@
 
 import UIKit
 import KKGestureLockView
+import LocalAuthentication
 
 enum PasswordLockerType
 {
@@ -25,14 +26,16 @@ class PasswordLocker: NSObject,KKGestureLockViewDelegate {
     private var type:PasswordLockerType = .ValidatePassword
     private var password:String!
     private var lockViewController:LockViewController!
+    private var useTouchId:Bool = false
     
     private var onValidateSuc:ValidateSuccessCallback!
     private var onSetPasswordSuc:SetPasswordSuccessCallback!
     
-    static func showValidateLocker(rootController:UIViewController,callback:ValidateSuccessCallback)
+    static func showValidateLocker(rootController:UIViewController,useTouchId:Bool,callback:ValidateSuccessCallback)
     {
         let locker = PasswordLocker(type: .ValidatePassword)
         locker.onValidateSuc = callback
+        locker.useTouchId = useTouchId
         locker.showLocker(rootController)
     }
     
@@ -50,8 +53,33 @@ class PasswordLocker: NSObject,KKGestureLockViewDelegate {
         rootController.navigationController?.pushViewController(lockViewController, animated: true)
         switch type
         {
-        case .SetPassword:lockViewController.message = NSLocalizedString("SWIPE_KEY_SET_PASSWORD", comment: "")
-        case .ValidatePassword:lockViewController.message = NSLocalizedString("SWIPE_KEY_VALIDATE_PASSWORD", comment: "")
+        case .SetPassword:
+            lockViewController.message = NSLocalizedString("SWIPE_KEY_SET_PASSWORD", comment: "")
+        case .ValidatePassword:
+            if useTouchId{
+                showTouchIdValidation()
+            }
+            lockViewController.message = NSLocalizedString("SWIPE_KEY_VALIDATE_PASSWORD", comment: "")
+        }
+    }
+    
+    private func showTouchIdValidation()
+    {
+        let laCtx = LAContext()
+        let policy = LAPolicy.DeviceOwnerAuthenticationWithBiometrics
+        if laCtx.canEvaluatePolicy(policy, error: nil){
+                laCtx.evaluatePolicy(policy, localizedReason: "USE_TOUCH_ID_VALIDATION".localizedString, reply: { (suc, error) -> Void in
+                    if suc
+                    {
+                        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                            self.lockViewController.navigationController?.popViewControllerAnimated(true)
+                            if let handler = self.onValidateSuc
+                            {
+                                handler()
+                            }
+                        })
+                    }
+                })
         }
     }
     

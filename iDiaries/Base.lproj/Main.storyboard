@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
@@ -272,13 +273,12 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="52"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Never Ads For Experience! Support iDiaries If Helpful." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fdm-QP-yDn">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fdm-QP-yDn">
                                             <rect key="frame" x="15" y="16" width="570" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="42" id="lNR-Xk-5o8"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="default">
                                                 <mask key="constraints">
@@ -969,6 +969,8 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="800"/>
                     <connections>
+                        <outlet property="reportBarItem" destination="ywp-so-cMN" id="vEo-aE-W9q"/>
+                        <outlet property="timeMailBarItem" destination="ClN-u5-kLp" id="Fj0-m4-s54"/>
                         <segue destination="b3n-mR-ADf" kind="show" identifier="ShowUserSettingController" id="Sp2-er-5nH"/>
                         <segue destination="4zA-fK-k5p" kind="show" identifier="ShowTimeMailController" id="iN4-Pz-Y2F"/>
                         <segue destination="gog-eg-vvZ" kind="show" identifier="ShowDairyDetailViewController" id="l5d-Vt-vbf"/>
@@ -979,79 +981,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PNI-s8-Gfo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2103" y="128"/>
-        </scene>
-        <!--About-->
-        <scene sceneID="d6Y-42-7G2">
-            <objects>
-                <viewController storyboardIdentifier="aboutViewController" title="About" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hxl-m0-nOG" customClass="AboutViewController" customModule="iDiaries" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="hi3-EM-iIt"/>
-                        <viewControllerLayoutGuide type="bottom" id="80t-00-Qmp"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="bPE-cf-3fg">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iDiaries" translatesAutoresizingMaskIntoConstraints="NO" id="inf-0q-N63">
-                                <rect key="frame" x="20" y="8" width="56" height="56"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="56" id="EA6-IQ-CLj"/>
-                                    <constraint firstAttribute="height" constant="56" id="c2L-yQ-mWE"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iDiaries" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jvc-V2-OR4">
-                                <rect key="frame" x="84" y="8" width="57" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="65v-Qy-qOv">
-                                <rect key="frame" x="84" y="34" width="142" height="30"/>
-                                <state key="normal" title="Vote me in app store"/>
-                                <connections>
-                                    <action selector="showInAppStore:" destination="hxl-m0-nOG" eventType="touchUpInside" id="QLe-mD-XNd"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EAU-Cj-F7W">
-                                <rect key="frame" x="20" y="72" width="153" height="30"/>
-                                <state key="normal" title="Email: cplover@live.cn"/>
-                                <connections>
-                                    <action selector="mailToBahamutSharelink:" destination="hxl-m0-nOG" eventType="touchUpInside" id="hoz-w8-ytC"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xMC-dd-o4n">
-                                <rect key="frame" x="20" y="110" width="560" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="xMC-dd-o4n" firstAttribute="leading" secondItem="EAU-Cj-F7W" secondAttribute="leading" id="30w-iN-Vq0"/>
-                            <constraint firstItem="jvc-V2-OR4" firstAttribute="top" secondItem="inf-0q-N63" secondAttribute="top" id="3OU-JE-qWx"/>
-                            <constraint firstItem="inf-0q-N63" firstAttribute="top" secondItem="hi3-EM-iIt" secondAttribute="bottom" constant="8" symbolic="YES" id="6mL-i2-pkG"/>
-                            <constraint firstItem="EAU-Cj-F7W" firstAttribute="leading" secondItem="inf-0q-N63" secondAttribute="leading" id="F5K-7s-wBC"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="xMC-dd-o4n" secondAttribute="trailing" id="Poo-y4-YHy"/>
-                            <constraint firstItem="xMC-dd-o4n" firstAttribute="top" secondItem="EAU-Cj-F7W" secondAttribute="bottom" constant="8" symbolic="YES" id="TTB-xx-ggo"/>
-                            <constraint firstItem="inf-0q-N63" firstAttribute="leading" secondItem="bPE-cf-3fg" secondAttribute="leadingMargin" id="a8l-Sx-kQ6"/>
-                            <constraint firstItem="65v-Qy-qOv" firstAttribute="bottom" secondItem="inf-0q-N63" secondAttribute="bottom" id="f8e-Xy-OhI"/>
-                            <constraint firstItem="jvc-V2-OR4" firstAttribute="leading" secondItem="inf-0q-N63" secondAttribute="trailing" constant="8" symbolic="YES" id="fQz-us-9kg"/>
-                            <constraint firstItem="65v-Qy-qOv" firstAttribute="leading" secondItem="jvc-V2-OR4" secondAttribute="leading" id="iO0-XK-uRL"/>
-                            <constraint firstItem="EAU-Cj-F7W" firstAttribute="top" secondItem="inf-0q-N63" secondAttribute="bottom" constant="8" symbolic="YES" id="kGW-Qe-HK4"/>
-                        </constraints>
-                    </view>
-                    <extendedEdge key="edgesForExtendedLayout"/>
-                    <navigationItem key="navigationItem" title="IDiaries" id="J9h-cX-WfG"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-                    <connections>
-                        <outlet property="appImageView" destination="inf-0q-N63" id="c25-3m-xN4"/>
-                        <outlet property="noteLabel" destination="xMC-dd-o4n" id="Ups-41-dOg"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ZHD-qA-bH8" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2033" y="1273"/>
         </scene>
         <!--Today-->
         <scene sceneID="wmX-zS-0Og">
@@ -1096,12 +1025,116 @@
             </objects>
             <point key="canvasLocation" x="2909" y="120"/>
         </scene>
+        <!--关于iDiaries-->
+        <scene sceneID="m8q-bp-7Ix">
+            <objects>
+                <viewController storyboardIdentifier="aboutViewController" title="关于iDiaries" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wuS-pZ-1dC" customClass="AboutViewController" customModule="iDiaries" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pQh-Ne-eFk"/>
+                        <viewControllerLayoutGuide type="bottom" id="4Am-rk-jvn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZLG-iN-end">
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="skT-0Y-RzJ">
+                                <rect key="frame" x="301" y="168" width="67" height="67"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="67" id="ac2-3b-eTu"/>
+                                    <constraint firstAttribute="height" constant="67" id="qX7-KQ-7Kk"/>
+                                </constraints>
+                                <state key="normal" image="heart_circle"/>
+                                <connections>
+                                    <action selector="showInAppStore:" destination="wuS-pZ-1dC" eventType="touchUpInside" id="EfE-0Y-gwL"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x8H-aV-C9z">
+                                <rect key="frame" x="376" y="168" width="67" height="67"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="8b0-4w-fXI"/>
+                                    <constraint firstAttribute="height" constant="128" id="S81-BM-tk5"/>
+                                </constraints>
+                                <state key="normal" image="money_circle"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="8b0-4w-fXI"/>
+                                        <exclude reference="S81-BM-tk5"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="rmb1:" destination="wuS-pZ-1dC" eventType="touchUpInside" id="cEv-db-yKa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y36-VD-e04">
+                                <rect key="frame" x="226" y="168" width="67" height="67"/>
+                                <state key="normal" image="mail_circle"/>
+                                <connections>
+                                    <action selector="mailToBahamutSharelink:" destination="wuS-pZ-1dC" eventType="touchUpInside" id="Tkr-0l-qb6"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feedback" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pOV-rJ-coE">
+                                <rect key="frame" x="222" y="243" width="76" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vote" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UOj-qE-RQJ">
+                                <rect key="frame" x="317" y="243" width="35" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Money Way" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dKA-CY-rfr">
+                                <rect key="frame" x="365" y="243" width="89" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Y36-VD-e04" firstAttribute="centerY" secondItem="skT-0Y-RzJ" secondAttribute="centerY" id="3x6-AK-dbl"/>
+                            <constraint firstItem="x8H-aV-C9z" firstAttribute="height" secondItem="skT-0Y-RzJ" secondAttribute="height" id="4Zm-zC-BbF"/>
+                            <constraint firstItem="x8H-aV-C9z" firstAttribute="centerY" secondItem="skT-0Y-RzJ" secondAttribute="centerY" id="9OF-we-eWw"/>
+                            <constraint firstItem="UOj-qE-RQJ" firstAttribute="centerX" secondItem="skT-0Y-RzJ" secondAttribute="centerX" id="C2k-N3-EQs"/>
+                            <constraint firstItem="dKA-CY-rfr" firstAttribute="centerX" secondItem="x8H-aV-C9z" secondAttribute="centerX" id="IrB-eU-bkf"/>
+                            <constraint firstItem="UOj-qE-RQJ" firstAttribute="top" secondItem="skT-0Y-RzJ" secondAttribute="bottom" constant="8" id="J1d-ZH-BKJ"/>
+                            <constraint firstItem="pOV-rJ-coE" firstAttribute="top" secondItem="Y36-VD-e04" secondAttribute="bottom" constant="8" symbolic="YES" id="J6h-lo-YSX"/>
+                            <constraint firstItem="skT-0Y-RzJ" firstAttribute="centerY" secondItem="ZLG-iN-end" secondAttribute="centerY" multiplier="3/4" id="Psf-2g-Ayn"/>
+                            <constraint firstItem="Y36-VD-e04" firstAttribute="width" secondItem="skT-0Y-RzJ" secondAttribute="width" id="Qgs-7z-qCE"/>
+                            <constraint firstItem="x8H-aV-C9z" firstAttribute="leading" secondItem="skT-0Y-RzJ" secondAttribute="trailing" constant="8" id="RVm-mm-hAX"/>
+                            <constraint firstItem="x8H-aV-C9z" firstAttribute="width" secondItem="skT-0Y-RzJ" secondAttribute="width" id="Vsf-6a-eho"/>
+                            <constraint firstItem="pOV-rJ-coE" firstAttribute="centerX" secondItem="Y36-VD-e04" secondAttribute="centerX" id="WHJ-00-IZr"/>
+                            <constraint firstItem="skT-0Y-RzJ" firstAttribute="top" secondItem="Y36-VD-e04" secondAttribute="bottom" constant="2" id="XfI-WT-kFI"/>
+                            <constraint firstItem="Y36-VD-e04" firstAttribute="height" secondItem="skT-0Y-RzJ" secondAttribute="height" id="dBi-i6-Oed"/>
+                            <constraint firstItem="skT-0Y-RzJ" firstAttribute="leading" secondItem="Y36-VD-e04" secondAttribute="leading" id="eQP-KI-kVe"/>
+                            <constraint firstItem="dKA-CY-rfr" firstAttribute="top" secondItem="x8H-aV-C9z" secondAttribute="bottom" constant="8" id="q7S-NH-Tfl"/>
+                            <constraint firstItem="skT-0Y-RzJ" firstAttribute="centerX" secondItem="ZLG-iN-end" secondAttribute="centerX" constant="34" id="uiI-lr-T4W"/>
+                            <constraint firstItem="skT-0Y-RzJ" firstAttribute="leading" secondItem="Y36-VD-e04" secondAttribute="trailing" constant="8" id="wZw-ny-53s"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="XfI-WT-kFI"/>
+                                <exclude reference="eQP-KI-kVe"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" title="iDiaries" id="Q7r-De-V4c"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zqc-PE-Dki" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2019" y="1273"/>
+        </scene>
     </scenes>
     <resources>
         <image name="diary_mark" width="48" height="48"/>
+        <image name="heart_circle" width="128" height="128"/>
         <image name="iCloud" width="512" height="512"/>
-        <image name="iDiaries" width="582" height="582"/>
+        <image name="mail_circle" width="128" height="128"/>
         <image name="mail_not_read" width="128" height="128"/>
+        <image name="money_circle" width="128" height="128"/>
         <image name="next" width="72" height="72"/>
         <image name="report" width="24" height="24"/>
         <image name="save" width="128" height="128"/>

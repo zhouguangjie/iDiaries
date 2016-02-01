@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import LocalAuthentication
 
 class UIEditTextPropertySet
 {
@@ -84,18 +85,13 @@ class UserSettingController: UITableViewController
         static let syncDiaries = "syncDiaries"
         static let alarmSync = "alarmSync"
         static let alarm = "alarm"
+        static let useTouchId = "useTouchId"
     }
     
     private var shownVoteMeAlert:Bool = false
     
     private var notShowGetSharelink:Bool{
-        get{
-            return NSUserDefaults.standardUserDefaults().boolForKey("notShowGetSharelink")
-        }
-        
-        set{
-            return NSUserDefaults.standardUserDefaults().setBool(newValue, forKey: "notShowGetSharelink")
-        }
+        return false
     }
     
     private var votedMe:Bool{
@@ -160,6 +156,7 @@ class UserSettingController: UITableViewController
     private func initPropertySet()
     {
         textPropertyCells.append(TextPropertyCellModel(propertySet: changePswPropertySet, editable: true, selector: "changePassword:"))
+        textPropertyCells.append(TextPropertyCellModel(propertySet: useTouchIdPropertySet, editable: true, selector: "useTouchId:"))
         textPropertyCells.append(TextPropertyCellModel(propertySet:syncDiariesPropertySet,editable:true, selector: "syncDiaries:"))
         textPropertyCells.append(TextPropertyCellModel(propertySet:alarmSyncPropertySet,editable:true, selector: "alarmSync:"))
         textPropertyCells.append(TextPropertyCellModel(propertySet:writeDiaryAlarmPropertySet,editable:true, selector: "setAlarm:"))
@@ -170,16 +167,31 @@ class UserSettingController: UITableViewController
     {
         let propertySet = UIEditTextPropertySet()
         propertySet.propertyIdentifier = InfoIds.changePsw
-        propertySet.propertyLabel = NSLocalizedString("CHANGE_PSW", comment: "Change Password")
+        propertySet.propertyLabel = "CHANGE_PSW".localizedString
         propertySet.propertyValue = ""
         return propertySet
+    }
+    
+    private var useTouchIdPropertySet:UIEditTextPropertySet
+        {
+            let propertySet = UIEditTextPropertySet()
+            propertySet.propertyIdentifier = InfoIds.useTouchId
+            propertySet.propertyLabel = "USE_TOUCH_ID".localizedString
+            if isTouchIdAvailable
+            {
+                propertySet.propertyValue = UserSetting.isSettingEnable("USE_TOUCH_ID") ? "ON".localizedString : "OFF".localizedString
+            }else
+            {
+                propertySet.propertyValue = "NOT_AVAILABLE".localizedString
+            }
+            return propertySet
     }
     
     private var alarmSyncPropertySet:UIEditTextPropertySet
     {
         let propertySet = UIEditTextPropertySet()
         propertySet.propertyIdentifier = InfoIds.alarmSync
-        propertySet.propertyLabel = NSLocalizedString("ALARM_SYNC", comment:"Alarm Sync")
+        propertySet.propertyLabel = "ALARM_SYNC".localizedString
         propertySet.propertyValue = SyncService.sharedInstance.remindSyncInterval.nameForShow
         return propertySet
     }
@@ -188,7 +200,7 @@ class UserSettingController: UITableViewController
     {
         let propertySet = UIEditTextPropertySet()
         propertySet.propertyIdentifier = InfoIds.syncDiaries
-        propertySet.propertyLabel = NSLocalizedString("SYNC_DIARIES", comment:"Sync Diaries")
+        propertySet.propertyLabel = "SYNC_DIARIES".localizedString
         propertySet.propertyValue = ""
         return propertySet
     }
@@ -197,7 +209,7 @@ class UserSettingController: UITableViewController
     {
         let propertySet = UIEditTextPropertySet()
         propertySet.propertyIdentifier = InfoIds.alarm
-        propertySet.propertyLabel = NSLocalizedString("ALARM_WRITE_DIARY", comment:"Alarm Write Diary")
+        propertySet.propertyLabel = "ALARM_WRITE_DIARY".localizedString
         if let alarmTime = DiaryService.sharedInstance.hasWriteDiaryAlarm()
         {
             let formatter = NSDateFormatter()
@@ -206,38 +218,78 @@ class UserSettingController: UITableViewController
             propertySet.propertyValue = formatter.stringFromDate(alarmTime)
         }else
         {
-            propertySet.propertyValue = NSLocalizedString("NO_ALARM", comment: "")
+            propertySet.propertyValue = "NO_ALARM".localizedString
         }
         return propertySet
     }
     
+    private var isTouchIdAvailable:Bool={
+        let lactx = LAContext()
+        let policy = LAPolicy.DeviceOwnerAuthenticationWithBiometrics
+        if lactx.canEvaluatePolicy(policy, error: nil)
+        {
+            return true
+        }else
+        {
+            return false
+        }
+    }()
+    
     //MARK: actions
+    
+    func useTouchId(tap:UITapGestureRecognizer)
+    {
+        if isTouchIdAvailable
+        {
+            let cell = tap.view as! TextPropertyCell
+            let alert = UIAlertController(title: "USE_TOUCH_ID".localizedString, message: nil, preferredStyle: .Alert)
+            alert.addAction(UIAlertAction(title: "ON".localizedString, style: .Default, handler: { (action) -> Void in
+                
+                UserSetting.enableSetting("USE_TOUCH_ID")
+                cell.info.propertySet.propertyValue = "ON".localizedString
+                cell.refresh()
+            }))
+            alert.addAction(UIAlertAction(title: "OFF".localizedString, style: .Default, handler: { (action) -> Void in
+                UserSetting.disableSetting("USE_TOUCH_ID")
+                cell.info.propertySet.propertyValue = "OFF".localizedString
+                cell.refresh()
+            }))
+            alert.addAction(UIAlertAction(title: "CANCEL".localizedString, style: .Cancel, handler: { (action) -> Void in
+            }))
+            self.presentViewController(alert, animated: true){ action in
+            }
+        }else
+        {
+            self.playToast("TouchID \("NOT_AVAILABLE".localizedString)!")
+        }
+    }
+    
     func changePassword(_:UITapGestureRecognizer)
     {
         PasswordLocker.showSetPasswordLocker(self) { (newPsw) -> Void in
             let msg = NSLocalizedString("PSW_CHANGED", comment: "Password Changed!")
-            self.showCheckMark(msg)
+            self.playCheckMark(msg)
         }
     }
     
     func alarmSync(tap:UITapGestureRecognizer)
     {
         let cell = tap.view as! TextPropertyCell
-        let alert = UIAlertController(title: NSLocalizedString("ALARM_SYNC", comment: ""), message: nil, preferredStyle: .Alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("EVERY_WEEK", comment: ""), style: .Default, handler: { (action) -> Void in
+        let alert = UIAlertController(title: "ALARM_SYNC".localizedString, message: nil, preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: "EVERY_WEEK".localizedString, style: .Default, handler: { (action) -> Void in
             self.setSyncAlarm(.oneWeek)
             cell.refresh()
         }))
-        alert.addAction(UIAlertAction(title: NSLocalizedString("EVERY_MONTH", comment: ""), style: .Default, handler: { (action) -> Void in
+        alert.addAction(UIAlertAction(title: "EVERY_MONTH".localizedString, style: .Default, handler: { (action) -> Void in
             self.setSyncAlarm(.oneMonth)
             cell.refresh()
         }))
         
-        alert.addAction(UIAlertAction(title: NSLocalizedString("NO_ALARM", comment: ""), style: .Default, handler: { (action) -> Void in
+        alert.addAction(UIAlertAction(title: "NO_ALARM".localizedString, style: .Default, handler: { (action) -> Void in
             self.setSyncAlarm(.noAlarm)
             cell.refresh()
         }))
-        alert.addAction(UIAlertAction(title: NSLocalizedString("CANCEL", comment: ""), style: .Cancel, handler: { (action) -> Void in
+        alert.addAction(UIAlertAction(title: "CANCEL".localizedString, style: .Cancel, handler: { (action) -> Void in
         }))
         self.presentViewController(alert, animated: true){ action in
         }
@@ -266,7 +318,7 @@ class UserSettingController: UITableViewController
                 cell.info.propertySet.propertyValue = self.writeDiaryAlarmPropertySet.propertyValue
                 cell.refresh()
                 let msg = NSLocalizedString("REMINDER_CHANGED", comment: "Reminder Changed!")
-                self.showCheckMark(msg)
+                self.playCheckMark(msg)
             }
         }))
         
@@ -301,7 +353,7 @@ class UserSettingController: UITableViewController
     //MARK: tableview delegate
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         //user infos + about + sharelink
-        return 2 + (notShowGetSharelink ? 1 : 0)
+        return 2 + (notShowGetSharelink ? 0 : 1)
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
