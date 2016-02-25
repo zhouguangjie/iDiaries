@@ -17,7 +17,7 @@ DerivedData
 *.ipa
 *.xcuserstate
 *xcuserdata*
-
+*.DS_Store
 #Bahamut secret config
 Bahamut/BahamutConfig.swift
 
