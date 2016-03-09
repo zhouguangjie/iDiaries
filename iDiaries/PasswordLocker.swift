@@ -68,7 +68,7 @@ class PasswordLocker: NSObject,KKGestureLockViewDelegate {
         let laCtx = LAContext()
         let policy = LAPolicy.DeviceOwnerAuthenticationWithBiometrics
         if laCtx.canEvaluatePolicy(policy, error: nil){
-                laCtx.evaluatePolicy(policy, localizedReason: "USE_TOUCH_ID_VALIDATION".localizedString, reply: { (suc, error) -> Void in
+                laCtx.evaluatePolicy(policy, localizedReason: "USE_TOUCH_ID_VALIDATION".localizedString(), reply: { (suc, error) -> Void in
                     if suc
                     {
                         dispatch_async(dispatch_get_main_queue(), { () -> Void in

@@ -969,7 +969,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.idiaries.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/../bahamut/Bahamut/Bahamut/BahamutCommon";
+				SWIFT_INCLUDE_PATHS = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/alexchow/GitHub/iDiaries/iDiaries/Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1009,7 +1009,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.idiaries.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/../bahamut/Bahamut/Bahamut/BahamutCommon";
+				SWIFT_INCLUDE_PATHS = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/alexchow/GitHub/iDiaries/iDiaries/Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

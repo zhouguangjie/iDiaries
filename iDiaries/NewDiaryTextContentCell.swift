@@ -75,6 +75,7 @@ class NewDiaryTextContentCell: NewDiaryBaseCell,UITextViewDelegate {
     func clearContent()
     {
         mainContentTextView.text = ""
+        updateMsgTxtPlaceHolder()
     }
     
     func tapDiaryMark(_:UITapGestureRecognizer)

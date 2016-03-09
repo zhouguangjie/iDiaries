@@ -10,9 +10,6 @@ import UIKit
 import KKGestureLockView
 import MJRefresh
 
-let ALERT_ACTION_OK = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style:.Cancel, handler: nil)
-let ALERT_ACTION_I_SEE = UIAlertAction(title: NSLocalizedString("I_SEE", comment: ""), style:.Cancel, handler: nil)
-
 enum ViewControllerMode
 {
     case NewDiaryMode
@@ -21,7 +18,7 @@ enum ViewControllerMode
 
 extension String
 {
-    var localizedString:String{
+    func localizedString() -> String{
         return NSLocalizedString(self, comment: "")
     }
 }
@@ -257,7 +254,7 @@ class ViewController: UITableViewController, KKGestureLockViewDelegate{
     func updateDiaryDateTitle(diaryDate:NSDate)
     {
         let formatter = NSDateFormatter()
-        formatter.dateFormat = "NEW_DIARY_DATE_TITILE_FORMAT".localizedString
+        formatter.dateFormat = "NEW_DIARY_DATE_TITILE_FORMAT".localizedString()
         formatter.timeZone = NSTimeZone.systemTimeZone()
         self.navigationItem.title = formatter.stringFromDate(diaryDate)
     }

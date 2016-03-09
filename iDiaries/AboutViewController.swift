@@ -63,7 +63,7 @@ class AboutViewController: UIViewController,MFMailComposeViewControllerDelegate,
             req.start()
         }else
         {
-            self.playToast("CANT_PAY_IN_APP".localizedString)
+            self.playToast("CANT_PAY_IN_APP".localizedString())
         }
     }
     

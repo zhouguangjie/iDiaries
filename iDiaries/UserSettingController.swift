@@ -167,7 +167,7 @@ class UserSettingController: UITableViewController
     {
         let propertySet = UIEditTextPropertySet()
         propertySet.propertyIdentifier = InfoIds.changePsw
-        propertySet.propertyLabel = "CHANGE_PSW".localizedString
+        propertySet.propertyLabel = "CHANGE_PSW".localizedString()
         propertySet.propertyValue = ""
         return propertySet
     }
@@ -176,13 +176,13 @@ class UserSettingController: UITableViewController
         {
             let propertySet = UIEditTextPropertySet()
             propertySet.propertyIdentifier = InfoIds.useTouchId
-            propertySet.propertyLabel = "USE_TOUCH_ID".localizedString
+            propertySet.propertyLabel = "USE_TOUCH_ID".localizedString()
             if isTouchIdAvailable
             {
-                propertySet.propertyValue = UserSetting.isSettingEnable("USE_TOUCH_ID") ? "ON".localizedString : "OFF".localizedString
+                propertySet.propertyValue = UserSetting.isSettingEnable("USE_TOUCH_ID") ? "ON".localizedString() : "OFF".localizedString()
             }else
             {
-                propertySet.propertyValue = "NOT_AVAILABLE".localizedString
+                propertySet.propertyValue = "NOT_AVAILABLE".localizedString()
             }
             return propertySet
     }
@@ -191,7 +191,7 @@ class UserSettingController: UITableViewController
     {
         let propertySet = UIEditTextPropertySet()
         propertySet.propertyIdentifier = InfoIds.alarmSync
-        propertySet.propertyLabel = "ALARM_SYNC".localizedString
+        propertySet.propertyLabel = "ALARM_SYNC".localizedString()
         propertySet.propertyValue = SyncService.sharedInstance.remindSyncInterval.nameForShow
         return propertySet
     }
@@ -200,7 +200,7 @@ class UserSettingController: UITableViewController
     {
         let propertySet = UIEditTextPropertySet()
         propertySet.propertyIdentifier = InfoIds.syncDiaries
-        propertySet.propertyLabel = "SYNC_DIARIES".localizedString
+        propertySet.propertyLabel = "SYNC_DIARIES".localizedString()
         propertySet.propertyValue = ""
         return propertySet
     }
@@ -209,7 +209,7 @@ class UserSettingController: UITableViewController
     {
         let propertySet = UIEditTextPropertySet()
         propertySet.propertyIdentifier = InfoIds.alarm
-        propertySet.propertyLabel = "ALARM_WRITE_DIARY".localizedString
+        propertySet.propertyLabel = "ALARM_WRITE_DIARY".localizedString()
         if let alarmTime = DiaryService.sharedInstance.hasWriteDiaryAlarm()
         {
             let formatter = NSDateFormatter()
@@ -218,7 +218,7 @@ class UserSettingController: UITableViewController
             propertySet.propertyValue = formatter.stringFromDate(alarmTime)
         }else
         {
-            propertySet.propertyValue = "NO_ALARM".localizedString
+            propertySet.propertyValue = "NO_ALARM".localizedString()
         }
         return propertySet
     }
@@ -242,25 +242,25 @@ class UserSettingController: UITableViewController
         if isTouchIdAvailable
         {
             let cell = tap.view as! TextPropertyCell
-            let alert = UIAlertController(title: "USE_TOUCH_ID".localizedString, message: nil, preferredStyle: .Alert)
-            alert.addAction(UIAlertAction(title: "ON".localizedString, style: .Default, handler: { (action) -> Void in
+            let alert = UIAlertController(title: "USE_TOUCH_ID".localizedString(), message: nil, preferredStyle: .Alert)
+            alert.addAction(UIAlertAction(title: "ON".localizedString(), style: .Default, handler: { (action) -> Void in
                 
                 UserSetting.enableSetting("USE_TOUCH_ID")
-                cell.info.propertySet.propertyValue = "ON".localizedString
+                cell.info.propertySet.propertyValue = "ON".localizedString()
                 cell.refresh()
             }))
-            alert.addAction(UIAlertAction(title: "OFF".localizedString, style: .Default, handler: { (action) -> Void in
+            alert.addAction(UIAlertAction(title: "OFF".localizedString(), style: .Default, handler: { (action) -> Void in
                 UserSetting.disableSetting("USE_TOUCH_ID")
-                cell.info.propertySet.propertyValue = "OFF".localizedString
+                cell.info.propertySet.propertyValue = "OFF".localizedString()
                 cell.refresh()
             }))
-            alert.addAction(UIAlertAction(title: "CANCEL".localizedString, style: .Cancel, handler: { (action) -> Void in
+            alert.addAction(UIAlertAction(title: "CANCEL".localizedString(), style: .Cancel, handler: { (action) -> Void in
             }))
             self.presentViewController(alert, animated: true){ action in
             }
         }else
         {
-            self.playToast("TouchID \("NOT_AVAILABLE".localizedString)!")
+            self.playToast("TouchID \("NOT_AVAILABLE".localizedString())!")
         }
     }
     
@@ -275,21 +275,21 @@ class UserSettingController: UITableViewController
     func alarmSync(tap:UITapGestureRecognizer)
     {
         let cell = tap.view as! TextPropertyCell
-        let alert = UIAlertController(title: "ALARM_SYNC".localizedString, message: nil, preferredStyle: .Alert)
-        alert.addAction(UIAlertAction(title: "EVERY_WEEK".localizedString, style: .Default, handler: { (action) -> Void in
+        let alert = UIAlertController(title: "ALARM_SYNC".localizedString(), message: nil, preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: "EVERY_WEEK".localizedString(), style: .Default, handler: { (action) -> Void in
             self.setSyncAlarm(.oneWeek)
             cell.refresh()
         }))
-        alert.addAction(UIAlertAction(title: "EVERY_MONTH".localizedString, style: .Default, handler: { (action) -> Void in
+        alert.addAction(UIAlertAction(title: "EVERY_MONTH".localizedString(), style: .Default, handler: { (action) -> Void in
             self.setSyncAlarm(.oneMonth)
             cell.refresh()
         }))
         
-        alert.addAction(UIAlertAction(title: "NO_ALARM".localizedString, style: .Default, handler: { (action) -> Void in
+        alert.addAction(UIAlertAction(title: "NO_ALARM".localizedString(), style: .Default, handler: { (action) -> Void in
             self.setSyncAlarm(.noAlarm)
             cell.refresh()
         }))
-        alert.addAction(UIAlertAction(title: "CANCEL".localizedString, style: .Cancel, handler: { (action) -> Void in
+        alert.addAction(UIAlertAction(title: "CANCEL".localizedString(), style: .Cancel, handler: { (action) -> Void in
         }))
         self.presentViewController(alert, animated: true){ action in
         }

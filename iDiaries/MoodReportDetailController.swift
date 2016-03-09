@@ -167,7 +167,7 @@ class MoodReportDetailController: UITableViewController
     private func initMoodTrendsChart()
     {
         let lineChartTitle = UILabel()
-        lineChartTitle.text = "MOOD_TRENDS_TITLE".localizedString
+        lineChartTitle.text = "MOOD_TRENDS_TITLE".localizedString()
         lineChartTitle.sizeToFit()
         lineChartTitle.textColor = UIColor.lightGrayColor()
         lineChartTitle.center = CGPointMake(self.view.center.x - 10, -10)
@@ -193,7 +193,7 @@ class MoodReportDetailController: UITableViewController
         let chartTitle = UILabel()
         let barChart = TEABarChart()
         let cellWidth = tableView.contentSize.width + 4
-        chartTitle.text = "MOOD_STATISTICS_TITLE".localizedString
+        chartTitle.text = "MOOD_STATISTICS_TITLE".localizedString()
         chartTitle.sizeToFit()
         chartTitle.textColor = UIColor.lightGrayColor()
         chartTitle.center = CGPointMake(self.view.center.x - 10, -13)
@@ -243,8 +243,8 @@ class MoodReportDetailController: UITableViewController
             let cell = tableView.dequeueReusableCellWithIdentifier(MoodReportSummaryCell.reuseId, forIndexPath: indexPath) as! MoodReportSummaryCell
             cell.totalDiariesCountLabel.text = String(format: "%d(%.0f%%)",report.diariesCount, monthMoodStat.writeDiaryPersent)
             cell.averageMoodsLabel.text = String(format: "%.0f%@", monthMoodStat.avgMoodPoint,monthMoodStat.avgMoodPointEmoji)
-            cell.bestMoodLabel.text = String(format: "DAY_MOOD_EMOJI_FORMAT".localizedString, monthMoodStat.bestDay,monthMoodStat.bestMood,monthMoodStat.bestMoodEmoji)
-            cell.badMoodLabel.text = String(format: "DAY_MOOD_EMOJI_FORMAT".localizedString, monthMoodStat.lowestDay,monthMoodStat.lowestMood,monthMoodStat.lowestMoodEmoji)
+            cell.bestMoodLabel.text = String(format: "DAY_MOOD_EMOJI_FORMAT".localizedString(), monthMoodStat.bestDay,monthMoodStat.bestMood,monthMoodStat.bestMoodEmoji)
+            cell.badMoodLabel.text = String(format: "DAY_MOOD_EMOJI_FORMAT".localizedString(), monthMoodStat.lowestDay,monthMoodStat.lowestMood,monthMoodStat.lowestMoodEmoji)
             return cell
         }
     }
