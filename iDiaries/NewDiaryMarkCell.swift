@@ -13,6 +13,7 @@ class NewDiaryMarkCell: NewDiaryBaseCell,UICollectionViewDataSource,UICollection
     static let reuseId = "NewDiaryMarkCell"
     var typedMarks:TypedMarks!
     static let minimumInteritemSpacing:CGFloat = 3
+    @IBOutlet weak var expandCellMarkImgView: UIImageView!
     @IBOutlet weak var marksCollectionView: UICollectionView!{
         didSet{
             marksCollectionView.delegate = self
@@ -25,8 +26,12 @@ class NewDiaryMarkCell: NewDiaryBaseCell,UICollectionViewDataSource,UICollection
         }
     }
     @IBOutlet weak var marksCollectionViewHeight: NSLayoutConstraint!
-    
-    private(set) var selectedMarks = [DiaryMark]()
+    private(set) var cellShrinkLabel:UILabel!
+    private(set) var selectedMarks = [DiaryMark](){
+        didSet{
+            cellShrinkLabel?.text = selectedMarks.map{String.isNullOrWhiteSpace($0.emoji) ? $0.displayName : $0.emoji}.joinWithSeparator("")
+        }
+    }
     
     func clearSelected()
     {
@@ -87,6 +92,13 @@ class NewDiaryMarkCell: NewDiaryBaseCell,UICollectionViewDataSource,UICollection
         if let title = header.viewWithTag(1) as? UILabel{
             title.text = headerText
         }
+        if self.cellShrinkLabel == nil{
+            if let shrinkLabel = header.viewWithTag(2) as? UILabel{
+                shrinkLabel.text = nil
+                self.cellShrinkLabel = shrinkLabel
+            }
+        }
+        
         return header
     }
 

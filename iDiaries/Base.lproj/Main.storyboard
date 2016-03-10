@@ -602,11 +602,11 @@
                                             <color key="textColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="next" translatesAutoresizingMaskIntoConstraints="NO" id="1b8-CH-aH6">
-                                            <rect key="frame" x="569" y="9" width="23" height="23"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="directional_right" translatesAutoresizingMaskIntoConstraints="NO" id="1b8-CH-aH6">
+                                            <rect key="frame" x="572" y="11" width="20" height="20"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="23" id="VjE-QF-0du"/>
-                                                <constraint firstAttribute="height" constant="23" id="mON-gl-Xze"/>
+                                                <constraint firstAttribute="width" constant="20" id="VjE-QF-0du"/>
+                                                <constraint firstAttribute="height" constant="20" id="mON-gl-Xze"/>
                                             </constraints>
                                         </imageView>
                                     </subviews>
@@ -692,8 +692,16 @@
                                                         <color key="textColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A Good Day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AQC-qd-TEZ">
+                                                        <rect key="frame" x="84" y="11" width="91" height="21"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                 </subviews>
                                                 <constraints>
+                                                    <constraint firstItem="AQC-qd-TEZ" firstAttribute="leading" secondItem="cZZ-K4-MKE" secondAttribute="trailing" constant="8" symbolic="YES" id="E2n-tL-rnH"/>
+                                                    <constraint firstItem="AQC-qd-TEZ" firstAttribute="baseline" secondItem="cZZ-K4-MKE" secondAttribute="baseline" id="HAn-dN-fHw"/>
                                                     <constraint firstItem="cZZ-K4-MKE" firstAttribute="centerY" secondItem="pOL-W3-8B6" secondAttribute="centerY" id="ecl-CB-Del"/>
                                                     <constraint firstAttribute="leadingMargin" secondItem="cZZ-K4-MKE" secondAttribute="leading" constant="7" id="xAn-ba-DrD"/>
                                                 </constraints>
@@ -704,21 +712,25 @@
                                                 </mask>
                                             </variation>
                                         </collectionView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="directional_right" translatesAutoresizingMaskIntoConstraints="NO" id="X9d-Wr-f4i">
+                                            <rect key="frame" x="572" y="11" width="20" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="S3T-Rp-9Tm"/>
+                                                <constraint firstAttribute="width" constant="20" id="sXm-cs-1Y5"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="bottomMargin" secondItem="RZf-Ht-TaO" secondAttribute="bottom" id="B5s-Eq-gMo"/>
-                                        <constraint firstItem="RZf-Ht-TaO" firstAttribute="centerY" secondItem="bcC-Gm-ppc" secondAttribute="centerY" id="CzB-KP-qe6"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="RZf-Ht-TaO" secondAttribute="trailing" id="JNW-X8-UQN"/>
+                                        <constraint firstItem="X9d-Wr-f4i" firstAttribute="top" secondItem="RZf-Ht-TaO" secondAttribute="top" constant="3" id="cvk-zL-bfv"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="X9d-Wr-f4i" secondAttribute="trailing" id="kLd-HA-mv7"/>
                                         <constraint firstAttribute="leadingMargin" secondItem="RZf-Ht-TaO" secondAttribute="leading" id="mqQ-y5-YS4"/>
                                         <constraint firstAttribute="topMargin" secondItem="RZf-Ht-TaO" secondAttribute="top" id="rk6-e4-eK6"/>
                                     </constraints>
-                                    <variation key="default">
-                                        <mask key="constraints">
-                                            <exclude reference="CzB-KP-qe6"/>
-                                        </mask>
-                                    </variation>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="expandCellMarkImgView" destination="X9d-Wr-f4i" id="8JP-Nh-Fb9"/>
                                     <outlet property="marksCollectionView" destination="RZf-Ht-TaO" id="InL-Rv-93X"/>
                                     <outlet property="marksCollectionViewHeight" destination="11V-3O-bby" id="lLf-cF-V7G"/>
                                 </connections>
@@ -730,13 +742,13 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="168"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8hf-Kf-Nz0">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8hf-Kf-Nz0">
                                             <rect key="frame" x="8" y="8" width="47" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="1Mn-lg-cVj">
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Mn-lg-cVj">
                                             <rect key="frame" x="8" y="37" width="584" height="116"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
@@ -751,7 +763,7 @@
                                                 </mask>
                                             </variation>
                                         </textView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Write something..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6bV-Gf-L4F">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Write something..." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6bV-Gf-L4F">
                                             <rect key="frame" x="15" y="44" width="577" height="18"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -1130,6 +1142,7 @@
     </scenes>
     <resources>
         <image name="diary_mark" width="48" height="48"/>
+        <image name="directional_right" width="128" height="128"/>
         <image name="heart_circle" width="128" height="128"/>
         <image name="iCloud" width="512" height="512"/>
         <image name="mail_circle" width="128" height="128"/>

@@ -589,11 +589,11 @@
                                             <color key="textColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="next" translatesAutoresizingMaskIntoConstraints="NO" id="1b8-CH-aH6">
-                                            <rect key="frame" x="569" y="9" width="23" height="23"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="directional_right" translatesAutoresizingMaskIntoConstraints="NO" id="1b8-CH-aH6">
+                                            <rect key="frame" x="572" y="11" width="20" height="20"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="23" id="VjE-QF-0du"/>
-                                                <constraint firstAttribute="height" constant="23" id="mON-gl-Xze"/>
+                                                <constraint firstAttribute="width" constant="20" id="VjE-QF-0du"/>
+                                                <constraint firstAttribute="height" constant="20" id="mON-gl-Xze"/>
                                             </constraints>
                                         </imageView>
                                     </subviews>
@@ -623,35 +623,35 @@
                                     <outlet property="dateLabel" destination="gNV-MF-MAQ" id="DLS-h9-xs2"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="NewDiaryMarkCell" rowHeight="168" id="SrN-WO-vcz" customClass="NewDiaryMarkCell" customModule="iDiaries" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="NewDiaryMarkCell" rowHeight="168" id="S1H-VE-by9" customClass="NewDiaryMarkCell" customModule="iDiaries" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="134" width="600" height="168"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SrN-WO-vcz" id="bcC-Gm-ppc">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="S1H-VE-by9" id="BM6-Zb-ndC">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="168"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" keyboardDismissMode="interactive" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="RZf-Ht-TaO">
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" keyboardDismissMode="interactive" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Juq-6D-k8D">
                                             <rect key="frame" x="8" y="8" width="584" height="152"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="100" id="11V-3O-bby"/>
+                                                <constraint firstAttribute="height" constant="100" id="rT8-xq-1DA"/>
                                             </constraints>
-                                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="UZ5-ct-2T2">
+                                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="PcJ-uo-cVL">
                                                 <size key="itemSize" width="185" height="23"/>
                                                 <size key="headerReferenceSize" width="50" height="42"/>
                                                 <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                 <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                             </collectionViewFlowLayout>
                                             <cells>
-                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DiaryMarkCell" id="Lz6-TO-P0O" customClass="DiaryMarkCell" customModule="iDiaries" customModuleProvider="target">
+                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DiaryMarkCell" id="mue-nN-6OE" customClass="DiaryMarkCell" customModule="iDiaries" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="42" width="185" height="23"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                         <rect key="frame" x="0.0" y="0.0" width="185" height="23"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="标记名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H6e-u6-POe">
-                                                                <rect key="frame" x="73" y="4" width="39" height="16"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mark" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="htO-aj-C7C">
+                                                                <rect key="frame" x="77" y="4" width="31" height="16"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                                 <color key="textColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
@@ -661,53 +661,65 @@
                                                     </view>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstItem="H6e-u6-POe" firstAttribute="centerX" secondItem="Lz6-TO-P0O" secondAttribute="centerX" id="VWp-Pt-nyc"/>
-                                                        <constraint firstItem="H6e-u6-POe" firstAttribute="centerY" secondItem="Lz6-TO-P0O" secondAttribute="centerY" id="n8k-WN-X2r"/>
+                                                        <constraint firstItem="htO-aj-C7C" firstAttribute="centerX" secondItem="mue-nN-6OE" secondAttribute="centerX" id="8lq-zh-uYI"/>
+                                                        <constraint firstItem="htO-aj-C7C" firstAttribute="centerY" secondItem="mue-nN-6OE" secondAttribute="centerY" id="IRI-QG-lbC"/>
                                                     </constraints>
                                                     <connections>
-                                                        <outlet property="markName" destination="H6e-u6-POe" id="WWR-al-vN3"/>
+                                                        <outlet property="markName" destination="htO-aj-C7C" id="riT-IB-mE9"/>
                                                     </connections>
                                                 </collectionViewCell>
                                             </cells>
-                                            <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MarkCollectionHeader" id="pOL-W3-8B6">
+                                            <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MarkCollectionHeader" id="9U2-oc-YJl">
                                                 <rect key="frame" x="0.0" y="0.0" width="584" height="42"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MarkType" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cZZ-K4-MKE">
+                                                    <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MarkType" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wiR-LP-8hF">
                                                         <rect key="frame" x="1" y="11" width="75" height="21"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A Good Day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T6C-xa-FM4">
+                                                        <rect key="frame" x="84" y="11" width="91" height="21"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstItem="cZZ-K4-MKE" firstAttribute="centerY" secondItem="pOL-W3-8B6" secondAttribute="centerY" id="ecl-CB-Del"/>
-                                                    <constraint firstAttribute="leadingMargin" secondItem="cZZ-K4-MKE" secondAttribute="leading" constant="7" id="xAn-ba-DrD"/>
+                                                    <constraint firstAttribute="leadingMargin" secondItem="wiR-LP-8hF" secondAttribute="leading" constant="7" id="9c0-c8-lMu"/>
+                                                    <constraint firstItem="T6C-xa-FM4" firstAttribute="baseline" secondItem="wiR-LP-8hF" secondAttribute="baseline" id="YFg-ih-X0M"/>
+                                                    <constraint firstItem="T6C-xa-FM4" firstAttribute="leading" secondItem="wiR-LP-8hF" secondAttribute="trailing" constant="8" symbolic="YES" id="cZM-cp-ZrX"/>
+                                                    <constraint firstItem="wiR-LP-8hF" firstAttribute="centerY" secondItem="9U2-oc-YJl" secondAttribute="centerY" id="rvC-Zf-u6e"/>
                                                 </constraints>
                                             </collectionReusableView>
                                             <variation key="default">
                                                 <mask key="constraints">
-                                                    <exclude reference="11V-3O-bby"/>
+                                                    <exclude reference="rT8-xq-1DA"/>
                                                 </mask>
                                             </variation>
                                         </collectionView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="directional_right" translatesAutoresizingMaskIntoConstraints="NO" id="7Ti-QA-fEj">
+                                            <rect key="frame" x="572" y="11" width="20" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="20" id="97q-61-3XI"/>
+                                                <constraint firstAttribute="height" constant="20" id="9uM-FU-QBw"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="bottomMargin" secondItem="RZf-Ht-TaO" secondAttribute="bottom" id="B5s-Eq-gMo"/>
-                                        <constraint firstItem="RZf-Ht-TaO" firstAttribute="centerY" secondItem="bcC-Gm-ppc" secondAttribute="centerY" id="CzB-KP-qe6"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="RZf-Ht-TaO" secondAttribute="trailing" id="JNW-X8-UQN"/>
-                                        <constraint firstAttribute="leadingMargin" secondItem="RZf-Ht-TaO" secondAttribute="leading" id="mqQ-y5-YS4"/>
-                                        <constraint firstAttribute="topMargin" secondItem="RZf-Ht-TaO" secondAttribute="top" id="rk6-e4-eK6"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="Juq-6D-k8D" secondAttribute="leading" id="0g6-Sq-Da9"/>
+                                        <constraint firstItem="7Ti-QA-fEj" firstAttribute="top" secondItem="Juq-6D-k8D" secondAttribute="top" constant="3" id="KZD-Eo-Kfa"/>
+                                        <constraint firstAttribute="topMargin" secondItem="Juq-6D-k8D" secondAttribute="top" id="YJR-Dj-p3h"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="7Ti-QA-fEj" secondAttribute="trailing" id="ckb-BZ-oPf"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Juq-6D-k8D" secondAttribute="bottom" id="jrf-Hw-R61"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Juq-6D-k8D" secondAttribute="trailing" id="mIw-gp-rJL"/>
                                     </constraints>
-                                    <variation key="default">
-                                        <mask key="constraints">
-                                            <exclude reference="CzB-KP-qe6"/>
-                                        </mask>
-                                    </variation>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="marksCollectionView" destination="RZf-Ht-TaO" id="InL-Rv-93X"/>
-                                    <outlet property="marksCollectionViewHeight" destination="11V-3O-bby" id="lLf-cF-V7G"/>
+                                    <outlet property="expandCellMarkImgView" destination="7Ti-QA-fEj" id="ygQ-g6-zz5"/>
+                                    <outlet property="marksCollectionView" destination="Juq-6D-k8D" id="yDQ-0s-Iec"/>
+                                    <outlet property="marksCollectionViewHeight" destination="rT8-xq-1DA" id="6fb-RS-62G"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="NewDiaryTextContentCell" rowHeight="168" id="deG-C7-C7D" customClass="NewDiaryTextContentCell" customModule="iDiaries" customModuleProvider="target">
@@ -1140,6 +1152,7 @@
     </scenes>
     <resources>
         <image name="diary_mark" width="48" height="48"/>
+        <image name="directional_right" width="128" height="128"/>
         <image name="heart_circle" width="128" height="128"/>
         <image name="iCloud" width="512" height="512"/>
         <image name="mail_circle" width="128" height="128"/>

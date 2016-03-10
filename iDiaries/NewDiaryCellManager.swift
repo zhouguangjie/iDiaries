@@ -9,12 +9,33 @@
 import Foundation
 import UIKit
 
-class NewDiaryCellManager
+class NewDiaryCellManager:NSObject
 {
     static var sharedInstance:NewDiaryCellManager = {
         return NewDiaryCellManager()
     }()
     
+    private var markCellExpandTapGestures:[UITapGestureRecognizer!] = [nil,nil,nil]
+    private var expandedMarkCellIndex = 0{
+        didSet{
+            if oldValue == expandedMarkCellIndex{
+                return
+            }
+            if markCells.count > 0{
+                let oldCell = markCells[oldValue]
+                oldCell.addGestureRecognizer(markCellExpandTapGestures[oldValue])
+                oldCell.expandCellMarkImgView.hidden = false
+                
+                let expandedCell = markCells[expandedMarkCellIndex]
+                expandedCell.removeGestureRecognizer(markCellExpandTapGestures[expandedMarkCellIndex])
+                expandedCell.expandCellMarkImgView.hidden = true
+                
+                let indexPaths = [NSIndexPath(forRow: expandedMarkCellIndex + 1, inSection: 0),NSIndexPath(forRow: oldValue + 1, inSection: 0)]
+                expandedCell.rootController.tableView.reloadRowsAtIndexPaths(indexPaths, withRowAnimation: UITableViewRowAnimation.Top)
+            }
+        }
+    }
+    let MarkCellShrinkHeight:CGFloat = 42
     private var markCellHeight:[CGFloat] = [0,0,0]
     private var markCells:[NewDiaryMarkCell!] = [nil,nil,nil]
     private let markCellsMultiSelection = [true,true,false]
@@ -116,7 +137,12 @@ class NewDiaryCellManager
     {
         if row > 0 && row <= 3
         {
-            return markCellHeight[row - 1] + 18
+            let index = row - 1
+            if index == expandedMarkCellIndex{
+                return markCellHeight[index] + 18
+            }else{
+                return MarkCellShrinkHeight
+            }
         }else if row == 6
         {
             return 98
@@ -141,6 +167,12 @@ class NewDiaryCellManager
                 self.markCells[markIndex] = mcell
                 mcell.typedMarks = AllDiaryMarks[markIndex]
                 mcell.marksCollectionView.allowsMultipleSelection = markCellsMultiSelection[markIndex]
+                markCellExpandTapGestures[markIndex] = UITapGestureRecognizer(target: self, action: "onMarkCellClicked:")
+                if expandedMarkCellIndex != markIndex{
+                    mcell.addGestureRecognizer(markCellExpandTapGestures[markIndex])
+                }else{
+                    mcell.expandCellMarkImgView.hidden = true
+                }
                 mcell.refresh()
                 mcell.sizeToFit()
                 initMarkCellHeight(markIndex)
@@ -169,6 +201,12 @@ class NewDiaryCellManager
         }
         cell.rootController = rootController
         return cell
+    }
+    
+    func onMarkCellClicked(a:UITapGestureRecognizer){
+        if let i = (markCells.indexOf {$0 == a.view}){
+            expandedMarkCellIndex = i
+        }
     }
     
     //MARK: temperate
