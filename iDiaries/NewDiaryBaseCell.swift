@@ -9,5 +9,5 @@
 import UIKit
 
 class NewDiaryBaseCell: UITableViewCell {
-    var rootController:ViewController!
+    var rootController:MainViewController!
 }

@@ -24,7 +24,6 @@ class AboutViewController: UIViewController,MFMailComposeViewControllerDelegate,
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.changeNavigationBarColor()
         SKPaymentQueue.defaultQueue().addTransactionObserver(self)
     }
     

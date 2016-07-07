@@ -43,11 +43,22 @@ class SyncFileModel: EVObject
     var diaries:[DiaryModel]!
 }
 
-class SyncService:NSNotificationCenter
+extension ServiceContainer{
+    static func getSyncService() -> SyncService{
+        return ServiceContainer.getService(SyncService)
+    }
+}
+
+class SyncService:NSNotificationCenter, ServiceProtocol
 {
-    static var sharedInstance = {
-        return SyncService()
-    }()
+    @objc static var ServiceName:String {return "Sync Service"}
+    func appStartInit(appName: String) {
+        PersistentManager.sharedInstance.useiCloudExtension("iCloud.com.idiaries.ios")
+    }
+    
+    func userLoginInit(userId: String) {
+        setServiceReady()
+    }
     
     //MARK: alarm diary sync
     var remindSyncInterval:SyncAlarmInterval{
@@ -179,8 +190,8 @@ class SyncService:NSNotificationCenter
     private func needSend() -> Bool
     {
         let serverNewest = IntMax(self.lockFile.syncDates.last?.doubleValue ?? 0)
-        let newDiary = IntMax(DiaryService.sharedInstance.newestDiaryDateTimeInterval)
-        let newMail = IntMax(TimeMailService.sharedInstance.newestTimeMailDateTimeInterval)
+        let newDiary = IntMax(ServiceContainer.getDiaryService().newestDiaryDateTimeInterval)
+        let newMail = IntMax(ServiceContainer.getTimeMailService().newestTimeMailDateTimeInterval)
         return newDiary > serverNewest || newMail > serverNewest
     }
     
@@ -232,8 +243,8 @@ class SyncService:NSNotificationCenter
     {
         fetchingSyncFilesQueue.removeAll()
         let lastSyncTime = self.lastetFetchServerDate?.timeIntervalSince1970 ?? 0
-        for var i = self.lockFile.syncDates.count - 1;  i >= 0; i--
-        {
+        let start = self.lockFile.syncDates.count - 1
+        for i in start.stride(through: 0, by: -1) {
             let date = self.lockFile.syncDates[i]
             if lastSyncTime < date.doubleValue
             {
@@ -317,9 +328,9 @@ class SyncService:NSNotificationCenter
     {
         let lastSyncTime = self.lockFile.syncDates.last?.doubleValue ?? 0
         let newSyncFileModel = SyncFileModel()
-        DiaryService.sharedInstance.getAllDiaries({ (diaries) -> Void in
+        ServiceContainer.getDiaryService().getAllDiaries({ (diaries) -> Void in
             newSyncFileModel.diaries = diaries.filter{$0.lastModifiedTime.doubleValue > lastSyncTime}
-            TimeMailService.sharedInstance.getAllTimeMail({ (mails) -> Void in
+            ServiceContainer.getTimeMailService().getAllTimeMail({ (mails) -> Void in
                 newSyncFileModel.mails = mails.filter{$0.lastModifiedTime.doubleValue > lastSyncTime}
                 
                 if newSyncFileModel.diaries.count > 0 || newSyncFileModel.mails.count > 0

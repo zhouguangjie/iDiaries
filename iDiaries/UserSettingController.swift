@@ -27,7 +27,6 @@ struct TextPropertyCellModel
     var selector:Selector!
 }
 
-
 class TextPropertyCell:UITableViewCell
 {
     static let reuseIdentifier = "TextPropertyCell"
@@ -134,6 +133,10 @@ class UserSettingController: UITableViewController
     
     private func voteMe()
     {
+        let times = NSUserDefaults.standardUserDefaults().integerForKey(LAUNCH_TIMES_KEY)
+        if times != 3 || times != 21 {
+            return
+        }
         let alert = UIAlertController(title: NSLocalizedString("INVITE_TO_VOTE_TITLE", comment: ""), message: NSLocalizedString("INVITE_TO_VOTE_MSG", comment: ""), preferredStyle: .Alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("NO_THANKS", comment: "No Thanks"), style: .Default, handler: { (action) -> Void in
             self.votedMe = true
@@ -155,11 +158,11 @@ class UserSettingController: UITableViewController
     
     private func initPropertySet()
     {
-        textPropertyCells.append(TextPropertyCellModel(propertySet: changePswPropertySet, editable: true, selector: "changePassword:"))
-        textPropertyCells.append(TextPropertyCellModel(propertySet: useTouchIdPropertySet, editable: true, selector: "useTouchId:"))
-        textPropertyCells.append(TextPropertyCellModel(propertySet:syncDiariesPropertySet,editable:true, selector: "syncDiaries:"))
-        textPropertyCells.append(TextPropertyCellModel(propertySet:alarmSyncPropertySet,editable:true, selector: "alarmSync:"))
-        textPropertyCells.append(TextPropertyCellModel(propertySet:writeDiaryAlarmPropertySet,editable:true, selector: "setAlarm:"))
+        textPropertyCells.append(TextPropertyCellModel(propertySet: changePswPropertySet, editable: true, selector: #selector(UserSettingController.changePassword(_:))))
+        textPropertyCells.append(TextPropertyCellModel(propertySet: useTouchIdPropertySet, editable: true, selector: #selector(UserSettingController.useTouchId(_:))))
+        textPropertyCells.append(TextPropertyCellModel(propertySet:syncDiariesPropertySet,editable:true, selector: #selector(UserSettingController.syncDiaries(_:))))
+        textPropertyCells.append(TextPropertyCellModel(propertySet:alarmSyncPropertySet,editable:true, selector: #selector(UserSettingController.alarmSync(_:))))
+        textPropertyCells.append(TextPropertyCellModel(propertySet:writeDiaryAlarmPropertySet,editable:true, selector: #selector(UserSettingController.setAlarm(_:))))
     }
     
     //MARK: property set
@@ -192,7 +195,7 @@ class UserSettingController: UITableViewController
         let propertySet = UIEditTextPropertySet()
         propertySet.propertyIdentifier = InfoIds.alarmSync
         propertySet.propertyLabel = "ALARM_SYNC".localizedString()
-        propertySet.propertyValue = SyncService.sharedInstance.remindSyncInterval.nameForShow
+        propertySet.propertyValue = ServiceContainer.getSyncService().remindSyncInterval.nameForShow
         return propertySet
     }
     
@@ -210,7 +213,7 @@ class UserSettingController: UITableViewController
         let propertySet = UIEditTextPropertySet()
         propertySet.propertyIdentifier = InfoIds.alarm
         propertySet.propertyLabel = "ALARM_WRITE_DIARY".localizedString()
-        if let alarmTime = DiaryService.sharedInstance.hasWriteDiaryAlarm()
+        if let alarmTime = ServiceContainer.getDiaryService().hasWriteDiaryAlarm()
         {
             let formatter = NSDateFormatter()
             formatter.dateFormat = "hh:mm"
@@ -278,15 +281,18 @@ class UserSettingController: UITableViewController
         let alert = UIAlertController(title: "ALARM_SYNC".localizedString(), message: nil, preferredStyle: .Alert)
         alert.addAction(UIAlertAction(title: "EVERY_WEEK".localizedString(), style: .Default, handler: { (action) -> Void in
             self.setSyncAlarm(.oneWeek)
+            cell.info.propertySet.propertyValue = SyncAlarmInterval.oneWeek.nameForShow
             cell.refresh()
         }))
         alert.addAction(UIAlertAction(title: "EVERY_MONTH".localizedString(), style: .Default, handler: { (action) -> Void in
             self.setSyncAlarm(.oneMonth)
+            cell.info.propertySet.propertyValue = SyncAlarmInterval.oneMonth.nameForShow
             cell.refresh()
         }))
         
         alert.addAction(UIAlertAction(title: "NO_ALARM".localizedString(), style: .Default, handler: { (action) -> Void in
             self.setSyncAlarm(.noAlarm)
+            cell.info.propertySet.propertyValue = SyncAlarmInterval.noAlarm.nameForShow
             cell.refresh()
         }))
         alert.addAction(UIAlertAction(title: "CANCEL".localizedString(), style: .Cancel, handler: { (action) -> Void in
@@ -298,9 +304,8 @@ class UserSettingController: UITableViewController
     private func setSyncAlarm(interval:SyncAlarmInterval)
     {
         alarmSyncPropertySet.propertyValue = interval.nameForShow
-        SyncService.sharedInstance.remindSyncInterval = interval
+        ServiceContainer.getSyncService().remindSyncInterval = interval
     }
-    
     
     func syncDiaries(_:UITapGestureRecognizer)
     {
@@ -314,7 +319,7 @@ class UserSettingController: UITableViewController
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
         alert.addAction(UIAlertAction(title: NSLocalizedString("SELECT_ALARM_TIME", comment: "Select Alarm Time"), style: .Default, handler: { (action) -> Void in
             SelectDateController.showTimePicker(self, date: NSDate(), minDate: nil, maxDate: nil) { (dateTime) -> Void in
-                DiaryService.sharedInstance.setWriteDiaryAlarm(dateTime)
+                ServiceContainer.getDiaryService().setWriteDiaryAlarm(dateTime)
                 cell.info.propertySet.propertyValue = self.writeDiaryAlarmPropertySet.propertyValue
                 cell.refresh()
                 let msg = NSLocalizedString("REMINDER_CHANGED", comment: "Reminder Changed!")
@@ -323,7 +328,7 @@ class UserSettingController: UITableViewController
         }))
         
         alert.addAction(UIAlertAction(title: NSLocalizedString("CLEAR_ALARM", comment: "Clear Alarm"), style: .Default, handler: { (action) -> Void in
-            DiaryService.sharedInstance.clearDiaryAlarm()
+            ServiceContainer.getDiaryService().clearDiaryAlarm()
             cell.info.propertySet.propertyValue = self.writeDiaryAlarmPropertySet.propertyValue
             cell.refresh()
         }))
@@ -339,9 +344,20 @@ class UserSettingController: UITableViewController
         AboutViewController.showAbout(self)
     }
     
-    func getSharelink(_:UITapGestureRecognizer)
+    private var inCN:Bool{
+        if let k = NSUserDefaults.standardUserDefaults().stringForKey("langCode"){
+            return k == "zh"
+        }
+        return false
+    }
+    
+    func getAdApp(_:UITapGestureRecognizer)
     {
-        let url = "itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=1059287119"
+        var url = "itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=1059287119"
+        if inCN {
+            url = "itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=1090723696"
+        }
+        
         UIApplication.sharedApplication().openURL(NSURL(string: url)!)
     }
     
@@ -381,12 +397,20 @@ class UserSettingController: UITableViewController
         }else if indexPath.section == 1
         {
             let cell = tableView.dequeueReusableCellWithIdentifier("aboutAppCell",forIndexPath: indexPath)
-            cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "about:"))
+            cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(UserSettingController.about(_:))))
             return cell
         }else {
             MobClick.event("GetSharelink")
-            let cell = tableView.dequeueReusableCellWithIdentifier("GetSharelinkCell",forIndexPath: indexPath)
-            cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "getSharelink:"))
+            let cell = tableView.dequeueReusableCellWithIdentifier("GetAdAppCell",forIndexPath: indexPath)
+            if inCN{
+                cell.subviews.first?.subviews.forEach{ v in
+                    if let label = v as? UILabel{
+                        label.text = "与好友视频对讲"
+                    }
+                }
+            }
+            
+            cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(UserSettingController.getAdApp(_:))))
             return cell
         }
     }

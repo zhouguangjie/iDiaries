@@ -21,7 +21,7 @@ class MoodReportCell : UITableViewCell
     
     @IBOutlet weak var reportTitleLabel: UILabel!{
         didSet{
-            self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "onClick:"))
+            self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(MoodReportCell.onClick(_:))))
         }
     }
     static let reuseId = "MoodReportCell"
@@ -63,7 +63,7 @@ class MoodReportViewController: UITableViewController
             let allDiaries = DiaryListManager.sharedInstance.diaries
             if allDiaries.count == 0
             {
-                DiaryService.sharedInstance.getAllDiaries({ (diaries) -> Void in
+                ServiceContainer.getDiaryService().getAllDiaries({ (diaries) -> Void in
                     self.refreshReports(diaries)
                 })
             }else
@@ -75,7 +75,7 @@ class MoodReportViewController: UITableViewController
     
     private func refreshReports(allDiaries:[DiaryModel])
     {
-        ReportService.sharedInstance.refreshReports(allDiaries, callback: { () -> Void in
+        ServiceContainer.getReportService().refreshReports(allDiaries, callback: { () -> Void in
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 self.tableView.reloadData()
                 self.refreshReportsHud.hideAsync(true)
@@ -87,7 +87,7 @@ class MoodReportViewController: UITableViewController
     
     private func updateTableViewFooter()
     {
-        if ReportService.sharedInstance.allReports.count == 0
+        if ServiceContainer.getReportService().allReports.count == 0
         {
             let footer = NothingViewFooter.instanceFromXib()
             footer.messageLabel.text = "NO_MONTH_MOOD_REPORT".localizedString()
@@ -110,17 +110,17 @@ class MoodReportViewController: UITableViewController
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return ReportService.sharedInstance.allReports.count > 0 ? 1 : 0
+        return ServiceContainer.getReportService().allReports.count > 0 ? 1 : 0
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return ReportService.sharedInstance.allReports.count
+        return ServiceContainer.getReportService().allReports.count
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(MoodReportCell.reuseId, forIndexPath: indexPath) as! MoodReportCell
-        cell.report = ReportService.sharedInstance.allReports[indexPath.row]
+        cell.report = ServiceContainer.getReportService().allReports[indexPath.row]
         cell.rootController = self
         cell.refresh()
         return cell

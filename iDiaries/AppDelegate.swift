@@ -8,9 +8,6 @@
 
 import UIKit
 
-let allServicesReady = "allServicesReady"
-var isAllServicesReady = false
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -19,27 +16,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         configureLanguage()
-        configurePersistent()
-        TimeMailService.sharedInstance.requestReminderPermission()
         configureUmeng()
+        configureNotification(application)
         return true
     }
     
     private func configureNotification(application: UIApplication)
     {
-        application.registerUserNotificationSettings(UIUserNotificationSettings.init(forTypes: [UIUserNotificationType.Alert,UIUserNotificationType.Sound,UIUserNotificationType.Badge], categories: nil))
-    }
-    
-    private func configurePersistent()
-    {
-        dispatch_async(dispatch_get_main_queue()) { () -> Void in
-            PersistentManager.sharedInstance.appInit("iDiaries")
-            PersistentManager.sharedInstance.useModelExtension(PersistentManager.sharedInstance.rootUrl.URLByAppendingPathComponent("idiaries_model.sqlite"),momdBundle: NSBundle.mainBundle())
-            PersistentManager.sharedInstance.useiCloudExtension("iCloud.com.idiaries.ios")
-            NSNotificationCenter.defaultCenter().postNotificationName(allServicesReady, object: nil)
-            isAllServicesReady = true
-            NSLog("All Services Ready")
-        }
+        let setting = UIUserNotificationSettings(forTypes: [UIUserNotificationType.Alert,UIUserNotificationType.Sound,UIUserNotificationType.Badge], categories: nil)
+        application.registerUserNotificationSettings(setting)
     }
     
     private func configureLanguage()
@@ -61,15 +46,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func configureUmeng()
     {
         dispatch_async(dispatch_get_main_queue()) { () -> Void in
-            MobClick.startWithAppkey(iDiariesConfig.umengAppkey, reportPolicy: BATCH, channelId: nil)
-            if let infoDic = NSBundle.mainBundle().infoDictionary
-            {
-                let version = infoDic["CFBundleShortVersionString"] as! String
-                MobClick.setAppVersion(version)
-            }
+            UMAnalyticsConfig.sharedInstance().appKey = iDiariesConfig.umengAppkey
+            MobClick.setAppVersion(iDiariesConfig.appVersion)
             MobClick.setEncryptEnabled(true)
             MobClick.setLogEnabled(false)
+            MobClick.startWithConfigure(UMAnalyticsConfig.sharedInstance())
         }
+    }
+    
+    func application(application: UIApplication, didRegisterUserNotificationSettings notificationSettings: UIUserNotificationSettings) {
+        
+    }
+    
+    func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
+        NSLog("LocalNotification")
     }
     
     func applicationWillResignActive(application: UIApplication) {
@@ -90,7 +80,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillEnterForeground(application: UIApplication) {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
         NewDiaryCellManager.sharedInstance.returnForeground()
-        if let c = ViewController.instance
+        if let c = MainViewController.instance
         {
             c.navigationController?.popToViewController(c, animated: true)
             c.mode = ViewControllerMode.NewDiaryMode

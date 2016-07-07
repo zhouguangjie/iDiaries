@@ -34,12 +34,12 @@ class SyncDiariesViewController: UIViewController
         
     @IBAction func sync(sender: AnyObject)
     {
-        SyncService.sharedInstance.sync()
+        ServiceContainer.getSyncService().sync()
     }
     
     private func refreshStatus()
     {
-        let syncStatus = SyncService.sharedInstance.syncStatus
+        let syncStatus = ServiceContainer.getSyncService().syncStatus
         dispatch_async(dispatch_get_main_queue()) { () -> Void in
             self.syncStatusLabel.text = NSLocalizedString(syncStatus.rawValue, comment: "")
             self.syncIndicator.startAnimating()
@@ -56,18 +56,18 @@ class SyncDiariesViewController: UIViewController
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidLoad()
-        SyncService.sharedInstance.initStatus()
+        ServiceContainer.getSyncService().initStatus()
         MobClick.beginLogPageView("SyncView")
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        SyncService.sharedInstance.addObserver(self, selector: "syncStatusChanged:", name: SyncService.syncStatusChanged, object: nil)
+        ServiceContainer.getSyncService().addObserver(self, selector: #selector(SyncDiariesViewController.syncStatusChanged(_:)), name: SyncService.syncStatusChanged, object: nil)
         MobClick.endLogPageView("SyncView")
     }
     
     override func viewWillDisappear(animated: Bool) {
-        SyncService.sharedInstance.removeObserver(self)
+        ServiceContainer.getSyncService().removeObserver(self)
     }
     
     //MARK: notification

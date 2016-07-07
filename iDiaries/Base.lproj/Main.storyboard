@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="0vz-KX-nyW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="f8d-uu-Ego">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
@@ -239,7 +239,7 @@
                                     <outlet property="propertyValueLabel" destination="b2M-gh-jrI" id="Thg-Od-yH9"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GetSharelinkCell" id="3m5-SP-IYr">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GetAdAppCell" id="3m5-SP-IYr">
                                 <rect key="frame" x="0.0" y="136" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3m5-SP-IYr" id="5mm-Jp-dNw">
@@ -332,7 +332,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2016-01" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mqt-8u-yBF">
-                                            <rect key="frame" x="8" y="11" width="64" height="21"/>
+                                            <rect key="frame" x="48" y="11" width="64" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
@@ -344,6 +344,13 @@
                                                 <constraint firstAttribute="width" constant="23" id="wVk-io-4UC"/>
                                             </constraints>
                                         </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chart_icon" translatesAutoresizingMaskIntoConstraints="NO" id="mrx-bM-mfV">
+                                            <rect key="frame" x="8" y="6" width="32" height="32"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="32" id="c0D-Gi-uGb"/>
+                                                <constraint firstAttribute="width" constant="32" id="llQ-vb-AVK"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="sZr-V9-X4D" firstAttribute="centerY" secondItem="Mqt-8u-yBF" secondAttribute="centerY" id="0mw-ZZ-Zni"/>
@@ -352,9 +359,13 @@
                                         <constraint firstItem="Mqt-8u-yBF" firstAttribute="centerY" secondItem="aZn-5e-noe" secondAttribute="centerY" id="bWa-dN-6BY"/>
                                         <constraint firstItem="sZr-V9-X4D" firstAttribute="trailing" secondItem="aZn-5e-noe" secondAttribute="trailingMargin" id="gCb-nF-zCF"/>
                                         <constraint firstItem="Mqt-8u-yBF" firstAttribute="leading" secondItem="aZn-5e-noe" secondAttribute="leadingMargin" id="ijd-GK-eIZ"/>
+                                        <constraint firstItem="mrx-bM-mfV" firstAttribute="centerY" secondItem="aZn-5e-noe" secondAttribute="centerY" id="rgM-UA-5C0"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="mrx-bM-mfV" secondAttribute="leading" id="t2z-9d-aBf"/>
+                                        <constraint firstItem="Mqt-8u-yBF" firstAttribute="leading" secondItem="mrx-bM-mfV" secondAttribute="trailing" constant="8" symbolic="YES" id="tUu-VW-wu4"/>
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
+                                            <exclude reference="ijd-GK-eIZ"/>
                                             <exclude reference="IO1-qE-rqW"/>
                                         </mask>
                                     </variation>
@@ -378,28 +389,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QQo-1G-dyl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2904" y="-423"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="HGq-1t-VKM">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0vz-KX-nyW" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="63a-TU-TN3">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.40000000000000002" green="0.80000000000000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        </textAttributes>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="hoi-mO-Ucz" kind="relationship" relationship="rootViewController" id="M19-Jx-TrC"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aXV-Un-tF2" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1397" y="128"/>
         </scene>
         <!--Time Mail-->
         <scene sceneID="ksp-DO-5EU">
@@ -582,7 +571,7 @@
         <!--iDiaries-->
         <scene sceneID="w2d-Qx-Phd">
             <objects>
-                <tableViewController id="hoi-mO-Ucz" customClass="ViewController" customModule="iDiaries" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="MainViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hoi-mO-Ucz" customClass="MainViewController" customModule="iDiaries" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="17Q-rJ-SyQ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="800"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -811,14 +800,14 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unchecked" translatesAutoresizingMaskIntoConstraints="NO" id="HRF-Kq-b3o">
-                                            <rect key="frame" x="8" y="11" width="23" height="23"/>
+                                            <rect key="frame" x="8" y="27" width="20" height="20"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="23" id="0Aw-8l-37T"/>
-                                                <constraint firstAttribute="height" constant="23" id="UgL-rp-V5h"/>
+                                                <constraint firstAttribute="width" constant="20" id="0Aw-8l-37T"/>
+                                                <constraint firstAttribute="height" constant="20" id="UgL-rp-V5h"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send Time Mail Send Time Mail Send Time Mail Send Time Mail Send Time Mail Send Time Mail" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cBj-8Q-hDq">
-                                            <rect key="frame" x="39" y="11" width="553" height="51"/>
+                                            <rect key="frame" x="36" y="11" width="556" height="51"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -832,14 +821,16 @@
                                         <constraint firstItem="cBj-8Q-hDq" firstAttribute="top" secondItem="WZ4-gN-CoV" secondAttribute="topMargin" constant="3" id="H2H-Pz-t0j"/>
                                         <constraint firstItem="cBj-8Q-hDq" firstAttribute="top" secondItem="WZ4-gN-CoV" secondAttribute="topMargin" constant="3" id="IVA-aM-5f4"/>
                                         <constraint firstAttribute="leadingMargin" secondItem="HRF-Kq-b3o" secondAttribute="leading" id="KbV-wN-L7N"/>
+                                        <constraint firstItem="HRF-Kq-b3o" firstAttribute="centerY" secondItem="WZ4-gN-CoV" secondAttribute="centerY" id="Qrx-8j-2nh"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="cBj-8Q-hDq" secondAttribute="bottom" priority="750" constant="7" id="X9Y-h6-TVh"/>
-                                        <constraint firstItem="HRF-Kq-b3o" firstAttribute="top" secondItem="cBj-8Q-hDq" secondAttribute="top" id="ZgM-zx-SPu"/>
+                                        <constraint firstItem="HRF-Kq-b3o" firstAttribute="top" secondItem="cBj-8Q-hDq" secondAttribute="top" constant="5" id="ZgM-zx-SPu"/>
                                         <constraint firstItem="cBj-8Q-hDq" firstAttribute="centerY" secondItem="WZ4-gN-CoV" secondAttribute="centerY" id="gt1-qS-zn4"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="cBj-8Q-hDq" secondAttribute="bottom" constant="2" id="gyx-dq-lzG"/>
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
                                             <exclude reference="3CQ-Su-hqT"/>
+                                            <exclude reference="ZgM-zx-SPu"/>
                                             <exclude reference="7Yh-Hj-hlB"/>
                                             <exclude reference="H2H-Pz-t0j"/>
                                             <exclude reference="gyx-dq-lzG"/>
@@ -978,6 +969,7 @@
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="800"/>
                     <connections>
@@ -1037,10 +1029,10 @@
             </objects>
             <point key="canvasLocation" x="2909" y="120"/>
         </scene>
-        <!--关于iDiaries-->
+        <!--iDiaries-->
         <scene sceneID="m8q-bp-7Ix">
             <objects>
-                <viewController storyboardIdentifier="aboutViewController" title="关于iDiaries" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wuS-pZ-1dC" customClass="AboutViewController" customModule="iDiaries" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="aboutViewController" title="iDiaries" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wuS-pZ-1dC" customClass="AboutViewController" customModule="iDiaries" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pQh-Ne-eFk"/>
                         <viewControllerLayoutGuide type="bottom" id="4Am-rk-jvn"/>
@@ -1133,14 +1125,34 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="iDiaries" id="Q7r-De-V4c"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zqc-PE-Dki" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2019" y="1273"/>
         </scene>
+        <!--Entry Navigation View Controller-->
+        <scene sceneID="bUS-JO-p9f">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="f8d-uu-Ego" customClass="EntryNavigationViewController" customModule="iDiaries" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rsC-WD-APo">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.40000000000000002" green="0.80000000000000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KQ9-gE-xYl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1405" y="28"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="chart_icon" width="128" height="128"/>
         <image name="diary_mark" width="48" height="48"/>
         <image name="directional_right" width="128" height="128"/>
         <image name="heart_circle" width="128" height="128"/>

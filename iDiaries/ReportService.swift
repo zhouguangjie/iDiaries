@@ -19,13 +19,20 @@ class Report
     var moodsMap:[Int:Int]!
 }
 
-class ReportService
+extension ServiceContainer{
+    static func getReportService() -> ReportService{
+        return ServiceContainer.getService(ReportService)
+    }
+}
+
+class ReportService:ServiceProtocol
 {
-    static var sharedInstance = {
-        return ReportService()
-    }()
-    
+    @objc static var ServiceName:String {return "Report Service"}
     private(set) var allReports = [Report]()
+    
+    @objc func userLoginInit(userId: String) {
+        setServiceReady()
+    }
     
     func refreshReports(allDiaries:[DiaryModel],callback:()->Void)
     {

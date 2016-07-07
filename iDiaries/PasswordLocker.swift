@@ -93,7 +93,7 @@ class PasswordLocker: NSObject,KKGestureLockViewDelegate {
     func gestureLockView(gestureLockView: KKGestureLockView!, didEndWithPasscode passcode: String!) {
         if type == .ValidatePassword
         {
-            if DiaryService.sharedInstance.checkPswCorrent(passcode)
+            if ServiceContainer.getDiaryService().checkPswCorrent(passcode)
             {
                 lockViewController.navigationController?.popViewControllerAnimated(true)
                 if let handler = onValidateSuc
@@ -113,7 +113,7 @@ class PasswordLocker: NSObject,KKGestureLockViewDelegate {
                 password = passcode
                 lockViewController.message = NSLocalizedString("REPEAT_PASSWORD", comment: "Repeat Password")
             }else if password == passcode{
-                DiaryService.sharedInstance.setPassword(passcode)
+                ServiceContainer.getDiaryService().setPassword(passcode)
                 lockViewController.navigationController?.popViewControllerAnimated(true)
                 if let handler = onSetPasswordSuc
                 {

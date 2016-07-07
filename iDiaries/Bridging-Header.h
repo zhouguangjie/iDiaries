@@ -14,5 +14,5 @@
 #import "UIBarButtomItem-Badge/UIButton+Badge.h"
 #import "UIBarButtomItem-Badge/UIbarButtonItem+Badge.h"
 
-#import "MobClick.h"
+#import "UMMobClick/MobClick.h"
 #endif /* Bridging_Header_h */

@@ -1,0 +1,132 @@
+
+/* Class = "UILabel"; text = "商店评价"; ObjectID = "2wa-Wg-48u"; */
+"UOj-qE-RQJ.text" = "商店评价";
+
+/* Class = "UILabel"; text = "🙂☀️"; ObjectID = "3wE-xE-WNO"; */
+"3wE-xE-WNO.text" = "🙂☀️";
+
+/* Class = "UILabel"; text = "🌧🙂"; ObjectID = "58o-2Q-UdW"; */
+"58o-2Q-UdW.text" = "🌧🙂";
+
+/* Class = "UINavigationItem"; title = "iDiaries"; ObjectID = "5th-99-zTO"; */
+"5th-99-zTO.title" = "点点日记";
+
+/* Class = "UILabel"; text = "Write something..."; ObjectID = "6bV-Gf-L4F"; */
+"6bV-Gf-L4F.text" = "Write something...";
+
+/* Class = "UILabel"; text = "今日"; ObjectID = "8hf-Kf-Nz0"; */
+"8hf-Kf-Nz0.text" = "今日";
+
+/* Class = "UILabel"; text = "反馈建议"; ObjectID = "8p6-7y-oer"; */
+"8p6-7y-oer.text" = "反馈建议";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "DcM-4Q-lEx"; */
+"DcM-4Q-lEx.normalTitle" = "Button";
+
+/* Class = "UIBarButtonItem"; title = "返回"; ObjectID = "FsE-Rj-kHh"; */
+"FsE-Rj-kHh.title" = "返回";
+
+/* Class = "UILabel"; text = "訊息"; ObjectID = "GRJ-dm-Uyr"; */
+"GRJ-dm-Uyr.text" = "訊息";
+
+/* Class = "UIButton"; normalTitle = "同步"; ObjectID = "Ha2-Rz-veW"; */
+"Ha2-Rz-veW.normalTitle" = "同步";
+
+/* Class = "UINavigationItem"; title = "支持iDiaries"; ObjectID = "IsF-4C-KaK"; */
+"pOV-rJ-coE.title" = "反馈";
+
+/* Class = "UILabel"; text = "2016-01"; ObjectID = "JrT-8u-cQl"; */
+"JrT-8u-cQl.text" = "2016-01";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "K7A-sX-2Cf"; */
+"K7A-sX-2Cf.text" = "Label";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "KZy-sU-Dhy"; */
+"KZy-sU-Dhy.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+
+/* Class = "UINavigationItem"; title = "同步"; ObjectID = "NLf-Zi-BQW"; */
+"NLf-Zi-BQW.title" = "同步";
+
+/* Class = "UILabel"; text = "Property Name"; ObjectID = "NxL-Zy-DVM"; */
+"NxL-Zy-DVM.text" = "Property Name";
+
+/* Class = "UILabel"; text = "2015-12-05 Saturday"; ObjectID = "OEo-Bx-UGQ"; */
+"OEo-Bx-UGQ.text" = "2015-12-05 Saturday";
+
+/* Class = "UIViewController"; title = "关于iDiaries"; ObjectID = "PQd-Iy-zOG"; */
+"Q7r-De-V4c.title" = "关于";
+
+/* Class = "UILabel"; text = "关于"; ObjectID = "TwN-AW-qwX"; */
+"fdm-QP-yDn.text" = "关于";
+
+/* Class = "UILabel"; text = "日誌"; ObjectID = "XsG-J5-esl"; */
+"XsG-J5-esl.text" = "日誌";
+
+/* Class = "UIBarButtonItem"; title = "返回"; ObjectID = "Zbz-Ac-wQo"; */
+"Zbz-Ac-wQo.title" = "返回";
+
+/* Class = "UILabel"; text = "Diary Content Diary Content Diary Content Diary Content Diary Content Diary Content Diary Content Diary Content"; ObjectID = "aDT-8x-M4n"; */
+"aDT-8x-M4n.text" = "Diary Content Diary Content Diary Content Diary Content Diary Content Diary Content Diary Content Diary Content";
+
+/* Class = "UILabel"; text = "Property Value"; ObjectID = "b2M-gh-jrI"; */
+"b2M-gh-jrI.text" = "Property Value";
+
+/* Class = "UINavigationItem"; title = "時光郵件"; ObjectID = "b5l-jg-akT"; */
+"b5l-jg-akT.title" = "時光郵件";
+
+/* Class = "UILabel"; text = "日誌"; ObjectID = "bmW-gf-cfy"; */
+"bmW-gf-cfy.text" = "日誌";
+
+/* Class = "UILabel"; text = "时光邮件"; ObjectID = "cBj-8Q-hDq"; */
+"cBj-8Q-hDq.text" = "时光邮件";
+
+/* Class = "UIBarButtonItem"; title = "返回"; ObjectID = "cJg-1d-8IA"; */
+"cJg-1d-8IA.title" = "返回";
+
+/* Class = "UILabel"; text = "🙂☀️"; ObjectID = "d1o-JV-JnS"; */
+"d1o-JV-JnS.text" = "🙂☀️";
+
+/* Class = "UINavigationItem"; title = "今日"; ObjectID = "dFR-KG-i0k"; */
+"dFR-KG-i0k.title" = "今日";
+
+/* Class = "UILabel"; text = "A Good Day"; ObjectID = "dX1-E0-0uM"; */
+"dX1-E0-0uM.text" = "A Good Day";
+
+/* Class = "UILabel"; text = "Mark"; ObjectID = "dc1-dC-Lch"; */
+"dc1-dC-Lch.text" = "Mark";
+
+/* Class = "UIBarButtonItem"; title = "返回"; ObjectID = "edF-SD-A2s"; */
+"edF-SD-A2s.title" = "返回";
+
+/* Class = "UILabel"; text = "2015-12-03 Mon. Winter"; ObjectID = "gNV-MF-MAQ"; */
+"gNV-MF-MAQ.text" = "2015-12-03 Mon. Winter";
+
+/* Class = "UINavigationItem"; title = "時光信箱"; ObjectID = "gS4-c9-oS0"; */
+"gS4-c9-oS0.title" = "時光信箱";
+
+/* Class = "UILabel"; text = "體驗Sharelink!"; ObjectID = "j1B-KW-eEK"; */
+"j1B-KW-eEK.text" = "體驗Sharelink!";
+
+/* Class = "UILabel"; text = "Good Day"; ObjectID = "kkj-Mi-IKg"; */
+"kkj-Mi-IKg.text" = "Good Day";
+
+/* Class = "UILabel"; text = "正在同步數據"; ObjectID = "mg0-yM-9e0"; */
+"mg0-yM-9e0.text" = "正在同步數據";
+
+/* Class = "UILabel"; text = "MarkType"; ObjectID = "q1z-5B-Z46"; */
+"q1z-5B-Z46.text" = "MarkType";
+
+/* Class = "UINavigationItem"; title = "我的心情記錄"; ObjectID = "r2b-d2-Dqr"; */
+"KcR-tz-Kng.title" = "我的心情記錄";
+
+/* Class = "UILabel"; text = "This is a mail from 2015-12-07"; ObjectID = "rbA-e5-Knw"; */
+"rbA-e5-Knw.text" = "This is a mail from 2015-12-07";
+
+/* Class = "UILabel"; text = "壕的方式"; ObjectID = "s6J-HK-Ier"; */
+"s6J-HK-Ier.text" = "壕的方式";
+
+/* Class = "UINavigationItem"; title = "設定"; ObjectID = "yGS-H0-2pK"; */
+"yGS-H0-2pK.title" = "設定";
+
+/* Class = "UINavigationItem"; title = "日誌"; ObjectID = "zox-ST-gb6"; */
+"zox-ST-gb6.title" = "日誌";

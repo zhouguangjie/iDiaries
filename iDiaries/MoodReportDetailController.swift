@@ -7,119 +7,144 @@
 //
 
 import UIKit
-import TEAChart
-import FSLineChart
+import Charts
 
-let barChartColors:[UIColor] =
-[
-    UIColor.redColor(),
-    UIColor.orangeColor(),
-    UIColor.greenColor(),
-    UIColor.cyanColor(),
-    UIColor.blueColor(),
-    UIColor.purpleColor(),
-    UIColor.yellowColor(),
-    UIColor.magentaColor(),
-    UIColor.brownColor(),
-    UIColor.themeColor
-]
-
-class MoodReportDetailCell:UITableViewCell
-{
-    static let reuseId = "MoodReportDetailCell"
-    @IBOutlet weak var chartContainer: UIView!
-}
-
-class MoodReportSummaryCell:UITableViewCell
-{
-    static let reuseId = "MoodReportSummaryCell"
-    @IBOutlet weak var totalDiariesCountLabel: UILabel!
-    @IBOutlet weak var averageMoodsLabel: UILabel!
-    @IBOutlet weak var bestMoodLabel: UILabel!
-    @IBOutlet weak var badMoodLabel: UILabel!
+struct MonthMoodStat {
+    var writeDiaryPersent:NSNumber = 0
+    var avgMoodPointEmoji = ""
+    var avgMoodPoint:NSNumber = 0
+    
+    var bestMood:NSNumber = 0
+    var bestDay:Int = 1
+    var bestMoodEmoji = ""
+    
+    var lowestMood:NSNumber = 0
+    var lowestDay:Int = 1
+    var lowestMoodEmoji = ""
+    
 }
 
 class MoodReportDetailController: UITableViewController
 {
-    private var charts = [UIView]()
-    var report:Report!{
-        didSet{
-            initLineChartData()
-            initStatData()
-        }
+    private var charts = [ChartViewBase]()
+    private var lineChart:LineChartView{
+        return charts[0] as! LineChartView
     }
+    
+    private var pieChart:PieChartView{
+        return charts[1] as! PieChartView
+    }
+    
+    private var barChart:BarChartView{
+        return charts[2] as! BarChartView
+    }
+    
+    var report:Report!
     private var lineChartViewData:[Float]!
-    
     private var monthMoodStat = MonthMoodStat()
-    
+    private var viewIndex = 0
     override func viewDidLoad() {
         super.viewDidLoad()
+        charts.append(LineChartView())
+        charts.append(PieChartView())
+        charts.append(BarChartView())
+        
         self.tableView.allowsSelection = false
         self.tableView.separatorStyle = .None
         tableView.estimatedRowHeight = tableView.rowHeight
         tableView.rowHeight = UITableViewAutomaticDimension
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        self.initCharts()
         let date = DateHelper.generateDate(report.year,month: report.month)
         self.navigationItem.title = MoodReportCell.titleFormatter.stringFromDate(date)
         self.tableView.reloadData()
+        let leftGesture = UISwipeGestureRecognizer(target: self, action: #selector(MoodReportDetailController.nextPage(_:)))
+        leftGesture.direction = .Up
+        let rightGesture = UISwipeGestureRecognizer(target: self, action: #selector(MoodReportDetailController.previousPage(_:)))
+        rightGesture.direction = .Down
+        self.tableView.addGestureRecognizer(leftGesture)
+        self.tableView.addGestureRecognizer(rightGesture)
+    }
+    
+    private var hasPrivious:Bool{
+        return viewIndex > 0
+    }
+    
+    private var hasNext:Bool{
+        return viewIndex < 4
     }
     
     //MARK: inits
     
-    private func initCharts()
-    {
-        initMoodTrendsChart()
-        initMoodStatisticsChart()
-    }
-    
-    private func initLineChartData()
+    private func generateLineChartData() -> LineChartData
     {
         let days = DateHelper.daysOfMonth(report.year, month: report.month)
-        var data = [Float]()
-        
-        for d in 1...days
-        {
-            var moodPoint:Float = 0.0
-            let moods = report.moods.filter{$0.day == d}
+        var data = [Double]()
+        let xs = (1...days).map { return Double($0) }
+        let ys = xs.map { (d) -> Double in
+            var moodPoint:Double = 0.0
+            let moods = report.moods.filter{$0.day == Int(d)}
             moods.forEach({ (mood) -> () in
-                moodPoint += (mood.mark.info as! Float)
+                moodPoint += Double(mood.mark.info as! Float)
             })
             
             if moodPoint > 0
             {
-                let yPoint = moodPoint / Float(moods.count)
+                let yPoint = moodPoint / Double(moods.count)
                 data.append(yPoint)
+                return yPoint
             }else{
-                data.append(data.last ?? 60)
+                return data.last ?? 60
             }
         }
-        self.lineChartViewData = data
+        self.lineChartViewData = data.map{Float($0)}
+        let yse1 = ys.enumerate().map { idx, i in return ChartDataEntry(value: i, xIndex: idx) }
         
+        let result = LineChartData(xVals: xs)
+        
+        let ds1 = LineChartDataSet(yVals: yse1, label: "MOOD_VALUE".localizedString())
+        ds1.mode = .CubicBezier
+        ds1.cubicIntensity = 0.2
+        ds1.drawCirclesEnabled = false
+        ds1.lineWidth = 1.8
+        ds1.circleRadius = 4.0
+        ds1.setCircleColor(UIColor.redColor())
+        ds1.highlightColor = UIColor(colorLiteralRed:244/255.0 ,green:117/255.0 ,blue:117/255.0 ,alpha:1.0)
+        ds1.setColor(UIColor.greenColor())
+        ds1.fillColor = UIColor.greenColor()
+        ds1.fillAlpha = 0.6
+        ds1.drawHorizontalHighlightIndicatorEnabled = false;
+        ds1.drawValuesEnabled = false
+        ds1.drawFilledEnabled = true
+        result.addDataSet(ds1)
+        return result
         
     }
     
-    struct MonthMoodStat {
-        var writeDiaryPersent:Double = 0
-        var avgMoodPointEmoji = ""
-        var avgMoodPoint:Float = 0
+    private func refreshMoodTrendsChart()
+    {
         
-        var bestMood:Float = 0
-        var bestDay:Int = 1
-        var bestMoodEmoji = ""
-        
-        var lowestMood:Float = 0
-        var lowestDay:Int = 1
-        var lowestMoodEmoji = ""
-        
+        let chart = self.lineChart
+        chart.data = generateLineChartData()
+        chart.gridBackgroundColor = NSUIColor.whiteColor()
+        chart.descriptionText = "MOOD_TRENDS_TITLE".localizedString()
+        chart.descriptionFont = chart.descriptionFont?.fontWithSize(13)
+        chart.xAxis.drawGridLinesEnabled = false
+        chart.leftAxis.setLabelCount(5, force: true)
+        chart.leftAxis.valueFormatter = CustomValueEmojiFormatter()
+        chart.leftAxis.drawGridLinesEnabled = false
+        chart.leftAxis.axisMinValue = 0
+        chart.leftAxis.axisMaxValue = 100
+        chart.rightAxis.axisMinValue = 0
+        chart.rightAxis.axisMaxValue = 100
+        chart.rightAxis.setLabelCount(5, force: true)
+        chart.animate(xAxisDuration: 0.8, yAxisDuration: 0.8)
     }
     
     private func initStatData()
@@ -128,156 +153,183 @@ class MoodReportDetailController: UITableViewController
         monthMoodStat.writeDiaryPersent = Double(report.diariesCount) / Double(monthDays) * 100
         
         var avgMoodPoint:Float = 0
-        self.lineChartViewData.forEach{avgMoodPoint += $0}
+        lineChartViewData.forEach{avgMoodPoint += $0}
         
         monthMoodStat.avgMoodPoint = avgMoodPoint / Float(lineChartViewData.count)
         
-        monthMoodStat.avgMoodPointEmoji = MoodReportDetailController.moodValueEmoji(CGFloat(monthMoodStat.avgMoodPoint))
+        monthMoodStat.avgMoodPointEmoji = moodValueEmoji(CGFloat(monthMoodStat.avgMoodPoint))
         
         monthMoodStat.bestMood = lineChartViewData.maxElement() ?? 60
-        monthMoodStat.bestDay = (lineChartViewData.indexOf(monthMoodStat.bestMood) ?? 0) + 1
-        monthMoodStat.bestMoodEmoji = MoodReportDetailController.moodValueEmoji(CGFloat(monthMoodStat.bestMood))
+        monthMoodStat.bestDay = (lineChartViewData.indexOf(monthMoodStat.bestMood.floatValue) ?? 0) + 1
+        monthMoodStat.bestMoodEmoji = moodValueEmoji(CGFloat(monthMoodStat.bestMood))
         
         monthMoodStat.lowestMood = lineChartViewData.minElement() ?? 60
-        monthMoodStat.lowestDay = (lineChartViewData.indexOf(monthMoodStat.lowestMood) ?? 0) + 1
-        monthMoodStat.lowestMoodEmoji = MoodReportDetailController.moodValueEmoji(CGFloat(monthMoodStat.lowestMood))
+        monthMoodStat.lowestDay = (lineChartViewData.indexOf(monthMoodStat.lowestMood.floatValue) ?? 0) + 1
+        monthMoodStat.lowestMoodEmoji = moodValueEmoji(CGFloat(monthMoodStat.lowestMood))
         
     }
     
-    static func moodValueEmoji(value:CGFloat) -> String
-    {
-        if value <= 30
-        {
-            return "😞"
-        }else if value < 60
-        {
-            return "☹️"
-        }else if value < 70
-        {
-            return "🙂"
-        }else if value < 88
-        {
-            return "😀"
-        }else
-        {
-            return "😄"
+    private class CustomValueEmojiFormatter:NSNumberFormatter{
+        override func stringFromNumber(number: NSNumber) -> String? {
+            return moodValueEmoji(CGFloat(number.floatValue))
         }
     }
     
-    private func initMoodTrendsChart()
-    {
-        let lineChartTitle = UILabel()
-        lineChartTitle.text = "MOOD_TRENDS_TITLE".localizedString()
-        lineChartTitle.sizeToFit()
-        lineChartTitle.textColor = UIColor.lightGrayColor()
-        lineChartTitle.center = CGPointMake(self.view.center.x - 10, -10)
-        let frame = CGRectMake(10, 23, tableView.contentSize.width - 20, tableView.contentSize.width - 56)
-        let lineChart = FSLineChart(frame: frame)
-        lineChart.addSubview(lineChartTitle)
-        lineChart.displayDataPoint = true
-        func getLabel(index:UInt) -> String{
-            return "\(index + 1)"
+    class CustomPieNumberFormatter:NSNumberFormatter{
+        private var count:NSNumber = 0
+        init(count:NSNumber) {
+            super.init()
+            self.count = count
         }
-        lineChart.horizontalGridStep = 7
-        lineChart.verticalGridStep = 5
-        lineChart.labelForIndex = getLabel
-        lineChart.labelForValue = MoodReportDetailController.moodValueEmoji
-        lineChart.fillColor = nil
         
-        charts.append(lineChart)
+        required init?(coder aDecoder: NSCoder) {
+            fatalError("init(coder:) has not been implemented")
+        }
+        
+        override func stringFromNumber(number: NSNumber) -> String? {
+            let persent = String(format: "%.0f", number.doubleValue / count.doubleValue * 100)
+            return "\(number.intValue)\n\(persent)%"
+        }
     }
     
-    private func initMoodStatisticsChart()
-    {
-        let barWidth:CGFloat = 23
-        let chartTitle = UILabel()
-        let barChart = TEABarChart()
-        let cellWidth = tableView.contentSize.width + 4
-        chartTitle.text = "MOOD_STATISTICS_TITLE".localizedString()
-        chartTitle.sizeToFit()
-        chartTitle.textColor = UIColor.lightGrayColor()
-        chartTitle.center = CGPointMake(self.view.center.x - 10, -13)
-        barChart.addSubview(chartTitle)
+    private func generatePieChartData() -> PieChartData{
+        let xVals = report.moodsMap.map { (id,value) -> String? in
+            return getDiaryMark("\(id)")?.emoji ?? ""
+        }
+        var i = 0
+        let yValus = report.moodsMap.map { (id,value) -> ChartDataEntry in
+            let c =  ChartDataEntry(value: Double(value), xIndex: i)
+            i+=1
+            return c
+        }
+        let ds = PieChartDataSet(yVals: yValus, label: "")
+        ds.colors = barChartColors.messArrayUp()
+        ds.xValuePosition = .InsideSlice
+        ds.yValuePosition = .OutsideSlice
+        let data = PieChartData(xVals: xVals)
+        data.addDataSet(ds)
+        data.setValueFormatter(CustomPieNumberFormatter(count: report.moods.count))
+        data.setValueTextColor(UIColor.blackColor())
         
-        let arr = MoodMarks.map{$0.id}
-        barChart.data = arr.map{report.moodsMap[$0] ?? 0}
-        barChart.xLabels = arr.map{ id -> String in
-            if let mark = getDiaryMark("\(id)")
-            {
-                return "\(mark.emoji)"
-            }else
-            {
-                return ""
-            }
-            }.filter{String.isNullOrEmpty($0) == false}
-        let barSpace = (cellWidth - CGFloat(arr.count) * barWidth) / CGFloat(arr.count)
-        barChart.barSpacing = Int(barSpace)
-        barChart.barColors = barChartColors.messArrayUp()
-        charts.append(barChart)
+        return data
+    }
+    
+    private func refreshMoodStatisticsChart()
+    {
+        let chart = pieChart
+        chart.descriptionText = "MOOD_PERSENT".localizedString()
+        chart.descriptionFont = chart.descriptionFont?.fontWithSize(13)
+        chart.data = generatePieChartData()
+        chart.drawCenterTextEnabled = true
+        chart.centerText = "\(report.diariesCount) 篇日记"
+        chart.drawSliceTextEnabled = true
+        chart.animate(xAxisDuration: 0.8, yAxisDuration: 0.8)
+    }
+    
+    private func generateBarChartData() -> BarChartData{
+        initStatData()
+        var yVals = [ChartDataEntry]()
+        yVals.append(BarChartDataEntry(value: monthMoodStat.bestMood.doubleValue, xIndex: 0,data: 0))
+        yVals.append(BarChartDataEntry(value: monthMoodStat.lowestMood.doubleValue, xIndex: 1,data: 1))
+        yVals.append(BarChartDataEntry(value: monthMoodStat.avgMoodPoint.doubleValue, xIndex: 2,data: 2))
+        let ds = BarChartDataSet(yVals: yVals, label: "")
+        
+        ds.colors = [barChartColors[2],UIColor.lightGrayColor(),barChartColors[0]]
+        let bestStr = String(format: "BEST_MOOD_VALUE_DAY_FORMAT".localizedString(), monthMoodStat.bestDay)
+        let lowStr = String(format: "LOW_MOOD_VALUE_DAY_FORMAT".localizedString(), monthMoodStat.lowestDay)
+        let avgStr = "AVG_MOOD_VALUE_FORMAT".localizedString()
+        
+        let result = BarChartData(xVals: [bestStr,lowStr,avgStr])
+        result.addDataSet(ds)
+        return result
+    }
+    
+    private func refreshBoardChart()
+    {
+        let chart = barChart
+        chart.data = generateBarChartData()
+        chart.leftAxis.valueFormatter = CustomValueEmojiFormatter()
+        chart.leftAxis.setLabelCount(5, force: true)
+        chart.leftAxis.axisMaxValue = 110
+        chart.leftAxis.axisMinValue = 0
+        chart.leftAxis.drawGridLinesEnabled = false
+        chart.xAxis.labelPosition = .Bottom
+        chart.descriptionText = ""
+        chart.animate(xAxisDuration: 0.8, yAxisDuration: 0.8)
+    }
+    
+    @IBAction func nextPage(sender:AnyObject?) {
+        if hasNext{
+            viewIndex+=1
+            tableView.reloadSections(NSIndexSet(index: 0), withRowAnimation: .Top)
+        }
     }
 
+    @IBAction func previousPage(sender:AnyObject?) {
+        if hasPrivious {
+            viewIndex-=1
+            tableView.reloadSections(NSIndexSet(index: 0), withRowAnimation: .Bottom)
+        }
+    }
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return self.report == nil ? 0 : 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 3
+        return self.charts.count > 0 ? 1 : 0
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-
-        // Configure the cell...
-        if indexPath.row < charts.count
-        {
-            let cell = tableView.dequeueReusableCellWithIdentifier(MoodReportDetailCell.reuseId, forIndexPath: indexPath) as! MoodReportDetailCell
-            let chart = charts[indexPath.row]
-            cell.addSubview(chart)
+        if viewIndex == 0{
+            let cell = tableView.dequeueReusableCellWithIdentifier(MoodReportStartCell.reuseId, forIndexPath: indexPath) as! MoodReportStartCell
+            let date = DateHelper.generateDate(report.year, month: report.month, day: 0, hour: 0, minute: 0, second: 0)
+            cell.titleLabel.text = String(format: "MOOD_REPORT_TITLE_FORMAT".localizedString(),MoodReportCell.titleFormatter.stringFromDate(date))
+            cell.nextButton.startFlash()
             return cell
-        }else
-        {
+        }else if viewIndex >= 1 && viewIndex <= 3{
+            let cell = tableView.dequeueReusableCellWithIdentifier(MoodReportDetailCell.reuseId, forIndexPath: indexPath) as! MoodReportDetailCell
+            let frame = CGRectMake(0, 0, cell.frame.size.width - 20, cell.frame.size.width - 20)
+            let chart = charts[viewIndex - 1]
+            chart.frame = frame
+            chart.center = CGPointMake(cell.center.x, cell.center.y - 30)
+            charts.forEach{$0.removeFromSuperview()}
+            cell.chartContainer.addSubview(chart)
+            cell.nextButton.hidden = !hasNext
+            cell.nextButton.startFlash()
+            return cell
+        }else{
+            initStatData()
             let cell = tableView.dequeueReusableCellWithIdentifier(MoodReportSummaryCell.reuseId, forIndexPath: indexPath) as! MoodReportSummaryCell
-            cell.totalDiariesCountLabel.text = String(format: "%d(%.0f%%)",report.diariesCount, monthMoodStat.writeDiaryPersent)
-            cell.averageMoodsLabel.text = String(format: "%.0f%@", monthMoodStat.avgMoodPoint,monthMoodStat.avgMoodPointEmoji)
-            cell.bestMoodLabel.text = String(format: "DAY_MOOD_EMOJI_FORMAT".localizedString(), monthMoodStat.bestDay,monthMoodStat.bestMood,monthMoodStat.bestMoodEmoji)
-            cell.badMoodLabel.text = String(format: "DAY_MOOD_EMOJI_FORMAT".localizedString(), monthMoodStat.lowestDay,monthMoodStat.lowestMood,monthMoodStat.lowestMoodEmoji)
+            cell.rootController = self
             return cell
         }
     }
-
+    
     override func tableView(tableView: UITableView, didEndDisplayingCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        if indexPath.row < charts.count
-        {
-            let frame = CGRectMake(10, 23, cell.frame.size.width - 20, cell.frame.size.width - 67)
-            if let chart = charts[indexPath.row] as? TEABarChart
-            {
-                chart.frame = frame
-                chart.layoutSubviews()
-            }else if let chart = charts[indexPath.row] as? FSLineChart
-            {
-                chart.frame = frame
-                chart.setChartData(self.lineChartViewData)
-            }
+        if viewIndex == 1 {
+            refreshMoodTrendsChart()
+        }else if viewIndex == 2{
+            refreshMoodStatisticsChart()
+        }else if viewIndex == 3{
+            refreshBoardChart()
         }
     }
 
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        if indexPath.row == 2
-        {
-            return UITableViewAutomaticDimension
-        }
-        return tableView.contentSize.width
+        return self.view.frame.height
     }
     
     static func showReport(rootController:UIViewController, report:Report)
     {
         let controller = instanceFromStoryBoard("MoodReport", identifier: "MoodReportDetailController") as! MoodReportDetailController
         controller.report = report
-        rootController.navigationController!.pushViewController(controller, animated: true)
+        rootController.presentViewController(controller, animated: true){
+            
+        }
+        //rootController.navigationController!.pushViewController(controller, animated: true)
     }
 
 }

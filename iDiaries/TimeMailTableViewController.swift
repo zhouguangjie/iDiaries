@@ -28,7 +28,7 @@ class TimeMailTableViewController: UITableViewController {
 
     private func updateTableViewFooter()
     {
-        if TimeMailService.sharedInstance.timeMails.count == 0
+        if ServiceContainer.getTimeMailService().timeMails.count == 0
         {
             let footer = NothingViewFooter.instanceFromXib()
             footer.messageLabel.text = NSLocalizedString("NO_MAIL_HERE", comment: "")
@@ -45,7 +45,7 @@ class TimeMailTableViewController: UITableViewController {
         if mailsLoaded == false
         {
             let hud = self.showActivityHud()
-            TimeMailService.sharedInstance.refreshTimeMailBox { () -> Void in
+            ServiceContainer.getTimeMailService().refreshTimeMailBox { () -> Void in
                 hud.hideAsync(true)
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
                     self.updateTableViewFooter()
@@ -69,11 +69,11 @@ class TimeMailTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return TimeMailService.sharedInstance.timeMails.count > 0 ? 1 : 0
+        return ServiceContainer.getTimeMailService().timeMails.count > 0 ? 1 : 0
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return TimeMailService.sharedInstance.timeMails.count
+        return ServiceContainer.getTimeMailService().timeMails.count
     }
 
     
@@ -81,7 +81,7 @@ class TimeMailTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier(TimeMailTableViewCell.reuseId, forIndexPath: indexPath) as! TimeMailTableViewCell
 
         // Configure the cell...
-        cell.timeMail = TimeMailService.sharedInstance.timeMails[indexPath.row]
+        cell.timeMail = ServiceContainer.getTimeMailService().timeMails[indexPath.row]
         cell.rootController = self
         cell.refresh()
         return cell

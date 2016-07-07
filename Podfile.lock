@@ -1,28 +1,35 @@
 PODS:
-  - EVReflection (2.14.1)
-  - FSLineChart (0.1.7)
+  - BEMSimpleLineGraph (4.1)
+  - Charts (2.2.5):
+    - Charts/Core (= 2.2.5)
+  - Charts/Core (2.2.5)
+  - EVReflection (2.20.2)
   - iCloudDocumentSync (7.4.1)
   - KKGestureLockView (1.0.0)
   - MBProgressHUD (0.9.2)
-  - MJRefresh (3.0.8)
-  - TEAChart (0.3.2)
+  - MJRefresh (3.1.9)
+  - UMengAnalytics (4.0.4)
 
 DEPENDENCIES:
-  - EVReflection
-  - FSLineChart
+  - BEMSimpleLineGraph
+  - Charts
+  - EVReflection (~> 2.20.0)
   - iCloudDocumentSync
   - KKGestureLockView
-  - MBProgressHUD (~> 0.9.1)
+  - MBProgressHUD (~> 0.9.2)
   - MJRefresh
-  - TEAChart
+  - UMengAnalytics
 
 SPEC CHECKSUMS:
-  EVReflection: d018df32f97a41b808cc36738a7b48fad57d86aa
-  FSLineChart: 1b8d3727e8feb323144126d381184bf1b15e6efc
+  BEMSimpleLineGraph: 44fd451f27f8e9cf96f2da5bea27603093576dd1
+  Charts: b48fcc8d7190de910ff9e9748f5360c8ea7856e5
+  EVReflection: 0b4e36daac550bcf8c949792362fb282c084d012
   iCloudDocumentSync: 961aac30ca09c221de4c236e94dae69912f2c589
   KKGestureLockView: b27a33d2fe7995cd3c5e548dab1a8db7947322b8
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
-  MJRefresh: fafde8f18f4afd66b434331a9beb67a6c0264056
-  TEAChart: b22170216cc5e97a9e32da46f5ca06c07ef43cd0
+  MJRefresh: c5f1f1653e5a1b932c90f78074f2bc86f3f9bd5e
+  UMengAnalytics: 4ed421fb3bca63b26fc13c947743cabf3831d199
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: 73c0c568ecc71d92e189190fbfcbf2ac23ad570b
+
+COCOAPODS: 1.0.1

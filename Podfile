@@ -1,19 +1,22 @@
 platform :ios, '8.0'
 use_frameworks!
 
-pod 'EVReflection'
+target "iDiaries" do
+
+pod 'EVReflection', '~> 2.20.0'
 
 pod 'MJRefresh'
 
-pod 'MBProgressHUD', '~> 0.9.1'
+pod 'MBProgressHUD', '~> 0.9.2'
 
 pod 'KKGestureLockView'
 
 pod 'iCloudDocumentSync'
 
-pod 'FSLineChart'
-
-pod 'TEAChart'
-
 pod 'BEMSimpleLineGraph'
 
+pod 'UMengAnalytics'
+
+pod 'Charts'
+
+end

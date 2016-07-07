@@ -23,7 +23,7 @@ class NewDiaryDateCell: NewDiaryBaseCell {
     @IBOutlet weak var dateLabel: UILabel!{
         didSet{
             updateDateLable()
-            self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "selectDate:"))
+            self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(NewDiaryDateCell.selectDate(_:))))
         }
     }
     

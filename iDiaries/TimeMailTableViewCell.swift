@@ -22,7 +22,7 @@ class TimeMailTableViewCell: UITableViewCell {
 
     private func initCell()
     {
-        self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "onCellTaped:"))
+        self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(TimeMailTableViewCell.onCellTaped(_:))))
     }
     
     func onCellTaped(_:UITapGestureRecognizer)

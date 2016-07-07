@@ -20,10 +20,10 @@ class NewDiaryTextContentCell: NewDiaryBaseCell,UITextViewDelegate {
             mainContentTextView.layer.cornerRadius = 7
             mainContentTextView.layer.borderWidth = 1
             mainContentTextView.layer.borderColor = UIColor.lightGrayColor().CGColor
-            let rec = UISwipeGestureRecognizer(target: self, action: "showEditContentController:")
+            let rec = UISwipeGestureRecognizer(target: self, action: #selector(NewDiaryTextContentCell.showEditContentController(_:)))
             rec.direction = .Left
             mainContentTextView.addGestureRecognizer(rec)
-            self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "onViewTap:"))
+            self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(NewDiaryTextContentCell.onViewTap(_:))))
         }
     }
     @IBOutlet weak var diaryMarkImgView: UIImageView!{
@@ -34,7 +34,7 @@ class NewDiaryTextContentCell: NewDiaryBaseCell,UITextViewDelegate {
             }
             diaryMarkImgView.image = isMarkedDiary ? UIImage(named: "diary_mark") : UIImage(named: "diary_unmark")
             diaryMarkImgView.userInteractionEnabled = true
-            diaryMarkImgView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "tapDiaryMark:"))
+            diaryMarkImgView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(NewDiaryTextContentCell.tapDiaryMark(_:))))
         }
     }
     

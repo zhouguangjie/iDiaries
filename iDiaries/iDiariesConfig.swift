@@ -16,4 +16,13 @@ class iDiariesConfig
     static let officalMail = "cplover@live.cn"
     
     static let umengAppkey = "56738bef67e58e976e001370"
+    
+    static var appVersion:String{
+        if let infoDic = NSBundle.mainBundle().infoDictionary
+        {
+            let version = infoDic["CFBundleShortVersionString"] as! String
+            return version
+        }
+        return "1.0"
+    }
 }

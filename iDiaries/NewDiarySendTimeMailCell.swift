@@ -15,14 +15,14 @@ class NewDiarySendTimeMailCell: NewDiaryBaseCell {
     @IBOutlet weak var futureReviewCheckImg: UIImageView!{
         didSet{
             futureReviewCheckImg.userInteractionEnabled = true
-            futureReviewCheckImg.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "selectTimeReviewDiary:"))
+            futureReviewCheckImg.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(NewDiarySendTimeMailCell.selectTimeReviewDiary(_:))))
         }
     }
     private(set) var futureReviewTime:NSDate!
     @IBOutlet weak var toFutureMe: UILabel!{
         didSet{
             toFutureMe.userInteractionEnabled = true
-            toFutureMe.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "selectTimeReviewDiary:"))
+            toFutureMe.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(NewDiarySendTimeMailCell.selectTimeReviewDiary(_:))))
             refreshCheckBoxLabel()
         }
     }
@@ -70,17 +70,21 @@ class NewDiarySendTimeMailCell: NewDiaryBaseCell {
     {
         self.futureReviewTime = date
         refreshCheckBoxLabel()
-        self.rootController.tableView.reloadData()
+        if let d = date {
+            let dateStrformat = NSLocalizedString("REMIND_FUTURE_ME_REVIEW_AT", comment: "")
+            let msg = String(format: dateStrformat, d.toLocalDateString())
+            self.rootController.showAlert(nil, msg: msg)
+        }else{
+            
+        }
     }
     
     private func refreshCheckBoxLabel(){
+        toFutureMe.text = NSLocalizedString("REMIND_FUTURE_ME_REVIEW", comment: "")
         if futureReviewTime == nil{
             futureReviewCheckImg.image = UIImage(named: "unchecked")
-            toFutureMe.text = NSLocalizedString("REMIND_FUTURE_ME_REVIEW", comment: "")
         }else{
             futureReviewCheckImg.image = UIImage(named: "checked")
-            let dateStrformat = NSLocalizedString("REMIND_FUTURE_ME_REVIEW_AT", comment: "")
-            toFutureMe.text = String(format: dateStrformat, self.futureReviewTime.toLocalDateString())
         }
         
     }

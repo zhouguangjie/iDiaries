@@ -11,7 +11,7 @@ import UIKit
 class DiaryContentCell: UITableViewCell {
     static let reuseId = "DiaryContentCell"
     
-    var rootController:ViewController!
+    var rootController:MainViewController!
     var diary:DiaryModel!
     @IBOutlet weak var diaryMarkImgView: UIImageView!
     @IBOutlet weak var daySummaryLabel: UILabel!
@@ -19,7 +19,7 @@ class DiaryContentCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var mainContentTextView: UILabel!{
         didSet{
-            self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "tapCell:"))
+            self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(DiaryContentCell.tapCell(_:))))
         }
     }
     

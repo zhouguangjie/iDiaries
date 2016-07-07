@@ -9,12 +9,23 @@
 import Foundation
 import EventKit
 
+extension ServiceContainer{
+    static func getTimeMailService() -> TimeMailService{
+        return ServiceContainer.getService(TimeMailService)
+    }
+}
+
 //MARK: TimeMailService
-class TimeMailService: NSNotificationCenter
+class TimeMailService:NSNotificationCenter, ServiceProtocol
 {
-    static var sharedInstance = {
-        return TimeMailService()
-    }()
+    @objc static var ServiceName:String {return "TimeMail Service"}
+    func appStartInit(appName: String) {
+        
+    }
+    
+    func userLoginInit(userId: String) {
+        setServiceReady()
+    }
     
     private(set) var timeMails = [TimeMailModel]()
     

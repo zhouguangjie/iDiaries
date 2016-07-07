@@ -86,7 +86,7 @@ class NewDiaryCellManager:NSObject
     
     func notReadyForSaveCell() -> (index:Int,cell:NewDiaryBaseCell)?
     {
-        for var i:Int = 0 ;i < markCells.count; i++
+        for i:Int in 0  ..< markCells.count
         {
             let cell = markCells[i]!
             if cell.selectedMarks.count == 0
@@ -108,7 +108,7 @@ class NewDiaryCellManager:NSObject
         dm.mainContent = textContentCell.mainContent
         dm.diaryMarked = textContentCell.isMarkedDiary
         dm.diaryType = DiaryType.Normal.rawValue
-        DiaryService.sharedInstance.addDiary(dm)
+        ServiceContainer.getDiaryService().addDiary(dm)
         
         dateCell.resetDate()
         weatherCell.clearSelected()
@@ -128,7 +128,7 @@ class NewDiaryCellManager:NSObject
             timeMail.mailReceiveDateTime = futureReviewTime.timeIntervalSince1970
             timeMail.diary = dm
             timeMail.sendMailTime = NSDate().timeIntervalSince1970
-            TimeMailService.sharedInstance.addTimeMail(timeMail)
+            ServiceContainer.getTimeMailService().addTimeMail(timeMail)
         }
         remindCell.setReviewDiaryTime(nil)
     }
@@ -150,7 +150,7 @@ class NewDiaryCellManager:NSObject
         return UITableViewAutomaticDimension
     }
     
-    func getNewDiaryCell(rootController:ViewController,row:Int) -> NewDiaryBaseCell
+    func getNewDiaryCell(rootController:MainViewController,row:Int) -> NewDiaryBaseCell
     {
         var cell:NewDiaryBaseCell!
         let tableView = rootController.tableView
@@ -167,7 +167,7 @@ class NewDiaryCellManager:NSObject
                 self.markCells[markIndex] = mcell
                 mcell.typedMarks = AllDiaryMarks[markIndex]
                 mcell.marksCollectionView.allowsMultipleSelection = markCellsMultiSelection[markIndex]
-                markCellExpandTapGestures[markIndex] = UITapGestureRecognizer(target: self, action: "onMarkCellClicked:")
+                markCellExpandTapGestures[markIndex] = UITapGestureRecognizer(target: self, action: #selector(NewDiaryCellManager.onMarkCellClicked(_:)))
                 if expandedMarkCellIndex != markIndex{
                     mcell.addGestureRecognizer(markCellExpandTapGestures[markIndex])
                 }else{

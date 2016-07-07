@@ -73,14 +73,22 @@ enum DiaryType : String
     case Normal = "normal"
 }
 
+extension ServiceContainer{
+    static func getDiaryService() -> DiaryService{
+        return ServiceContainer.getService(DiaryService)
+    }
+}
+
 //MARK: DiaryService
-class DiaryService: NSNotificationCenter {
-    static var sharedInstance = {
-       return DiaryService()
-    }()
+class DiaryService:NSNotificationCenter, ServiceProtocol {
+    @objc static var ServiceName:String {return "Diary Service"}
+    func appStartInit(appName: String) {
+        PersistentManager.sharedInstance.appInit(appName)
+        PersistentManager.sharedInstance.useModelExtension(PersistentManager.sharedInstance.rootUrl.URLByAppendingPathComponent("idiaries_model.sqlite"),momdBundle: NSBundle.mainBundle())
+    }
     
-    override init() {
-        
+    func userLoginInit(userId: String) {
+        setServiceReady()
     }
     
     var newestDiaryDateTimeInterval:NSTimeInterval{
@@ -105,6 +113,7 @@ class DiaryService: NSNotificationCenter {
     func setWriteDiaryAlarm(alarmTime:NSDate)
     {
         clearDiaryAlarm()
+        
         NSUserDefaults.standardUserDefaults().setObject(alarmTime, forKey: ALARM_WRITE_DIARY_TIME_KEY)
         let localNotification = UILocalNotification()
         localNotification.fireDate = alarmTime

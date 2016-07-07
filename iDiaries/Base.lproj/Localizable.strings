@@ -37,12 +37,19 @@ TIME_MAIL_REMINDER_EFFECTIVELESS = "The Time Mail Will Not Remind By Calendar";
 NEW_DIARY_DATE_TITILE_FORMAT = "LLL. dd EEE";
 
 YEAR_MONTH_FORMAT = "LLLL yyyy";
+MOOD_REPORT_TITLE_FORMAT = "%@ Mood Report";
 MOOD_STATISTICS_TITLE = "Moods Statistics";
 MOOD_TRENDS_TITLE = "This Month Moods Changes";
+MOOD_VALUE = "Mood Value";
+MOOD_PERSENT = "Mood Proportion";
 DAY_MOOD_EMOJI_FORMAT = "Day %d(%.0f%@)";
 
-NO_MONTH_MOOD_REPORT = "No Moods Reports, Start To Write Diary, The Report Will Release Next Month!";
+BEST_MOOD_VALUE_DAY_FORMAT = "Most Happy\n Day %d";
+LOW_MOOD_VALUE_DAY_FORMAT = "Lowest Mood\nDay %d";
+AVG_MOOD_VALUE_FORMAT = "Average";
 
+NO_MONTH_MOOD_REPORT = "No Moods Reports, Start To Write Diary, The Report Will Release Next Month!";
+SHARE_URL_COPIED = "Share Link Copied~";
 //Weather
 "Sunny" = "Sunny";
 "Cloudy" = "Cloudy";
@@ -98,10 +105,11 @@ Thursday = "Thursday";
 Friday = "Friday";
 Saturday = "Saturday";
 
-REMIND_FUTURE_ME_REVIEW = "Send time mail to future me";
-REMIND_FUTURE_ME_REVIEW_AT = "Mail will send to %@";
+TIME_MAIL = "Time Mail";
+REMIND_FUTURE_ME_REVIEW = "Send A Time Mail To Future";
+REMIND_FUTURE_ME_REVIEW_AT = "Mail Will Send To %@";
 
-TIME_MAIL_RECEIVED_TIME = "Time Mail Send Date";
+TIME_MAIL_RECEIVED_TIME = "Time Mail Receive Date";
 
 SWIPE_KEY_SET_PASSWORD = "Set A New Password";
 SWIPE_KEY_VALIDATE_PASSWORD = "Validate Your Password";
@@ -112,7 +120,7 @@ REPEAT_PASSWORD_NOT_MATCH = "Validate New Password Not Match,Retry Set New Passw
 NO_DIARY_HERE = "Diary Is Empty!";
 NO_MAIL_HERE = "Time Mail Box Is Empty!";
 
-TIME_MAIL_FROM_DATE = "This mail is from %@";
+TIME_MAIL_FROM_DATE = "This Mail Is From %@";
 
 CHANGE_PSW = "Change Password";
 SYNC_DIARIES = "Sync iDiaries";
@@ -142,5 +150,7 @@ SYNC_UP_TO_DATE = "All Synced";
 NEED_TO_SYNC = "Sync";
 SYNC_ERROR = "Sync Error";
 
-TIME_TO_WRITE_DIARY = "It's time to write diary!";
+TIME_TO_WRITE_DIARY = "It's Time To Write Diary!";
 YOU_HAVE_A_NEW_TIME_MAIL = "New Time Mail Received";
+NEW_DIARY = "New Diary";
+MY_DIARIES = "My Diaries";
