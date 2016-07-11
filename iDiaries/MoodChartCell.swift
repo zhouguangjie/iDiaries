@@ -57,7 +57,7 @@ class MoodReportSummaryCell:UITableViewCell
 {
     var rootController:MoodReportDetailController!
     @IBAction func shareFriends() {
-        UIPasteboard.generalPasteboard().setValue("itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=1065482853", forPasteboardType: "public.utf8-plain-text")
+        UIPasteboard.generalPasteboard().setValue(iDiariesConfig.sharelink, forPasteboardType: "public.utf8-plain-text")
         self.rootController.playToast("SHARE_URL_COPIED".localizedString())
     }
     

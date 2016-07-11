@@ -95,6 +95,22 @@ class MainViewController: UITableViewController, KKGestureLockViewDelegate{
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         refreshDiaryView()
+        tryShowStartSettingAlert()
+    }
+    
+    private func tryShowStartSettingAlert() -> Bool{
+        if mode != .NewDiaryMode {
+            return false
+        }
+        if ServiceContainer.getDiaryService().hasPassword(){
+            return false
+        }else{
+            let ok = UIAlertAction(title: "OK".localizedString(), style: .Default, handler: { (ac) in
+                self.userSettingClick(self)
+            })
+            self.showAlert("NO_PASSWORD_TITLE".localizedString(), msg: "NO_PASSWORD_MSG".localizedString(), actions: [ok])
+            return true
+        }
     }
     
     private func refreshDiaryView()
@@ -132,10 +148,10 @@ class MainViewController: UITableViewController, KKGestureLockViewDelegate{
         {
             let date = ServiceContainer.getSyncService().lastSyncDate
             let msgFormat = NSLocalizedString("NOT_SYNC_DAYS", comment: "")
-            let msg = String(format: msgFormat, "\(abs(date.totalDaysSinceNow))")
+            let msg = String(format: msgFormat, String(format: "%.0f", abs(date.totalDaysSinceNow.doubleValue)))
             let alert = UIAlertController(title: NSLocalizedString("SYNC", comment: ""), message: msg, preferredStyle: .Alert)
             alert.addAction(UIAlertAction(title: NSLocalizedString("REMIND_SYNC_NEXT_TIME", comment: ""), style: .Default, handler: { (action) -> Void in
-                ServiceContainer.getSyncService().remindSyncAfterDay = NSDate().totalDaysSince1970
+                ServiceContainer.getSyncService().remindSyncAfterDay = NSDate().totalDaysSince1970.integerValue
             }))
             
             alert.addAction(UIAlertAction(title: NSLocalizedString("DONT_REMIND_SYNC", comment: ""), style: .Default, handler: { (action) -> Void in
@@ -143,7 +159,7 @@ class MainViewController: UITableViewController, KKGestureLockViewDelegate{
             }))
             
             alert.addAction(UIAlertAction(title: NSLocalizedString("SYNC_NOW", comment: ""), style: .Default, handler: { (action) -> Void in
-                ServiceContainer.getSyncService().remindSyncAfterDay = NSDate().totalDaysSince1970
+                ServiceContainer.getSyncService().remindSyncAfterDay = NSDate().totalDaysSince1970.integerValue
                 SyncDiariesViewController.showSyncDiariesViewController(self.navigationController!)
             }))
             showAlert(self, alertController: alert)
@@ -162,11 +178,6 @@ class MainViewController: UITableViewController, KKGestureLockViewDelegate{
     {
         let startPos = CGPointMake(diaryShot.frame.origin.x + diaryShot.frame.width/2, self.view.frame.height - 72)
         UIAnimationHelper.flyToTopForView(startPos,view: diaryShot)
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     private func updateTableViewHeader()

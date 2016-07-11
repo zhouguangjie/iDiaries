@@ -25,4 +25,6 @@ class iDiariesConfig
         }
         return "1.0"
     }
+    
+    static let sharelink = "itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=1065482853"
 }

@@ -111,7 +111,7 @@ REMIND_FUTURE_ME_REVIEW_AT = "Mail Will Send To %@";
 
 TIME_MAIL_RECEIVED_TIME = "Time Mail Receive Date";
 
-SWIPE_KEY_SET_PASSWORD = "Set A New Password";
+SWIPE_KEY_SET_PASSWORD = "Swipe Keyboard To Setup A New Password";
 SWIPE_KEY_VALIDATE_PASSWORD = "Validate Your Password";
 INCORRECT_PASSWORD = "Validate Failed,Retry Please";
 REPEAT_PASSWORD = "Validate New Password";
@@ -154,3 +154,6 @@ TIME_TO_WRITE_DIARY = "It's Time To Write Diary!";
 YOU_HAVE_A_NEW_TIME_MAIL = "New Time Mail Received";
 NEW_DIARY = "New Diary";
 MY_DIARIES = "My Diaries";
+NO_PASSWORD_TITLE = "Diary Setting";
+NO_PASSWORD_MSG = "Setup Your Diary Password And Other Settings Please!";
+DIARY_REPORT_RELEASED = "The Last Mood Report Released!";

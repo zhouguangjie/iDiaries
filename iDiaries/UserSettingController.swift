@@ -216,7 +216,7 @@ class UserSettingController: UITableViewController
         if let alarmTime = ServiceContainer.getDiaryService().hasWriteDiaryAlarm()
         {
             let formatter = NSDateFormatter()
-            formatter.dateFormat = "hh:mm"
+            formatter.dateFormat = "HH:mm"
             formatter.timeZone = NSTimeZone()
             propertySet.propertyValue = formatter.stringFromDate(alarmTime)
         }else
@@ -239,6 +239,11 @@ class UserSettingController: UITableViewController
     }()
     
     //MARK: actions
+    
+    @IBAction func sharelink(sender: AnyObject) {
+        UIPasteboard.generalPasteboard().setValue(iDiariesConfig.sharelink, forPasteboardType: "public.utf8-plain-text")
+        self.playToast("SHARE_URL_COPIED".localizedString())
+    }
     
     func useTouchId(tap:UITapGestureRecognizer)
     {

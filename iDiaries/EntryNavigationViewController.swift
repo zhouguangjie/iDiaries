@@ -25,8 +25,7 @@ class EntryNavigationViewController: UINavigationController {
     
     func onServicesAllReady(a:NSNotification) {
         ServiceContainer.instance.removeObserver(self)
-        
-        NSTimer.scheduledTimerWithTimeInterval(2, target: self, selector: #selector(EntryNavigationViewController.showMainViewController(_:)), userInfo: self, repeats: false)
+        NSTimer.scheduledTimerWithTimeInterval(1.2, target: self, selector: #selector(EntryNavigationViewController.showMainViewController(_:)), userInfo: self, repeats: false)
     }
     
     func showMainViewController(_:NSTimer?){

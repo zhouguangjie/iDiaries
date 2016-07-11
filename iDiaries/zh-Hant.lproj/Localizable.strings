@@ -49,7 +49,7 @@ AVG_MOOD_VALUE_FORMAT = "平均指數";
 
 DAY_MOOD_EMOJI_FORMAT = "%d號(%.0f%@)";
 
-NO_MONTH_MOOD_REPORT = "還沒有心情記錄，馬上開始寫日誌吧，下個月1號就會有心情記錄的了！";
+NO_MONTH_MOOD_REPORT = "還沒有心情記錄，馬上開始寫日誌吧，下個月1號會生成本月的心情報告~";
 
 SHARE_URL_COPIED = "推荐链接已复制到剪切板~";
 //Weather
@@ -113,7 +113,7 @@ REMIND_FUTURE_ME_REVIEW_AT = "%@ 將會收到這條日誌的時光信件！";
 
 TIME_MAIL_RECEIVED_TIME = "時光信件接收時間";
 
-SWIPE_KEY_SET_PASSWORD = "滑動設置密碼";
+SWIPE_KEY_SET_PASSWORD = "滑動鍵盤設置新的密碼";
 SWIPE_KEY_VALIDATE_PASSWORD = "滑動解鎖";
 INCORRECT_PASSWORD = "認證失敗，請重試";
 REPEAT_PASSWORD = "設定新密碼";
@@ -156,3 +156,6 @@ TIME_TO_WRITE_DIARY = "開始寫日誌吧!";
 YOU_HAVE_A_NEW_TIME_MAIL = "收到新的時光信件！";
 NEW_DIARY = "新日誌";
 MY_DIARIES = "日誌本";
+NO_PASSWORD_TITLE = "設定你的日誌";
+NO_PASSWORD_MSG = "請設定你的日誌簿的密碼、提醒寫日誌時間等";
+DIARY_REPORT_RELEASED = "可以查看上月心情報告啦~~";

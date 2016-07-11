@@ -84,7 +84,7 @@ class SyncService:NSNotificationCenter, ServiceProtocol
     
     var isRemindSyncNow:Bool{
         let now = NSDate()
-        if remindSyncAfterDay < now.totalDaysSince1970
+        if remindSyncAfterDay < now.totalDaysSince1970.integerValue
         {
             switch remindSyncInterval
             {

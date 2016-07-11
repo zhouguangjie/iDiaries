@@ -307,7 +307,13 @@
                             <outlet property="delegate" destination="b3n-mR-ADf" id="fwf-gL-Kh0"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Setting" id="yGS-H0-2pK"/>
+                    <navigationItem key="navigationItem" title="Setting" id="yGS-H0-2pK">
+                        <barButtonItem key="rightBarButtonItem" image="share" id="oDe-Od-cnM">
+                            <connections>
+                                <action selector="sharelink:" destination="b3n-mR-ADf" id="JkJ-Hz-bRo"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="320"/>
                 </tableViewController>
@@ -1163,6 +1169,7 @@
         <image name="next" width="72" height="72"/>
         <image name="report" width="24" height="24"/>
         <image name="save" width="128" height="128"/>
+        <image name="share" width="21" height="21"/>
         <image name="sync" width="128" height="128"/>
         <image name="time_mail" width="24" height="24"/>
         <image name="unchecked" width="72" height="72"/>

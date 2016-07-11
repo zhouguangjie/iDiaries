@@ -25,13 +25,40 @@ extension ServiceContainer{
     }
 }
 
+let TYPE_NOTIFY_DIARY_REPORT = "diary_report_released"
+
+
 class ReportService:ServiceProtocol
 {
     @objc static var ServiceName:String {return "Report Service"}
     private(set) var allReports = [Report]()
     
     @objc func userLoginInit(userId: String) {
+        checkReportNotification()
         setServiceReady()
+    }
+    
+    private func checkReportNotification(){
+        let contain = UIApplication.sharedApplication().scheduledLocalNotifications?.contains({ (n) -> Bool in
+            if let t = n.userInfo?[TYPE_KEY] as? String{
+                if t == TYPE_NOTIFY_DIARY_REPORT{
+                    return true
+                }
+            }
+            return false
+            
+        })
+        if contain == false {
+            let localNotification = UILocalNotification()
+            let now = NSDate()
+            localNotification.fireDate = DateHelper.generateDate(now.yearOfDate, month: now.monthOfDate,day: 1,hour: 18)
+            localNotification.timeZone = NSTimeZone.defaultTimeZone()
+            localNotification.soundName = UILocalNotificationDefaultSoundName
+            localNotification.repeatInterval = NSCalendarUnit.Month
+            localNotification.alertBody = "DIARY_REPORT_RELEASED".localizedString()
+            localNotification.hasAction = false
+            localNotification.userInfo = [TYPE_KEY:TYPE_NOTIFY_DIARY_REPORT]
+        }
     }
     
     func refreshReports(allDiaries:[DiaryModel],callback:()->Void)

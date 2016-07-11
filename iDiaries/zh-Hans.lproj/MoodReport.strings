@@ -21,7 +21,7 @@
 "cPK-Ot-l2V.normalTitle" = "Button";
 
 /* Class = "UILabel"; text = "Swipe Up To Read"; ObjectID = "pwN-sO-zJ5"; */
-"pwN-sO-zJ5.text" = "下滑开始阅读";
+"pwN-sO-zJ5.text" = "上滑开始阅读";
 
 /* Class = "UIButton"; normalTitle = "推荐给好友"; ObjectID = "uio-3k-x4F"; */
 "uio-3k-x4F.normalTitle" = "推荐给好友";

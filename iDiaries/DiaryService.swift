@@ -8,6 +8,10 @@
 
 import Foundation
 
+let ALARM_WRITE_DIARY_TIME_KEY = "ALARM_WRITE_DIARY_TIME_KEY"
+let TYPE_KEY = "type"
+let TYPE_NOTIFY_WRITE_DIARY = "write_diary"
+
 //MARK: models
 class DiaryMark: BahamutObject
 {
@@ -88,6 +92,7 @@ class DiaryService:NSNotificationCenter, ServiceProtocol {
     }
     
     func userLoginInit(userId: String) {
+        checkWriteDiaryAlarm()
         setServiceReady()
     }
     
@@ -101,7 +106,6 @@ class DiaryService:NSNotificationCenter, ServiceProtocol {
     }
     
     //MARK: alarm write diary
-    let ALARM_WRITE_DIARY_TIME_KEY = "ALARM_WRITE_DIARY_TIME_KEY"
     func hasWriteDiaryAlarm() -> NSDate!
     {
         if let time = NSUserDefaults.standardUserDefaults().objectForKey(ALARM_WRITE_DIARY_TIME_KEY) as? NSDate{
@@ -110,27 +114,43 @@ class DiaryService:NSNotificationCenter, ServiceProtocol {
         return nil
     }
     
+    private func checkWriteDiaryAlarm() {
+        if let date = NSUserDefaults.standardUserDefaults().objectForKey(ALARM_WRITE_DIARY_TIME_KEY) as? NSDate{
+            let contain = UIApplication.sharedApplication().scheduledLocalNotifications?.contains({ (n) -> Bool in
+                if let t = n.userInfo?[TYPE_KEY] as? String{
+                    if t == TYPE_NOTIFY_WRITE_DIARY{
+                        return true
+                    }
+                }
+                return false
+                
+            })
+            if contain == false {
+                setWriteDiaryAlarm(date)
+            }
+        }
+    }
+    
     func setWriteDiaryAlarm(alarmTime:NSDate)
     {
         clearDiaryAlarm()
-        
         NSUserDefaults.standardUserDefaults().setObject(alarmTime, forKey: ALARM_WRITE_DIARY_TIME_KEY)
         let localNotification = UILocalNotification()
         localNotification.fireDate = alarmTime
         localNotification.timeZone = NSTimeZone.defaultTimeZone()
         localNotification.soundName = UILocalNotificationDefaultSoundName
         localNotification.repeatInterval = NSCalendarUnit.Day
-        localNotification.alertBody = NSLocalizedString("TIME_TO_WRITE_DIARY", comment: "")
+        localNotification.alertBody = "TIME_TO_WRITE_DIARY".localizedString()
         localNotification.applicationIconBadgeNumber = UIApplication.sharedApplication().applicationIconBadgeNumber + 1
         localNotification.hasAction = false
-        localNotification.userInfo = ["type":"write_diary"]
+        localNotification.userInfo = [TYPE_KEY:TYPE_NOTIFY_WRITE_DIARY]
         UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
     }
     
     func clearDiaryAlarm()
     {
         NSUserDefaults.standardUserDefaults().setObject(nil, forKey: ALARM_WRITE_DIARY_TIME_KEY)
-        UIApplication.sharedApplication().scheduledLocalNotifications?.removeElement{$0.userInfo != nil && ("write_diary" == $0.userInfo!["type"] as? String)}
+        UIApplication.sharedApplication().scheduledLocalNotifications?.removeElement{$0.userInfo != nil && (TYPE_NOTIFY_WRITE_DIARY == $0.userInfo![TYPE_KEY] as? String)}
     }
     
     //MARK: password

@@ -15,6 +15,8 @@ extension ServiceContainer{
     }
 }
 
+let TYPE_NOTIFY_TIME_MAIL_RECEIVED = "time_mail_received"
+
 //MARK: TimeMailService
 class TimeMailService:NSNotificationCenter, ServiceProtocol
 {
@@ -116,10 +118,10 @@ class TimeMailService:NSNotificationCenter, ServiceProtocol
     {
         let notification = UILocalNotification()
         notification.fireDate = NSDate(timeIntervalSince1970: mail.mailReceiveDateTime.doubleValue)
-        notification.userInfo = [mailReceivedNotificationId:mail.mailId,"type":"time_mail_received"]
+        notification.userInfo = [mailReceivedNotificationId:mail.mailId,TYPE_KEY:TYPE_NOTIFY_TIME_MAIL_RECEIVED]
         notification.soundName = UILocalNotificationDefaultSoundName
         notification.timeZone = NSTimeZone.defaultTimeZone()
-        notification.alertBody = NSLocalizedString("YOU_HAVE_A_NEW_TIME_MAIL", comment: "")
+        notification.alertBody = "YOU_HAVE_A_NEW_TIME_MAIL".localizedString()
         notification.applicationIconBadgeNumber = UIApplication.sharedApplication().applicationIconBadgeNumber + 1
         UIApplication.sharedApplication().scheduleLocalNotification(notification)
     }
@@ -152,7 +154,7 @@ class TimeMailService:NSNotificationCenter, ServiceProtocol
         if String.isNullOrWhiteSpace(mail.calendarIdentifier)
         {
             let event = EKEvent(eventStore: eventStore)
-            let msg = NSLocalizedString("YOU_HAVE_A_NEW_TIME_MAIL", comment: "")
+            let msg = "YOU_HAVE_A_NEW_TIME_MAIL".localizedString()
             let datetime = NSDate(timeIntervalSince1970: mail.mailReceiveDateTime.doubleValue)
             let alarm = EKAlarm(absoluteDate: datetime)
             event.title = iDiariesConfig.appTitle + ":" + msg

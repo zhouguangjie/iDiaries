@@ -73,7 +73,9 @@ class NewDiaryMarkCell: NewDiaryBaseCell,UICollectionViewDataSource,UICollection
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         let cell = collectionView.cellForItemAtIndexPath(indexPath) as! DiaryMarkCell
         SystemSoundHelper.keyTink()
-        selectedMarks.append(cell.markModel)
+        if !selectedMarks.contains(cell.markModel){
+            selectedMarks.append(cell.markModel)
+        }
         cell.refresh()
     }
     
