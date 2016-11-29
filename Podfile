@@ -7,7 +7,7 @@ pod 'EVReflection', '~> 2.20.0'
 
 pod 'MJRefresh'
 
-pod 'MBProgressHUD', '~> 0.9.2'
+pod 'MBProgressHUD'
 
 pod 'KKGestureLockView'
 
@@ -17,6 +17,6 @@ pod 'BEMSimpleLineGraph'
 
 pod 'UMengAnalytics'
 
-pod 'Charts'
+pod 'Charts', '~> 2'
 
 end

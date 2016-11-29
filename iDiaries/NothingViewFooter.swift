@@ -12,7 +12,7 @@ class NothingViewFooter: UIView {
 
     static func instanceFromXib() -> NothingViewFooter
     {
-        return NSBundle.mainBundle().loadNibNamed("NothingViewFooter", owner: nil, options: nil).filter{$0 is NothingViewFooter}.first as! NothingViewFooter
+        return NSBundle.mainBundle().loadNibNamed("NothingViewFooter", owner: nil, options: nil)!.filter{$0 is NothingViewFooter}.first as! NothingViewFooter
     }
     @IBOutlet weak var messageLabel: UILabel!
 

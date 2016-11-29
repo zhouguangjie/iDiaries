@@ -88,7 +88,7 @@ class DiaryService:NSNotificationCenter, ServiceProtocol {
     @objc static var ServiceName:String {return "Diary Service"}
     func appStartInit(appName: String) {
         PersistentManager.sharedInstance.appInit(appName)
-        PersistentManager.sharedInstance.useModelExtension(PersistentManager.sharedInstance.rootUrl.URLByAppendingPathComponent("idiaries_model.sqlite"),momdBundle: NSBundle.mainBundle())
+        PersistentManager.sharedInstance.useModelExtension(PersistentManager.sharedInstance.rootUrl.URLByAppendingPathComponent("idiaries_model.sqlite")!,momdBundle: NSBundle.mainBundle())
     }
     
     func userLoginInit(userId: String) {

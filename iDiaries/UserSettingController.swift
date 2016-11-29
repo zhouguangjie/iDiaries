@@ -410,7 +410,7 @@ class UserSettingController: UITableViewController
             if inCN{
                 cell.subviews.first?.subviews.forEach{ v in
                     if let label = v as? UILabel{
-                        label.text = "与好友视频对讲"
+                        label.text = "VG高颜值俱乐部"
                     }
                 }
             }

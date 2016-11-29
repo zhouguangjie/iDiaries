@@ -16,6 +16,10 @@
 		E70DDE9E1C10156B00DD0E57 /* DiaryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70DDE9D1C10156B00DD0E57 /* DiaryService.swift */; };
 		E70DDEA01C1015D400DD0E57 /* DiaryMarksConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70DDE9F1C1015D400DD0E57 /* DiaryMarksConfig.swift */; };
 		E70DDEA21C10197F00DD0E57 /* DiaryContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70DDEA11C10197F00DD0E57 /* DiaryContentCell.swift */; };
+		E710F4461DED3DF000DE0374 /* BahamutCommonLocalized.swift in Sources */ = {isa = PBXBuildFile; fileRef = E710F4421DED3DF000DE0374 /* BahamutCommonLocalized.swift */; };
+		E710F4471DED3DF000DE0374 /* CommonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E710F4431DED3DF000DE0374 /* CommonExtension.swift */; };
+		E710F4481DED3DF000DE0374 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = E710F4441DED3DF000DE0374 /* Math.swift */; };
+		E710F4491DED3DF000DE0374 /* String+MD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = E710F4451DED3DF000DE0374 /* String+MD5.swift */; };
 		E712FB2A1CF8574100C5AFA6 /* ColorUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = E712FB1B1CF8574100C5AFA6 /* ColorUtil.swift */; };
 		E712FB2B1CF8574100C5AFA6 /* ControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E712FB1C1CF8574100C5AFA6 /* ControllerExtension.swift */; };
 		E712FB2C1CF8574100C5AFA6 /* HSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = E712FB1E1CF8574100C5AFA6 /* HSL.swift */; };
@@ -56,7 +60,6 @@
 		E712FB7D1CF8578800C5AFA6 /* BahamutModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E712FB691CF8578800C5AFA6 /* BahamutModel.xcdatamodeld */; };
 		E712FB7E1CF8578800C5AFA6 /* ModelEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E712FB6B1CF8578800C5AFA6 /* ModelEntity.swift */; };
 		E712FB7F1CF8578800C5AFA6 /* ModelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E712FB6C1CF8578800C5AFA6 /* ModelExtension.swift */; };
-		E712FB831CF857E400C5AFA6 /* BahamutTaskQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E712FB811CF857E400C5AFA6 /* BahamutTaskQueue.swift */; };
 		E712FB841CF857E400C5AFA6 /* ProgressTaskWatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E712FB821CF857E400C5AFA6 /* ProgressTaskWatcher.swift */; };
 		E743D8D91C128E10003ACC4E /* NewDiaryCellManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E743D8D81C128E10003ACC4E /* NewDiaryCellManager.swift */; };
 		E743D8DC1C129479003ACC4E /* DiaryListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E743D8DB1C129479003ACC4E /* DiaryListManager.swift */; };
@@ -100,19 +103,8 @@
 		E7C6A24C1C462D520094E7C4 /* ReportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C6A24B1C462D520094E7C4 /* ReportService.swift */; };
 		E7CD27201C17F51700AB2C64 /* SyncDiariesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CD271F1C17F51700AB2C64 /* SyncDiariesViewController.swift */; };
 		E7D84D461C4780C700CC180D /* MoodReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D84D451C4780C700CC180D /* MoodReportViewController.swift */; };
-		E7DF89321C4A558200C908D8 /* iDiariesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DF88C71C4A539800C908D8 /* iDiariesTests.swift */; };
 		E7F3D4F41D2C831800C149DC /* MoodChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F3D4F31D2C831800C149DC /* MoodChartCell.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		E7DF88CA1C4A539800C908D8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E76DEB6C1C0E981D0072A1D7 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E76DEB731C0E981D0072A1D7;
-			remoteInfo = iDiaries;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		2C6CC0BDD0C2F3E4BF93137B /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,6 +121,10 @@
 		E70DDE9D1C10156B00DD0E57 /* DiaryService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryService.swift; sourceTree = "<group>"; };
 		E70DDE9F1C1015D400DD0E57 /* DiaryMarksConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryMarksConfig.swift; sourceTree = "<group>"; };
 		E70DDEA11C10197F00DD0E57 /* DiaryContentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryContentCell.swift; sourceTree = "<group>"; };
+		E710F4421DED3DF000DE0374 /* BahamutCommonLocalized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BahamutCommonLocalized.swift; sourceTree = "<group>"; };
+		E710F4431DED3DF000DE0374 /* CommonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonExtension.swift; sourceTree = "<group>"; };
+		E710F4441DED3DF000DE0374 /* Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
+		E710F4451DED3DF000DE0374 /* String+MD5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+MD5.swift"; sourceTree = "<group>"; };
 		E712FB1B1CF8574100C5AFA6 /* ColorUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorUtil.swift; sourceTree = "<group>"; };
 		E712FB1C1CF8574100C5AFA6 /* ControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControllerExtension.swift; sourceTree = "<group>"; };
 		E712FB1E1CF8574100C5AFA6 /* HSL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HSL.swift; sourceTree = "<group>"; };
@@ -173,7 +169,6 @@
 		E712FB6A1CF8578800C5AFA6 /* BahamutModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BahamutModel.xcdatamodel; sourceTree = "<group>"; };
 		E712FB6B1CF8578800C5AFA6 /* ModelEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelEntity.swift; sourceTree = "<group>"; };
 		E712FB6C1CF8578800C5AFA6 /* ModelExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelExtension.swift; sourceTree = "<group>"; };
-		E712FB811CF857E400C5AFA6 /* BahamutTaskQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BahamutTaskQueue.swift; sourceTree = "<group>"; };
 		E712FB821CF857E400C5AFA6 /* ProgressTaskWatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressTaskWatcher.swift; sourceTree = "<group>"; };
 		E743D8D81C128E10003ACC4E /* NewDiaryCellManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewDiaryCellManager.swift; sourceTree = "<group>"; };
 		E743D8DB1C129479003ACC4E /* DiaryListManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryListManager.swift; sourceTree = "<group>"; };
@@ -228,9 +223,6 @@
 		E7C6A24B1C462D520094E7C4 /* ReportService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportService.swift; sourceTree = "<group>"; };
 		E7CD271F1C17F51700AB2C64 /* SyncDiariesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncDiariesViewController.swift; sourceTree = "<group>"; };
 		E7D84D451C4780C700CC180D /* MoodReportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoodReportViewController.swift; sourceTree = "<group>"; };
-		E7DF88C51C4A539800C908D8 /* iDiariesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iDiariesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E7DF88C71C4A539800C908D8 /* iDiariesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iDiariesTests.swift; sourceTree = "<group>"; };
-		E7DF88C91C4A539800C908D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7E792231D2BDC7E00F06D94 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.storyboard"; sourceTree = "<group>"; };
 		E7E792241D2BDC8400F06D94 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.storyboard"; sourceTree = "<group>"; };
 		E7F3D4F01D2C76F800C149DC /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
@@ -248,13 +240,6 @@
 				E7534B881C23DE3500F0ED58 /* libz.1.2.5.tbd in Frameworks */,
 				E781B4881C11925F0014A17D /* AudioToolbox.framework in Frameworks */,
 				BA76F0B2909B883F54BA6B6F /* Pods_iDiaries.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E7DF88C21C4A539800C908D8 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,6 +308,10 @@
 		E712FB361CF8574D00C5AFA6 /* BahamutCommon */ = {
 			isa = PBXGroup;
 			children = (
+				E710F4421DED3DF000DE0374 /* BahamutCommonLocalized.swift */,
+				E710F4431DED3DF000DE0374 /* CommonExtension.swift */,
+				E710F4441DED3DF000DE0374 /* Math.swift */,
+				E710F4451DED3DF000DE0374 /* String+MD5.swift */,
 				E712FB371CF8574D00C5AFA6 /* ArrayUtil.swift */,
 				E712FB381CF8574D00C5AFA6 /* BahamutCommon.h */,
 				E712FB391CF8574D00C5AFA6 /* BahamutObject.swift */,
@@ -425,7 +414,6 @@
 		E712FB801CF857E400C5AFA6 /* BahamutTask */ = {
 			isa = PBXGroup;
 			children = (
-				E712FB811CF857E400C5AFA6 /* BahamutTaskQueue.swift */,
 				E712FB821CF857E400C5AFA6 /* ProgressTaskWatcher.swift */,
 			);
 			name = BahamutTask;
@@ -504,7 +492,6 @@
 				E76DEB761C0E981D0072A1D7 /* iDiaries */,
 				E76DEB751C0E981D0072A1D7 /* Products */,
 				E930703952CF9F5E7439696B /* Frameworks */,
-				E7DF88C61C4A539800C908D8 /* iDiariesTests */,
 				AC869AAB230ECA090C9AF8C0 /* Pods */,
 			);
 			sourceTree = "<group>";
@@ -513,7 +500,6 @@
 			isa = PBXGroup;
 			children = (
 				E76DEB741C0E981D0072A1D7 /* iDiaries.app */,
-				E7DF88C51C4A539800C908D8 /* iDiariesTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -598,15 +584,6 @@
 			name = MonthMoodReport;
 			sourceTree = "<group>";
 		};
-		E7DF88C61C4A539800C908D8 /* iDiariesTests */ = {
-			isa = PBXGroup;
-			children = (
-				E7DF88C71C4A539800C908D8 /* iDiariesTests.swift */,
-				E7DF88C91C4A539800C908D8 /* Info.plist */,
-			);
-			path = iDiariesTests;
-			sourceTree = "<group>";
-		};
 		E930703952CF9F5E7439696B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -644,24 +621,6 @@
 			productReference = E76DEB741C0E981D0072A1D7 /* iDiaries.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E7DF88C41C4A539800C908D8 /* iDiariesTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E7DF88CE1C4A539800C908D8 /* Build configuration list for PBXNativeTarget "iDiariesTests" */;
-			buildPhases = (
-				E7DF88C11C4A539800C908D8 /* Sources */,
-				E7DF88C21C4A539800C908D8 /* Frameworks */,
-				E7DF88C31C4A539800C908D8 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E7DF88CB1C4A539800C908D8 /* PBXTargetDependency */,
-			);
-			name = iDiariesTests;
-			productName = iDiariesTests;
-			productReference = E7DF88C51C4A539800C908D8 /* iDiariesTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -684,10 +643,6 @@
 							};
 						};
 					};
-					E7DF88C41C4A539800C908D8 = {
-						CreatedOnToolsVersion = 7.2;
-						TestTargetID = E76DEB731C0E981D0072A1D7;
-					};
 				};
 			};
 			buildConfigurationList = E76DEB6F1C0E981D0072A1D7 /* Build configuration list for PBXProject "iDiaries" */;
@@ -706,7 +661,6 @@
 			projectRoot = "";
 			targets = (
 				E76DEB731C0E981D0072A1D7 /* iDiaries */,
-				E7DF88C41C4A539800C908D8 /* iDiariesTests */,
 			);
 		};
 /* End PBXProject section */
@@ -724,13 +678,6 @@
 				E76DEB7F1C0E981D0072A1D7 /* Assets.xcassets in Resources */,
 				E7AE3DD31C4B77E900CB1859 /* MoodReport.storyboard in Resources */,
 				E76DEB7D1C0E981D0072A1D7 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E7DF88C31C4A539800C908D8 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -779,7 +726,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -792,7 +739,6 @@
 				E76DEB7A1C0E981D0072A1D7 /* MainViewController.swift in Sources */,
 				E712FB321CF8574100C5AFA6 /* ToastHelper.swift in Sources */,
 				E712FB841CF857E400C5AFA6 /* ProgressTaskWatcher.swift in Sources */,
-				E712FB831CF857E400C5AFA6 /* BahamutTaskQueue.swift in Sources */,
 				E712FB6E1CF8578800C5AFA6 /* PersistentBase.swift in Sources */,
 				E702310B1D2B935900260446 /* ServiceContainer.swift in Sources */,
 				E781B47C1C114BC60014A17D /* NewDiaryMarkCell.swift in Sources */,
@@ -841,7 +787,9 @@
 				E712FB301CF8574100C5AFA6 /* KeyboardAdjustHelper.swift in Sources */,
 				E70DDEA01C1015D400DD0E57 /* DiaryMarksConfig.swift in Sources */,
 				E7BD6FB01C48B5EE00DB738F /* MoodReportDetailController.swift in Sources */,
+				E710F4491DED3DF000DE0374 /* String+MD5.swift in Sources */,
 				E712FB7C1CF8578800C5AFA6 /* ShareChatEntity.swift in Sources */,
+				E710F4471DED3DF000DE0374 /* CommonExtension.swift in Sources */,
 				E712FB2F1CF8574100C5AFA6 /* KDCircularProgress.swift in Sources */,
 				E712FB2A1CF8574100C5AFA6 /* ColorUtil.swift in Sources */,
 				E712FB771CF8578800C5AFA6 /* BahamutMessage.xcdatamodeld in Sources */,
@@ -859,11 +807,13 @@
 				E712FB2B1CF8574100C5AFA6 /* ControllerExtension.swift in Sources */,
 				E7C6A24C1C462D520094E7C4 /* ReportService.swift in Sources */,
 				E74DB7B81C193362004F0207 /* DiaryDetailViewController.swift in Sources */,
+				E710F4481DED3DF000DE0374 /* Math.swift in Sources */,
 				E712FB7B1CF8578800C5AFA6 /* ShareChatEntity+CoreDataProperties.swift in Sources */,
 				E712FB7D1CF8578800C5AFA6 /* BahamutModel.xcdatamodeld in Sources */,
 				E743D8F41C14AD3E003ACC4E /* UIBarButtonItem+Badge.m in Sources */,
 				E712FB471CF8574D00C5AFA6 /* BahamutObject.swift in Sources */,
 				E70DDEA21C10197F00DD0E57 /* DiaryContentCell.swift in Sources */,
+				E710F4461DED3DF000DE0374 /* BahamutCommonLocalized.swift in Sources */,
 				E712FB4D1CF8574D00C5AFA6 /* RegexUtil.swift in Sources */,
 				E77D43481C15E853008E350A /* iDiariesConfig.swift in Sources */,
 				E712FB4B1CF8574D00C5AFA6 /* DateHelper.swift in Sources */,
@@ -873,23 +823,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E7DF88C11C4A539800C908D8 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E7DF89321C4A558200C908D8 /* iDiariesTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		E7DF88CB1C4A539800C908D8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E76DEB731C0E981D0072A1D7 /* iDiaries */;
-			targetProxy = E7DF88CA1C4A539800C908D8 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		E712FB3A1CF8574D00C5AFA6 /* BahamutCommonLocalized.strings */ = {
@@ -1073,6 +1007,7 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_INCLUDE_PATHS = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/alexchow/GitHub/iDiaries/iDiaries/Bridging-Header.h";
+				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1109,33 +1044,8 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_INCLUDE_PATHS = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/alexchow/GitHub/iDiaries/iDiaries/Bridging-Header.h";
+				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		E7DF88CC1C4A539800C908D8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = iDiariesTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.GStudio.iDiariesTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iDiaries.app/iDiaries";
-			};
-			name = Debug;
-		};
-		E7DF88CD1C4A539800C908D8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = iDiariesTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.GStudio.iDiariesTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iDiaries.app/iDiaries";
 			};
 			name = Release;
 		};
@@ -1156,15 +1066,6 @@
 			buildConfigurations = (
 				E76DEB871C0E981D0072A1D7 /* Debug */,
 				E76DEB881C0E981D0072A1D7 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E7DF88CE1C4A539800C908D8 /* Build configuration list for PBXNativeTarget "iDiariesTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E7DF88CC1C4A539800C908D8 /* Debug */,
-				E7DF88CD1C4A539800C908D8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
